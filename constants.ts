@@ -20,8 +20,8 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "БАГРАТ",
-    category: "Premium Barbershop / 2025",
+    title: "BAGRAT",
+    category: "Barbershop / 2025",
     url: "https://bagra-five.vercel.app/",
     imageUrl: "/images/projects/bagrat.jpg",  // TODO: Добавить фото 1200x800
     isComingSoon: false
@@ -36,7 +36,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 5,
-    title: "VOID",
+    title: "DEVELOPMENT",
     category: "High-Performance API / 2025",
     url: "#",
     imageUrl: "/images/projects/void.jpg",  // TODO: Добавить фото 1200x800
@@ -44,7 +44,7 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 6,
-    title: "UNKNOWN",
+    title: "DEVELOPMENT",
     category: "Experimental / 2025",
     url: "#",
     imageUrl: "/images/projects/unknown.jpg",  // TODO: Добавить фото 1200x800
