@@ -70,7 +70,7 @@ const App: React.FC = () => {
 
       {/* Navigation */}
       <nav className="fixed top-0 left-0 w-full p-6 md:p-8 z-[100] flex justify-between items-center glass-nav">
-        <div className="font-clash font-bold text-xl tracking-tighter interactive text-white">LEAD.DEV</div>
+        <div className="font-clash font-bold text-xl tracking-tighter interactive text-white">DEV</div>
         <div className="hidden md:flex gap-12 font-syne text-[10px] uppercase tracking-[0.4em] text-white/40">
           <a href="#projects" className="hover:text-[#2dd4bf] transition-colors">Projects</a>
           <a href="#expertise" className="hover:text-[#7dd3fc] transition-colors">Expertise</a>
@@ -140,7 +140,7 @@ const App: React.FC = () => {
           </h2>
           <div className="text-right">
              <p className="font-syne text-[10px] uppercase tracking-[0.6em] text-[#2dd4bf] mb-2 font-bold">Release Archive</p>
-             <p className="font-clash text-xl text-slate-500 tracking-tight font-bold">2023 — 2024</p>
+             <p className="font-clash text-xl text-slate-500 tracking-tight font-bold">2024 — 2025</p>
           </div>
         </div>
         
@@ -156,7 +156,7 @@ const App: React.FC = () => {
         <div className="text-center relative">
           <span className="font-syne text-[10px] uppercase tracking-[0.8em] text-[#2dd4bf] mb-10 block font-bold">Connection Request</span>
           <h2 className="text-[15vw] md:text-[10vw] font-clash font-bold tracking-tighter leading-none uppercase interactive text-white">
-            Let's <br /><span className="text-outline">Collaborate</span>
+            Let's <br /><span className="text-outline">BUILD</span>
           </h2>
           <div className="mt-20 relative group inline-block">
             <button 
@@ -170,7 +170,7 @@ const App: React.FC = () => {
         </div>
 
         <footer className="absolute bottom-10 left-0 w-full px-10 flex flex-col md:flex-row justify-between items-center text-slate-700 font-syne text-[9px] uppercase tracking-[0.6em] gap-6">
-          <div className="flex gap-12"><span>© 2024 ARCHIVE</span><span>PRECISION V.5.0</span></div>
+          <div className="flex gap-12"><span>© 2025 ARCHIVE</span><span>PRECISION V.5.0</span></div>
           <div className="flex gap-8 font-bold">
             <a href="#" className="hover:text-[#2dd4bf] interactive">GH</a>
             <a href="#" className="hover:text-[#2dd4bf] interactive">LI</a>
