@@ -3,7 +3,6 @@ export interface Project {
   id: number;
   title: string;
   category: string;
-  url: string;
   imageUrl: string;
   isComingSoon: boolean;
 }
