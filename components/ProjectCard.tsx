@@ -69,14 +69,19 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ project, index }) => {
         </p>
         
         {!project.isComingSoon ? (
-          <div className="flex items-center gap-6 group interactive w-max">
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-6 group interactive w-max"
+          >
             <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center group-hover:bg-[#2dd4bf] group-hover:text-[#020617] transition-all shadow-lg">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                 <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
               </svg>
             </div>
             <span className="font-syne text-[10px] uppercase tracking-[0.3em] font-extrabold text-white/60 group-hover:text-white transition-colors">View Project</span>
-          </div>
+          </a>
         ) : (
           <div className="flex items-center gap-6 opacity-20">
             <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center">
