@@ -24,7 +24,7 @@ export const PROJECTS: Project[] = [
     category: "Web Platform / 2025",
     url: "https://bambl.one/",
     imageUrl: "/images/projects/bambl.jpg",  // TODO: Добавить фото 1200x800
-    isComingSoon: false
+    isComingSoon: true
   },
   {
     id: 4,
@@ -32,7 +32,7 @@ export const PROJECTS: Project[] = [
     category: "Web Platform / 2025",
     url: "https://justhourglass.com/",
     imageUrl: "/images/projects/hourglass.jpg",  // TODO: Добавить фото 1200x800
-    isComingSoon: false
+    isComingSoon: true
   },
   {
     id: 5,
