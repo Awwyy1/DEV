@@ -20,18 +20,18 @@ export const PROJECTS: Project[] = [
   },
   {
     id: 3,
-    title: "BAGRAT",
-    category: "Barbershop / 2025",
-    url: "https://bagra-five.vercel.app/",
-    imageUrl: "/images/projects/bagrat.jpg",  // TODO: Добавить фото 1200x800
+    title: "BAMBL",
+    category: "Web Platform / 2025",
+    url: "https://bambl.one/",
+    imageUrl: "/images/projects/bambl.jpg",  // TODO: Добавить фото 1200x800
     isComingSoon: false
   },
   {
     id: 4,
-    title: "ALEXNES",
-    category: "Addiction Recovery Therapy / 2025",
-    url: "https://www.alexnes.com/",
-    imageUrl: "/images/projects/alexnes.jpg",  // TODO: Добавить фото 1200x800
+    title: "HOURGLASS",
+    category: "Web Platform / 2025",
+    url: "https://justhourglass.com/",
+    imageUrl: "/images/projects/hourglass.jpg",  // TODO: Добавить фото 1200x800
     isComingSoon: false
   },
   {
