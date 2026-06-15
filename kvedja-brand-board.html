@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kveðja — Visual Identity Directions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Caveat:wght@500&family=Cormorant+Garamond:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{ --gap:clamp(24px,4vw,56px); }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:#0e0e10;color:#e9e9ec;font-family:'Inter',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1080px;margin:0 auto;padding:clamp(28px,5vw,72px) clamp(18px,4vw,40px)}
+  .lede h1{font-family:'Fraunces',serif;font-weight:400;font-size:clamp(34px,6vw,64px);letter-spacing:.06em;margin:0 0 .15em}
+  .lede .pron{color:#9a9ca3;font-size:14px;letter-spacing:.18em;text-transform:uppercase}
+  .lede p{color:#b9bbc1;max-width:62ch;margin:.9em 0 0}
+  .lede .key{margin-top:1.4em;padding:14px 18px;border:1px solid #2a2a2f;border-radius:8px;color:#cfd1d6;background:#141417;font-size:15px;max-width:70ch}
+  .lede .key b{color:#fff;font-weight:600}
+  hr.sep{border:none;border-top:1px solid #232327;margin:var(--gap) 0}
+
+  /* ---- direction block ---- */
+  .dir{padding:clamp(26px,4vw,48px);border-radius:14px;margin:34px 0;color:var(--ink);background:var(--bg);position:relative;overflow:hidden}
+  .dir .tag{position:absolute;top:0;right:0;background:var(--ink);color:var(--bg);font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;padding:7px 14px;border-bottom-left-radius:10px}
+  .dir .dname{font-size:12px;letter-spacing:.28em;text-transform:uppercase;opacity:.6;margin:0 0 6px;font-family:'JetBrains Mono',monospace}
+  .dir .concept{font-family:var(--display);font-size:clamp(22px,3vw,30px);margin:0 0 4px;font-weight:var(--dispw,400)}
+  .dir .blurb{max-width:60ch;opacity:.78;font-size:15px;margin:0 0 28px}
+
+  .row{display:flex;flex-wrap:wrap;gap:36px;align-items:flex-start}
+  .col{flex:1 1 280px;min-width:260px}
+  .label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;opacity:.5;margin:0 0 12px}
+
+  /* wordmark */
+  .wordmark{font-family:var(--display);font-size:clamp(40px,7vw,68px);line-height:.95;font-weight:var(--dispw,400);letter-spacing:var(--wmls,.02em);text-transform:var(--wmtt,none);color:var(--ink)}
+  .wordmark .eth{color:var(--accent)}
+  .tagline{font-family:var(--ui);font-size:13px;letter-spacing:.16em;text-transform:uppercase;opacity:.62;margin-top:14px}
+
+  /* the mark / seal */
+  .mark{width:118px;height:118px;color:var(--ink)}
+  .mark .eth{font-family:var(--display);font-weight:500}
+  .mark .ring{font-family:'JetBrains Mono',monospace}
+
+  /* palette */
+  .swatches{display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid rgba(0,0,0,.12)}
+  .sw{flex:1;aspect-ratio:1/1.25;display:flex;align-items:flex-end;padding:8px;font-family:'JetBrains Mono',monospace;font-size:9.5px}
+  .sw span{background:rgba(0,0,0,.45);color:#fff;padding:2px 5px;border-radius:3px;letter-spacing:.04em}
+  .sw.light span{background:rgba(255,255,255,.7);color:#111}
+
+  /* type specimen */
+  .spec .big{font-family:var(--display);font-size:clamp(26px,3.4vw,40px);font-weight:var(--dispw,400);margin:0 0 4px}
+  .spec .small{font-family:var(--ui);font-size:14px;opacity:.78;margin:0 0 10px;max-width:48ch}
+  .spec .mono{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.14em;opacity:.62}
+  .spec .scriptline{font-family:'Caveat',cursive;font-size:26px;opacity:.85}
+
+  /* plate card */
+  .plate{width:100%;max-width:330px;border-radius:var(--cardr,4px);overflow:hidden;background:var(--ink);box-shadow:0 18px 40px -22px rgba(0,0,0,.55);border:var(--cardb,none)}
+  .photo{aspect-ratio:4/5;position:relative;background:var(--photo)}
+  .photo::after{content:"";position:absolute;inset:0;background:var(--photoglow,none)}
+  .photo .sun{position:absolute;width:64px;height:64px;border-radius:50%;background:var(--sun,transparent);top:24%;left:60%;filter:blur(2px);opacity:var(--suno,0)}
+  .cap{padding:14px 16px;background:var(--bg);color:var(--ink)}
+  .cap .pn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.2em;opacity:.55;text-transform:uppercase}
+  .cap .ttl{font-family:var(--display);font-size:20px;font-weight:var(--dispw,400);margin:3px 0 0}
+  .cap .insc{margin-top:8px;font-size:12px;opacity:.7}
+  .photo .overlay{position:absolute;left:0;right:0;bottom:0;padding:16px;z-index:2}
+
+  @media (max-width:560px){ .mark{width:96px;height:96px} }
+  .foot{color:#8a8c93;font-size:13px;text-align:center;margin-top:48px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <div class="lede">
+    <div class="pron">/ ˈkvɛð·ja / · «КВЕ-дья»</div>
+    <h1>Kveðja</h1>
+    <p>Исландское «с приветом / с уважением» — слово, которым подписывают открытки и письма. Бренд = жест: ты выбираешь работу из архива, ставишь свою надпись (Inscription) и оставляешь себе или отправляешь как привет с Севера.</p>
+    <div class="key"><b>Три визуальные директории.</b> Это территории, а не финальные логотипы — выбери ту, чья интонация ближе, и я разверну её в полный гайд и применю к реальным макетам сайта. Глиф <b>ð</b> везде работает как фирменный знак.</div>
+  </div>
+
+  <hr class="sep">
+
+  <!-- ============ A · THE ATLAS ============ -->
+  <section class="dir" style="--bg:#F6F4EF;--ink:#16130F;--accent:#5C6248;--display:'Fraunces',serif;--ui:'Inter',sans-serif;--dispw:400;--wmls:.04em;--cardr:3px;
+      --photo:linear-gradient(180deg,#cdd6da 0%,#9fb1ba 34%,#566066 64%,#1d1c1a 100%);--sun:#eef2f0;--suno:.5;--photoglow:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.18),transparent 55%);">
+    <div class="tag">DIRECTION A</div>
+    <p class="dname">The Atlas</p>
+    <h2 class="concept">Архив-монография. Атлас Севера.</h2>
+    <p class="blurb">Интонация фотоальбома Steidl, скрещённого со старым картографическим атласом: номера пластин, координаты, серии, подписи как музейные таблички. Авторитетно, интеллектуально, коллекционно.</p>
+
+    <div class="row">
+      <div class="col">
+        <p class="label">Wordmark</p>
+        <div class="wordmark">KVE<span class="eth">Ð</span>JA</div>
+        <div class="tagline">The North, in plates.</div>
+      </div>
+      <div class="col" style="flex:0 0 auto">
+        <p class="label">The Mark</p>
+        <svg class="mark" viewBox="0 0 120 120">
+          <defs><path id="ring-a" d="M60,60 m-45,0 a45,45 0 1,1 90,0 a45,45 0 1,1 -90,0"/></defs>
+          <circle cx="60" cy="60" r="57" fill="none" stroke="currentColor" stroke-width="1"/>
+          <circle cx="60" cy="60" r="46" fill="none" stroke="currentColor" stroke-width=".5"/>
+          <text class="ring" font-size="8.5" letter-spacing="3.4" fill="currentColor"><textPath href="#ring-a" startOffset="0">KVEÐJA · ÍSLAND · 64°N · KVEÐJA · ÍSLAND · 64°N · </textPath></text>
+          <text class="eth" x="60" y="74" text-anchor="middle" font-size="42" fill="currentColor">ð</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:30px">
+      <div class="col">
+        <p class="label">Palette</p>
+        <div class="swatches">
+          <div class="sw" style="background:#16130F"><span>#16130F Basalt</span></div>
+          <div class="sw" style="background:#5C6248"><span>#5C6248 Moss</span></div>
+          <div class="sw" style="background:#8FA6B2"><span>#8FA6B2 Glacial</span></div>
+          <div class="sw light" style="background:#B7B3AC"><span>#B7B3AC Ash</span></div>
+          <div class="sw light" style="background:#F6F4EF"><span>#F6F4EF Paper</span></div>
+        </div>
+        <p class="label" style="margin-top:26px">Type system</p>
+        <div class="spec">
+          <p class="big">Highland Light</p>
+          <p class="small">Fraunces (display, высокий контраст) + Inter (интерфейс) + JetBrains Mono для координат и номеров пластин — «полевые данные» каталога.</p>
+          <p class="mono">PLATE 14 · SERIES II · 64.12°N 18.97°W</p>
+        </div>
+      </div>
+      <div class="col" style="flex:0 0 auto">
+        <p class="label">Plate card</p>
+        <div class="plate">
+          <div class="photo"><div class="sun"></div></div>
+          <div class="cap">
+            <div class="pn">Plate 14 · Series II</div>
+            <div class="ttl">Highland Light</div>
+            <div class="insc">— for Anna · Sprengisandur · Nov 2025</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ B · KULDI ============ -->
+  <section class="dir" style="--bg:#FAFAFA;--ink:#0B0B0C;--accent:#3FA9C0;--display:'Space Grotesk',sans-serif;--ui:'Inter',sans-serif;--dispw:500;--wmls:-.01em;--wmtt:lowercase;--cardr:2px;--cardb:1px solid #e7e7e9;
+      --photo:linear-gradient(180deg,#ffffff 0%,#eaf0f2 50%,#d2dce0 74%,#aebcc1 100%);--photoglow:radial-gradient(100% 70% at 50% 10%,rgba(255,255,255,.5),transparent 60%);">
+    <div class="tag">DIRECTION B</div>
+    <p class="dname">Kuldi · «холод»</p>
+    <h2 class="concept">Белый куб. Современная галерея.</h2>
+    <p class="blurb">Аскетичная contemporary-галерея: максимум воздуха, почти монохром, всё делает изображение. Холодно, модно, design-forward. Один ледяной акцент — и больше ничего лишнего.</p>
+
+    <div class="row">
+      <div class="col">
+        <p class="label">Wordmark</p>
+        <div class="wordmark">kve<span class="eth">ð</span>ja</div>
+        <div class="tagline">The North, inscribed.</div>
+      </div>
+      <div class="col" style="flex:0 0 auto">
+        <p class="label">The Mark</p>
+        <svg class="mark" viewBox="0 0 120 120">
+          <rect x="14" y="14" width="92" height="92" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text class="eth" x="60" y="76" text-anchor="middle" font-size="46" fill="currentColor" style="font-family:'Space Grotesk',sans-serif;font-weight:500">ð</text>
+          <text x="60" y="98" text-anchor="middle" font-size="7" letter-spacing="4" fill="currentColor" style="font-family:'Inter',sans-serif">ÍSLAND</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:30px">
+      <div class="col">
+        <p class="label">Palette</p>
+        <div class="swatches">
+          <div class="sw" style="background:#0B0B0C"><span>#0B0B0C Ink</span></div>
+          <div class="sw light" style="background:#9A9CA0"><span>#9A9CA0 Steel</span></div>
+          <div class="sw light" style="background:#E7E7E9"><span>#E7E7E9 Fog</span></div>
+          <div class="sw" style="background:#3FA9C0"><span>#3FA9C0 Glacier</span></div>
+          <div class="sw light" style="background:#FAFAFA"><span>#FAFAFA Snow</span></div>
+        </div>
+        <p class="label" style="margin-top:26px">Type system</p>
+        <div class="spec">
+          <p class="big">Highland Light</p>
+          <p class="small">Space Grotesk (display, гео-гротеск) + Inter (UI). Только sans, единая система, минимум кегля. Ледяной акцент — лишь на ссылках и hover.</p>
+          <p class="mono" style="font-family:'Inter',sans-serif;letter-spacing:.18em">14 / SERIES II</p>
+        </div>
+      </div>
+      <div class="col" style="flex:0 0 auto">
+        <p class="label">Plate card</p>
+        <div class="plate">
+          <div class="photo"></div>
+          <div class="cap">
+            <div class="pn" style="font-family:'Inter',sans-serif;letter-spacing:.22em">14 — Series II</div>
+            <div class="ttl">Highland Light</div>
+            <div class="insc" style="text-align:center">— for Anna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ C · HRAUN ============ -->
+  <section class="dir" style="--bg:#F2E9DA;--ink:#2B2620;--accent:#B5562E;--display:'Fraunces',serif;--ui:'DM Sans',sans-serif;--dispw:500;--wmls:.01em;--cardr:3px;
+      --photo:linear-gradient(180deg,#f3dcb6 0%,#dd9f6f 38%,#9c5a4a 66%,#2b2620 100%);--sun:#ffe9c4;--suno:.7;--photoglow:radial-gradient(120% 80% at 62% 18%,rgba(255,220,160,.25),transparent 55%);">
+    <div class="tag">DIRECTION C</div>
+    <p class="dname">Hraun · «лава»</p>
+    <h2 class="concept">Аналоговый архив. Тёплая открытка.</h2>
+    <p class="blurb">Тактильно и тепло: наследие открытки и печати — бумажная фактура, чуть винтажная палитра, штемпель/печать, ощущение letterpress. Эмоционально, по-человечески, «отправлено с любовью».</p>
+
+    <div class="row">
+      <div class="col">
+        <p class="label">Wordmark</p>
+        <div class="wordmark" style="font-style:italic">Kve<span class="eth" style="font-style:normal">ð</span>ja</div>
+        <div class="tagline" style="font-family:'Caveat',cursive;font-size:22px;letter-spacing:0;text-transform:none">from Iceland, with a word</div>
+      </div>
+      <div class="col" style="flex:0 0 auto">
+        <p class="label">The Mark · postmark</p>
+        <svg class="mark" viewBox="0 0 120 120">
+          <defs><path id="ring-c" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0"/></defs>
+          <circle cx="60" cy="60" r="56" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="1 3"/>
+          <circle cx="60" cy="60" r="45" fill="none" stroke="currentColor" stroke-width="1"/>
+          <text class="ring" font-size="8" letter-spacing="3" fill="currentColor" style="font-family:'DM Sans',sans-serif;font-weight:700"><textPath href="#ring-c" startOffset="0">REYKJAVÍK · ÍSLAND · KVEÐJA · 64°N · </textPath></text>
+          <text class="eth" x="60" y="73" text-anchor="middle" font-size="40" fill="currentColor">ð</text>
+        </svg>
+      </div>
+    </div>
+
+    <div class="row" style="margin-top:30px">
+      <div class="col">
+        <p class="label">Palette</p>
+        <div class="swatches">
+          <div class="sw" style="background:#2B2620"><span>#2B2620 Peat</span></div>
+          <div class="sw" style="background:#B5562E"><span>#B5562E Rust</span></div>
+          <div class="sw" style="background:#6E6A99"><span>#6E6A99 Lupine</span></div>
+          <div class="sw" style="background:#3F6B6B"><span>#3F6B6B Sea</span></div>
+          <div class="sw light" style="background:#F2E9DA"><span>#F2E9DA Cream</span></div>
+        </div>
+        <p class="label" style="margin-top:26px">Type system</p>
+        <div class="spec">
+          <p class="big">Highland Light</p>
+          <p class="small">Fraunces (humanist, мягкая оптика) + DM Sans (UI) + Caveat — рукописный росчерк только для пресета «Margin Note».</p>
+          <p class="scriptline">with love, from Iceland</p>
+        </div>
+      </div>
+      <div class="col" style="flex:0 0 auto">
+        <p class="label">Plate card</p>
+        <div class="plate">
+          <div class="photo">
+            <div class="sun"></div>
+            <div class="overlay"><div style="width:34px;height:34px;border:1.5px dashed #f2e9da;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#f2e9da;font-family:'Fraunces',serif;font-size:18px;margin-left:auto">ð</div></div>
+          </div>
+          <div class="cap">
+            <div class="pn">No. 14 · Series II</div>
+            <div class="ttl" style="font-style:italic">Highland Light</div>
+            <div class="insc" style="font-family:'Caveat',cursive;font-size:18px;opacity:.85">— with love, for Anna</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="foot">KVEÐJA · VISUAL IDENTITY · 3 DIRECTIONS · 2026</div>
+
+</div>
+</body>
+</html>
