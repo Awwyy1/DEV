@@ -23,6 +23,12 @@ export default function Inscribe() {
   const [text, setText] = useState('for Anna');
   const [preset, setPreset] = useState<Preset>('Dedication');
   const [align, setAlign] = useState<Align>('Center');
+  const [customImage, setCustomImage] = useState<string | undefined>();
+
+  const onPick = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) setCustomImage(URL.createObjectURL(file));
+  };
 
   const alignClass =
     preset === 'Title' ? (align === 'Left' ? 'al-left' : align === 'Right' ? 'al-right' : '') : '';
@@ -45,13 +51,28 @@ export default function Inscribe() {
       <div className="editor">
         <div className="stage">
           <div className="frame">
-            <Photo gradient={plate.gradient} image={plate.image}>
+            <Photo gradient={plate.gradient} image={customImage ?? plate.image}>
               <div className={`insc ${PRESET_CLASS[preset]} ${alignClass}`}>{rendered}</div>
             </Photo>
           </div>
         </div>
         <div className="panel">
-          <div className="d-label">Your words</div>
+          <div className="d-label">Photo</div>
+          <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+            <label className="chip-sel" style={{ cursor: 'pointer' }}>
+              Upload your own
+              <input type="file" accept="image/*" style={{ display: 'none' }} onChange={onPick} />
+            </label>
+            {customImage && (
+              <button className="chip-sel" onClick={() => setCustomImage(undefined)}>
+                Reset
+              </button>
+            )}
+          </div>
+
+          <div className="d-label" style={{ margin: '20px 0 8px' }}>
+            Your words
+          </div>
           <input className="field" value={text} onChange={(e) => setText(e.target.value)} />
 
           <div className="d-label" style={{ margin: '18px 0 8px' }}>
