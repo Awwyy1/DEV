@@ -1,74 +1,86 @@
-// The archive's data model. Each "plate" is one photograph.
-// `gradient` is a placeholder until a real `image` is added — swap freely.
-// `location` is per-plate on purpose: the archive travels anywhere.
+// Archive data. Gradients are cool / high-key placeholders per the guide's
+// photography rules — swap `gradient` for a real `image` URL when ready.
+// `place`/`coords` are per-plate on purpose: the archive travels anywhere.
+
+export interface Edition {
+  name: string;
+  desc: string;
+  price: string;
+  mark?: boolean; // limited edition carries the ð mark
+}
+
+export const EDITIONS: Edition[] = [
+  { name: 'Open Edition — Digital', desc: 'Hi-res file, inscribed. Instant download.', price: '€15' },
+  { name: 'Open Edition — Print', desc: 'A4, archival matte. Shipped worldwide.', price: '€59' },
+  { name: 'Limited Edition — /100', desc: 'A3, numbered, embossed mark + certificate.', price: '€149', mark: true },
+];
+
+export const LIMITED = EDITIONS.find((e) => e.mark)!;
 
 export interface Plate {
   id: string;
-  no: string; // plate number, e.g. "01"
-  series: string; // e.g. "Series I"
+  no: string;
+  series: string;
   title: string;
-  location: string; // where it was taken — anywhere in the world
-  year: string;
-  inscription?: string; // optional handwritten-style note
-  gradient: string; // placeholder background until an image is set
-  image?: string; // optional real image URL (overrides gradient when present)
+  place: string;
+  coords?: string;
+  date: string;
+  description: string;
+  gradient: string;
+  image?: string;
 }
+
+export const TAGS = ['All', 'Highlands', 'Winter Light', 'Coast', 'Lupine'];
 
 export const PLATES: Plate[] = [
   {
-    id: 'p01',
-    no: '01',
-    series: 'Series I',
-    title: 'First Light',
-    location: 'Vík, Iceland',
-    year: '2025',
-    gradient: 'linear-gradient(180deg,#cdd6da 0%,#9fb1ba 36%,#566066 68%,#1d1c1a 100%)',
+    id: '01', no: '01', series: 'Series II', title: 'Glacier Edge',
+    place: 'Lofoten, Norway', coords: '68.21°N 13.96°E', date: 'January 2025',
+    description: 'First light along the ice, where the shelf gives out and the water begins.',
+    gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
   },
   {
-    id: 'p02',
-    no: '02',
-    series: 'Series I',
-    title: 'Low Tide',
-    location: 'Lofoten, Norway',
-    year: '2025',
-    inscription: 'before the wind',
-    gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 44%,#8fa3ab 100%)',
+    id: '02', no: '02', series: 'Series II', title: 'Black Sand',
+    place: 'Tenerife, Spain', coords: '28.27°N 16.61°W', date: 'March 2025',
+    description: 'A long beach under flat cloud, nothing moving but the tide line.',
+    gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
   },
   {
-    id: 'p03',
-    no: '03',
-    series: 'Series I',
-    title: 'Static',
-    location: 'Tokyo, Japan',
-    year: '2026',
-    gradient: 'linear-gradient(180deg,#e7e7e9 0%,#aebfc4 55%,#3fa9c0 100%)',
+    id: '03', no: '03', series: 'Series II', title: 'Highland Light',
+    place: 'Atacama, Chile', coords: '24.50°S 69.25°W', date: 'February 2026',
+    description: 'Last light across the interior, where the track gives out and the cold begins.',
+    gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
   },
   {
-    id: 'p04',
-    no: '04',
-    series: 'Series II',
-    title: 'Cold Open',
-    location: 'Atacama, Chile',
-    year: '2026',
-    gradient: 'linear-gradient(180deg,#d9d2c7 0%,#9aa0a3 50%,#2b2e30 100%)',
+    id: '04', no: '04', series: 'Series II', title: 'Still Fjord',
+    place: 'Faroe Islands', coords: '62.01°N 6.77°W', date: 'November 2025',
+    description: 'Water held so still the cliffs forget which way is up.',
+    gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
   },
   {
-    id: 'p05',
-    no: '05',
-    series: 'Series II',
-    title: 'Held Still',
-    location: 'Faroe Islands',
-    year: '2025',
-    inscription: 'for no one in particular',
-    gradient: 'linear-gradient(180deg,#f4f6f7 0%,#c4ced2 40%,#6c7a80 100%)',
+    id: '05', no: '05', series: 'Series III', title: 'Static',
+    place: 'Tokyo, Japan', coords: '35.68°N 139.69°E', date: 'January 2026',
+    description: 'A grey afternoon between buildings, the city holding its breath.',
+    gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
   },
   {
-    id: 'p06',
-    no: '06',
-    series: 'Series II',
-    title: 'Afterimage',
-    location: 'Patagonia, Argentina',
-    year: '2026',
-    gradient: 'linear-gradient(180deg,#cfd6d8 0%,#9aabb0 38%,#46555a 72%,#10100f 100%)',
+    id: '06', no: '06', series: 'Series III', title: 'Held Still',
+    place: 'Patagonia, Argentina', coords: '50.94°S 73.40°W', date: 'March 2026',
+    description: 'Wind paused for a single frame over open water.',
+    gradient: 'linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)',
+  },
+  {
+    id: '07', no: '07', series: 'Series III', title: 'Cold Open',
+    place: 'Hokkaido, Japan', coords: '43.80°N 142.86°E', date: 'December 2025',
+    description: 'Snowlight before the snow, the whole field one even tone.',
+    gradient: 'linear-gradient(200deg,#fbfdfd,#e3ebed 55%,#b3c2c7 88%,#7f9197)',
+  },
+  {
+    id: '08', no: '08', series: 'Series III', title: 'Afterimage',
+    place: 'Scottish Highlands', coords: '57.01°N 4.74°W', date: 'February 2026',
+    description: 'What stays on the eye after you look away from the loch.',
+    gradient: 'linear-gradient(180deg,#cfd6d8,#9aabb0 38%,#46555a 80%,#10100f)',
   },
 ];
+
+export const findPlate = (id?: string): Plate => PLATES.find((p) => p.id === id) ?? PLATES[0];
