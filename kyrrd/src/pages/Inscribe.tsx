@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { findPlate, LIMITED } from '../plates';
+import { findPlate, PRICE } from '../plates';
 import { Photo } from '../components/Photo';
 
 const PRESETS = ['Title', 'Dedication', 'Field Plate', 'Margin Note'] as const;
@@ -24,7 +24,8 @@ export default function Inscribe() {
   const [preset, setPreset] = useState<Preset>('Dedication');
   const [align, setAlign] = useState<Align>('Center');
 
-  const alignClass = preset === 'Title' ? (align === 'Left' ? 'al-left' : align === 'Right' ? 'al-right' : '') : '';
+  const alignClass =
+    preset === 'Title' ? (align === 'Left' ? 'al-left' : align === 'Right' ? 'al-right' : '') : '';
 
   const rendered = (() => {
     switch (preset) {
@@ -50,11 +51,11 @@ export default function Inscribe() {
           </div>
         </div>
         <div className="panel">
-          <div className="d-label">Inscription</div>
+          <div className="d-label">Your words</div>
           <input className="field" value={text} onChange={(e) => setText(e.target.value)} />
 
           <div className="d-label" style={{ margin: '18px 0 8px' }}>
-            Preset
+            Style
           </div>
           <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
             {PRESETS.map((p) => (
@@ -75,27 +76,24 @@ export default function Inscribe() {
             ))}
           </div>
 
-          <div className="edition" style={{ marginTop: 20 }}>
+          <div className="edition" style={{ marginTop: 22 }}>
             <div>
-              <div className="nm">
-                {LIMITED.name}
-                <span style={{ color: 'var(--glacier-ink)' }}>&nbsp;ð</span>
-              </div>
-              <div className="ds">{LIMITED.desc}</div>
+              <div className="nm">Signed digital card</div>
+              <div className="ds">Instant download · send to anyone</div>
             </div>
-            <div className="pr">{LIMITED.price}</div>
+            <div className="pr">{PRICE}</div>
           </div>
 
           <button
             className="btn btn-primary"
-            style={{ marginTop: 16, width: '100%', justifyContent: 'center' }}
+            style={{ marginTop: 16, width: '100%' }}
             onClick={() =>
               navigate(
                 `/checkout?plate=${plate.id}&insc=${encodeURIComponent(text)}&preset=${encodeURIComponent(preset)}`,
               )
             }
           >
-            Add to cart
+            Continue to payment
           </button>
         </div>
       </div>

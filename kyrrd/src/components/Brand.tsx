@@ -9,17 +9,26 @@ export function Wordmark({ className = '', style }: { className?: string; style?
   );
 }
 
-/** The Mark — square seal of authenticity. ð over the brand line. */
-export function Mark({ size = 104 }: { size?: number }) {
+/** The Mark — square seal. `label` adds the brand line beneath the ð. */
+export function Mark({ size = 104, label = true }: { size?: number; label?: boolean }) {
   return (
     <svg className="seal" width={size} height={size} viewBox="0 0 120 120" fill="none" aria-label="kyrrð mark">
       <rect x="12" y="12" width="96" height="96" stroke="currentColor" strokeWidth="1" />
-      <text x="60" y="74" textAnchor="middle" fontSize="48" fill="currentColor" style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}>
+      <text
+        x="60"
+        y={label ? 74 : 80}
+        textAnchor="middle"
+        fontSize={label ? 48 : 58}
+        fill="currentColor"
+        style={{ fontFamily: "'Space Grotesk', sans-serif", fontWeight: 500 }}
+      >
         ð
       </text>
-      <text x="60" y="99" textAnchor="middle" fontSize="6.5" letterSpacing="4" fill="currentColor" style={{ fontFamily: "'Inter', sans-serif" }}>
-        KYRRÐ
-      </text>
+      {label && (
+        <text x="60" y="99" textAnchor="middle" fontSize="6.5" letterSpacing="4" fill="currentColor" style={{ fontFamily: "'Inter', sans-serif" }}>
+          KYRRÐ
+        </text>
+      )}
     </svg>
   );
 }

@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { EDITIONS, findPlate } from '../plates';
+import { findPlate, PRICE } from '../plates';
 import { Photo } from '../components/Photo';
 
 export default function PlateDetail() {
@@ -28,25 +28,20 @@ export default function PlateDetail() {
             {plate.description}
           </p>
 
-          {EDITIONS.map((e) => (
-            <div className="edition" key={e.name}>
-              <div>
-                <div className="nm">
-                  {e.name}
-                  {e.mark && <span style={{ color: 'var(--glacier-ink)' }}>&nbsp;ð</span>}
-                </div>
-                <div className="ds">{e.desc}</div>
-              </div>
-              <div className="pr">{e.price}</div>
+          <div className="edition">
+            <div>
+              <div className="nm">Digital photo-card</div>
+              <div className="ds">Signed by you. Instant download — send it to anyone, anywhere.</div>
             </div>
-          ))}
+            <div className="pr">{PRICE}</div>
+          </div>
 
           <Link
             to={`/inscribe/${plate.id}`}
             className="btn btn-primary"
-            style={{ marginTop: 20, width: '100%', justifyContent: 'center' }}
+            style={{ marginTop: 22, width: '100%' }}
           >
-            Inscribe this plate
+            Sign &amp; send
           </Link>
         </div>
       </div>

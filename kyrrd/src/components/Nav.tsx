@@ -8,10 +8,9 @@ export default function Nav() {
       </Link>
       <nav className="nav">
         <Link to="/archive">The Archive</Link>
-        <Link to="/archive">Editions</Link>
-        <Link to="/about">Field Notes</Link>
-        <Link to="/inscribe/01" className="btn btn-primary" style={{ padding: '9px 16px' }}>
-          Inscribe
+        <Link to="/about">How it works</Link>
+        <Link to="/archive" className="btn btn-primary" style={{ padding: '10px 18px' }}>
+          Send a card
         </Link>
       </nav>
     </header>

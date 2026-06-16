@@ -3,11 +3,13 @@ import { Mark } from './Brand';
 export default function Footer() {
   return (
     <footer className="foot">
-      <Mark size={64} />
-      <span className="meta">© 2026 · kyrrð · an archive, released slowly</span>
-      <span className="bm wm">
-        kyrr<span className="eth">ð</span>
-      </span>
+      <div className="foot-top">
+        <span className="bm">
+          kyrr<span className="eth">ð</span>
+        </span>
+        <Mark size={34} label={false} />
+      </div>
+      <div className="foot-fine">© 2026 KYRRÐ</div>
     </footer>
   );
 }

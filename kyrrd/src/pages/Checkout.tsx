@@ -1,5 +1,5 @@
 import { useSearchParams } from 'react-router-dom';
-import { findPlate, LIMITED } from '../plates';
+import { findPlate, PRICE } from '../plates';
 import { Photo } from '../components/Photo';
 
 export default function Checkout() {
@@ -12,7 +12,7 @@ export default function Checkout() {
     <div className="wrap section">
       <div className="grid g2" style={{ alignItems: 'start' }}>
         <div>
-          <div className="d-h2">Your edition</div>
+          <div className="d-h2">Your card</div>
           <div
             style={{
               display: 'flex',
@@ -30,23 +30,23 @@ export default function Checkout() {
               style={{ width: 84, aspectRatio: '4/5', flex: '0 0 auto' }}
             />
             <div>
-              <div className="d-label">Plate {plate.no} · Limited /100</div>
+              <div className="d-label">Plate {plate.no} · Digital card</div>
               <div className="d-h2" style={{ fontSize: 20, marginTop: 3 }}>
                 {plate.title}
               </div>
               <div className="d-cap">
-                Inscription: “{insc}” · {preset}
+                Signed: “{insc}” · {preset}
               </div>
             </div>
             <div className="pr" style={{ marginLeft: 'auto', fontFamily: 'var(--disp)', fontWeight: 500 }}>
-              {LIMITED.price}
+              {PRICE}
             </div>
           </div>
         </div>
         <div>
-          <div className="d-label">Delivery</div>
-          <input className="field" placeholder="Email — for file & certificate" />
-          <input className="field" placeholder="Shipping address" />
+          <div className="d-label">Send</div>
+          <input className="field" placeholder="Your email — receipt &amp; download link" />
+          <input className="field" placeholder="Recipient's email — optional, we'll send it for you" />
           <div
             style={{
               display: 'flex',
@@ -58,13 +58,13 @@ export default function Checkout() {
             }}
           >
             <span>Total</span>
-            <span>{LIMITED.price}</span>
+            <span>{PRICE}</span>
           </div>
-          <button className="btn btn-primary" style={{ width: '100%', justifyContent: 'center' }}>
-            Pay with card
+          <button className="btn btn-primary" style={{ width: '100%' }}>
+            Pay {PRICE}
           </button>
           <p className="d-cap" style={{ textAlign: 'center', marginTop: 10 }}>
-            Secured by Stripe · printed &amp; shipped via Gelato/Prodigi
+            Secured by Stripe · instant download
           </p>
         </div>
       </div>

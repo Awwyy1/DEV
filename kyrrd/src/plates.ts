@@ -1,21 +1,8 @@
-// Archive data. Gradients are cool / high-key placeholders per the guide's
-// photography rules — swap `gradient` for a real `image` URL when ready.
-// `place`/`coords` are per-plate on purpose: the archive travels anywhere.
+// Archive data. Gradients are cool / high-key placeholders — swap `gradient`
+// for a real `image` URL when ready. `place` is per-plate: the archive
+// travels anywhere. Every photo becomes a signed digital card.
 
-export interface Edition {
-  name: string;
-  desc: string;
-  price: string;
-  mark?: boolean; // limited edition carries the ð mark
-}
-
-export const EDITIONS: Edition[] = [
-  { name: 'Open Edition — Digital', desc: 'Hi-res file, inscribed. Instant download.', price: '€15' },
-  { name: 'Open Edition — Print', desc: 'A4, archival matte. Shipped worldwide.', price: '€59' },
-  { name: 'Limited Edition — /100', desc: 'A3, numbered, embossed mark + certificate.', price: '€149', mark: true },
-];
-
-export const LIMITED = EDITIONS.find((e) => e.mark)!;
+export const PRICE = '$4.99';
 
 export interface Plate {
   id: string;
@@ -30,7 +17,7 @@ export interface Plate {
   image?: string;
 }
 
-export const TAGS = ['All', 'Highlands', 'Winter Light', 'Coast', 'Lupine'];
+export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
 
 export const PLATES: Plate[] = [
   {
