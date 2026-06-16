@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kyrrð — Brand & UI Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0B0C; --snow:#FAFAFA; --white:#FFFFFF; --mist:#F2F4F5;
+    --fog:#E7E7E9; --steel:#9A9CA0; --steel-d:#6C6E73;
+    --glacier:#3FA9C0; --glacier-ink:#1F7C92;
+    --disp:'Space Grotesk',sans-serif; --ui:'Inter',system-ui,sans-serif;
+    --pad:clamp(20px,4vw,48px);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--mist);color:var(--ink);font-family:var(--ui);font-weight:400;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .doc{max-width:1180px;margin:0 auto;padding:clamp(26px,5vw,64px) var(--pad)}
+  a{color:var(--glacier-ink);text-decoration:none}
+  .label{font-size:11px;font-weight:500;letter-spacing:.24em;text-transform:uppercase;color:var(--steel-d)}
+  h2.sec{font-family:var(--disp);font-weight:500;font-size:clamp(22px,3vw,30px);letter-spacing:-.01em;margin:0 0 4px}
+  .sec-sub{color:var(--steel-d);max-width:66ch;margin:0 0 26px}
+  section.block{background:var(--white);border:1px solid var(--fog);border-radius:16px;padding:clamp(22px,3.5vw,44px);margin:18px 0}
+
+  .index{position:sticky;top:0;z-index:50;background:rgba(250,250,250,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--fog)}
+  .index .row{max-width:1180px;margin:0 auto;padding:12px var(--pad);display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  .index .bm{font-family:var(--disp);font-weight:500;font-size:18px;letter-spacing:-.01em}
+  .index .bm .eth{color:var(--glacier)}
+  .index nav{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;letter-spacing:.04em;color:var(--steel-d)}
+  .index nav a{color:var(--steel-d)} .index nav a:hover{color:var(--ink)}
+
+  .cover{padding:clamp(40px,8vw,90px) var(--pad)}
+  .cover .pron{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--steel-d)}
+  .cover h1{font-family:var(--disp);font-weight:500;font-size:clamp(56px,13vw,150px);line-height:.9;letter-spacing:-.03em;margin:.12em 0 0}
+  .cover h1 .eth{color:var(--glacier)}
+  .cover .dir{font-family:var(--disp);font-weight:400;font-size:clamp(18px,3vw,26px);color:var(--steel-d);margin-top:8px}
+  .cover .ess{max-width:62ch;color:var(--ink);opacity:.82;margin-top:22px;font-size:clamp(16px,2vw,19px);font-weight:300}
+
+  .grid{display:grid;gap:24px}
+  .g2{grid-template-columns:repeat(2,1fr)} .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)}
+  @media(max-width:780px){.g2,.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.g2,.g3,.g4{grid-template-columns:1fr}}
+
+  .wm{font-family:var(--disp);font-weight:500;letter-spacing:-.02em} .wm .eth{color:var(--glacier)}
+  .logo-box{border:1px solid var(--fog);border-radius:10px;padding:30px;display:flex;align-items:center;justify-content:center;min-height:120px}
+  .logo-box.dark{background:var(--ink)} .logo-box.dark .wm{color:var(--snow)}
+  .clearspace{position:relative;border:1px dashed var(--fog);padding:30px;border-radius:10px;display:flex;justify-content:center}
+
+  .mark{width:104px;height:104px;color:var(--ink)} .mark .eth{font-family:var(--disp);font-weight:500}
+
+  .sw{border:1px solid var(--fog);border-radius:10px;overflow:hidden}
+  .sw .chip{height:90px} .sw .meta{padding:10px 12px;font-size:12px}
+  .sw .meta b{display:block;font-weight:500} .sw .meta code{color:var(--steel-d);font-size:11px}
+
+  .ts > div{padding:14px 0;border-bottom:1px solid var(--fog)}
+  .ts .meta{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel)}
+  .d-xl{font-family:var(--disp);font-weight:500;font-size:clamp(40px,7vw,72px);letter-spacing:-.03em;line-height:1}
+  .d-h1{font-family:var(--disp);font-weight:500;font-size:clamp(30px,4vw,46px);letter-spacing:-.02em}
+  .d-h2{font-family:var(--disp);font-weight:500;font-size:26px;letter-spacing:-.01em}
+  .d-lead{font-weight:300;font-size:20px} .d-body{font-size:16px} .d-cap{font-size:13px;color:var(--steel-d)}
+  .d-label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--steel-d);font-weight:500}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ui);font-size:14px;font-weight:500;padding:12px 22px;border-radius:2px;border:1px solid var(--ink);cursor:pointer;transition:.18s}
+  .btn-primary{background:var(--ink);color:var(--snow)} .btn-primary:hover{box-shadow:inset 0 -2px 0 var(--glacier)}
+  .btn-ghost{background:transparent;color:var(--ink)} .btn-ghost:hover{border-color:var(--glacier);color:var(--glacier-ink)}
+  .chip-sel{display:inline-flex;font-size:12px;padding:7px 14px;border:1px solid var(--fog);border-radius:999px;color:var(--steel-d)}
+  .chip-sel.on{border-color:var(--ink);color:var(--ink);background:var(--mist)}
+  .tag{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;background:var(--mist);border:1px solid var(--fog);color:var(--steel-d);padding:4px 9px;border-radius:3px}
+  .field{width:100%;padding:11px 13px;border:1px solid var(--fog);border-radius:2px;font-family:var(--ui);font-size:14px;margin-top:8px;background:var(--white)}
+
+  .ph{position:relative;overflow:hidden;background:var(--p,linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6))}
+  .ph::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 60% at 52% 8%,rgba(255,255,255,.45),transparent 60%)}
+  .ph .sun{position:absolute;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.85);top:22%;left:62%;filter:blur(3px);opacity:.6}
+  .ph .wmark{position:absolute;right:10px;bottom:9px;font-family:var(--disp);font-weight:500;font-size:15px;color:rgba(11,11,12,.5);z-index:2}
+
+  .plate{background:var(--white);border:1px solid var(--fog);border-radius:2px;overflow:hidden}
+  .plate .ph{aspect-ratio:4/5} .plate .cap{padding:12px 14px}
+  .plate .cap .pn{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--steel)}
+  .plate .cap .ttl{font-family:var(--disp);font-weight:500;font-size:18px;margin-top:3px}
+
+  .screen{border:1px solid var(--fog);border-radius:14px;overflow:hidden;background:var(--white);margin:16px 0}
+  .screen .bar{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid var(--fog);background:var(--mist)}
+  .screen .bar .dot{width:9px;height:9px;border-radius:50%;background:var(--fog)}
+  .screen .bar .url{flex:1;text-align:center;font-size:11px;color:var(--steel);letter-spacing:.05em}
+  .topnav{display:flex;align-items:center;justify-content:space-between;padding:16px var(--pad);border-bottom:1px solid var(--fog)}
+  .topnav .bm{font-family:var(--disp);font-weight:500;font-size:19px} .topnav .bm .eth{color:var(--glacier)}
+  .topnav .nav{display:flex;gap:18px;font-size:13px;color:var(--steel-d);align-items:center}
+  .hero{position:relative} .hero .ph{height:min(60vh,440px)}
+  .hero .ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(24px,5vw,56px)}
+  .hero h1{font-family:var(--disp);font-weight:500;color:#0b0b0c;font-size:clamp(34px,6vw,64px);letter-spacing:-.03em;line-height:.95;margin:0;max-width:18ch}
+  .hero p{max-width:52ch;color:#222;font-weight:300;font-size:clamp(15px,2vw,18px);margin:12px 0 20px}
+  .editor{display:grid;grid-template-columns:1.3fr 1fr} @media(max-width:720px){.editor{grid-template-columns:1fr}}
+  .editor .stage{background:var(--mist);padding:clamp(20px,4vw,44px);display:flex;align-items:center;justify-content:center}
+  .editor .stage .frame{width:min(100%,340px);background:#fff;padding:14px;border:1px solid var(--fog);box-shadow:0 24px 50px -30px rgba(0,0,0,.4)}
+  .editor .stage .frame .ph{aspect-ratio:4/5;position:relative}
+  .editor .stage .insc{position:absolute;left:0;right:0;bottom:14px;text-align:center;color:#0b0b0c;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+  .editor .panel{padding:clamp(20px,3vw,32px)}
+  .edition{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;padding:16px 0;border-top:1px solid var(--fog)}
+  .edition .nm{font-family:var(--disp);font-weight:500;font-size:16px} .edition .ds{font-size:12.5px;color:var(--steel-d);margin-top:2px;max-width:38ch}
+  .edition .pr{font-family:var(--disp);font-weight:500;font-size:18px;white-space:nowrap}
+
+  .do{display:grid;grid-template-columns:1fr 1fr;gap:18px} @media(max-width:620px){.do{grid-template-columns:1fr}}
+  .do .card{border:1px solid var(--fog);border-radius:10px;padding:16px}
+  .do .h{font-size:11px;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:8px}
+  .do .yes .h{color:var(--glacier-ink)} .do .no .h{color:#b14a3a}
+  .do li{font-size:13.5px;color:var(--steel-d);margin:5px 0}
+
+  /* instagram */
+  .phone{width:300px;border:1px solid var(--fog);border-radius:26px;overflow:hidden;background:#fff;margin:0 auto;box-shadow:0 24px 60px -34px rgba(0,0,0,.4)}
+  .phone .pbar{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;font-family:var(--disp);font-weight:600;font-size:15px;border-bottom:1px solid var(--fog)}
+  .phone .pbar .eth{color:var(--glacier)}
+  .ig-head{display:flex;gap:18px;align-items:center;padding:16px}
+  .ig-av{width:74px;height:74px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .ig-av .eth{font-family:var(--disp);font-weight:500;font-size:40px;color:var(--glacier)}
+  .ig-stats{display:flex;gap:16px;font-size:12px;text-align:center;color:var(--steel-d)} .ig-stats b{display:block;color:var(--ink);font-size:15px;font-family:var(--disp)}
+  .ig-bio{padding:0 16px 14px;font-size:13px;line-height:1.5}
+  .ig-bio .nm{font-weight:600}
+  .ig-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}
+  .ig-grid .ph{aspect-ratio:1/1}
+  .ig-grid .quote{display:flex;align-items:center;justify-content:center;background:var(--mist);font-family:var(--disp);font-weight:500;font-size:13px;color:var(--ink);text-align:center;padding:8px}
+
+  .foot{text-align:center;color:var(--steel);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:40px 0 8px;font-family:var(--disp)}
+  .mono{font-family:var(--disp);font-size:12.5px;background:var(--mist);border:1px solid var(--fog);border-radius:6px;padding:2px 7px}
+</style>
+</head>
+<body>
+
+<div class="index">
+  <div class="row">
+    <span class="bm">kyrr<span class="eth">ð</span></span>
+    <nav>
+      <a href="#logo">Logo</a><a href="#dos">Do/Don't</a><a href="#mark">Mark</a><a href="#color">Color</a>
+      <a href="#type">Type</a><a href="#ui">UI</a><a href="#insc">Inscription</a><a href="#photo">Photo</a>
+      <a href="#screens">Screens</a><a href="#voice">Voice</a><a href="#ig">Instagram</a>
+    </nav>
+  </div>
+</div>
+
+<div class="cover">
+  <div class="pron">/ ˈkɪrð / · “KIRTH” · kyrrð (Icelandic — stillness, calm)</div>
+  <h1>kyrr<span class="eth">ð</span></h1>
+  <div class="dir">Signed photo-cards · $4.99</div>
+  <p class="ess">A quiet archive of beautiful photographs you can make personal. Pick a view, add your words, and send it as a signed digital card — to someone, anywhere in the world. Not a print shop, not a stock site: a small, calm way to turn a photograph into a gift.</p>
+</div>
+
+<div class="doc">
+
+  <!-- 01 LOGO / LOGOBOOK -->
+  <section class="block" id="logo">
+    <span class="label">01 — Logo · Logobook</span>
+    <h2 class="sec">Wordmark</h2>
+    <p class="sec-sub">Space Grotesk Medium, lowercase, tight tracking (−0.02em). The glyph <b>ð</b> is the only coloured element (Glacier #3FA9C0) — it is the signature. Romanised as “kyrrd” in URLs, handles and email; the ð lives in the logo.</p>
+    <div class="grid g2">
+      <div class="logo-box"><span class="wm" style="font-size:56px">kyrr<span class="eth">ð</span></span></div>
+      <div class="logo-box dark"><span class="wm" style="font-size:56px">kyrr<span class="eth">ð</span></span></div>
+    </div>
+
+    <p class="label" style="margin:26px 0 10px">Lockup · wordmark + mark</p>
+    <div class="grid g2">
+      <div class="logo-box" style="gap:18px">
+        <svg class="mark" viewBox="0 0 120 120" style="width:54px;height:54px"><rect x="12" y="12" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.4"/><text class="eth" x="60" y="78" text-anchor="middle" font-size="56" fill="currentColor">ð</text></svg>
+        <span class="wm" style="font-size:40px">kyrr<span class="eth">ð</span></span>
+      </div>
+      <div class="logo-box" style="flex-direction:column;gap:6px">
+        <span class="wm" style="font-size:34px">kyrr<span class="eth">ð</span></span>
+        <span class="d-label">Signed photo-cards</span>
+      </div>
+    </div>
+
+    <p class="label" style="margin:26px 0 10px">Clear space &amp; sizes</p>
+    <div class="grid g3">
+      <div class="clearspace"><span class="wm" style="font-size:30px">kyrr<span class="eth">ð</span></span></div>
+      <div class="logo-box"><span class="wm" style="font-size:20px">kyrr<span class="eth">ð</span></span></div>
+      <div class="logo-box"><span class="wm" style="font-size:14px">kyrr<span class="eth">ð</span></span></div>
+    </div>
+    <p class="d-cap" style="margin-top:14px">Clear space = the height of “k” on all sides · minimum size 14px / 12mm · the ð keeps its Glacier colour at every size.</p>
+  </section>
+
+  <!-- 02 DO / DON'T -->
+  <section class="block" id="dos">
+    <span class="label">02 — Logo usage</span>
+    <h2 class="sec">Do &amp; Don't</h2>
+    <p class="sec-sub">The wordmark is quiet by design. Protect it.</p>
+    <div class="do">
+      <div class="card yes"><div class="h">Do</div><ul style="margin:0;padding-left:16px">
+        <li>keep ð in Glacier; the rest in Ink (light) or Snow (dark)</li>
+        <li>always lowercase, generous clear space</li>
+        <li>place on calm light grounds, deep Ink, or a quiet photo edge</li>
+        <li>pair with the seal for stamps, avatars, certificates</li></ul></div>
+      <div class="card no"><div class="h">Don't</div><ul style="margin:0;padding-left:16px">
+        <li>recolour ð to anything but Glacier; don't colour the whole word</li>
+        <li>UPPERCASE, stretch, skew, outline or add drop-shadows</li>
+        <li>lay it over a busy / high-contrast part of an image</li>
+        <li>swap the typeface or loosen the tracking</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 03 MARK -->
+  <section class="block" id="mark">
+    <span class="label">03 — The Mark</span>
+    <h2 class="sec">The seal</h2>
+    <p class="sec-sub">A square seal with ð — used as the favicon, the Instagram avatar, the quiet watermark on previews, and the sign-off in the footer. Geometric and still, in the spirit of the white cube.</p>
+    <div class="grid g4">
+      <div class="logo-box">
+        <svg class="mark" viewBox="0 0 120 120"><rect x="12" y="12" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1"/><text class="eth" x="60" y="74" text-anchor="middle" font-size="48" fill="currentColor">ð</text><text x="60" y="99" text-anchor="middle" font-size="6.5" letter-spacing="4" fill="currentColor" style="font-family:Inter">KYRRÐ</text></svg>
+      </div>
+      <div class="logo-box dark" style="color:var(--snow)">
+        <svg class="mark" viewBox="0 0 120 120" style="color:var(--snow)"><rect x="12" y="12" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1"/><text x="60" y="74" text-anchor="middle" font-size="48" fill="var(--glacier)">ð</text><text x="60" y="99" text-anchor="middle" font-size="6.5" letter-spacing="4" fill="currentColor" style="font-family:Inter">KYRRÐ</text></svg>
+      </div>
+      <div class="logo-box"><svg class="mark" viewBox="0 0 120 120" style="width:64px;height:64px"><rect x="12" y="12" width="96" height="96" fill="none" stroke="currentColor" stroke-width="1.4"/><text class="eth" x="60" y="80" text-anchor="middle" font-size="58" fill="currentColor">ð</text></svg></div>
+      <div class="logo-box dark"><div style="width:60px;height:60px;border-radius:50%;background:#0b0b0c;border:1px solid #2a2a2e;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--disp);font-weight:500;font-size:34px;color:var(--glacier)">ð</span></div></div>
+    </div>
+    <p class="d-cap" style="margin-top:14px">Left → right: favicon / seal, seal on Ink, mark only, round avatar (Instagram).</p>
+  </section>
+
+  <!-- 04 COLOR -->
+  <section class="block" id="color">
+    <span class="label">04 — Color</span>
+    <h2 class="sec">Palette</h2>
+    <p class="sec-sub">Near-monochrome: Ink and Snow carry 95% of the interface. Glacier is a pinpoint accent — links, hover, the ð, one key CTA highlight. Never flood large areas with accent.</p>
+    <div class="grid g4">
+      <div class="sw"><div class="chip" style="background:#0B0B0C"></div><div class="meta"><b>Ink</b><code>#0B0B0C</code><br>text, buttons</div></div>
+      <div class="sw"><div class="chip" style="background:#FAFAFA;border-bottom:1px solid #E7E7E9"></div><div class="meta"><b>Snow</b><code>#FAFAFA</code><br>background</div></div>
+      <div class="sw"><div class="chip" style="background:#F2F4F5;border-bottom:1px solid #E7E7E9"></div><div class="meta"><b>Mist</b><code>#F2F4F5</code><br>sections</div></div>
+      <div class="sw"><div class="chip" style="background:#E7E7E9"></div><div class="meta"><b>Fog</b><code>#E7E7E9</code><br>lines, fills</div></div>
+      <div class="sw"><div class="chip" style="background:#9A9CA0"></div><div class="meta"><b>Steel</b><code>#9A9CA0</code><br>captions*</div></div>
+      <div class="sw"><div class="chip" style="background:#6C6E73"></div><div class="meta"><b>Steel Dk</b><code>#6C6E73</code><br>secondary text (AA)</div></div>
+      <div class="sw"><div class="chip" style="background:#3FA9C0"></div><div class="meta"><b>Glacier</b><code>#3FA9C0</code><br>accent, ð</div></div>
+      <div class="sw"><div class="chip" style="background:#1F7C92"></div><div class="meta"><b>Glacier Ink</b><code>#1F7C92</code><br>links (AA text)</div></div>
+    </div>
+  </section>
+
+  <!-- 05 TYPE -->
+  <section class="block" id="type">
+    <span class="label">05 — Typography</span>
+    <h2 class="sec">Scale</h2>
+    <p class="sec-sub">Space Grotesk (display) + Inter (UI/body). Sans only. Headlines: tight tracking. Labels: .24em uppercase. Body: Inter 400; lead: Inter 300.</p>
+    <div class="ts">
+      <div><div class="meta">Display XL · Space Grotesk 500 · −.03em</div><div class="d-xl">A photograph, signed and sent</div></div>
+      <div><div class="meta">H1 · 500</div><div class="d-h1">Choose a view, add your words</div></div>
+      <div><div class="meta">H2 · 500</div><div class="d-h2">The Archive — Series II</div></div>
+      <div><div class="meta">Lead · Inter 300 · 20</div><div class="d-lead">A quiet archive you can make personal — one card at a time.</div></div>
+      <div><div class="meta">Body · Inter 400 · 16</div><div class="d-body">Pick a photograph, add a message, and send it as a signed digital card to anyone, anywhere.</div></div>
+      <div><div class="meta">Caption · 13</div><div class="d-cap">Plate 01 · Lofoten, Norway · 68.21°N 13.96°E</div></div>
+      <div><div class="meta">Label · 11 · .24em caps</div><div class="d-label">Signed photo-cards · $4.99</div></div>
+    </div>
+  </section>
+
+  <!-- 06 UI KIT -->
+  <section class="block" id="ui">
+    <span class="label">06 — UI Kit</span>
+    <h2 class="sec">Components</h2>
+    <p class="sec-sub">Small radii (2px), 1px Fog borders, thin hovers. Primary CTA = ink button with an icy underline on hover.</p>
+    <div class="grid g2" style="align-items:start">
+      <div>
+        <p class="d-label" style="margin-bottom:12px">Buttons &amp; chips</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center">
+          <button class="btn btn-primary">Sign &amp; send</button>
+          <button class="btn btn-ghost">Choose a photograph</button>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+          <span class="chip-sel on">Title</span><span class="chip-sel">Dedication</span><span class="chip-sel">Field Plate</span><span class="chip-sel">Margin Note</span>
+        </div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:16px">
+          <span class="tag">All</span><span class="tag">Waterfalls</span><span class="tag">Coast</span><span class="tag">Mountains</span><span class="tag">Cities</span>
+        </div>
+        <input class="field" style="margin-top:16px" placeholder="for Anna">
+      </div>
+      <div>
+        <p class="d-label" style="margin-bottom:12px">Plate card · single price</p>
+        <div class="plate" style="max-width:240px">
+          <div class="ph" style="--p:linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)"><div class="sun"></div><div class="wmark">ð</div></div>
+          <div class="cap"><div class="pn">01 — Series II</div><div class="ttl">Glacier Edge</div></div>
+        </div>
+        <div class="edition" style="max-width:240px"><div><div class="nm">Digital photo-card</div><div class="ds">Signed by you · instant download</div></div><div class="pr">$4.99</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 07 INSCRIPTION -->
+  <section class="block" id="insc">
+    <span class="label">07 — Inscription presets</span>
+    <h2 class="sec">How a message stays gallery-grade</h2>
+    <p class="sec-sub">No free-for-all text. Four tuned presets — the result always looks designed. Type your words, pick a preset, choose alignment.</p>
+    <div class="grid g4">
+      <div class="plate"><div class="ph" style="aspect-ratio:4/5;--p:linear-gradient(180deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)"><div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><span style="font-family:var(--disp);font-weight:500;color:#0b0b0c;font-size:22px">Anna</span></div></div><div class="cap"><div class="pn">Title</div><div class="d-cap">large display, centred</div></div></div>
+      <div class="plate"><div class="ph" style="aspect-ratio:4/5;--p:linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)"><div style="position:absolute;left:0;right:0;bottom:18px;text-align:center;color:#0b0b0c;font-size:11px;letter-spacing:.22em;text-transform:uppercase">— for Anna —</div></div><div class="cap"><div class="pn">Dedication</div><div class="d-cap">small caps, lower field</div></div></div>
+      <div class="plate"><div class="ph" style="aspect-ratio:4/5;--p:linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)"><div style="position:absolute;left:14px;bottom:14px;color:#0b0b0c;font-size:10px;letter-spacing:.14em">68.21°N 13.96°E · JAN 2025</div></div><div class="cap"><div class="pn">Field Plate</div><div class="d-cap">coords + date, corner</div></div></div>
+      <div class="plate"><div class="ph" style="aspect-ratio:4/5;--p:linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)"><div style="position:absolute;right:14px;top:50%;color:#0b0b0c;font-size:13px;font-style:italic;transform:translateY(-50%)">with love</div></div><div class="cap"><div class="pn">Margin Note</div><div class="d-cap">italic note, side</div></div></div>
+    </div>
+  </section>
+
+  <!-- 08 PHOTOGRAPHY -->
+  <section class="block" id="photo">
+    <span class="label">08 — Photography</span>
+    <h2 class="sec">The image</h2>
+    <p class="sec-sub">Cool, high-key, calm. The photo “hangs on the wall” — generous margins, no frames or shadows in the gallery. Previews carry the ð watermark and are reduced; the clean, signed hi-res is delivered only after payment.</p>
+    <div class="do">
+      <div class="card yes"><div class="h">Do</div><ul style="margin:0;padding-left:16px">
+        <li>cool white balance, muted saturation</li><li>air around the frame, one 4:5 format</li><li>quiet scenes: mist, ice, water, stone, minimal</li><li>ð watermark, bottom-right, low opacity</li></ul></div>
+      <div class="card no"><div class="h">Don't</div><ul style="margin:0;padding-left:16px">
+        <li>warm “postcard” filters, blown-out sunsets</li><li>borders, shadows, rounded corners on the image</li><li>collages — one image = one work</li><li>large Glacier fills over a photo</li></ul></div>
+    </div>
+  </section>
+
+  <!-- 09 SCREENS -->
+  <section id="screens">
+    <span class="label">09 — Applied screens</span>
+    <h2 class="sec" style="margin-bottom:10px">The flow: photo → words → pay → send</h2>
+
+    <div class="screen">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">kyrrd.pics</span></div>
+      <div>
+        <div class="topnav"><span class="bm">kyrr<span class="eth">ð</span></span><div class="nav"><a>The Archive</a><a>How it works</a><button class="btn btn-primary" style="padding:9px 16px">Send a card</button></div></div>
+        <div class="hero">
+          <div class="ph" style="--p:linear-gradient(175deg,#ffffff 0%,#eaf1f3 40%,#c4d2d6 72%,#7d9197 100%)"><div class="sun"></div></div>
+          <div class="ov"><span class="d-label" style="margin-bottom:14px">Signed photo-cards · $4.99</span><h1>A photograph, signed and sent.</h1><p>Pick a view, add your words, and send it as a personal digital card — to someone, anywhere in the world.</p><div style="display:flex;gap:12px;flex-wrap:wrap"><button class="btn btn-primary">Choose a photograph</button><button class="btn btn-ghost">How it works</button></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">kyrrd.pics/plate/01-glacier-edge</span></div>
+      <div style="padding:clamp(20px,4vw,40px) var(--pad)">
+        <div class="grid g2" style="align-items:start">
+          <div class="ph" style="aspect-ratio:4/5;border:1px solid var(--fog);--p:linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)"><div class="sun"></div><div class="wmark">ð</div></div>
+          <div>
+            <div class="d-label">Plate 01 · Series II</div>
+            <div class="d-h1" style="margin:6px 0 4px">Glacier Edge</div>
+            <div class="d-cap">Lofoten, Norway · 68.21°N 13.96°E · January 2025</div>
+            <p class="d-body" style="color:var(--steel-d);margin:14px 0 8px">First light along the ice, where the shelf gives out and the water begins.</p>
+            <div class="edition"><div><div class="nm">Digital photo-card</div><div class="ds">Signed by you. Instant download — send it to anyone, anywhere.</div></div><div class="pr">$4.99</div></div>
+            <button class="btn btn-primary" style="margin-top:20px;width:100%">Sign &amp; send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">kyrrd.pics/inscribe/01</span></div>
+      <div class="editor">
+        <div class="stage"><div class="frame"><div class="ph" style="--p:linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)"><div class="sun"></div><div class="insc">— for Anna —</div></div></div></div>
+        <div class="panel">
+          <div class="d-label">Photo</div>
+          <div style="display:flex;gap:8px;margin:8px 0 18px"><span class="chip-sel">Upload your own</span></div>
+          <div class="d-label">Your words</div><input class="field" value="for Anna">
+          <div style="margin:18px 0 8px" class="d-label">Style</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap"><span class="chip-sel">Title</span><span class="chip-sel on">Dedication</span><span class="chip-sel">Field Plate</span><span class="chip-sel">Margin Note</span></div>
+          <div class="edition" style="margin-top:20px"><div><div class="nm">Signed digital card</div><div class="ds">Instant download · send to anyone</div></div><div class="pr">$4.99</div></div>
+          <button class="btn btn-primary" style="margin-top:14px;width:100%">Continue to payment</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen">
+      <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">kyrrd.pics/checkout</span></div>
+      <div style="padding:clamp(20px,4vw,40px) var(--pad)">
+        <div class="grid g2" style="align-items:start">
+          <div><div class="d-h2">Your card</div>
+            <div style="display:flex;gap:14px;margin-top:16px;border:1px solid var(--fog);padding:14px;border-radius:2px">
+              <div class="ph" style="width:80px;aspect-ratio:4/5;flex:0 0 auto;--p:linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)"></div>
+              <div><div class="d-label">Plate 01 · Digital card</div><div class="d-h2" style="font-size:20px;margin-top:3px">Glacier Edge</div><div class="d-cap">Signed: “for Anna” · Dedication</div></div>
+              <div class="pr" style="margin-left:auto;font-family:var(--disp);font-weight:500">$4.99</div>
+            </div>
+          </div>
+          <div><div class="d-label">Send</div>
+            <input class="field" placeholder="Your email — receipt &amp; download">
+            <input class="field" placeholder="Recipient's email — optional, we send it">
+            <div style="display:flex;justify-content:space-between;margin:16px 0;font-family:var(--disp);font-weight:500;font-size:18px"><span>Total</span><span>$4.99</span></div>
+            <button class="btn btn-primary" style="width:100%">Pay $4.99</button>
+            <p class="d-cap" style="text-align:center;margin-top:10px">Secured by Stripe · instant download</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10 VOICE -->
+  <section class="block" id="voice">
+    <span class="label">10 — Voice &amp; Tone</span>
+    <h2 class="sec">How kyrrð speaks</h2>
+    <p class="sec-sub">Restrained, curatorial, quietly confident. We sell a feeling, not a transaction. Calm verbs, concrete facts, no hype.</p>
+    <div class="do" style="margin-bottom:18px">
+      <div class="card yes"><div class="h">We say</div><ul style="margin:0;padding-left:16px">
+        <li>kept · held · signed · sent · for someone</li>
+        <li>one card · $4.99 · anywhere in the world</li>
+        <li>“a photograph, signed and sent”</li>
+        <li>plain, short, human</li></ul></div>
+      <div class="card no"><div class="h">We avoid</div><ul style="margin:0;padding-left:16px">
+        <li>“buy now”, “sale”, “limited series”, urgency</li>
+        <li>“Iceland / the North” as a claim — it travels anywhere</li>
+        <li>exclamation marks, emoji walls, hype adjectives</li>
+        <li>“NFT”, “unlock”, marketing clichés</li></ul></div>
+    </div>
+    <div class="grid g3">
+      <div class="logo-box" style="flex-direction:column;align-items:flex-start;text-align:left"><div class="d-label">Hero</div><p class="d-body" style="margin:8px 0 0">A photograph, signed and sent.</p></div>
+      <div class="logo-box" style="flex-direction:column;align-items:flex-start;text-align:left"><div class="d-label">Product</div><p class="d-body" style="margin:8px 0 0">Pick a view, add your words, send it. $4.99.</p></div>
+      <div class="logo-box" style="flex-direction:column;align-items:flex-start;text-align:left"><div class="d-label">About</div><p class="d-body" style="margin:8px 0 0">kyrrð is a small archive you can make personal — one card at a time.</p></div>
+    </div>
+  </section>
+
+  <!-- 11 INSTAGRAM -->
+  <section class="block" id="ig">
+    <span class="label">11 — Instagram</span>
+    <h2 class="sec">Profile &amp; grid</h2>
+    <p class="sec-sub">The handle <span class="mono">@kyrrd.pics</span> matches the domain. Avatar = the ð on Ink. Keep the grid cool and calm — the photographs do the talking; drop in the occasional typographic “dedication” tile for rhythm.</p>
+
+    <div class="grid g2" style="align-items:start">
+      <div class="phone">
+        <div class="pbar">kyrr<span class="eth">ð</span>.pics</div>
+        <div class="ig-head">
+          <div class="ig-av"><span class="eth">ð</span></div>
+          <div class="ig-stats"><div><b>—</b>posts</div><div><b>—</b>followers</div><div><b>—</b>following</div></div>
+        </div>
+        <div class="ig-bio">
+          <div class="nm">kyrrð · signed photo-cards</div>
+          Quiet photographs, signed in your words.<br>
+          Pick one, add a message, send it — anywhere. $4.99.<br>
+          ↓ start &nbsp;<span style="color:var(--glacier-ink)">kyrrd.pics</span>
+        </div>
+        <div class="ig-grid">
+          <div class="ph" style="--p:linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)"><div class="wmark">ð</div></div>
+          <div class="quote">— for Anna —</div>
+          <div class="ph" style="--p:linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)"><div class="wmark">ð</div></div>
+          <div class="ph" style="--p:linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)"><div class="wmark">ð</div></div>
+          <div class="ph" style="--p:linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)"><div class="wmark">ð</div></div>
+          <div class="quote">A view,<br>in your words</div>
+          <div class="ph" style="--p:linear-gradient(180deg,#fbfdfd,#e3ebed 55%,#b3c2c7 88%,#7f9197)"><div class="wmark">ð</div></div>
+          <div class="ph" style="--p:linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)"><div class="wmark">ð</div></div>
+          <div class="quote">$4.99</div>
+        </div>
+      </div>
+
+      <div>
+        <p class="d-label">Name</p>
+        <p class="d-body" style="margin:6px 0 16px">kyrrð · signed photo-cards</p>
+        <p class="d-label">Bio</p>
+        <p class="d-body" style="margin:6px 0 4px">Quiet photographs, signed in your words.<br>Pick one, add a message, send it — anywhere. $4.99.<br>↓ start</p>
+        <p class="d-cap" style="margin:0 0 16px">Link: kyrrd.pics</p>
+        <p class="d-label">Grid recipe</p>
+        <ul style="margin:6px 0 16px;padding-left:16px;color:var(--steel-d);font-size:13.5px">
+          <li>cool / high-key photos, consistent tone, lots of air</li>
+          <li>ð watermark bottom-right on every photo tile</li>
+          <li>every 3rd–4th tile: a Mist “dedication” or one-line type tile</li>
+          <li>captions: place + one calm line; link in bio, not in caption</li>
+        </ul>
+        <p class="d-label">Post types</p>
+        <ul style="margin:6px 0 0;padding-left:16px;color:var(--steel-d);font-size:13.5px">
+          <li><b>Photo</b> — a single plate, place as caption</li>
+          <li><b>How it works</b> — 3-slide carousel: Choose · Sign · Send</li>
+          <li><b>Dedication</b> — a sample signed card (social proof, calm)</li>
+          <li><b>Story CTA</b> — “Sign one → kyrrd.pics” with link sticker</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="do" style="margin-top:18px">
+      <div class="card no"><div class="h">Fix on the current profile</div><ul style="margin:0;padding-left:16px">
+        <li>bio says “a quiet piece of <b>Iceland</b>” → drop it (we travel anywhere)</li>
+        <li>“<b>Limited series</b>” → we no longer sell editions; remove it</li>
+        <li>add the <b>$4.99</b> price and the <b>kyrrd.pics</b> link</li></ul></div>
+      <div class="card yes"><div class="h">Keep</div><ul style="margin:0;padding-left:16px">
+        <li>handle @kyrrd.pics (matches domain)</li>
+        <li>ð-on-Ink avatar — strong and on-brand</li>
+        <li>calm, curatorial captions</li></ul></div>
+    </div>
+  </section>
+
+  <div class="foot">kyrrð · brand &amp; ui guide · 2026</div>
+</div>
+</body>
+</html>
