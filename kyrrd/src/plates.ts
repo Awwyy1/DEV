@@ -38,8 +38,8 @@ export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
 
 export const PLATES: Plate[] = [
   {
-    id: '01', no: '01', series: 'Series II', title: 'Glacier Edge',
-    place: 'Lofoten, Norway', coords: '68.21°N 13.96°E', date: 'January 2025',
+    id: '01', no: '01', series: 'Series II', title: 'Grótta Lighthouse',
+    place: 'Reyklavik, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
     description: 'First light along the ice, where the shelf gives out and the water begins.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
     image: '/photos/glacier-edge.jpg',
