@@ -42,7 +42,7 @@ export const PLATES: Plate[] = [
     place: 'Lofoten, Norway', coords: '68.21°N 13.96°E', date: 'January 2025',
     description: 'First light along the ice, where the shelf gives out and the water begins.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
-    image: '/photos/GlacierEdge.jpg',
+    image: '/photos/glacier-edge.jpg',
   },
   {
     id: '02', no: '02', series: 'Series II', title: 'Black Sand',
