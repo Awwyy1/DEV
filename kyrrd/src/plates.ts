@@ -1,6 +1,23 @@
-// Archive data. Gradients are cool / high-key placeholders — swap `gradient`
-// for a real `image` URL when ready. `place` is per-plate: the archive
-// travels anywhere. Every photo becomes a signed digital card.
+/* ============================================================
+   PHOTO CATALOG — the only file you edit to manage photos.
+
+   (1) ADD A PHOTO
+       a. Upload the image to  kyrrd/public/photos/
+          (GitHub → folder → Add file → Upload files)
+       b. Copy one { ... } block below, paste it, and set:
+            id      unique id, e.g. '09'
+            no      number shown on the card, e.g. '09'
+            title   the NAME shown under the photo   ← rename here
+            place / date / coords   the caption line
+            image   '/photos/your-file.jpg'
+       c. Merge the PR → refresh kyrrd.pics
+
+   (2) RENAME a photo  → change its `title` (and `no` if you like)
+   (3) REORDER         → move the { } block up or down
+   (4) REMOVE          → delete its { } block
+
+   `image` always wins over `gradient`. Shoot / crop ~4:5 (portrait).
+   ============================================================ */
 
 export const PRICE = '$4.99';
 
