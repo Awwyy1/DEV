@@ -6,6 +6,7 @@ import Archive from './pages/Archive';
 import PlateDetail from './pages/PlateDetail';
 import Inscribe from './pages/Inscribe';
 import Checkout from './pages/Checkout';
+import Done from './pages/Done';
 import About from './pages/About';
 
 function Layout() {
@@ -29,6 +30,7 @@ export default function App() {
         <Route path="plate/:id" element={<PlateDetail />} />
         <Route path="inscribe/:id" element={<Inscribe />} />
         <Route path="checkout" element={<Checkout />} />
+        <Route path="done" element={<Done />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<Home />} />
       </Route>

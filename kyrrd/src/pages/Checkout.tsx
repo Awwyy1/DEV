@@ -1,12 +1,35 @@
-import { useSearchParams } from 'react-router-dom';
+import { useState } from 'react';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { findPlate, PRICE } from '../plates';
 import { Photo } from '../components/Photo';
+import { useOrder, type Order } from '../order';
 
 export default function Checkout() {
   const [params] = useSearchParams();
-  const plate = findPlate(params.get('plate') ?? undefined);
-  const insc = params.get('insc') ?? '';
-  const preset = params.get('preset') ?? 'Dedication';
+  const navigate = useNavigate();
+  const { order, setOrder } = useOrder();
+
+  const plate = findPlate(order?.plateId ?? params.get('plate') ?? undefined);
+  const current: Order =
+    order ?? {
+      plateId: plate.id,
+      title: plate.title,
+      place: plate.place,
+      coords: plate.coords,
+      date: plate.date,
+      gradient: plate.gradient,
+      image: plate.image,
+      inscription: params.get('insc') ?? '',
+      preset: params.get('preset') ?? 'Dedication',
+      align: 'Center',
+    };
+
+  const [recipient, setRecipient] = useState('');
+
+  const pay = () => {
+    setOrder({ ...current, recipient });
+    navigate('/done');
+  };
 
   return (
     <div className="wrap section">
@@ -24,18 +47,18 @@ export default function Checkout() {
             }}
           >
             <Photo
-              gradient={plate.gradient}
-              image={plate.image}
+              gradient={current.gradient}
+              image={current.image}
               sun={false}
               style={{ width: 84, aspectRatio: '4/5', flex: '0 0 auto' }}
             />
             <div>
               <div className="d-label">Plate {plate.no} · Digital card</div>
               <div className="d-h2" style={{ fontSize: 20, marginTop: 3 }}>
-                {plate.title}
+                {current.title}
               </div>
               <div className="d-cap">
-                Signed: “{insc}” · {preset}
+                Signed: “{current.inscription}” · {current.preset}
               </div>
             </div>
             <div className="pr" style={{ marginLeft: 'auto', fontFamily: 'var(--disp)', fontWeight: 500 }}>
@@ -46,7 +69,12 @@ export default function Checkout() {
         <div>
           <div className="d-label">Send</div>
           <input className="field" placeholder="Your email — receipt &amp; download link" />
-          <input className="field" placeholder="Recipient's email — optional, we'll send it for you" />
+          <input
+            className="field"
+            placeholder="Recipient's email — optional, we'll send it for you"
+            value={recipient}
+            onChange={(e) => setRecipient(e.target.value)}
+          />
           <div
             style={{
               display: 'flex',
@@ -60,7 +88,7 @@ export default function Checkout() {
             <span>Total</span>
             <span>{PRICE}</span>
           </div>
-          <button className="btn btn-primary" style={{ width: '100%' }}>
+          <button className="btn btn-primary" style={{ width: '100%' }} onClick={pay}>
             Pay {PRICE}
           </button>
           <p className="d-cap" style={{ textAlign: 'center', marginTop: 10 }}>

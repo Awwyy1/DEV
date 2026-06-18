@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { findPlate, PRICE } from '../plates';
 import { Photo } from '../components/Photo';
+import { useOrder } from '../order';
 
 const PRESETS = ['Title', 'Dedication', 'Field Plate', 'Margin Note'] as const;
 const ALIGNS = ['Center', 'Left', 'Right'] as const;
@@ -18,6 +19,7 @@ const PRESET_CLASS: Record<Preset, string> = {
 export default function Inscribe() {
   const { id } = useParams();
   const navigate = useNavigate();
+  const { setOrder } = useOrder();
   const plate = findPlate(id);
 
   const [text, setText] = useState('for Anna');
@@ -27,9 +29,13 @@ export default function Inscribe() {
 
   const onPick = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (file) setCustomImage(URL.createObjectURL(file));
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => setCustomImage(reader.result as string); // data URL — survives navigation + canvas
+    reader.readAsDataURL(file);
   };
 
+  const image = customImage ?? plate.image;
   const alignClass =
     preset === 'Title' ? (align === 'Left' ? 'al-left' : align === 'Right' ? 'al-right' : '') : '';
 
@@ -46,12 +52,28 @@ export default function Inscribe() {
     }
   })();
 
+  const toCheckout = () => {
+    setOrder({
+      plateId: plate.id,
+      title: plate.title,
+      place: plate.place,
+      coords: plate.coords,
+      date: plate.date,
+      gradient: plate.gradient,
+      image,
+      inscription: text,
+      preset,
+      align,
+    });
+    navigate('/checkout');
+  };
+
   return (
     <div className="wrap section">
       <div className="editor">
         <div className="stage">
           <div className="frame">
-            <Photo gradient={plate.gradient} image={customImage ?? plate.image}>
+            <Photo gradient={plate.gradient} image={image}>
               <div className={`insc ${PRESET_CLASS[preset]} ${alignClass}`}>{rendered}</div>
             </Photo>
           </div>
@@ -105,15 +127,7 @@ export default function Inscribe() {
             <div className="pr">{PRICE}</div>
           </div>
 
-          <button
-            className="btn btn-primary"
-            style={{ marginTop: 16, width: '100%' }}
-            onClick={() =>
-              navigate(
-                `/checkout?plate=${plate.id}&insc=${encodeURIComponent(text)}&preset=${encodeURIComponent(preset)}`,
-              )
-            }
-          >
+          <button className="btn btn-primary" style={{ marginTop: 16, width: '100%' }} onClick={toCheckout}>
             Continue to payment
           </button>
         </div>
