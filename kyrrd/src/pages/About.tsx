@@ -1,12 +1,17 @@
 import { Link } from 'react-router-dom';
+import { useSeo } from '../seo';
 
 const STEPS = [
   ['01', 'Choose a photograph', 'Browse the archive and pick a view that fits the moment.'],
-  ['02', 'Add your words', 'Sign it — a name, a dedication, a quiet note. Always laid out for you.'],
-  ['03', 'Download & send', 'Get your signed card and send it however you like — to anyone, anywhere.'],
+  ['02', 'Add your words', 'Sign it with a name, a dedication, or a quiet note. Always laid out for you.'],
+  ['03', 'Download and send', 'Get your signed card and send it however you like, to anyone, anywhere.'],
 ];
 
 export default function About() {
+  useSeo(
+    'How it works — kyrrð',
+    'How kyrrð works: choose a photograph, add your words, and send it as a signed digital card.',
+  );
   return (
     <div className="wrap section" style={{ maxWidth: 760 }}>
       <div className="d-label">How it works</div>
@@ -15,7 +20,7 @@ export default function About() {
       </h1>
       <p className="d-lead" style={{ color: 'var(--steel-d)' }}>
         kyrrð is a small archive of quiet photographs. Pick one, add your words, and send it as a
-        signed digital card — to someone, anywhere in the world.
+        signed digital card to someone, anywhere in the world.
       </p>
 
       <div style={{ marginTop: 36 }}>

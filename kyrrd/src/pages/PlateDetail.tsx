@@ -1,16 +1,19 @@
 import { Link, useParams } from 'react-router-dom';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
+import { useSeo } from '../seo';
 
 export default function PlateDetail() {
   const { id } = useParams();
   const plate = findPlate(id);
+  useSeo(`${plate.title} — kyrrð`, plate.description);
   return (
     <div className="wrap section">
       <div className="grid g2" style={{ alignItems: 'start' }}>
         <Photo
           gradient={plate.gradient}
           image={plate.image}
+          alt={plate.title}
           style={{ aspectRatio: '4/5', border: '1px solid var(--fog)' }}
         />
         <div>
@@ -31,7 +34,7 @@ export default function PlateDetail() {
           <div className="edition">
             <div>
               <div className="nm">A signed card</div>
-              <div className="ds">Add your words and keep it — or send it to anyone, anywhere.</div>
+              <div className="ds">Add your words and keep it, or send it to anyone, anywhere.</div>
             </div>
           </div>
 

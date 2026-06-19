@@ -2,10 +2,12 @@ import { Link, useParams } from 'react-router-dom';
 import { findPost } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
+import { useSeo } from '../seo';
 
 export default function Article() {
   const { slug } = useParams();
   const post = findPost(slug);
+  useSeo(post ? `${post.title} — kyrrð` : 'Journal — kyrrð', post?.excerpt);
 
   if (!post) {
     return (
@@ -30,7 +32,7 @@ export default function Article() {
       </h1>
       <div className="d-cap">by kyrrð · {post.date}</div>
 
-      <Photo image={post.image} gradient={post.gradient} className="article-hero" />
+      <Photo image={post.image} gradient={post.gradient} alt={post.title} className="article-hero" />
 
       <div className="article-body">
         {post.body.map((para, i) =>
@@ -46,7 +48,7 @@ export default function Article() {
 
       {plate && (
         <Link to={`/plate/${plate.slug ?? plate.id}`} className="cta-card">
-          <Photo gradient={plate.gradient} image={plate.image} sun={false} />
+          <Photo gradient={plate.gradient} image={plate.image} sun={false} alt={plate.title} />
           <div>
             <div className="d-label">Send this view as a card</div>
             <div className="d-h2" style={{ fontSize: 20, marginTop: 3 }}>

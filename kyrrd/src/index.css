@@ -96,7 +96,20 @@ button { font: inherit; }
 .topnav .bm .eth { color: var(--glacier); }
 .topnav .nav { display: flex; gap: 22px; font-size: 13px; color: var(--steel-d); align-items: center; }
 .topnav .nav a:hover { color: var(--ink); }
-@media (max-width: 620px) { .topnav .nav a:not(.btn) { display: none; } }
+.burger { display: none; flex-direction: column; gap: 5px; width: 42px; height: 42px; align-items: center; justify-content: center; border: 1px solid var(--fog); border-radius: 2px; background: none; cursor: pointer; }
+.burger span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
+.mobile-menu { display: none; }
+@media (max-width: 620px) {
+  .topnav .nav { display: none; }
+  .burger { display: inline-flex; }
+  .mobile-menu {
+    display: flex; position: fixed; left: 0; right: 0; top: 60px; z-index: 49;
+    flex-direction: column; gap: 2px; background: var(--snow);
+    border-bottom: 1px solid var(--fog); padding: 10px var(--pad) 22px;
+  }
+  .mobile-menu a { padding: 13px 2px; font-size: 15px; color: var(--ink); border-bottom: 1px solid var(--fog); }
+  .mobile-menu a.btn { margin-top: 14px; border: 1px solid var(--ink); justify-content: center; }
+}
 
 /* ---- hero (fills the viewport, give or take) ---- */
 .hero { position: relative; display: flex; align-items: flex-end; min-height: clamp(540px, 86vh, 920px); }
@@ -138,7 +151,10 @@ button { font: inherit; }
 .foot .bm { font-family: var(--disp); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; }
 .foot .bm .eth { color: var(--glacier); }
 .foot .seal { width: 34px; height: 34px; color: var(--ink); flex: 0 0 auto; }
-.foot .foot-fine { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--steel); font-weight: 400; }
+.foot .foot-fine { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; align-items: center; font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--steel); font-weight: 400; }
+.foot .foot-links { display: flex; gap: 18px; }
+.foot .foot-fine a { color: var(--steel); }
+.foot .foot-fine a:hover { color: var(--ink); }
 
 /* ---- journal ---- */
 .kicker { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--steel-d); font-weight: 500; }

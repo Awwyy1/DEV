@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Mark } from './Brand';
 
 export default function Footer() {
@@ -9,7 +10,14 @@ export default function Footer() {
           kyrr<span className="eth">ð</span>
         </span>
       </div>
-      <div className="foot-fine">© 2026 KYRRÐ</div>
+      <div className="foot-fine">
+        <span>© 2026 KYRRÐ</span>
+        <span className="foot-links">
+          <Link to="/journal">Journal</Link>
+          <Link to="/privacy">Privacy</Link>
+          <Link to="/terms">Terms</Link>
+        </span>
+      </div>
     </footer>
   );
 }

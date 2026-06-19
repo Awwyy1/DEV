@@ -1,8 +1,13 @@
 import { Link } from 'react-router-dom';
 import { POSTS } from '../journal';
 import { Photo } from '../components/Photo';
+import { useSeo } from '../seo';
 
 export default function Journal() {
+  useSeo(
+    'Journal — kyrrð',
+    'Notes from the places in the archive: short, human guides to quiet corners of the world.',
+  );
   const [featured, ...rest] = POSTS;
   return (
     <div className="wrap section">
@@ -13,7 +18,7 @@ export default function Journal() {
 
       {featured && (
         <Link to={`/journal/${featured.slug}`} className="featured">
-          <Photo image={featured.image} gradient={featured.gradient} />
+          <Photo image={featured.image} gradient={featured.gradient} alt={featured.title} />
           <div className="kicker" style={{ marginTop: 16 }}>
             {featured.kicker} · {featured.readMin} min read
           </div>
@@ -28,7 +33,7 @@ export default function Journal() {
         <div className="grid g3" style={{ marginTop: 44 }}>
           {rest.map((p) => (
             <Link key={p.slug} to={`/journal/${p.slug}`} className="post-card">
-              <Photo image={p.image} gradient={p.gradient} />
+              <Photo image={p.image} gradient={p.gradient} alt={p.title} />
               <div className="kicker" style={{ marginTop: 12 }}>
                 {p.kicker} · {p.readMin} min
               </div>

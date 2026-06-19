@@ -1,7 +1,12 @@
 import { Link } from 'react-router-dom';
 import { Photo } from '../components/Photo';
+import { useSeo } from '../seo';
 
 export default function Home() {
+  useSeo(
+    'kyrrð — sign a photo, send it',
+    'Choose a photograph, add your words, and send it as a signed digital card to anyone, anywhere.',
+  );
   return (
     <section className="hero">
       <Photo gradient="linear-gradient(175deg,#ffffff 0%,#eaf1f3 40%,#c4d2d6 72%,#7d9197 100%)" />
