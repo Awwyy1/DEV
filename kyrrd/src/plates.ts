@@ -70,9 +70,9 @@ export const PLATES: Plate[] = [
     slug: 'hallgrimskirkja',
   },
   {
-    id: '04', no: '04', series: 'Series II', title: 'Still Fjord',
-    place: 'Faroe Islands', coords: '62.01°N 6.77°W', date: 'November 2025',
-    description: 'Water held so still the cliffs forget which way is up.',
+    id: '04', no: '04', series: 'Series II', title: 'The Partnership Sculpture',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'November 2025',
+    description: 'A bronze emblem of unity, celebrating the enduring friendship between two nations across the Atlantic.',
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
   },
   {
