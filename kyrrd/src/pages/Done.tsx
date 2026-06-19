@@ -37,7 +37,6 @@ async function renderCard(canvas: HTMLCanvasElement, order: Order) {
   const ctx = canvas.getContext('2d');
   if (!ctx) return;
 
-  // base image / gradient
   if (order.image) {
     await drawCover(ctx, order.image);
   } else {
@@ -72,13 +71,11 @@ async function renderCard(canvas: HTMLCanvasElement, order: Order) {
     ctx.font = 'italic 400 36px "Inter", sans-serif';
     ctx.fillText(t, W - 80, H / 2);
   } else {
-    // Dedication
     ctx.textAlign = 'center';
     ctx.font = '500 30px "Inter", sans-serif';
     ctx.fillText(`—   ${t.toUpperCase()}   —`, W / 2, H - 110);
   }
 
-  // ð watermark
   ctx.textAlign = 'right';
   ctx.font = '500 40px "Space Grotesk", sans-serif';
   ctx.fillStyle = 'rgba(11,11,12,0.55)';
@@ -96,7 +93,7 @@ export default function Done() {
   if (!order) {
     return (
       <div className="wrap section" style={{ maxWidth: 720 }}>
-        <div className="d-h2">Nothing to download yet.</div>
+        <div className="d-h2">Nothing here yet.</div>
         <p className="d-body" style={{ color: 'var(--steel-d)', margin: '10px 0 20px' }}>
           Choose a photograph and sign it first.
         </p>
@@ -123,13 +120,13 @@ export default function Done() {
 
   return (
     <div className="wrap section" style={{ maxWidth: 760 }}>
-      <div className="d-label">Payment received · test mode</div>
+      <div className="d-label">Your card</div>
       <h1 className="d-h1" style={{ margin: '8px 0 8px' }}>
-        Your card is ready.
+        Ready to send.
       </h1>
       <p className="d-body" style={{ color: 'var(--steel-d)', maxWidth: '54ch' }}>
-        This is a test checkout — no real charge was made. Your signed card is below: download it now
-        {order.recipient ? `, and we'd email it to ${order.recipient}` : ''}.
+        Download your signed card and send it however you like — a message, an email, or print it at
+        home.
       </p>
 
       <div style={{ maxWidth: 360, margin: '24px 0', border: '1px solid var(--fog)' }}>

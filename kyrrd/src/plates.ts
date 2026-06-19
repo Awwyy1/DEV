@@ -2,24 +2,23 @@
    PHOTO CATALOG — the only file you edit to manage photos.
 
    (1) ADD A PHOTO
-       a. Upload the image to  kyrrd/public/photos/
-          (GitHub → folder → Add file → Upload files)
+       a. Upload the image to  kyrrd/public/photos/   (must be JPEG/PNG/WebP — NOT HEIC)
        b. Copy one { ... } block below, paste it, and set:
             id      unique id, e.g. '09'
             no      number shown on the card, e.g. '09'
             title   the NAME shown under the photo   ← rename here
             place / date / coords   the caption line
             image   '/photos/your-file.jpg'
-       c. Merge the PR → refresh kyrrd.pics
+            slug    (optional) pretty URL, e.g. 'my-photo'  → /plate/my-photo
+       c. Save / merge → refresh kyrrd.pics
 
    (2) RENAME a photo  → change its `title` (and `no` if you like)
-   (3) REORDER         → move the { } block up or down
-   (4) REMOVE          → delete its { } block
+   (3) PRETTY URL      → add a `slug` (else the URL uses the id, e.g. /plate/02)
+   (4) REORDER         → move the { } block up or down
+   (5) REMOVE          → delete its { } block
 
    `image` always wins over `gradient`. Shoot / crop ~4:5 (portrait).
    ============================================================ */
-
-export const PRICE = '$4.99';
 
 export interface Plate {
   id: string;
@@ -32,6 +31,7 @@ export interface Plate {
   description: string;
   gradient: string;
   image?: string;
+  slug?: string; // pretty URL segment; falls back to `id`
 }
 
 export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
@@ -43,6 +43,7 @@ export const PLATES: Plate[] = [
     description: 'An island guarded by the ocean, where the path disappears with the rising tide.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
     image: '/photos/glacier-edge.jpg',
+    slug: 'grotta-lighthouse',
   },
   {
     id: '02', no: '02', series: 'Series II', title: 'Black Sand',
@@ -88,4 +89,5 @@ export const PLATES: Plate[] = [
   },
 ];
 
-export const findPlate = (id?: string): Plate => PLATES.find((p) => p.id === id) ?? PLATES[0];
+export const findPlate = (key?: string): Plate =>
+  PLATES.find((p) => p.id === key || p.slug === key) ?? PLATES[0];

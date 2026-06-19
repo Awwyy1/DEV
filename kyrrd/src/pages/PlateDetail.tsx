@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { findPlate, PRICE } from '../plates';
+import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 
 export default function PlateDetail() {
@@ -30,14 +30,13 @@ export default function PlateDetail() {
 
           <div className="edition">
             <div>
-              <div className="nm">Digital photo-card</div>
-              <div className="ds">Signed by you. Instant download — send it to anyone, anywhere.</div>
+              <div className="nm">A signed card</div>
+              <div className="ds">Add your words and keep it — or send it to anyone, anywhere.</div>
             </div>
-            <div className="pr">{PRICE}</div>
           </div>
 
           <Link
-            to={`/inscribe/${plate.id}`}
+            to={`/inscribe/${plate.slug ?? plate.id}`}
             className="btn btn-primary"
             style={{ marginTop: 22, width: '100%' }}
           >
