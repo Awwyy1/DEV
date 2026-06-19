@@ -47,7 +47,7 @@ export const PLATES: Plate[] = [
   },
   {
     id: '01', no: '01', series: 'Series II', title: 'Grótta Lighthouse',
-    place: 'Reyklavik, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
+    place: 'Reykjavík, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
     description: 'An island guarded by the ocean, where the path disappears with the rising tide.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
     image: '/photos/glacier-edge.jpg',
@@ -55,15 +55,19 @@ export const PLATES: Plate[] = [
   },
   {
     id: '02', no: '02', series: 'Series II', title: 'The Sun Voyager',
-    place: 'Reyklavik, Iceland', coords: '64.15°N 21.92°W', date: 'June 13 2026',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.92°W', date: 'June 13 2026',
     description: 'Jón Gunnar Árnason’s iconic sculpture, standing proud against Mount Esja since 1990.',
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
+    image: '/photos/The-Sun-Voyager.jpeg',
+    slug: 'sun-voyager',
   },
   {
     id: '03', no: '03', series: 'Series II', title: 'Hallgrímskirkja',
-    place: 'Reyklavik, Iceland', coords: '64.14°N 21.93°W', date: 'May 27 2026',
+    place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'May 27 2026',
     description: 'Reykjavík iconic landmark, standing tall as a beacon of Icelandic heritage and design.',
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
+    image: '/photos/Hallgrimskirkja.jpeg',
+    slug: 'hallgrimskirkja',
   },
   {
     id: '04', no: '04', series: 'Series II', title: 'Still Fjord',
