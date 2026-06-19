@@ -74,30 +74,24 @@ export const PLATES: Plate[] = [
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 04 2025',
     description: 'A bronze emblem of unity, celebrating the enduring friendship between two nations across the Atlantic.',
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
+    image: '/photos/The-Partnership-Sculpture.jpeg',
+    slug: 'partnership-sculpture',
   },
   {
     id: '05', no: '05', series: 'Series III', title: 'Althingi Parliament House',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 05 2026',
-    description: 'The historic seat of Alþingi, home to one of the worlds oldest surviving parliaments..',
+    description: 'The historic seat of Alþingi, home to one of the world’s oldest surviving parliaments.',
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
+    image: '/photos/Althingi-Parliament.jpeg',
+    slug: 'althingi',
   },
   {
     id: '06', no: '06', series: 'Series III', title: 'Harpa',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'March 2026',
     description: 'An endless play of light and water, designed to dissolve the boundaries of space.',
     gradient: 'linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)',
-  },
-  {
-    id: '07', no: '07', series: 'Series III', title: 'Cold Open',
-    place: 'Hokkaido, Japan', coords: '43.80°N 142.86°E', date: 'December 2025',
-    description: 'Snowlight before the snow, the whole field one even tone.',
-    gradient: 'linear-gradient(200deg,#fbfdfd,#e3ebed 55%,#b3c2c7 88%,#7f9197)',
-  },
-  {
-    id: '08', no: '08', series: 'Series III', title: 'Afterimage',
-    place: 'Scottish Highlands', coords: '57.01°N 4.74°W', date: 'February 2026',
-    description: 'What stays on the eye after you look away from the loch.',
-    gradient: 'linear-gradient(180deg,#cfd6d8,#9aabb0 38%,#46555a 80%,#10100f)',
+    image: '/photos/Harpa.jpeg',
+    slug: 'harpa',
   },
 ];
 
