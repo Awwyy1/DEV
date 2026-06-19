@@ -28,6 +28,27 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'water-carrier',
+    title: 'The Water Carrier who waited years to stand',
+    kicker: 'Iceland · Field note',
+    readMin: 5,
+    date: 'June 2026',
+    excerpt:
+      'A bronze woman near Lækjargata who carried water through the city long before the pipes arrived, and who waited years for Reykjavík to let her stand.',
+    gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
+    image: '/photos/WaterCarrier.jpeg',
+    plateSlug: 'water-carrier',
+    plateTitle: 'Water Carrier',
+    body: [
+      'She stands near Lækjargata, in the older part of central Reykjavík, a bronze woman bent forward under a wooden yoke with a pail of water hanging from each end. People pass her on their way to the shops without always noticing, which feels right, because for most of her life she was exactly the kind of person nobody looked at twice. If you stop in front of her for a moment you can see the weight in her shoulders and the patience in her face, and you begin to understand why she is here.',
+      'Before Reykjavík had pipes in its walls, somebody had to bring the water. For a long time that somebody was usually a woman, often a poor one, who carried it from the wells and the pond to the houses of people who could pay her a little to do it. The work was heavy and endless and almost invisible, the sort of labour a town leans on without ever thanking. The statue is for her. Ásmundur Sveinsson, who made it, spent much of his life turning ordinary working people into bronze, and the water carrier is one of the most honest things he ever did.',
+      'He shaped her in the nineteen thirties, and the city did not know what to do with her. Many people thought she was ugly. They wanted their public sculpture to lift the eye and flatter the nation, and here instead was a stooped figure doing hard manual work, with no grace added and nothing softened. The argument went on for years, and the statue waited while it played out. She only found her place in the city in the late nineteen forties, long after she was finished, once enough people had come round to the idea that a monument could honour effort instead of glory.',
+      'Time has been kinder to her than her first audience was. The thing people once found unlovely is now the thing they value, because she tells the truth about how a small northern town actually kept itself alive. Reykjavík grew up around her, the wells closed, the pipes arrived, and the job she represents disappeared completely, which is the only reason we can afford to find her beautiful now.',
+      'She is easy to visit and easy to miss, which is part of her charm. You will find her on a low base near the corner of Lækjargata, a short walk from the harbour and the pond, with the old timber houses of the centre around her. Morning is a good time, before the street fills up, when the light comes in low and the bronze still holds a little of the cold. Bring nothing in particular. Just stand where she is looking and imagine the same spot a hundred and thirty years ago, full of people doing exactly what she is doing.',
+      'There is something fitting about turning a figure like this into a card and sending it to someone you are thinking of. She spent her working life carrying something heavy to a door that was not her own, because it mattered to the people inside. A photograph of her, with a few words of your own added, is a quieter version of the same small and deliberate act.',
+    ],
+  },
+  {
     slug: 'grotta-lighthouse',
     title: 'Grótta Lighthouse, where the tide sets the schedule',
     kicker: 'Iceland · Field note',
