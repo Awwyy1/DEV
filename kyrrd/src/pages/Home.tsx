@@ -6,7 +6,7 @@ export default function Home() {
     <section className="hero">
       <Photo gradient="linear-gradient(175deg,#ffffff 0%,#eaf1f3 40%,#c4d2d6 72%,#7d9197 100%)" />
       <div className="ov">
-        <span className="d-label eyebrow">Signed photo-cards · $4.99</span>
+        <span className="d-label eyebrow">Signed photo-cards</span>
         <h1>A photograph, signed and sent.</h1>
         <p>
           Pick a view, add your words, and send it as a personal digital card — to someone, anywhere

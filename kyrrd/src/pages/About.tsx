@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 const STEPS = [
   ['01', 'Choose a photograph', 'Browse the archive and pick a view that fits the moment.'],
   ['02', 'Add your words', 'Sign it — a name, a dedication, a quiet note. Always laid out for you.'],
-  ['03', 'Pay $4.99', 'One price, one card. No bundles, no fuss.'],
-  ['04', 'Download & send', 'Get your signed image instantly, or let us send it to them for you.'],
+  ['03', 'Download & send', 'Get your signed card and send it however you like — to anyone, anywhere.'],
 ];
 
 export default function About() {
@@ -38,11 +37,6 @@ export default function About() {
           </div>
         ))}
       </div>
-
-      <p className="d-cap" style={{ marginTop: 28 }}>
-        Previews are shown watermarked and reduced; your clean, signed image arrives the moment you
-        pay.
-      </p>
 
       <Link to="/archive" className="btn btn-primary" style={{ marginTop: 28 }}>
         Choose a photograph

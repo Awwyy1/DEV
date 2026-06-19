@@ -139,3 +139,22 @@ button { font: inherit; }
 .foot .bm .eth { color: var(--glacier); }
 .foot .seal { width: 34px; height: 34px; color: var(--ink); flex: 0 0 auto; }
 .foot .foot-fine { font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--steel); font-weight: 400; }
+
+/* ---- journal ---- */
+.kicker { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--steel-d); font-weight: 500; }
+.featured { display: block; color: inherit; }
+.featured .ph { aspect-ratio: 16 / 9; border: 1px solid var(--fog); }
+.post-card { display: block; color: inherit; }
+.post-card .ph { aspect-ratio: 16 / 10; border: 1px solid var(--fog); }
+.post-card .post-title { font-family: var(--disp); font-weight: 500; font-size: 18px; margin-top: 4px; }
+
+.article { max-width: 760px; }
+.article .article-hero.ph { aspect-ratio: 3 / 2; border: 1px solid var(--fog); margin: 26px 0 6px; }
+.article-body { margin-top: 22px; }
+.article-body p { font-size: 17px; line-height: 1.75; color: #2a2a2e; margin: 0 0 1.25em; }
+.article-body p.lede { font-size: 21px; line-height: 1.6; font-weight: 300; color: var(--ink); margin-bottom: 1.1em; }
+
+.cta-card { display: flex; align-items: center; gap: 16px; border: 1px solid var(--fog); border-radius: 2px; padding: 14px; margin-top: 30px; color: inherit; transition: 0.2s; }
+.cta-card:hover { box-shadow: 0 20px 40px -28px rgba(0, 0, 0, 0.35); }
+.cta-card .ph { width: 72px; aspect-ratio: 4 / 5; flex: 0 0 auto; }
+.cta-card .arrow { margin-left: auto; color: var(--glacier-ink); font-size: 20px; }

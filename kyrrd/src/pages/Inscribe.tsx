@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { findPlate, PRICE } from '../plates';
+import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import { useOrder } from '../order';
 
@@ -31,7 +31,7 @@ export default function Inscribe() {
     const file = e.target.files?.[0];
     if (!file) return;
     const reader = new FileReader();
-    reader.onload = () => setCustomImage(reader.result as string); // data URL — survives navigation + canvas
+    reader.onload = () => setCustomImage(reader.result as string);
     reader.readAsDataURL(file);
   };
 
@@ -52,7 +52,7 @@ export default function Inscribe() {
     }
   })();
 
-  const toCheckout = () => {
+  const finish = () => {
     setOrder({
       plateId: plate.id,
       title: plate.title,
@@ -65,7 +65,7 @@ export default function Inscribe() {
       preset,
       align,
     });
-    navigate('/checkout');
+    navigate('/done');
   };
 
   return (
@@ -119,16 +119,8 @@ export default function Inscribe() {
             ))}
           </div>
 
-          <div className="edition" style={{ marginTop: 22 }}>
-            <div>
-              <div className="nm">Signed digital card</div>
-              <div className="ds">Instant download · send to anyone</div>
-            </div>
-            <div className="pr">{PRICE}</div>
-          </div>
-
-          <button className="btn btn-primary" style={{ marginTop: 16, width: '100%' }} onClick={toCheckout}>
-            Continue to payment
+          <button className="btn btn-primary" style={{ marginTop: 24, width: '100%' }} onClick={finish}>
+            Get my card
           </button>
         </div>
       </div>
