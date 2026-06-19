@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { findPost } from '../journal';
+import { findPost, POSTS } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import { useSeo } from '../seo';
@@ -21,6 +21,7 @@ export default function Article() {
   }
 
   const plate = post.plateSlug ? findPlate(post.plateSlug) : undefined;
+  const others = POSTS.filter((p) => p.slug !== post.slug).slice(0, 2);
 
   return (
     <article className="wrap section article">
@@ -47,16 +48,45 @@ export default function Article() {
       </div>
 
       {plate && (
-        <Link to={`/plate/${plate.slug ?? plate.id}`} className="cta-card">
-          <Photo gradient={plate.gradient} image={plate.image} sun={false} alt={plate.title} />
-          <div>
-            <div className="d-label">Send this view as a card</div>
-            <div className="d-h2" style={{ fontSize: 20, marginTop: 3 }}>
-              {post.plateTitle ?? plate.title}
+        <div className="article-cta">
+          <div className="cta-top">
+            <Photo
+              gradient={plate.gradient}
+              image={plate.image}
+              sun={false}
+              alt={plate.title}
+              className="cta-thumb"
+            />
+            <div>
+              <div className="d-label">Turn this view into a card</div>
+              <div className="d-h2" style={{ fontSize: 20, marginTop: 3 }}>
+                {post.plateTitle ?? plate.title}
+              </div>
             </div>
           </div>
-          <span className="arrow">→</span>
-        </Link>
+          <Link to={`/inscribe/${plate.slug ?? plate.id}`} className="btn btn-primary cta-btn">
+            Sign and send to someone close
+          </Link>
+        </div>
+      )}
+
+      {others.length > 0 && (
+        <div className="related">
+          <div className="d-label">Keep reading</div>
+          <div className="related-list">
+            {others.map((p) => (
+              <Link key={p.slug} to={`/journal/${p.slug}`} className="related-item">
+                <Photo image={p.image} gradient={p.gradient} alt={p.title} />
+                <div>
+                  <div className="kicker">
+                    {p.kicker} · {p.readMin} min
+                  </div>
+                  <div className="related-title">{p.title}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
       )}
     </article>
   );
