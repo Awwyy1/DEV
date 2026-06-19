@@ -8,6 +8,7 @@ export default function Nav() {
       </Link>
       <nav className="nav">
         <Link to="/archive">The Archive</Link>
+        <Link to="/journal">Journal</Link>
         <Link to="/about">How it works</Link>
         <Link to="/archive" className="btn btn-primary" style={{ padding: '10px 18px' }}>
           Send a card

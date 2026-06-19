@@ -7,6 +7,8 @@ import PlateDetail from './pages/PlateDetail';
 import Inscribe from './pages/Inscribe';
 import Done from './pages/Done';
 import About from './pages/About';
+import Journal from './pages/Journal';
+import Article from './pages/Article';
 
 function Layout() {
   return (
@@ -29,6 +31,8 @@ export default function App() {
         <Route path="plate/:id" element={<PlateDetail />} />
         <Route path="inscribe/:id" element={<Inscribe />} />
         <Route path="done" element={<Done />} />
+        <Route path="journal" element={<Journal />} />
+        <Route path="journal/:slug" element={<Article />} />
         <Route path="about" element={<About />} />
         <Route path="*" element={<Home />} />
       </Route>
