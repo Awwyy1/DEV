@@ -60,9 +60,9 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
   },
   {
-    id: '03', no: '03', series: 'Series II', title: 'Highland Light',
-    place: 'Atacama, Chile', coords: '24.50°S 69.25°W', date: 'February 2026',
-    description: 'Last light across the interior, where the track gives out and the cold begins.',
+    id: '03', no: '03', series: 'Series II', title: 'Hallgrímskirkja',
+    place: 'Reyklavik, Iceland', coords: '64.14°N 21.93°W', date: 'May 27 2026',
+    description: 'Reykjavík iconic landmark, standing tall as a beacon of Icelandic heritage and design.',
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
   },
   {
