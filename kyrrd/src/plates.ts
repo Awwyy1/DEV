@@ -82,9 +82,9 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
   },
   {
-    id: '06', no: '06', series: 'Series III', title: 'Held Still',
-    place: 'Patagonia, Argentina', coords: '50.94°S 73.40°W', date: 'March 2026',
-    description: 'Wind paused for a single frame over open water.',
+    id: '06', no: '06', series: 'Series III', title: 'Harpa',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'March 2026',
+    description: 'An endless play of light and water, designed to dissolve the boundaries of space.',
     gradient: 'linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)',
   },
   {
