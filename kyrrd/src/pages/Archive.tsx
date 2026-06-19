@@ -1,7 +1,9 @@
 import { PLATES, TAGS } from '../plates';
 import PlateCard from '../components/PlateCard';
+import { useSeo } from '../seo';
 
 export default function Archive() {
+  useSeo('The Archive — kyrrð', 'A quiet archive of photographs. Pick one, sign it, and send it as a card.');
   return (
     <div className="wrap section">
       <div className="archhead">

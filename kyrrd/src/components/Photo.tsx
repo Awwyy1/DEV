@@ -11,6 +11,7 @@ export function Photo({
   sun = true,
   style,
   className = '',
+  alt = '',
   children,
 }: {
   gradient?: string;
@@ -18,13 +19,14 @@ export function Photo({
   sun?: boolean;
   style?: CSSProperties;
   className?: string;
+  alt?: string;
   children?: ReactNode;
 }) {
   const s: CSSProperties = { ...style };
   if (gradient) (s as Record<string, string>)['--p'] = gradient;
   return (
     <div className={`ph ${image ? 'has-img' : ''} ${className}`} style={s}>
-      {image ? <img className="ph-img" src={image} alt="" loading="lazy" /> : sun && <span className="sun" />}
+      {image ? <img className="ph-img" src={image} alt={alt} loading="lazy" /> : sun && <span className="sun" />}
       {children}
     </div>
   );
