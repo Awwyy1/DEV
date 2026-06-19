@@ -79,7 +79,7 @@ button { font: inherit; }
 .ph { position: relative; overflow: hidden; background: var(--p, linear-gradient(180deg, #fff, #e8eef0 55%, #c9d4d8 78%, #9fb0b6)); background-size: cover; background-position: center; }
 .ph::after { content: ""; position: absolute; inset: 0; background: radial-gradient(90% 60% at 52% 8%, rgba(255, 255, 255, 0.45), transparent 60%); }
 .ph .sun { position: absolute; width: 54px; height: 54px; border-radius: 50%; background: rgba(255, 255, 255, 0.85); top: 22%; left: 62%; filter: blur(3px); opacity: 0.6; }
-.ph .ph-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.ph .ph-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; image-orientation: from-image; }
 .ph.has-img::after { display: none; } /* real photos render clean, no highlight wash */
 
 /* ---- plate card ---- */
@@ -95,7 +95,7 @@ button { font: inherit; }
 .topnav .bm { font-family: var(--disp); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; }
 .topnav .bm .eth { color: var(--glacier); }
 .topnav .nav { display: flex; gap: 22px; font-size: 13px; color: var(--steel-d); align-items: center; }
-.topnav .nav a:hover { color: var(--ink); }
+.topnav .nav a:not(.btn):hover { color: var(--ink); }
 .burger { display: none; flex-direction: column; gap: 5px; width: 42px; height: 42px; align-items: center; justify-content: center; border: 1px solid var(--fog); border-radius: 2px; background: none; cursor: pointer; }
 .burger span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
 .mobile-menu { display: none; }
@@ -108,7 +108,7 @@ button { font: inherit; }
     border-bottom: 1px solid var(--fog); padding: 10px var(--pad) 22px;
   }
   .mobile-menu a { padding: 13px 2px; font-size: 15px; color: var(--ink); border-bottom: 1px solid var(--fog); }
-  .mobile-menu a.btn { margin-top: 14px; border: 1px solid var(--ink); justify-content: center; }
+  .mobile-menu a.btn { margin-top: 14px; border: 1px solid var(--ink); justify-content: center; color: var(--snow); }
 }
 
 /* ---- hero (fills the viewport, give or take) ---- */

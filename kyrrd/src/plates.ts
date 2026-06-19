@@ -38,6 +38,14 @@ export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
 
 export const PLATES: Plate[] = [
   {
+    id: '09', no: '09', series: 'Series III', title: 'Water Carrier',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
+    description: 'A bronze woman bowed under a yoke, still carrying water through the city long after the taps arrived.',
+    gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
+    image: '/photos/WaterCarrier.jpeg',
+    slug: 'water-carrier',
+  },
+  {
     id: '01', no: '01', series: 'Series II', title: 'Grótta Lighthouse',
     place: 'Reyklavik, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
     description: 'An island guarded by the ocean, where the path disappears with the rising tide.',
