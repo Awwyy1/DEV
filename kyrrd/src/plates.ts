@@ -54,9 +54,9 @@ export const PLATES: Plate[] = [
     slug: 'grotta-lighthouse',
   },
   {
-    id: '02', no: '02', series: 'Series II', title: 'Black Sand',
-    place: 'Tenerife, Spain', coords: '28.27°N 16.61°W', date: 'March 2025',
-    description: 'A long beach under flat cloud, nothing moving but the tide line.',
+    id: '02', no: '02', series: 'Series II', title: 'The Sun Voyager',
+    place: 'Reyklavik, Iceland', coords: '64.15°N 21.92°W', date: 'June 13 2026',
+    description: 'Jón Gunnar Árnason’s iconic sculpture, standing proud against Mount Esja since 1990.',
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
   },
   {
