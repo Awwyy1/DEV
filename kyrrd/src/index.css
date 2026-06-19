@@ -3,6 +3,7 @@
    the brand & UI guide.
    ============================================================ */
 :root {
+  color-scheme: light;
   --ink: #0b0b0c;
   --snow: #fafafa;
   --white: #ffffff;
@@ -12,10 +13,31 @@
   --steel-d: #6c6e73;
   --glacier: #3fa9c0;
   --glacier-ink: #1f7c92;
+  --nav-bg: rgba(250, 250, 250, 0.86);
+  --body-ink: #2a2a2e;
+  --hero-ink: #0b0b0c;
+  --hero-sub: #222222;
   --disp: 'Space Grotesk', sans-serif;
   --ui: 'Inter', system-ui, sans-serif;
   --pad: clamp(24px, 4.5vw, 56px);
   --maxw: 1180px;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #ececee; /* primary text + the "ink" colour (becomes the inverted button) */
+  --snow: #0d0d0f; /* page background */
+  --white: #161619; /* card / surface */
+  --mist: #141417; /* section fills */
+  --fog: #2a2a2e; /* hairlines, borders */
+  --steel: #8a8c92;
+  --steel-d: #a6a8ae; /* secondary text, lifted for contrast */
+  --glacier: #45b3ca;
+  --glacier-ink: #74c7da; /* links, readable on dark */
+  --nav-bg: rgba(13, 13, 15, 0.82);
+  --body-ink: #c6c7cc;
+  --hero-ink: #f2f2f4;
+  --hero-sub: #b9bbc1;
 }
 
 * { box-sizing: border-box; }
@@ -91,7 +113,10 @@ button { font: inherit; }
 .plate .cap .ttl { font-family: var(--disp); font-weight: 500; font-size: 18px; margin-top: 3px; }
 
 /* ---- top nav ---- */
-.topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--pad); border-bottom: 1px solid var(--fog); background: rgba(250, 250, 250, 0.86); backdrop-filter: blur(8px); }
+.topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--pad); border-bottom: 1px solid var(--fog); background: var(--nav-bg); backdrop-filter: blur(8px); }
+.nav-right { display: flex; align-items: center; gap: 14px; }
+.theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; flex: 0 0 auto; border: 1px solid var(--fog); border-radius: 2px; background: none; color: var(--steel-d); cursor: pointer; transition: 0.18s; }
+.theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
 .topnav .bm { font-family: var(--disp); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; }
 .topnav .bm .eth { color: var(--glacier); }
 .topnav .nav { display: flex; gap: 22px; font-size: 13px; color: var(--steel-d); align-items: center; }
@@ -116,8 +141,11 @@ button { font: inherit; }
 .hero .ph { position: absolute; inset: 0; }
 .hero .ov { position: relative; z-index: 1; width: 100%; padding: 0 var(--pad) clamp(48px, 9vh, 104px); }
 .hero .eyebrow { display: block; margin-bottom: 18px; }
-.hero h1 { font-family: var(--disp); font-weight: 500; color: #0b0b0c; font-size: clamp(40px, 7.5vw, 84px); letter-spacing: -0.03em; line-height: 0.95; margin: 0; max-width: 18ch; }
-.hero p { max-width: 52ch; color: #222; font-weight: 300; font-size: clamp(15px, 2vw, 20px); margin: 18px 0 26px; }
+.hero h1 { font-family: var(--disp); font-weight: 500; color: var(--hero-ink); font-size: clamp(40px, 7.5vw, 84px); letter-spacing: -0.03em; line-height: 0.95; margin: 0; max-width: 18ch; }
+.hero p { max-width: 52ch; color: var(--hero-sub); font-weight: 300; font-size: clamp(15px, 2vw, 20px); margin: 18px 0 26px; }
+.home-hero-ph { background: linear-gradient(175deg, #ffffff 0%, #eaf1f3 40%, #c4d2d6 72%, #7d9197 100%); }
+.home-hero-ph::after { display: none; }
+[data-theme='dark'] .home-hero-ph { background: linear-gradient(175deg, #20242b 0%, #161a20 55%, #0d1014 100%); }
 
 /* ---- archive head ---- */
 .archhead { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
@@ -169,7 +197,7 @@ button { font: inherit; }
 .article { max-width: 760px; }
 .article .article-hero.ph { aspect-ratio: 4 / 5; max-width: 460px; border: 1px solid var(--fog); margin: 26px 0 8px; }
 .article-body { margin-top: 22px; }
-.article-body p { font-size: 17px; line-height: 1.75; color: #2a2a2e; margin: 0 0 1.25em; }
+.article-body p { font-size: 17px; line-height: 1.75; color: var(--body-ink); margin: 0 0 1.25em; }
 .article-body p.lede { font-size: 21px; line-height: 1.6; font-weight: 300; color: var(--ink); margin-bottom: 1.1em; }
 
 .article-cta { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; margin-top: 44px; border: 1px solid var(--fog); border-radius: 2px; padding: 18px 20px; }

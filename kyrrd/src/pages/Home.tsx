@@ -9,7 +9,7 @@ export default function Home() {
   );
   return (
     <section className="hero">
-      <Photo gradient="linear-gradient(175deg,#ffffff 0%,#eaf1f3 40%,#c4d2d6 72%,#7d9197 100%)" />
+      <Photo className="home-hero-ph" sun={false} />
       <div className="ov">
         <span className="d-label eyebrow">Signed photo-cards</span>
         <h1>A photograph, signed and sent.</h1>

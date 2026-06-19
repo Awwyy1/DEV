@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ThemeToggle from './ThemeToggle';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -12,25 +13,29 @@ export default function Nav() {
           kyrr<span className="eth">ð</span>
         </Link>
 
-        <nav className="nav">
-          <Link to="/archive">The Archive</Link>
-          <Link to="/journal">Journal</Link>
-          <Link to="/about">How it works</Link>
-          <Link to="/archive" className="btn btn-primary" style={{ padding: '10px 18px' }}>
-            Send a card
-          </Link>
-        </nav>
+        <div className="nav-right">
+          <nav className="nav">
+            <Link to="/archive">The Archive</Link>
+            <Link to="/journal">Journal</Link>
+            <Link to="/about">How it works</Link>
+            <Link to="/archive" className="btn btn-primary" style={{ padding: '10px 18px' }}>
+              Send a card
+            </Link>
+          </nav>
 
-        <button
-          className="burger"
-          aria-label="Menu"
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-        >
-          <span />
-          <span />
-          <span />
-        </button>
+          <ThemeToggle />
+
+          <button
+            className="burger"
+            aria-label="Menu"
+            aria-expanded={open}
+            onClick={() => setOpen((o) => !o)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
       </header>
 
       {open && (
