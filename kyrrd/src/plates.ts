@@ -71,14 +71,14 @@ export const PLATES: Plate[] = [
   },
   {
     id: '04', no: '04', series: 'Series II', title: 'The Partnership Sculpture',
-    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'November 2025',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 04 2025',
     description: 'A bronze emblem of unity, celebrating the enduring friendship between two nations across the Atlantic.',
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
   },
   {
-    id: '05', no: '05', series: 'Series III', title: 'Static',
-    place: 'Tokyo, Japan', coords: '35.68°N 139.69°E', date: 'January 2026',
-    description: 'A grey afternoon between buildings, the city holding its breath.',
+    id: '05', no: '05', series: 'Series III', title: 'Althingi Parliament House',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 05 2026',
+    description: 'The historic seat of Alþingi, home to one of the worlds oldest surviving parliaments..',
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
   },
   {
