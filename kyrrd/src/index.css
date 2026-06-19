@@ -158,14 +158,16 @@ button { font: inherit; }
 
 /* ---- journal ---- */
 .kicker { font-size: 11px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--steel-d); font-weight: 500; }
-.featured { display: block; color: inherit; }
-.featured .ph { aspect-ratio: 16 / 9; border: 1px solid var(--fog); }
+.featured { display: grid; grid-template-columns: minmax(240px, 340px) 1fr; gap: clamp(22px, 4vw, 48px); align-items: center; color: inherit; }
+.featured .ph { aspect-ratio: 4 / 5; border: 1px solid var(--fog); }
+.featured .read { display: inline-block; margin-top: 16px; color: var(--glacier-ink); font-size: 14px; letter-spacing: 0.04em; }
+@media (max-width: 700px) { .featured { grid-template-columns: 1fr; } }
 .post-card { display: block; color: inherit; }
-.post-card .ph { aspect-ratio: 16 / 10; border: 1px solid var(--fog); }
+.post-card .ph { aspect-ratio: 4 / 5; border: 1px solid var(--fog); }
 .post-card .post-title { font-family: var(--disp); font-weight: 500; font-size: 18px; margin-top: 4px; }
 
 .article { max-width: 760px; }
-.article .article-hero.ph { aspect-ratio: 3 / 2; border: 1px solid var(--fog); margin: 26px 0 6px; }
+.article .article-hero.ph { aspect-ratio: 4 / 5; max-width: 460px; border: 1px solid var(--fog); margin: 26px 0 8px; }
 .article-body { margin-top: 22px; }
 .article-body p { font-size: 17px; line-height: 1.75; color: #2a2a2e; margin: 0 0 1.25em; }
 .article-body p.lede { font-size: 21px; line-height: 1.6; font-weight: 300; color: var(--ink); margin-bottom: 1.1em; }
