@@ -4,6 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext x='50' y='74' font-size='82' text-anchor='middle' font-family='Space Grotesk,sans-serif' fill='%233FA9C0'%3E%C3%B0%3C/text%3E%3C/svg%3E" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t !== 'light' && t !== 'dark') {
+            t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {}
+      })();
+    </script>
     <meta name="description" content="Choose a photograph, add your words, and send it as a signed digital card — to anyone, anywhere. $4.99." />
     <link rel="canonical" href="https://kyrrd.pics/" />
     <meta property="og:title" content="kyrrð — sign a photo, send it" />
