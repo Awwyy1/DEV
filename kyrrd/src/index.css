@@ -215,3 +215,10 @@ button { font: inherit; }
 .related-item .ph { width: 76px; aspect-ratio: 4 / 5; flex: 0 0 auto; border: 1px solid var(--fog); }
 .related-item .related-title { font-family: var(--disp); font-weight: 500; font-size: 16px; margin-top: 4px; line-height: 1.2; }
 @media (max-width: 620px) { .related-list { grid-template-columns: 1fr; } }
+
+/* theme controls */
+@media (max-width: 620px) { .theme-toggle { display: none; } }
+.menu-theme { display: flex; align-items: center; justify-content: space-between; padding: 14px 2px; border-bottom: 1px solid var(--fog); }
+.menu-theme .seg { display: inline-flex; border: 1px solid var(--fog); border-radius: 999px; overflow: hidden; }
+.menu-theme .seg button { font: inherit; font-size: 13px; padding: 7px 16px; background: none; border: none; color: var(--steel-d); cursor: pointer; transition: 0.18s; }
+.menu-theme .seg button.on { background: var(--mist); color: var(--ink); }
