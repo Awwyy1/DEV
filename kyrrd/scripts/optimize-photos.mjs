@@ -1,15 +1,22 @@
-// Build-time photo optimisation.
-// iPhone JPEGs come in at 3–4 MB and 4000px wide, which makes the gallery slow.
-// This downsizes everything in public/photos to a sensible web size and
-// re-encodes it, so uploads can stay full-size while the served files are light.
-// Runs automatically before every build (see "prebuild" in package.json).
+// Build-output photo optimisation (runs as "postbuild", after Vite copies
+// public/ into dist/). It only touches dist/photos, so the source files in
+// public/photos stay as your full-size originals (no merge conflicts), while
+// the deployed files are light. iPhone JPEGs (3-4 MB) become ~200-350 KB.
 
-import { readdir, stat, writeFile } from 'node:fs/promises';
+import { readdir, stat, writeFile, access } from 'node:fs/promises';
 import { join, extname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import sharp from 'sharp';
 
-const dir = fileURLToPath(new URL('../public/photos/', import.meta.url));
+const dir = fileURLToPath(new URL('../dist/photos/', import.meta.url));
+
+try {
+  await access(dir);
+} catch {
+  console.log('  (no dist/photos, skipping photo optimisation)');
+  process.exit(0);
+}
+
 const MAX = 1600; // longest edge, plenty for 4:5 cards even on retina
 const QUALITY = 80;
 

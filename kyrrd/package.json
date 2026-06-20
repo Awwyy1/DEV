@@ -5,8 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "prebuild": "node scripts/optimize-photos.mjs",
     "build": "vite build",
+    "postbuild": "node scripts/optimize-photos.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
