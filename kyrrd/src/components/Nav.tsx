@@ -1,9 +1,11 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
+import { useTheme } from '../theme';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [theme, setTheme] = useTheme();
   const close = () => setOpen(false);
 
   return (
@@ -49,6 +51,19 @@ export default function Nav() {
           <Link to="/about" onClick={close}>
             How it works
           </Link>
+
+          <div className="menu-theme">
+            <span className="d-label">Theme</span>
+            <div className="seg">
+              <button className={theme === 'light' ? 'on' : ''} onClick={() => setTheme('light')}>
+                Light
+              </button>
+              <button className={theme === 'dark' ? 'on' : ''} onClick={() => setTheme('dark')}>
+                Dark
+              </button>
+            </div>
+          </div>
+
           <Link to="/archive" className="btn btn-primary" onClick={close}>
             Send a card
           </Link>

@@ -1,24 +1,7 @@
-import { useEffect, useState } from 'react';
-
-type Theme = 'light' | 'dark';
-
-function current(): Theme {
-  if (typeof document === 'undefined') return 'light';
-  return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
-}
+import { useTheme } from '../theme';
 
 export default function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>(current);
-
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-    try {
-      localStorage.setItem('theme', theme);
-    } catch {
-      /* ignore */
-    }
-  }, [theme]);
-
+  const [theme, setTheme] = useTheme();
   const isDark = theme === 'dark';
 
   return (
@@ -30,7 +13,10 @@ export default function ThemeToggle() {
       {isDark ? (
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6">
           <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19" strokeLinecap="round" />
+          <path
+            d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.4 1.4M17.6 17.6L19 19M19 5l-1.4 1.4M6.4 17.6L5 19"
+            strokeLinecap="round"
+          />
         </svg>
       ) : (
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" strokeWidth="1.6">
