@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import { findPost, POSTS } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
+import MapLink from '../components/MapLink';
 import { useSeo } from '../seo';
 
 export default function Article() {
@@ -31,7 +32,10 @@ export default function Article() {
       <h1 className="d-h1" style={{ margin: '10px 0 6px' }}>
         {post.title}
       </h1>
-      <div className="d-cap">by kyrrð · {post.date}</div>
+      <div className="d-cap article-byline">
+        <span>by kyrrð · {post.date}</span>
+        {plate && <MapLink plate={plate} />}
+      </div>
 
       <Photo image={post.image} gradient={post.gradient} alt={post.title} className="article-hero" />
 

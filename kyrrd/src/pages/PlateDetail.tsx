@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
+import MapLink from '../components/MapLink';
 import { useSeo } from '../seo';
 
 export default function PlateDetail() {
@@ -27,7 +28,11 @@ export default function PlateDetail() {
             {plate.place} · {plate.coords ? `${plate.coords} · ` : ''}
             {plate.date}
           </div>
-          <p className="d-body" style={{ color: 'var(--steel-d)', margin: '14px 0 8px' }}>
+          <div style={{ marginTop: 10 }}>
+            <MapLink plate={plate} />
+          </div>
+
+          <p className="d-body" style={{ color: 'var(--steel-d)', margin: '16px 0 8px' }}>
             {plate.description}
           </p>
 

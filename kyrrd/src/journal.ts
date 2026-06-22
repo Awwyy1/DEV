@@ -28,6 +28,47 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'unknown-bureaucrat',
+    title: 'Iceland has no unknown soldier, so it honoured this man instead',
+    kicker: 'Iceland · Field note',
+    readMin: 5,
+    date: 'June 2026',
+    excerpt:
+      'A man with a briefcase strides toward the City Hall, and where his head should be there is a block of raw basalt. A monument to the anonymous official, equal parts tribute and joke.',
+    gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
+    image: '/photos/Unknown-Bureaucrat.jpeg',
+    plateSlug: 'unknown-bureaucrat',
+    plateTitle: 'Unknown Bureaucrat',
+    body: [
+      'At the northern end of the city pond, where the long footbridge runs across to the City Hall, a man in a coat strides forward with a briefcase in his hand. Where his head and chest should be there is a rough, unworked block of Icelandic basalt. You can walk past him in a hurry and only register it a few steps later, and then you have to go back and look at him properly.',
+      'Most countries keep a monument to the unknown soldier. Iceland has never had an army, so it has no unknown soldier to mourn, and somewhere in that gap Magnús Tómasson found this idea and cast it in 1994. He called it the unknown bureaucrat, a tribute to the anonymous official who quietly keeps a country running. Whether it is sincere or gently teasing is left entirely to you, and the honest answer is that it manages to be both at once.',
+      'The whole thing lives in the contrast. From the waist down he is precise and human, the creased trousers, the briefcase, the forward lean of a man with somewhere to be. From the waist up he is a slab of raw rock, faceless and heavy, the role sitting square on the shoulders of the person. It says more about work, and about being a small part of a large machine, than a page of writing could.',
+      'He is easy to find and easy to miss, which suits him. Look for him at the City Hall end of Tjörnin, by the water, among the ducks and the reflections of the houses around the pond. A slow loop of the pond takes you right past, and most of the people walking it never notice the quiet joke standing at the edge.',
+      'There are few better things to send to a friend who is buried under a desk than a faceless office worker carved in bronze, signed with a kind word from you. It lands as a joke and stays as something a little warmer, which is about the most a card can hope to do.',
+    ],
+  },
+  {
+    slug: 'hofdi-house',
+    title: 'Höfði, the white house where the Cold War began to end',
+    kicker: 'Iceland · Field note',
+    readMin: 6,
+    date: 'June 2026',
+    excerpt:
+      'A small white house on the Reykjavík shore where Reagan and Gorbachev met in 1986, older and stranger than the summit, and said to come with a ghost.',
+    gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
+    image: '/photos/hofdi-house.jpeg',
+    plateSlug: 'hofdi-house',
+    plateTitle: 'Höfði House',
+    body: [
+      'On the north shore of Reykjavík, a little apart from everything, a white timber house stands on its own patch of grass and looks out at the bay with Mount Esja on the far side. It is pale and prim and slightly formal, the kind of house that seems to be keeping a secret, and for a building its size it has held more history than most.',
+      'For two days in October 1986, this is where Ronald Reagan and Mikhail Gorbachev sat down together. The talks ended without an agreement and were called a failure at the time, and yet almost everyone now looks back on those two days in this house as the moment the Cold War began to come apart in a good way. Inside, the American and Soviet flags hang crossed to mark it.',
+      'The house is older and odder than that summit. It was put up in 1909, built in Norway, shipped across the sea in pieces and assembled here for the French consul. For a dozen years it was the home of the poet Einar Benediktsson, whose statue now stands not far away, and in 1958 the city bought it and turned it into a place for receptions and official welcomes.',
+      'It is also, by long tradition, haunted. The resident ghost is known as the White Lady, and a former British ambassador found her presence unsettling enough that he persuaded Britain to sell the house and move on. The Foreign Ministry has even put it on the record, with the lovely careful line that it will neither confirm nor deny that Höfði has a ghost.',
+      'You cannot usually go inside, and you do not need to. The photograph is the house itself, white and self-contained against the grey water with the mountain behind it. It stands a short walk along the shore from the Sun Voyager and the Partnership sculpture, so the three of them make one easy and rewarding loop on a clear day.',
+      'There is something fitting about sending a small white house where, for a moment, the world let its shoulders drop. Sign it with a few of your own words for someone you wish that same ease, and the picture carries more than it seems to.',
+    ],
+  },
+  {
     slug: 'harpa',
     title: 'Harpa, the glass hall that almost never opened',
     kicker: 'Iceland · Field note',
