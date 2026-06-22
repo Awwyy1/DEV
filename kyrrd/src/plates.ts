@@ -94,9 +94,9 @@ export const PLATES: Plate[] = [
     slug: 'harpa',
   },
   {
-    id: '10', no: '10', series: 'Series IV', title: 'Perlan',
+    id: '10', no: '10', series: 'Series IV', title: 'Unknown Bureaucrat',
     place: 'Reykjavík, Iceland', coords: '64.13°N 21.92°W', date: 'June 2026',
-    description: 'A glass dome on the hill above the city, holding the warmth of the water stored beneath it.',
+    description: 'An anonymous figure burdened by stone, embodying the quiet grind of bureaucratic life.',
     gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
     slug: 'perlan',
   },
