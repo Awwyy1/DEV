@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>kyrrð — Map link mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0B0B0C; --snow:#FAFAFA; --white:#FFFFFF; --mist:#F2F4F5;
+    --fog:#E7E7E9; --steel:#9A9CA0; --steel-d:#6C6E73;
+    --glacier:#3FA9C0; --glacier-ink:#1F7C92;
+    --disp:'Space Grotesk',sans-serif; --ui:'Inter',system-ui,sans-serif; --pad:clamp(20px,4vw,48px);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--mist);color:var(--ink);font-family:var(--ui);line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1100px;margin:0 auto;padding:clamp(26px,5vw,56px) var(--pad)}
+  .bm{font-family:var(--disp);font-weight:500;font-size:20px;letter-spacing:-.01em}
+  .bm .eth{color:var(--glacier)}
+  .pre{font-size:12px;letter-spacing:.26em;text-transform:uppercase;color:var(--steel-d);margin-top:30px}
+  h1{font-family:var(--disp);font-weight:500;font-size:clamp(30px,5vw,48px);letter-spacing:-.02em;margin:.2em 0 .1em}
+  .lede{color:var(--steel-d);max-width:64ch;font-weight:300;font-size:18px}
+  .label{font-size:11px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--steel-d);margin:0 0 4px}
+  section.block{background:var(--white);border:1px solid var(--fog);border-radius:16px;padding:clamp(20px,3.5vw,40px);margin:20px 0}
+  h2.sec{font-family:var(--disp);font-weight:500;font-size:clamp(20px,3vw,28px);margin:0 0 4px}
+  .sub{color:var(--steel-d);max-width:60ch;margin:0 0 24px;font-size:15px}
+
+  .d-label{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--steel-d);font-weight:500}
+  .d-h1{font-family:var(--disp);font-weight:500;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.02em;margin:6px 0 4px}
+  .d-cap{font-size:13px;color:var(--steel-d)}
+  .d-body{font-size:15px;color:var(--steel-d);margin:14px 0}
+
+  .ph{position:relative;overflow:hidden;border:1px solid var(--fog);background:linear-gradient(180deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:var(--ui);font-size:14px;font-weight:500;padding:13px 24px;border-radius:2px;border:1px solid var(--ink);background:var(--ink);color:var(--snow);cursor:pointer;text-decoration:none}
+
+  /* the map link — the thing we are deciding on */
+  .maplink{display:inline-flex;align-items:center;gap:7px;color:var(--glacier-ink);text-decoration:none;font-size:14px;font-weight:500}
+  .maplink:hover{text-decoration:underline}
+  .maplink svg{flex:0 0 auto}
+
+  .mapchip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--fog);border-radius:999px;padding:8px 15px;color:var(--ink);text-decoration:none;font-size:13px}
+  .mapchip:hover{border-color:var(--glacier);color:var(--glacier-ink)}
+
+  .mapthumb{display:block;text-decoration:none;color:inherit;border:1px solid var(--fog);border-radius:6px;overflow:hidden;max-width:300px}
+  .mapthumb .map{height:140px;width:100%;border:0;display:block;filter:grayscale(.15)}
+  .mapthumb .mt-cap{display:flex;align-items:center;gap:7px;padding:9px 12px;font-size:13px;color:var(--glacier-ink);background:var(--white)}
+
+  .opt{border:1px solid var(--fog);border-radius:12px;padding:18px}
+  .opt .pick{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--steel-d);margin-bottom:14px}
+  .opt.rec{border-color:var(--glacier)}
+  .opt.rec .pick{color:var(--glacier-ink)}
+
+  .grid2{display:grid;grid-template-columns:minmax(220px,300px) 1fr;gap:30px;align-items:start}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media(max-width:760px){.grid3{grid-template-columns:1fr}}
+
+  .note{font-size:13px;color:var(--steel-d);background:var(--mist);border:1px solid var(--fog);border-radius:8px;padding:12px 14px;margin-top:16px}
+  .foot{text-align:center;color:var(--steel);font-size:12px;letter-spacing:.14em;text-transform:uppercase;margin:36px 0 6px;font-family:var(--disp)}
+  .kbd{font-family:var(--disp);background:var(--mist);border:1px solid var(--fog);border-radius:5px;padding:1px 6px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <span class="bm">kyrr<span class="eth">ð</span></span>
+  <div class="pre">Proposal · location on Google Maps</div>
+  <h1>How the map link looks</h1>
+  <p class="lede">A small, free link to Google Maps under each photo and each article. No API key, no cost. On a phone it opens the Maps app straight on the spot. Below: where it sits, three styles to choose from, and a live example of an embedded mini-map.</p>
+
+  <!-- 1. ON THE CARD -->
+  <section class="block">
+    <span class="label">01 — On the photo card (detail page)</span>
+    <h2 class="sec">Under the location line</h2>
+    <p class="sub">The link sits right under “place · coordinates · date”, before the description. Quiet, on-brand, one tap to the map.</p>
+
+    <div class="grid2">
+      <div class="ph" style="aspect-ratio:4/5;border-radius:2px">
+        <img src="https://kyrrd.pics/photos/Hallgrimskirkja.jpeg" alt="" onerror="this.style.display='none'">
+      </div>
+      <div>
+        <div class="d-label">Plate 03 · Series II</div>
+        <div class="d-h1">Hallgrímskirkja</div>
+        <div class="d-cap">Reykjavík, Iceland · 64.14°N 21.93°W · May 2026</div>
+
+        <a class="maplink" style="margin-top:10px" href="https://www.google.com/maps/search/?api=1&query=64.1417,-21.9266" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.2" r="2.4"/></svg>
+          View on Google Maps ↗
+        </a>
+
+        <p class="d-body">Reykjavík iconic landmark, standing tall as a beacon of Icelandic heritage and design.</p>
+        <a class="btn" href="#" style="width:100%">Sign &amp; send</a>
+      </div>
+    </div>
+    <div class="note">On the small archive grid the cards stay clean (just photo + title). The map link lives here on the detail page and in the article, so the gallery itself is not cluttered.</div>
+  </section>
+
+  <!-- 2. THREE STYLES -->
+  <section class="block">
+    <span class="label">02 — Pick a style</span>
+    <h2 class="sec">Three ways the link can look</h2>
+    <p class="sub">Same behaviour, different weight. My recommendation is A — quietest, fits the gallery tone.</p>
+    <div class="grid3">
+      <div class="opt rec">
+        <div class="pick">A · text link — recommended</div>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=64.1417,-21.9266" target="_blank" rel="noopener noreferrer">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.2" r="2.4"/></svg>
+          View on Google Maps ↗
+        </a>
+      </div>
+      <div class="opt">
+        <div class="pick">B · outlined chip</div>
+        <a class="mapchip" href="https://www.google.com/maps/search/?api=1&query=64.1417,-21.9266" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.2" r="2.4"/></svg>
+          Open in Maps
+        </a>
+      </div>
+      <div class="opt">
+        <div class="pick">C · mini-map thumbnail</div>
+        <a class="mapthumb" href="https://www.google.com/maps/search/?api=1&query=64.1417,-21.9266" target="_blank" rel="noopener noreferrer">
+          <iframe class="map" loading="lazy" src="https://www.google.com/maps?q=64.1417,-21.9266&z=14&output=embed"></iframe>
+          <span class="mt-cap">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.2" r="2.4"/></svg>
+            Hallgrímskirkja · open map ↗
+          </span>
+        </a>
+      </div>
+    </div>
+    <div class="note">A and B are pure links — free, zero setup, open Google Maps in a new tab or the phone app. C shows a real map preview inline (the example above is live); for production an inline map is best served via Google’s official Embed API (free tier + a key), which we can add later if you like the look.</div>
+  </section>
+
+  <!-- 3. IN THE ARTICLE -->
+  <section class="block">
+    <span class="label">03 — In the article</span>
+    <h2 class="sec">Under the byline</h2>
+    <p class="sub">Same link, placed at the top of the piece next to the date, so a reader can jump to the spot before or after reading.</p>
+    <div style="max-width:680px">
+      <div class="d-label">Iceland · Field note · 6 min read</div>
+      <div class="d-h1">Hallgrímskirkja, the church built to look like lava</div>
+      <div class="d-cap" style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+        by kyrrð · June 2026
+        <span style="color:var(--fog)">|</span>
+        <a class="maplink" href="https://www.google.com/maps/search/?api=1&query=64.1417,-21.9266" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21s7-6.6 7-12a7 7 0 1 0-14 0c0 5.4 7 12 7 12z"/><circle cx="12" cy="9.2" r="2.4"/></svg>
+          Reykjavík · View on map ↗
+        </a>
+      </div>
+      <div class="ph" style="aspect-ratio:4/5;max-width:420px;border-radius:2px;margin:20px 0 6px">
+        <img src="https://kyrrd.pics/photos/Hallgrimskirkja.jpeg" alt="" onerror="this.style.display='none'">
+      </div>
+      <p style="font-size:18px;font-weight:300;color:var(--ink);max-width:62ch">You can see it from almost anywhere in Reykjavík. The church stands on Skólavörðuholt, the low hill at the top of the old town…</p>
+    </div>
+  </section>
+
+  <!-- 4. EMBED DEMO -->
+  <section class="block">
+    <span class="label">04 — Live embed example</span>
+    <h2 class="sec">What a real inline map looks like</h2>
+    <p class="sub">If you ever want the map shown on the page (not just a link), this is the size and feel. It is live in this file — drag it around.</p>
+    <iframe style="width:100%;max-width:680px;height:300px;border:1px solid var(--fog);border-radius:8px" loading="lazy" src="https://www.google.com/maps?q=64.1417,-21.9266&z=14&output=embed"></iframe>
+    <div class="note">My recommendation: ship <b>Option A</b> (the quiet text link) on both the card and the article now. It is free, instant, and works on every device. Keep the inline embed (Option C / this) as a “maybe later”.</div>
+  </section>
+
+  <div class="foot">kyrrð · map link mockup · 2026</div>
+</div>
+</body>
+</html>
