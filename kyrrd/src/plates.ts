@@ -32,6 +32,7 @@ export interface Plate {
   gradient: string;
   image?: string;
   slug?: string; // pretty URL segment; falls back to `id`
+  mapsUrl?: string; // optional Google Maps link override (else built from coords)
 }
 
 export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
@@ -95,16 +96,18 @@ export const PLATES: Plate[] = [
   },
   {
     id: '10', no: '10', series: 'Series IV', title: 'Unknown Bureaucrat',
-    place: 'Reykjavík, Iceland', coords: '64.13°N 21.92°W', date: 'June 2026',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
     description: 'An anonymous figure burdened by stone, embodying the quiet grind of bureaucratic life.',
     gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
-    slug: 'perlan',
+    image: '/photos/Unknown-Bureaucrat.jpeg',
+    slug: 'unknown-bureaucrat',
   },
   {
     id: '11', no: '11', series: 'Series IV', title: 'Höfði House',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 2026',
     description: 'A small white house by the sea where two superpowers once sat down to talk.',
     gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
+    image: '/photos/hofdi-house.jpeg',
     slug: 'hofdi-house',
   },
   {

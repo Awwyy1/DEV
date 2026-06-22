@@ -222,3 +222,9 @@ button { font: inherit; }
 .menu-theme .seg { display: inline-flex; border: 1px solid var(--fog); border-radius: 999px; overflow: hidden; }
 .menu-theme .seg button { font: inherit; font-size: 13px; padding: 7px 16px; background: none; border: none; color: var(--steel-d); cursor: pointer; transition: 0.18s; }
 .menu-theme .seg button.on { background: var(--mist); color: var(--ink); }
+
+/* map link (Option A) */
+.maplink { display: inline-flex; align-items: center; gap: 7px; color: var(--glacier-ink); text-decoration: none; font-size: 14px; font-weight: 500; }
+.maplink:hover { text-decoration: underline; }
+.maplink svg { flex: 0 0 auto; }
+.article-byline { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
