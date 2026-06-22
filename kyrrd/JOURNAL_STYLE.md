@@ -43,6 +43,11 @@ What is left is a small island with a white lighthouse on it, and for a few hour
 around every low tide you can walk straight out to it across a strip of sand that
 the sea keeps for itself the rest of the day."
 
+## Benchmark
+The "Unknown Bureaucrat" piece in `kyrrd/src/journal.ts` is the gold standard.
+Match its rhythm, its restraint and its dry warmth. When in doubt, read it first.
+
 ## Where it goes
 Each finished article becomes one block in `kyrrd/src/journal.ts`
-(slug, title, kicker, readMin, date, excerpt, image, plateSlug, body).
+(slug, title, kicker, date, excerpt, image, plateSlug, body). Reading time is
+computed automatically from the text.

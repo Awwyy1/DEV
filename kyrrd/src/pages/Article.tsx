@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { findPost, POSTS } from '../journal';
+import { findPost, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
@@ -27,7 +27,7 @@ export default function Article() {
   return (
     <article className="wrap section article">
       <div className="kicker">
-        {post.kicker} · {post.readMin} min read
+        {post.kicker} · {readingMinutes(post)} min read
       </div>
       <h1 className="d-h1" style={{ margin: '10px 0 6px' }}>
         {post.title}
@@ -83,7 +83,7 @@ export default function Article() {
                 <Photo image={p.image} gradient={p.gradient} alt={p.title} />
                 <div>
                   <div className="kicker">
-                    {p.kicker} · {p.readMin} min
+                    {p.kicker} · {readingMinutes(p)} min
                   </div>
                   <div className="related-title">{p.title}</div>
                 </div>

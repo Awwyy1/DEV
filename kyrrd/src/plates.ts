@@ -32,7 +32,8 @@ export interface Plate {
   gradient: string;
   image?: string;
   slug?: string; // pretty URL segment; falls back to `id`
-  mapsUrl?: string; // optional Google Maps link override (else built from coords)
+  mapsUrl?: string; // paste a Google Maps share link for an exact pin
+  mapsQuery?: string; // precise place name to search, when the title differs
 }
 
 export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
@@ -45,6 +46,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
     image: '/photos/WaterCarrier.jpeg',
     slug: 'water-carrier',
+    mapsQuery: 'Vatnsberinn, Reykjavík',
   },
   {
     id: '01', no: '01', series: 'Series II', title: 'Grótta Lighthouse',
@@ -85,6 +87,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
     image: '/photos/Althingi-Parliament.jpeg',
     slug: 'althingi',
+    mapsQuery: 'Alþingishúsið, Reykjavík',
   },
   {
     id: '06', no: '06', series: 'Series III', title: 'Harpa',
@@ -101,6 +104,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
     image: '/photos/Unknown-Bureaucrat.jpeg',
     slug: 'unknown-bureaucrat',
+    mapsQuery: 'Monument to the Unknown Bureaucrat, Reykjavík',
   },
   {
     id: '11', no: '11', series: 'Series IV', title: 'Höfði House',

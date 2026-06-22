@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { POSTS } from '../journal';
+import { POSTS, readingMinutes } from '../journal';
 import { Photo } from '../components/Photo';
 import { useSeo } from '../seo';
 
@@ -21,7 +21,7 @@ export default function Journal() {
             <Photo image={p.image} gradient={p.gradient} alt={p.title} />
             <div className="post-body">
               <div className="kicker">
-                {p.kicker} · {p.readMin} min read
+                {p.kicker} · {readingMinutes(p)} min read
               </div>
               <div className="post-title">{p.title}</div>
               <p style={{ color: 'var(--steel-d)', maxWidth: '46ch' }}>{p.excerpt}</p>
