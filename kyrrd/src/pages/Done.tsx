@@ -129,7 +129,7 @@ export default function Done() {
         home.
       </p>
 
-      <div style={{ maxWidth: 360, margin: '24px 0', border: '1px solid var(--fog)' }}>
+      <div style={{ maxWidth: 360, margin: '24px 0', border: 'var(--hair) solid var(--fog)' }}>
         <canvas ref={canvasRef} style={{ width: '100%', display: 'block' }} />
       </div>
 

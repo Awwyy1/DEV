@@ -15,7 +15,7 @@ export default function PlateDetail() {
           gradient={plate.gradient}
           image={plate.image}
           alt={plate.title}
-          style={{ aspectRatio: '4/5', border: '1px solid var(--fog)' }}
+          style={{ aspectRatio: '4/5', border: 'var(--hair) solid var(--fog)' }}
         />
         <div>
           <div className="d-label">

@@ -3,7 +3,6 @@
      slug       URL: /journal/<slug>
      title      the headline
      kicker     small line above the title, e.g. 'Iceland · Field note'
-     readMin    estimated reading minutes
      date       'June 2026'
      excerpt    one-sentence summary (shown on the list)
      image      '/photos/file.jpg' (hero); gradient is the fallback
@@ -16,7 +15,6 @@ export interface Post {
   slug: string;
   title: string;
   kicker: string;
-  readMin: number;
   date: string;
   excerpt: string;
   gradient: string;
@@ -31,7 +29,6 @@ export const POSTS: Post[] = [
     slug: 'unknown-bureaucrat',
     title: 'Iceland has no unknown soldier, so it honoured this man instead',
     kicker: 'Iceland · Field note',
-    readMin: 5,
     date: 'June 2026',
     excerpt:
       'A man with a briefcase strides toward the City Hall, and where his head should be there is a block of raw basalt. A monument to the anonymous official, equal parts tribute and joke.',
@@ -51,7 +48,6 @@ export const POSTS: Post[] = [
     slug: 'hofdi-house',
     title: 'Höfði, the white house where the Cold War began to end',
     kicker: 'Iceland · Field note',
-    readMin: 6,
     date: 'June 2026',
     excerpt:
       'A small white house on the Reykjavík shore where Reagan and Gorbachev met in 1986, older and stranger than the summit, and said to come with a ghost.',
@@ -72,7 +68,6 @@ export const POSTS: Post[] = [
     slug: 'harpa',
     title: 'Harpa, the glass hall that almost never opened',
     kicker: 'Iceland · Field note',
-    readMin: 5,
     date: 'June 2026',
     excerpt:
       'A great wall of coloured glass on the Reykjavík harbour that was left half built when the banks fell, and finished anyway as a sign the country was standing up again.',
@@ -93,7 +88,6 @@ export const POSTS: Post[] = [
     slug: 'althingi',
     title: 'Althingi, a parliament older than its house',
     kicker: 'Iceland · Field note',
-    readMin: 6,
     date: 'June 2026',
     excerpt:
       'A modest grey stone house on a Reykjavík square that holds a parliament first gathered in the year 930, with four guardian spirits carved above its windows.',
@@ -114,7 +108,6 @@ export const POSTS: Post[] = [
     slug: 'partnership-sculpture',
     title: 'The Partnership, and the house just up the shore',
     kicker: 'Iceland · Field note',
-    readMin: 5,
     date: 'June 2026',
     excerpt:
       'Two bronze figures holding on to each other on the Reykjavík shore, a gift between two countries, set a short walk from the house where the Cold War began to thaw.',
@@ -135,7 +128,6 @@ export const POSTS: Post[] = [
     slug: 'hallgrimskirkja',
     title: 'Hallgrímskirkja, the church built to look like lava',
     kicker: 'Iceland · Field note',
-    readMin: 6,
     date: 'June 2026',
     excerpt:
       'The pale tower above Reykjavík took more than forty years to build, and its front was shaped to echo the basalt columns of the Icelandic coast.',
@@ -156,7 +148,6 @@ export const POSTS: Post[] = [
     slug: 'sun-voyager',
     title: 'The Sun Voyager is not a Viking ship',
     kicker: 'Iceland · Field note',
-    readMin: 5,
     date: 'June 2026',
     excerpt:
       'A gleaming steel boat on the Reykjavík waterfront that almost everyone reads as a Viking ship, and that its maker meant as something else entirely.',
@@ -177,7 +168,6 @@ export const POSTS: Post[] = [
     slug: 'water-carrier',
     title: 'The Water Carrier who waited years to stand',
     kicker: 'Iceland · Field note',
-    readMin: 5,
     date: 'June 2026',
     excerpt:
       'A bronze woman near Lækjargata who carried water through the city long before the pipes arrived, and who waited years for Reykjavík to let her stand.',
@@ -198,7 +188,6 @@ export const POSTS: Post[] = [
     slug: 'grotta-lighthouse',
     title: 'Grótta Lighthouse, where the tide sets the schedule',
     kicker: 'Iceland · Field note',
-    readMin: 6,
     date: 'June 2026',
     excerpt:
       'A small white lighthouse at the western edge of Reykjavík that you can only reach on foot when the sea allows it.',
@@ -218,3 +207,9 @@ export const POSTS: Post[] = [
 ];
 
 export const findPost = (slug?: string): Post | undefined => POSTS.find((p) => p.slug === slug);
+
+/** Reading time from the body, ~200 words per minute, at least 1. */
+export function readingMinutes(post: Post): number {
+  const words = post.body.join(' ').split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
