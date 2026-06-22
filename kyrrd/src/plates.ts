@@ -93,6 +93,41 @@ export const PLATES: Plate[] = [
     image: '/photos/Harpa.jpeg',
     slug: 'harpa',
   },
+  {
+    id: '10', no: '10', series: 'Series IV', title: 'Perlan',
+    place: 'Reykjavík, Iceland', coords: '64.13°N 21.92°W', date: 'June 2026',
+    description: 'A glass dome on the hill above the city, holding the warmth of the water stored beneath it.',
+    gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
+    slug: 'perlan',
+  },
+  {
+    id: '11', no: '11', series: 'Series IV', title: 'Höfði House',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 2026',
+    description: 'A small white house by the sea where two superpowers once sat down to talk.',
+    gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
+    slug: 'hofdi-house',
+  },
+  {
+    id: '12', no: '12', series: 'Series IV', title: 'Tjörnin',
+    place: 'Reykjavík, Iceland', coords: '64.14°N 21.94°W', date: 'June 2026',
+    description: 'The city pond, full of birds and the soft reflection of the houses gathered around it.',
+    gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
+    slug: 'tjornin',
+  },
+  {
+    id: '13', no: '13', series: 'Series IV', title: 'Old Harbour',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.95°W', date: 'June 2026',
+    description: 'Fishing boats and whale-watching hulls resting against the quiet morning water.',
+    gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
+    slug: 'old-harbour',
+  },
+  {
+    id: '14', no: '14', series: 'Series IV', title: 'Mount Esja',
+    place: 'Reykjavík, Iceland', coords: '64.24°N 21.79°W', date: 'June 2026',
+    description: 'The long flat mountain across the bay that changes colour with every passing hour.',
+    gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
+    slug: 'mount-esja',
+  },
 ];
 
 export const findPlate = (key?: string): Plate =>
