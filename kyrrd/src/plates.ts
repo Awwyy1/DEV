@@ -49,7 +49,7 @@ export const PLATES: Plate[] = [
     mapsQuery: 'Vatnsberinn, Reykjavík',
   },
   {
-    id: '01', no: '01', series: 'Series II', title: 'Grótta Lighthouse',
+    id: '01', no: '01', series: 'Series II', title: 'Grotta Lighthouse',
     place: 'Reykjavík, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
     description: 'An island guarded by the ocean, where the path disappears with the rising tide.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
@@ -65,7 +65,7 @@ export const PLATES: Plate[] = [
     slug: 'sun-voyager',
   },
   {
-    id: '03', no: '03', series: 'Series II', title: 'Hallgrímskirkja',
+    id: '03', no: '03', series: 'Series II', title: 'Hallgrimskirkja',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'May 27 2026',
     description: 'Reykjavík iconic landmark, standing tall as a beacon of Icelandic heritage and design.',
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
@@ -107,7 +107,7 @@ export const PLATES: Plate[] = [
     mapsQuery: 'Monument to the Unknown Bureaucrat, Reykjavík',
   },
   {
-    id: '11', no: '11', series: 'Series IV', title: 'Höfði House',
+    id: '11', no: '11', series: 'Series IV', title: 'Hofdi House',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 2026',
     description: 'A small white house by the sea where two superpowers once sat down to talk.',
     gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
@@ -122,7 +122,7 @@ export const PLATES: Plate[] = [
     slug: 'tjornin',
   },
   {
-    id: '13', no: '13', series: 'Series IV', title: 'Arnarhóll',
+    id: '13', no: '13', series: 'Series IV', title: 'Arnarholl',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.95°W', date: 'June 2026',
     description: 'Armoured, spear in hand, looking out over the capital he founded.',
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
