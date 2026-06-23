@@ -59,7 +59,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
     image: '/photos/WaterCarrier.jpeg',
     slug: 'water-carrier',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/uh56g3gKDMePMQLd7',
     mapsQuery: 'Vatnsberinn, Reykjavík',
   },
   {
