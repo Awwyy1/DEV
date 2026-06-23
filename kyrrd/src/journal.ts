@@ -26,6 +26,66 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'jonas-hallgrimsson',
+    title: 'The poet by the pond, and the country that called him its darling',
+    kicker: 'Iceland · Field note',
+    date: 'June 2026',
+    excerpt:
+      'A bronze figure of Jónas Hallgrímsson in the little park by Tjörnin, the first statue by an Icelandic artist to stand in a public place, and a quiet centrepiece of a city that remembers its writers carefully.',
+    gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
+    image: '/photos/Jonas-Hallgrimsson.jpeg',
+    plateSlug: 'jonas-hallgrimsson',
+    plateTitle: 'Jónas Hallgrímsson',
+    body: [
+      'In the little park along the south side of the city pond, set among the trees of Hljómskálagarður, a man in nineteenth century dress stands on a low pedestal and looks out toward the water. He is small as monuments go, and there is no great plinth or theatrical pose, just the figure of a person who clearly meant to write something down and was caught mid thought instead.',
+      'The man is Jónas Hallgrímsson, who lived from 1807 to 1845 and is one of the very few writers any country calls its own darling. He was a poet and a natural scientist at once, which the nineteenth century allowed in a way ours does not, and his short life produced poems that Icelanders still learn at school and use in their everyday speech. When you hear a Reykjavík morning described as fagurt eins og fjall, beautiful as a mountain, you are hearing a line of his thinking on through the language.',
+      'The statue itself has its own quiet record. It was made by Einar Jónsson and unveiled in 1907 to mark the hundredth anniversary of the poet’s birth, which makes it the very first public statue in Iceland that was made by an Icelandic sculptor. For a country that had not long stopped being a Danish province, the gesture mattered. It was a poet, raised by one of their own carvers, and put down in the open air for ordinary people to walk past.',
+      'It has not always stood here. For its first forty years it lived at the corner of Lækjargata and Amtmannsstígur, a more crowded spot in the centre, and only in 1947 did the city move it to the pond, where it has been ever since. The new location suits it. The water is quiet, the park is small and well kept, and the statue has the air of a man who has finally been given a desk by the window.',
+      'Visiting takes ten minutes. Walk the southern half of Tjörnin, where the swans and the geese hold long opinionated conversations, and you will see him through the trees. Mornings are best, before the families on the path, because the bronze is at its best in flat light.',
+      'There is something very on brand for a country to send a small statue of a poet rather than a king. Sign one for someone who reads carefully and writes back, and the photograph carries about as Icelandic a compliment as a card can.',
+    ],
+  },
+  {
+    slug: 'arnarholl',
+    title: 'The man on the hill, and the cove that became a city',
+    kicker: 'Iceland · Field note',
+    date: 'June 2026',
+    excerpt:
+      'A bronze settler with a spear and a high seat pillar on a low grassy hill in the centre of Reykjavík, looking out at the city he is said to have started.',
+    gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
+    image: '/photos/Arnarholl.jpeg',
+    plateSlug: 'arnarholl',
+    plateTitle: 'Arnarhóll',
+    body: [
+      'In the middle of central Reykjavík, between the concert hall and the parliament, the ground tilts up briefly into a low green hill called Arnarhóll. At the top of it stands a tall bronze man in furs and armour, leaning on a spear and looking north across the bay. People sit on the grass around him with sandwiches and bottles of beer, and on a warm day in summer the slope fills up like a stadium.',
+      'The man is Ingólfur Arnarson, the figure the sagas place at the start of the whole Icelandic story. The Book of Settlements has him land here around the year 874, name the place Reykjavík, which means the bay of smokes, on account of the steam coming off the hot springs, and call it home. Whether the dates and the details are exactly right is one of those questions historians enjoy, and what is certainly true is that this is the spot the country chose to mark as its beginning.',
+      'The statue was made by Einar Jónsson, the same sculptor who made the Jónas Hallgrímsson piece by the pond, and it went up on the hill in 1924. He has Ingólfur standing by his high seat pillar, the carved wooden pillar that, by the legend, the settler threw into the sea from his ship and then followed wherever it washed ashore. There is a small carved figure of Odin on the other side of the pillar, with the two ravens at his feet, which is a fair amount of mythology for one piece of bronze.',
+      'Most of the meaning is in the view rather than the man. From his pedestal you look straight out over the harbour and Harpa, across the bay to Esja, and on a clear afternoon the whole north of the city sits laid out in front of you. It is a generous gift to a city, an old story and a wide view in the same place, and you do not have to take the saga literally to feel it.',
+      'It is one of the easiest things in Reykjavík to walk to and one of the most often missed by people in a hurry. The hill is just behind the concert hall on the harbour, a minute or two from the main shopping streets, and there is no fee and no queue.',
+      'Sending the founder of a city to someone who is starting something is a quiet, slightly grand thing to do. Sign it with a steady word and the photograph carries more than it shows.',
+    ],
+  },
+  {
+    slug: 'black-cone',
+    title: 'A broken boulder in front of parliament, and the year a country banged its pots',
+    kicker: 'Iceland · Field note',
+    date: 'June 2026',
+    excerpt:
+      'A heavy black cone driven into a boulder in the square in front of the Icelandic parliament, a memorial to the protests of 2009 and the right to refuse.',
+    gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
+    image: '/photos/The-black-cone.jpeg',
+    plateSlug: 'black-cone',
+    plateTitle: 'The Black Cone',
+    body: [
+      'In the corner of Austurvöllur, the small green square in front of the Icelandic parliament, a heavy boulder sits on the grass with a black cone driven straight into the top of it. The stone is split open along the line of the cone, as if something patient had finally pushed too hard, and a small plaque underneath gives the line that earns the work its name. When the government violates the rights of the people, it reads, insurrection is for the people the most sacred of rights and the most indispensable of duties. The sentence is from the French Revolution.',
+      'The piece is by the Spanish artist Santiago Sierra and it was unveiled in 2012, on the third anniversary of the protests that took place on this very lawn through the early months of 2009. After the Icelandic banks collapsed in 2008 and dragged a large part of the country down with them, people came out into Austurvöllur in their hats and coats with whatever they had to hand, including a great many kitchen pots and pans, and they stood here and banged them until the government fell. The country, half in joke and half in earnest, calls it the Pots and Pans Revolution.',
+      'The cone itself is doing more than it first looks like it is doing. Sierra borrowed the shape from the tall pointed hat, the capirote, that the Inquisition forced condemned people to wear in public to shame them. He took the symbol that was used to silence ordinary people and drove it through a rock, the way a peaceful protest sometimes does manage to split open a system that looked immovable from the outside.',
+      'It is a quiet memorial and it sits exactly where it has to. There is no fence around it, no museum signage and no opening hours. You walk along the side of the parliament, see the broken stone in the grass, and either notice it or not. The members of parliament who walk past it every working day know exactly what it is for.',
+      'Take a look at it the next time you cross Austurvöllur, ideally on a working day, when the square has its civic mood on. From there it is a short walk to the cathedral, the parliament itself and on down to the pond. There is no fee, no queue and no key, which is also part of the point.',
+      'There are few better photographs to send to a person you trust on a stubborn day than a boulder with a black cone in it on the lawn outside a parliament. Sign it with a careful word and the picture does the rest.',
+    ],
+  },
+  {
     slug: 'unknown-bureaucrat',
     title: 'Iceland has no unknown soldier, so it honoured this man instead',
     kicker: 'Iceland · Field note',
