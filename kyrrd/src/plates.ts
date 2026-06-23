@@ -78,7 +78,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
     image: '/photos/The-Sun-Voyager.jpeg',
     slug: 'sun-voyager',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/fLSZxB7wTDUS8b5K9',
   },
   {
     id: '03', no: '03', series: 'Series II', title: 'Hallgrimskirkja',
