@@ -148,6 +148,15 @@ button { font: inherit; }
 .home-hero-ph::after { display: none; }
 [data-theme='dark'] .home-hero-ph { background: linear-gradient(175deg, #20242b 0%, #161a20 55%, #0d1014 100%); }
 
+/* ---- home intro ---- */
+.home-intro { max-width: 60ch; padding: clamp(20px, 6vh, 64px) 0 clamp(28px, 6vh, 56px); }
+.home-title { margin: 10px 0 0; max-width: 16ch; }
+.home-lede { max-width: 52ch; color: var(--steel-d); font-weight: 300; font-size: clamp(15px, 2vw, 20px); margin: 16px 0 26px; line-height: 1.5; }
+.home-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.home-archhead { margin-top: clamp(36px, 7vh, 72px); }
+.seeall { align-self: baseline; color: var(--steel-d); }
+.seeall:hover { color: var(--ink); }
+
 /* ---- archive head ---- */
 .archhead { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
 
