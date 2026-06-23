@@ -115,7 +115,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)',
     image: '/photos/Harpa.jpeg',
     slug: 'harpa',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/9Sjh2W6vGcdiHwrm8',
   },
   {
     id: '10', no: '10', series: 'Series IV', title: 'Unknown Bureaucrat',
