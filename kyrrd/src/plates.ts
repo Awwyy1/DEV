@@ -96,7 +96,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
     image: '/photos/The-Partnership-Sculpture.jpeg',
     slug: 'partnership-sculpture',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/8LrrBWL9wyvuijJj9',
   },
   {
     id: '05', no: '05', series: 'Series III', title: 'Althingi Parliament House',
@@ -105,7 +105,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
     image: '/photos/Althingi-Parliament.jpeg',
     slug: 'althingi',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/dShnqqthHmDtbu2H9',
     mapsQuery: 'Alþingishúsið, Reykjavík',
   },
   {
@@ -124,7 +124,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
     image: '/photos/Unknown-Bureaucrat.jpeg',
     slug: 'unknown-bureaucrat',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/az5ee1gHZKVV7CmZA',
     mapsQuery: 'Monument to the Unknown Bureaucrat, Reykjavík',
   },
   {
@@ -134,7 +134,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
     image: '/photos/hofdi-house.jpeg',
     slug: 'hofdi-house',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/fPsvWe3mRM8Cqf3r8',
   },
   {
     id: '12', no: '12', series: 'Series IV', title: 'Einar Benediktsson',
@@ -143,7 +143,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
     image: '/photos/Einar-Benediktsson.jpeg',
     slug: 'einar-benediktsson',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/54BeDJCVVFEoUDks8',
     mapsQuery: 'Einar Benediktsson statue, Höfði, Reykjavík',
   },
   {
@@ -153,7 +153,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
     image: '/photos/Arnarholl.jpeg',
     slug: 'arnarholl',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/V4TDaYU63c3Zqz61A',
     mapsQuery: 'Ingólfur Arnarson statue, Arnarhóll, Reykjavík',
   },
   {
@@ -163,7 +163,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     image: '/photos/The-black-cone.jpeg',
     slug: 'black-cone',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/WRj48fMoY65L95JRA',
     mapsQuery: 'The Black Cone, Monument to Civil Disobedience, Reykjavík',
   },
 ];
