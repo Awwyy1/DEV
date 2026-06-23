@@ -69,7 +69,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
     image: '/photos/glacier-edge.jpg',
     slug: 'grotta-lighthouse',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/YbsUwJ2c7R4hezwM6',
   },
   {
     id: '02', no: '02', series: 'Series II', title: 'The Sun Voyager',
