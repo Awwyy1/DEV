@@ -122,9 +122,9 @@ export const PLATES: Plate[] = [
     slug: 'tjornin',
   },
   {
-    id: '13', no: '13', series: 'Series IV', title: 'Old Harbour',
+    id: '13', no: '13', series: 'Series IV', title: 'Arnarhóll',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.95°W', date: 'June 2026',
-    description: 'Fishing boats and whale-watching hulls resting against the quiet morning water.',
+    description: 'Armoured, spear in hand, looking out over the capital he founded.',
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
     slug: 'old-harbour',
   },
