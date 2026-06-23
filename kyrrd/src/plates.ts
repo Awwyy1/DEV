@@ -115,9 +115,9 @@ export const PLATES: Plate[] = [
     slug: 'hofdi-house',
   },
   {
-    id: '12', no: '12', series: 'Series IV', title: 'Tjörnin',
+    id: '12', no: '12', series: 'Series IV', title: 'Islandsvardan',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.94°W', date: 'June 2026',
-    description: 'The city pond, full of birds and the soft reflection of the houses gathered around it.',
+    description: 'A bronze cairn rising from the shore. Part volcanic memory, part sentinel.',
     gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
     slug: 'tjornin',
   },
