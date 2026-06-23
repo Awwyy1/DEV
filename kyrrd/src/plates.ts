@@ -87,7 +87,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
     image: '/photos/Hallgrimskirkja.jpeg',
     slug: 'hallgrimskirkja',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/6K1YGj6NsbuVDk7a7',
   },
   {
     id: '04', no: '04', series: 'Series II', title: 'The Partnership Sculpture',
