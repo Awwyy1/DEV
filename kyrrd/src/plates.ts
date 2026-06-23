@@ -147,7 +147,7 @@ export const PLATES: Plate[] = [
     mapsQuery: 'Einar Benediktsson statue, Höfði, Reykjavík',
   },
   {
-    id: '13', no: '13', series: 'Series IV', title: 'Arnarhóll',
+    id: '13', no: '13', series: 'Series IV', title: 'Ingólfur Arnarson',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'June 2026',
     description: 'Armoured, spear in hand, looking out over the capital he founded.',
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
