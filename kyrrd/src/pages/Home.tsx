@@ -14,7 +14,7 @@ export default function Home() {
         <span className="d-label eyebrow">Signed photo-cards</span>
         <h1>A photograph, signed and sent.</h1>
         <p>
-          Pick a view, add your words, and send it as a personal digital card — to someone, anywhere
+          Pick a view, add your words, and send it as a personal digital card to someone, anywhere
           in the world.
         </p>
         <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
