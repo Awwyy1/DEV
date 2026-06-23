@@ -129,9 +129,9 @@ export const PLATES: Plate[] = [
     slug: 'old-harbour',
   },
   {
-    id: '14', no: '14', series: 'Series IV', title: 'Mount Esja',
+    id: '14', no: '14', series: 'Series IV', title: 'The black cone.',
     place: 'Reykjavík, Iceland', coords: '64.24°N 21.79°W', date: 'June 2026',
-    description: 'The long flat mountain across the bay that changes colour with every passing hour.',
+    description: 'A monument to civil disobedience. A reminder of the power of standing for one’s rights.',
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     slug: 'mount-esja',
   },
