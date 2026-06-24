@@ -22,7 +22,6 @@
   color: #111;
 }
 .pc--minimal { background: #f9f6f0; }
-.pc--cinematic { background: #0a0a0a; }
 .pc--vintage { background: #efe8d8; }
 .pc img { display: block; }
 
@@ -52,14 +51,6 @@
 .pc-min__loc { font-family: var(--pc-disp); text-transform: uppercase; letter-spacing: 0.3em; font-size: 14px; color: #6b7280; font-weight: 700; margin: 0; }
 .pc-min__sender { font-family: var(--pc-serif); font-style: italic; font-size: 24px; color: #9ca3af; margin: 0; }
 
-/* ---- cinematic ---- */
-.pc-cin { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; background: #000; }
-.pc-cin__imgwrap { width: 100%; height: 600px; position: relative; overflow: hidden; }
-.pc-cin__imgwrap img { position: absolute; left: 0; right: 0; top: -25%; width: 100%; height: 150%; object-fit: cover; }
-.pc-cin__msg { position: absolute; left: 0; right: 0; bottom: 128px; text-align: center; padding: 0 96px; }
-.pc-cin__msg p { font-size: 30px; color: #ffde59; letter-spacing: 0.05em; text-shadow: 0 4px 4px rgba(0, 0, 0, 0.8); margin: 0; }
-.pc-cin__bar { position: absolute; top: 64px; left: 64px; right: 64px; display: flex; justify-content: space-between; color: rgba(255, 255, 255, 0.5); font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; }
-
 /* ---- vintage ---- */
 .pc-vin { position: absolute; inset: 0; padding: 64px; }
 .pc-vin__frame { position: absolute; inset: 0; border: 24px solid #efe8d8; z-index: 10; pointer-events: none; }
@@ -85,7 +76,8 @@
 .cards-thumb img { width: 100%; height: 100%; object-fit: cover; }
 .cards-thumb:hover { opacity: 0.9; }
 .cards-thumb.on { opacity: 1; border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink); }
-.cards-previewcol { display: flex; justify-content: center; }
+.cards-previewcol { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.cards-dl { align-self: center; }
 .pc-stage { width: 432px; height: 540px; position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); }
 .pc-stage .pc { transform: scale(0.4); }
 

@@ -20,15 +20,21 @@ export default function PlateDetail() {
         <div>
           <div className="d-label">
             Plate {plate.no} · {plate.series}
+            {plate.date && <span className="pd-date-m"> · {plate.date}</span>}
           </div>
           <div className="d-h1" style={{ margin: '6px 0 4px' }}>
             {plate.title}
           </div>
-          <div className="d-cap">
-            {plate.place} · {plate.coords ? `${plate.coords} · ` : ''}
-            {plate.date}
+          <div className="d-cap pd-cap">
+            <span>{plate.place}</span>
+            {plate.coords && <span className="pd-coords"> · {plate.coords}</span>}
+            <span className="pd-date-d"> · {plate.date}</span>
+            <span className="pd-map-inline">
+              {' · '}
+              <MapLink plate={plate} />
+            </span>
           </div>
-          <div style={{ marginTop: 10 }}>
+          <div className="pd-map-block">
             <MapLink plate={plate} />
           </div>
 
