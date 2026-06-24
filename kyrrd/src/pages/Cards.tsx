@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { toPng } from 'html-to-image';
+import html2canvas from 'html2canvas';
 import { PLATES } from '../plates';
 import PostcardPreview, { StyleId, CardPhoto } from '../components/PostcardPreview';
 import { useSeo } from '../seo';
@@ -62,15 +62,22 @@ export default function Cards() {
     setBusy(true);
     try {
       if (document.fonts) await document.fonts.ready;
-      const dataUrl = await toPng(node, {
+      const canvas = await html2canvas(node, {
         width: 1080,
         height: 1350,
-        pixelRatio: 1,
-        // capture the canvas at full size, ignoring the on-screen preview scale
-        style: { transform: 'none', transformOrigin: 'top left', margin: '0' },
+        scale: 1,
+        backgroundColor: null,
+        useCORS: true,
+        logging: false,
+        // render at full size: drop the on-screen preview scale on the clone
+        onclone: (doc) => {
+          doc.querySelectorAll('.pc').forEach((el) => {
+            (el as HTMLElement).style.transform = 'none';
+          });
+        },
       });
       const a = document.createElement('a');
-      a.href = dataUrl;
+      a.href = canvas.toDataURL('image/png');
       a.download = `kyrrd-${styleId}.png`;
       a.click();
     } catch (err) {
