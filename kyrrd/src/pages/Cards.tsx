@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { toPng } from 'html-to-image';
 import { PLATES } from '../plates';
 import PostcardPreview, { StyleId, CardPhoto } from '../components/PostcardPreview';
@@ -19,8 +19,42 @@ export default function Cards() {
   const [photoIdx, setPhotoIdx] = useState(0);
   const [message, setMessage] = useState('Wish you were here.');
   const [sender, setSender] = useState('Anna');
+  const [imgData, setImgData] = useState('');
   const [busy, setBusy] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  // Inline the chosen photo as a data URL so the PNG export always contains it.
+  // html-to-image can silently drop <img> elements it has to fetch over the
+  // network, so we hand it an already-embedded image instead.
+  useEffect(() => {
+    let cancelled = false;
+    setImgData('');
+    fetch(PHOTOS[photoIdx].url)
+      .then((r) => r.blob())
+      .then(
+        (blob) =>
+          new Promise<string>((resolve, reject) => {
+            const fr = new FileReader();
+            fr.onload = () => resolve(fr.result as string);
+            fr.onerror = reject;
+            fr.readAsDataURL(blob);
+          }),
+      )
+      .then((data) => {
+        if (!cancelled) setImgData(data);
+      })
+      .catch(() => {
+        if (!cancelled) setImgData(PHOTOS[photoIdx].url);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, [photoIdx]);
+
+  const photo: CardPhoto = {
+    url: imgData || PHOTOS[photoIdx].url,
+    location: PHOTOS[photoIdx].location,
+  };
 
   async function download() {
     const node = cardRef.current;
@@ -32,7 +66,6 @@ export default function Cards() {
         width: 1080,
         height: 1350,
         pixelRatio: 1,
-        cacheBust: true,
         // capture the canvas at full size, ignoring the on-screen preview scale
         style: { transform: 'none', transformOrigin: 'top left', margin: '0' },
       });
@@ -49,51 +82,50 @@ export default function Cards() {
 
   return (
     <div className="wrap section">
-      <div className="d-label">Preview / alternative</div>
-      <h1 className="d-h2" style={{ marginTop: 4 }}>
-        Postcard styles
-      </h1>
-      <p className="cards-note">
-        A sandbox to try the new card designs. Nothing here is wired to the live archive, the
-        current cards stay exactly as they are.
-      </p>
+      <h1 className="d-h2 cards-title">Postcard styles</h1>
 
-      <div className="cards-layout">
-        <div className="cards-controls">
-          <div className="cards-group">
-            <div className="d-label">Style</div>
-            <div className="cards-styles">
-              {STYLES.map((s) => (
-                <button
-                  key={s}
-                  type="button"
-                  className={'chip-sel' + (s === styleId ? ' on' : '')}
-                  onClick={() => setStyleId(s)}
-                >
-                  {s}
-                </button>
-              ))}
-            </div>
+      <div className="cards-editor">
+        <div className="ce-chips cards-styles">
+          {STYLES.map((s) => (
+            <button
+              key={s}
+              type="button"
+              className={'chip-sel' + (s === styleId ? ' on' : '')}
+              onClick={() => setStyleId(s)}
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+
+        <div className="ce-preview">
+          <div className="pc-stage">
+            <PostcardPreview
+              ref={cardRef}
+              photo={photo}
+              message={message}
+              sender={sender}
+              styleId={styleId}
+            />
+          </div>
+        </div>
+
+        <div className="ce-rest">
+          <div className="cards-thumbs">
+            {PHOTOS.map((p, i) => (
+              <button
+                key={p.url}
+                type="button"
+                className={'cards-thumb' + (i === photoIdx ? ' on' : '')}
+                onClick={() => setPhotoIdx(i)}
+                aria-label={p.location}
+              >
+                <img src={p.url} alt="" />
+              </button>
+            ))}
           </div>
 
-          <div className="cards-group">
-            <div className="d-label">Photo</div>
-            <div className="cards-thumbs">
-              {PHOTOS.map((p, i) => (
-                <button
-                  key={p.url}
-                  type="button"
-                  className={'cards-thumb' + (i === photoIdx ? ' on' : '')}
-                  onClick={() => setPhotoIdx(i)}
-                  aria-label={p.location}
-                >
-                  <img src={p.url} alt="" />
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="cards-group">
+          <div className="cards-field">
             <label className="d-label" htmlFor="pc-msg">
               Message
             </label>
@@ -106,7 +138,7 @@ export default function Cards() {
             />
           </div>
 
-          <div className="cards-group">
+          <div className="cards-field">
             <label className="d-label" htmlFor="pc-from">
               Signed by
             </label>
@@ -117,23 +149,12 @@ export default function Cards() {
               onChange={(e) => setSender(e.target.value)}
             />
           </div>
-        </div>
 
-        <div className="cards-previewcol">
-          <div className="pc-stage">
-            <PostcardPreview
-              ref={cardRef}
-              photo={PHOTOS[photoIdx]}
-              message={message}
-              sender={sender}
-              styleId={styleId}
-            />
-          </div>
           <button
             type="button"
             className="btn btn-primary cards-dl"
             onClick={download}
-            disabled={busy}
+            disabled={busy || !imgData}
           >
             {busy ? 'Rendering…' : 'Download PNG'}
           </button>
