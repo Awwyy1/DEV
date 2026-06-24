@@ -1,4 +1,6 @@
-export type StyleId = 'editorial' | 'polaroid' | 'minimal' | 'cinematic' | 'vintage';
+import { forwardRef } from 'react';
+
+export type StyleId = 'editorial' | 'polaroid' | 'minimal' | 'vintage';
 
 export interface CardPhoto {
   url: string;
@@ -31,89 +33,78 @@ function Pin() {
 
 /**
  * The postcard canvas is a fixed 1080x1350 (4:5). The editor scales it down
- * visually with a CSS transform so it fits on screen.
+ * visually with a CSS transform; export captures the node at full size.
  */
-export default function PostcardPreview({ photo, message, sender, styleId }: PostcardPreviewProps) {
-  return (
-    <div className={`pc pc--${styleId}`}>
-      {styleId === 'editorial' && (
-        <>
-          <img src={photo.url} alt="" className="pc-ed__img" />
-          <div className="pc-ed__grad" />
-          <div className="pc-ed__body">
-            <p className="pc-ed__msg">{message || 'Your beautiful message goes here'}</p>
-            <div className="pc-ed__meta">
-              <span className="pc-ed__loc">
-                <Pin /> {photo.location}
-              </span>
-              <span>{sender ? `From ${sender}` : ''}</span>
+const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
+  ({ photo, message, sender, styleId }, ref) => {
+    return (
+      <div className={`pc pc--${styleId}`} ref={ref}>
+        {styleId === 'editorial' && (
+          <>
+            <img src={photo.url} alt="" className="pc-ed__img" />
+            <div className="pc-ed__grad" />
+            <div className="pc-ed__body">
+              <p className="pc-ed__msg">{message || 'Your beautiful message goes here'}</p>
+              <div className="pc-ed__meta">
+                <span className="pc-ed__loc">
+                  <Pin /> {photo.location}
+                </span>
+                <span>{sender ? `From ${sender}` : ''}</span>
+              </div>
+            </div>
+          </>
+        )}
+
+        {styleId === 'polaroid' && (
+          <div className="pc-pol">
+            <div className="pc-pol__imgwrap">
+              <img src={photo.url} alt="" />
+            </div>
+            <div className="pc-pol__cap">
+              <p className="pc-pol__msg">{message || 'Thinking of you...'}</p>
+              <p className="pc-pol__meta">
+                {photo.location} {sender ? `— ${sender}` : ''}
+              </p>
             </div>
           </div>
-        </>
-      )}
+        )}
 
-      {styleId === 'polaroid' && (
-        <div className="pc-pol">
-          <div className="pc-pol__imgwrap">
-            <img src={photo.url} alt="" />
-          </div>
-          <div className="pc-pol__cap">
-            <p className="pc-pol__msg">{message || 'Thinking of you...'}</p>
-            <p className="pc-pol__meta">
-              {photo.location} {sender ? `— ${sender}` : ''}
-            </p>
-          </div>
-        </div>
-      )}
-
-      {styleId === 'minimal' && (
-        <div className="pc-min">
-          <div className="pc-min__imgwrap">
-            <img src={photo.url} alt="" />
-          </div>
-          <div className="pc-min__content">
-            <p className="pc-min__msg">{message || 'A minimalist greeting.'}</p>
-            <div className="pc-min__meta">
-              <p className="pc-min__loc">{photo.location}</p>
-              <p className="pc-min__sender">{sender ? `xoxo, ${sender}` : ''}</p>
+        {styleId === 'minimal' && (
+          <div className="pc-min">
+            <div className="pc-min__imgwrap">
+              <img src={photo.url} alt="" />
             </div>
-          </div>
-        </div>
-      )}
-
-      {styleId === 'cinematic' && (
-        <div className="pc-cin">
-          <div className="pc-cin__imgwrap">
-            <img src={photo.url} alt="" />
-          </div>
-          <div className="pc-cin__msg">
-            <p>"{message || 'It feels like a movie here.'}"</p>
-          </div>
-          <div className="pc-cin__bar">
-            <span>REC // 00:00:00:00</span>
-            <span>
-              {photo.location} {sender ? `— ${sender}` : ''}
-            </span>
-          </div>
-        </div>
-      )}
-
-      {styleId === 'vintage' && (
-        <div className="pc-vin">
-          <div className="pc-vin__frame" />
-          <div className="pc-vin__imgwrap">
-            <img src={photo.url} alt="" />
-            <div className="pc-vin__tint" />
-            <div className="pc-vin__cap">
-              <p className="pc-vin__msg">{message || 'Greetings from far away...'}</p>
-              <div className="pc-vin__meta">
-                <span>{photo.location}</span>
-                <span className="pc-vin__sender">{sender}</span>
+            <div className="pc-min__content">
+              <p className="pc-min__msg">{message || 'A minimalist greeting.'}</p>
+              <div className="pc-min__meta">
+                <p className="pc-min__loc">{photo.location}</p>
+                <p className="pc-min__sender">{sender ? `xoxo, ${sender}` : ''}</p>
               </div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
-  );
-}
+        )}
+
+        {styleId === 'vintage' && (
+          <div className="pc-vin">
+            <div className="pc-vin__frame" />
+            <div className="pc-vin__imgwrap">
+              <img src={photo.url} alt="" />
+              <div className="pc-vin__tint" />
+              <div className="pc-vin__cap">
+                <p className="pc-vin__msg">{message || 'Greetings from far away...'}</p>
+                <div className="pc-vin__meta">
+                  <span>{photo.location}</span>
+                  <span className="pc-vin__sender">{sender}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  },
+);
+
+PostcardPreview.displayName = 'PostcardPreview';
+
+export default PostcardPreview;

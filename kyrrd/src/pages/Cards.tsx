@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
+import { toPng } from 'html-to-image';
 import { PLATES } from '../plates';
 import PostcardPreview, { StyleId, CardPhoto } from '../components/PostcardPreview';
 import { useSeo } from '../seo';
 import '../cards.css';
 
-const STYLES: StyleId[] = ['editorial', 'polaroid', 'minimal', 'cinematic', 'vintage'];
+const STYLES: StyleId[] = ['editorial', 'polaroid', 'minimal', 'vintage'];
 
 const PHOTOS: CardPhoto[] = PLATES.filter((p) => p.image).map((p) => ({
   url: p.image as string,
@@ -18,6 +19,33 @@ export default function Cards() {
   const [photoIdx, setPhotoIdx] = useState(0);
   const [message, setMessage] = useState('Wish you were here.');
   const [sender, setSender] = useState('Anna');
+  const [busy, setBusy] = useState(false);
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  async function download() {
+    const node = cardRef.current;
+    if (!node) return;
+    setBusy(true);
+    try {
+      if (document.fonts) await document.fonts.ready;
+      const dataUrl = await toPng(node, {
+        width: 1080,
+        height: 1350,
+        pixelRatio: 1,
+        cacheBust: true,
+        // capture the canvas at full size, ignoring the on-screen preview scale
+        style: { transform: 'none', transformOrigin: 'top left', margin: '0' },
+      });
+      const a = document.createElement('a');
+      a.href = dataUrl;
+      a.download = `kyrrd-${styleId}.png`;
+      a.click();
+    } catch (err) {
+      console.error('Card export failed', err);
+    } finally {
+      setBusy(false);
+    }
+  }
 
   return (
     <div className="wrap section">
@@ -94,12 +122,21 @@ export default function Cards() {
         <div className="cards-previewcol">
           <div className="pc-stage">
             <PostcardPreview
+              ref={cardRef}
               photo={PHOTOS[photoIdx]}
               message={message}
               sender={sender}
               styleId={styleId}
             />
           </div>
+          <button
+            type="button"
+            className="btn btn-primary cards-dl"
+            onClick={download}
+            disabled={busy}
+          >
+            {busy ? 'Rendering…' : 'Download PNG'}
+          </button>
         </div>
       </div>
     </div>
