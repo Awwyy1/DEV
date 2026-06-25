@@ -71,6 +71,9 @@
 .ce-chipgroup { display: flex; flex-direction: column; gap: 10px; }
 .cards-chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
 .cards-chips-row .chip-sel { text-transform: capitalize; }
+.cards-chips-row .chip-sel:disabled,
+.cards-chips-row .chip-sel.locked { opacity: 0.4; cursor: not-allowed; }
+.chip-lock { margin-left: 6px; vertical-align: -1px; opacity: 0.85; }
 
 .ce-preview { display: flex; justify-content: center; }
 .pc-stage { --pc-scale: 0.4; width: calc(var(--pc-w, 1080px) * var(--pc-scale)); height: calc(var(--pc-h, 1350px) * var(--pc-scale)); position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); transition: width 0.35s ease, height 0.35s ease; }
@@ -86,6 +89,12 @@
 .cards-field .field { margin-top: 0; }
 .cards-dl { width: 100%; }
 
+/* mobile compaction: tighter title, label + chips on one row, smaller chips */
+@media (max-width: 620px) {
+  .cards-title { font-size: 17px; font-weight: 500; margin-bottom: 14px; }
+  .ce-chipgroup { flex-direction: row; align-items: center; gap: 10px; }
+  .cards-chips-row .chip-sel { padding: 6px 11px; }
+}
 @media (max-width: 520px) {
   .pc-stage { --pc-scale: 0.3; }
 }
