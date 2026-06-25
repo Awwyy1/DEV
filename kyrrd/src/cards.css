@@ -65,8 +65,11 @@
    chips, preview, photo picker, message, signed by, download)
    ============================================================ */
 .cards-title { margin: 0 0 20px; }
-.create-back { display: inline-block; color: var(--steel-d); font-size: 14px; }
-.create-back:hover { color: var(--ink); }
+.crumbs { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 14px; }
+.crumbs a { color: var(--steel-d); }
+.crumbs a:hover { color: var(--ink); }
+.crumbs .sep { color: var(--steel); }
+.crumbs .here { color: var(--ink); }
 .cards-editor { display: flex; flex-direction: column; gap: 20px; }
 
 .cards-chips { display: flex; flex-direction: column; gap: 16px; }
@@ -90,6 +93,19 @@
 .cards-field { display: flex; flex-direction: column; gap: 6px; }
 .cards-field .field { margin-top: 0; }
 .cards-dl { width: 100%; }
+
+/* post-save panel */
+.ce-saved { margin-top: 24px; padding-top: 22px; border-top: var(--hair) solid var(--fog); }
+.ce-saved__ok { display: flex; align-items: center; gap: 10px; }
+.ce-saved__tick { width: 26px; height: 26px; border-radius: 50%; background: var(--glacier); color: #fff; display: inline-flex; align-items: center; justify-content: center; font-size: 15px; flex: 0 0 auto; }
+.ce-saved__t { font-family: var(--disp); font-weight: 500; font-size: 17px; }
+.ce-saved__sub { color: var(--steel-d); font-size: 13.5px; margin: 8px 0 16px; max-width: 46ch; }
+.ce-saved__btns { display: flex; gap: 10px; flex-wrap: wrap; }
+.ce-saved__more { margin-top: 20px; }
+.ce-saved__thumbs { display: flex; gap: 10px; margin-top: 10px; flex-wrap: wrap; }
+.ce-saved__thumb { width: 62px; height: 62px; border-radius: 3px; overflow: hidden; border: var(--hair) solid var(--fog); display: block; }
+.ce-saved__thumb img { width: 100%; height: 100%; object-fit: cover; }
+.ce-saved__thumb:hover { border-color: var(--ink); }
 
 /* mobile compaction: tighter title, label + chips on one row, smaller chips */
 @media (max-width: 620px) {

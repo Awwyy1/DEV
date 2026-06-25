@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
+import { Link } from 'react-router-dom';
 import html2canvas from 'html2canvas';
 import PostcardPreview, { StyleId, CardPhoto } from './PostcardPreview';
 import '../cards.css';
@@ -38,9 +39,11 @@ interface CardEditorProps {
   photos: CardPhoto[];
   /** Show the thumbnail photo picker. Off in production, handy for testing. */
   showPicker?: boolean;
+  /** Other photos offered after saving (the "more from the archive" strip). */
+  suggestions?: { slug: string; url: string; title: string }[];
 }
 
-export default function CardEditor({ photos, showPicker = false }: CardEditorProps) {
+export default function CardEditor({ photos, showPicker = false, suggestions = [] }: CardEditorProps) {
   const [styleId, setStyleId] = useState<StyleId>('editorial');
   const [format, setFormat] = useState<FormatId>('post');
   const [photoIdx, setPhotoIdx] = useState(0);
@@ -48,6 +51,7 @@ export default function CardEditor({ photos, showPicker = false }: CardEditorPro
   const [sender, setSender] = useState('Anna');
   const [imgData, setImgData] = useState('');
   const [busy, setBusy] = useState(false);
+  const [saved, setSaved] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
 
   const fmt = FORMATS.find((f) => f.id === format) ?? FORMATS[0];
@@ -79,6 +83,11 @@ export default function CardEditor({ photos, showPicker = false }: CardEditorPro
       cancelled = true;
     };
   }, [current?.url]);
+
+  // Hide the saved panel the moment anything is tweaked.
+  useEffect(() => {
+    setSaved(false);
+  }, [styleId, format, message, sender, current?.url]);
 
   const photo: CardPhoto = {
     url: imgData || current?.url || '',
@@ -122,6 +131,7 @@ export default function CardEditor({ photos, showPicker = false }: CardEditorPro
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
           await navigator.share({ files: [file] });
+          setSaved(true);
           return;
         } catch (e) {
           if ((e as Error).name === 'AbortError') return;
@@ -134,6 +144,7 @@ export default function CardEditor({ photos, showPicker = false }: CardEditorPro
       document.body.appendChild(a);
       a.click();
       a.remove();
+      setSaved(true);
       setTimeout(() => URL.revokeObjectURL(url), 1500);
     } catch (err) {
       console.error('Card export failed', err);
@@ -246,6 +257,43 @@ export default function CardEditor({ photos, showPicker = false }: CardEditorPro
         >
           {busy ? 'Rendering…' : 'Save card'}
         </button>
+
+        {saved && (
+          <div className="ce-saved">
+            <div className="ce-saved__ok">
+              <span className="ce-saved__tick" aria-hidden="true">
+                ✓
+              </span>
+              <span className="ce-saved__t">Saved to your photos</span>
+            </div>
+            <p className="ce-saved__sub">
+              Your signed card is ready. Want a different size? Pick another format and save again.
+            </p>
+            <div className="ce-saved__btns">
+              <Link to="/archive" className="btn btn-primary">
+                Make another card
+              </Link>
+            </div>
+
+            {suggestions.length > 0 && (
+              <div className="ce-saved__more">
+                <div className="d-label">More from the archive</div>
+                <div className="ce-saved__thumbs">
+                  {suggestions.map((s) => (
+                    <Link
+                      key={s.slug}
+                      to={`/create/${s.slug}`}
+                      className="ce-saved__thumb"
+                      aria-label={s.title}
+                    >
+                      <img src={s.url} alt="" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
       </div>
     </div>
   );
