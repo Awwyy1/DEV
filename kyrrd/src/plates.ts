@@ -166,6 +166,37 @@ export const PLATES: Plate[] = [
     mapsUrl: 'https://maps.app.goo.gl/WRj48fMoY65L95JRA',
     mapsQuery: 'The Black Cone, Monument to Civil Disobedience, Reykjavík',
   },
+
+  /* ---- NEW placeholders. For each: drop the photo in kyrrd/public/photos,
+     set `image`, rename `title`, write the `description` (and `coords`/`mapsUrl`
+     if you like). Then tell me and I will write the Journal article. ---- */
+  {
+    id: '15', no: '15', series: 'Series V', title: 'New plate 15',
+    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
+    description: 'Placeholder. Add the photo and replace this description.',
+    gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
+    image: '', // ← add your photo, e.g. '/photos/your-file.jpeg'
+    slug: 'plate-15',
+    mapsUrl: '', // ← paste your Google Maps link here
+  },
+  {
+    id: '16', no: '16', series: 'Series V', title: 'New plate 16',
+    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
+    description: 'Placeholder. Add the photo and replace this description.',
+    gradient: 'linear-gradient(180deg,#f1f6f3,#d3e2d9 55%,#9fb8aa)',
+    image: '', // ← add your photo, e.g. '/photos/your-file.jpeg'
+    slug: 'plate-16',
+    mapsUrl: '', // ← paste your Google Maps link here
+  },
+  {
+    id: '17', no: '17', series: 'Series V', title: 'New plate 17',
+    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
+    description: 'Placeholder. Add the photo and replace this description.',
+    gradient: 'linear-gradient(180deg,#f7f5f2,#e4dcd2 55%,#b9aa98)',
+    image: '', // ← add your photo, e.g. '/photos/your-file.jpeg'
+    slug: 'plate-17',
+    mapsUrl: '', // ← paste your Google Maps link here
+  },
 ];
 
 export const findPlate = (key?: string): Plate =>

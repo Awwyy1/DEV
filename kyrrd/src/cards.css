@@ -78,7 +78,7 @@
 .chip-lock { margin-left: 6px; vertical-align: -1px; opacity: 0.85; }
 
 .ce-preview { display: flex; justify-content: center; }
-.pc-stage { --pc-scale: 0.4; width: calc(var(--pc-w, 1080px) * var(--pc-scale)); height: calc(var(--pc-h, 1350px) * var(--pc-scale)); position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); transition: width 0.35s ease, height 0.35s ease; }
+.pc-stage { --pc-scale: 0.4; width: calc(var(--pc-w, 1080px) * var(--pc-scale)); height: calc(var(--pc-h, 1350px) * var(--pc-scale)); position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); }
 .pc-stage .pc { transform: scale(var(--pc-scale)); }
 
 .ce-rest { display: flex; flex-direction: column; gap: 18px; }
