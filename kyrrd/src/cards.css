@@ -11,8 +11,8 @@
   --pc-disp: 'Space Grotesk', sans-serif;
   --pc-serif: 'Playfair Display', Georgia, serif;
   --pc-hand: 'Caveat', cursive;
-  width: 1080px;
-  height: 1350px;
+  width: var(--pc-w, 1080px);
+  height: var(--pc-h, 1350px);
   position: relative;
   overflow: hidden;
   background: #fff;
@@ -42,7 +42,7 @@
 
 /* ---- minimal ---- */
 .pc-min { position: absolute; inset: 0; padding: 128px; display: flex; flex-direction: column; }
-.pc-min__imgwrap { width: 100%; height: 618px; overflow: hidden; margin-bottom: 64px; background-size: cover; background-position: center; background-repeat: no-repeat; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
+.pc-min__imgwrap { width: 100%; height: calc(var(--pc-h, 1350px) * 0.46); overflow: hidden; margin-bottom: 64px; background-size: cover; background-position: center; background-repeat: no-repeat; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); }
 .pc-min__content { flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
 .pc-min__msg { font-size: 36px; line-height: 1.625; color: #1f2937; letter-spacing: 0.025em; font-weight: 300; max-width: 768px; margin: 0; }
 .pc-min__meta { display: flex; justify-content: space-between; align-items: flex-end; }
@@ -67,12 +67,14 @@
 .cards-title { margin: 0 0 20px; }
 .cards-editor { display: flex; flex-direction: column; gap: 20px; }
 
-.cards-styles { display: flex; flex-wrap: wrap; gap: 8px; }
-.cards-styles .chip-sel { text-transform: capitalize; }
+.cards-chips { display: flex; flex-direction: column; gap: 16px; }
+.ce-chipgroup { display: flex; flex-direction: column; gap: 10px; }
+.cards-chips-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.cards-chips-row .chip-sel { text-transform: capitalize; }
 
 .ce-preview { display: flex; justify-content: center; }
-.pc-stage { width: 432px; height: 540px; position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); }
-.pc-stage .pc { transform: scale(0.4); }
+.pc-stage { --pc-scale: 0.4; width: calc(var(--pc-w, 1080px) * var(--pc-scale)); height: calc(var(--pc-h, 1350px) * var(--pc-scale)); position: relative; box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.45); transition: width 0.35s ease, height 0.35s ease; }
+.pc-stage .pc { transform: scale(var(--pc-scale)); }
 
 .ce-rest { display: flex; flex-direction: column; gap: 18px; }
 .cards-thumbs { display: flex; flex-wrap: wrap; gap: 8px; }
@@ -85,8 +87,7 @@
 .cards-dl { width: 100%; }
 
 @media (max-width: 520px) {
-  .pc-stage { width: 324px; height: 405px; }
-  .pc-stage .pc { transform: scale(0.3); }
+  .pc-stage { --pc-scale: 0.3; }
 }
 
 /* desktop: preview on the left, controls stacked on the right */
