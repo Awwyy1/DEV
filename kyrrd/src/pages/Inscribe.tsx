@@ -16,6 +16,10 @@ const PRESET_CLASS: Record<Preset, string> = {
   'Margin Note': 'note',
 };
 
+// Upload-your-own is hidden from users for now. Code is kept intact;
+// flip this to true to bring the control back.
+const SHOW_UPLOAD = false;
+
 export default function Inscribe() {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -79,20 +83,24 @@ export default function Inscribe() {
           </div>
         </div>
         <div className="panel">
-          <div className="d-label">Photo</div>
-          <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
-            <label className="chip-sel" style={{ cursor: 'pointer' }}>
-              Upload your own
-              <input type="file" accept="image/*" style={{ display: 'none' }} onChange={onPick} />
-            </label>
-            {customImage && (
-              <button className="chip-sel" onClick={() => setCustomImage(undefined)}>
-                Reset
-              </button>
-            )}
-          </div>
+          {SHOW_UPLOAD && (
+            <>
+              <div className="d-label">Photo</div>
+              <div style={{ display: 'flex', gap: 8, marginTop: 8, flexWrap: 'wrap' }}>
+                <label className="chip-sel" style={{ cursor: 'pointer' }}>
+                  Upload your own
+                  <input type="file" accept="image/*" style={{ display: 'none' }} onChange={onPick} />
+                </label>
+                {customImage && (
+                  <button className="chip-sel" onClick={() => setCustomImage(undefined)}>
+                    Reset
+                  </button>
+                )}
+              </div>
+            </>
+          )}
 
-          <div className="d-label" style={{ margin: '20px 0 8px' }}>
+          <div className="d-label" style={{ margin: '0 0 8px' }}>
             Your words
           </div>
           <input className="field" value={text} onChange={(e) => setText(e.target.value)} />
