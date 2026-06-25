@@ -5,7 +5,11 @@ import PostcardPreview, { StyleId, CardPhoto } from '../components/PostcardPrevi
 import { useSeo } from '../seo';
 import '../cards.css';
 
-const STYLES: StyleId[] = ['editorial', 'polaroid', 'minimal', 'vintage'];
+const STYLES: { id: StyleId; label: string; locked?: boolean }[] = [
+  { id: 'editorial', label: 'Editorial' },
+  { id: 'vintage', label: 'Vintage' },
+  { id: 'polaroid', label: 'Polaroid', locked: true },
+];
 
 type FormatId = 'post' | 'story' | 'square';
 const FORMATS: { id: FormatId; label: string; w: number; h: number }[] = [
@@ -18,6 +22,23 @@ const PHOTOS: CardPhoto[] = PLATES.filter((p) => p.image).map((p) => ({
   url: p.image as string,
   location: p.title,
 }));
+
+function LockIcon() {
+  return (
+    <svg
+      className="chip-lock"
+      width="11"
+      height="11"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+    >
+      <rect x="4.5" y="11" width="15" height="9" rx="1.6" />
+      <path d="M8 11V8a4 4 0 0 1 8 0v3" />
+    </svg>
+  );
+}
 
 export default function Cards() {
   useSeo('Card styles (preview) — kyrrð', 'A sandbox for trying new postcard designs.');
@@ -34,7 +55,6 @@ export default function Cards() {
   const fmt = FORMATS.find((f) => f.id === format) ?? FORMATS[0];
 
   // Inline the chosen photo as a data URL so the PNG export always contains it.
-  // html2canvas can silently drop <img> it has to fetch over the network.
   useEffect(() => {
     let cancelled = false;
     setImgData('');
@@ -69,29 +89,57 @@ export default function Cards() {
     const node = cardRef.current;
     if (!node) return;
     setBusy(true);
+    // Capture an off-screen, full-size, untransformed clone. Capturing the
+    // on-screen (CSS-scaled) node makes html2canvas leave a stray edge stripe.
+    const holder = document.createElement('div');
+    holder.style.cssText = `position:fixed;left:-100000px;top:0;width:${fmt.w}px;height:${fmt.h}px;overflow:hidden;`;
     try {
       if (document.fonts) await document.fonts.ready;
-      const canvas = await html2canvas(node, {
+      const clone = node.cloneNode(true) as HTMLElement;
+      clone.style.transform = 'none';
+      clone.style.margin = '0';
+      clone.style.setProperty('--pc-w', `${fmt.w}px`);
+      clone.style.setProperty('--pc-h', `${fmt.h}px`);
+      holder.appendChild(clone);
+      document.body.appendChild(holder);
+
+      const canvas = await html2canvas(clone, {
         width: fmt.w,
         height: fmt.h,
         scale: 1,
         backgroundColor: null,
         useCORS: true,
         logging: false,
-        // render at full size: drop the on-screen preview scale on the clone
-        onclone: (doc) => {
-          doc.querySelectorAll('.pc').forEach((el) => {
-            (el as HTMLElement).style.transform = 'none';
-          });
-        },
       });
+      const blob = await new Promise<Blob | null>((res) => canvas.toBlob(res, 'image/png'));
+      if (!blob) throw new Error('export produced no image');
+
+      const filename = `kyrrd-${styleId}-${format}.png`;
+      const file = new File([blob], filename, { type: 'image/png' });
+
+      // On phones, the share sheet ("Save to Photos") is the reliable path and
+      // works in both Safari and Chrome; <a download> is flaky on mobile.
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        try {
+          await navigator.share({ files: [file] });
+          return;
+        } catch (e) {
+          if ((e as Error).name === 'AbortError') return; // user cancelled
+          // otherwise fall through to a normal download
+        }
+      }
+      const url = URL.createObjectURL(blob);
       const a = document.createElement('a');
-      a.href = canvas.toDataURL('image/png');
-      a.download = `kyrrd-${styleId}-${format}.png`;
+      a.href = url;
+      a.download = filename;
+      document.body.appendChild(a);
       a.click();
+      a.remove();
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
     } catch (err) {
       console.error('Card export failed', err);
     } finally {
+      if (holder.parentNode) document.body.removeChild(holder);
       setBusy(false);
     }
   }
@@ -125,12 +173,14 @@ export default function Cards() {
             <div className="cards-chips-row">
               {STYLES.map((s) => (
                 <button
-                  key={s}
+                  key={s.id}
                   type="button"
-                  className={'chip-sel' + (s === styleId ? ' on' : '')}
-                  onClick={() => setStyleId(s)}
+                  className={'chip-sel' + (s.id === styleId ? ' on' : '') + (s.locked ? ' locked' : '')}
+                  onClick={() => !s.locked && setStyleId(s.id)}
+                  disabled={s.locked}
                 >
-                  {s}
+                  {s.label}
+                  {s.locked && <LockIcon />}
                 </button>
               ))}
             </div>
