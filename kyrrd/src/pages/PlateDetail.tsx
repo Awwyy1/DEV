@@ -50,7 +50,7 @@ export default function PlateDetail() {
           </div>
 
           <Link
-            to={`/inscribe/${plate.slug ?? plate.id}`}
+            to={`/create/${plate.slug ?? plate.id}`}
             className="btn btn-primary"
             style={{ marginTop: 22, width: '100%' }}
           >

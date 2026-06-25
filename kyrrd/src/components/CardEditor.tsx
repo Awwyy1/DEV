@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import html2canvas from 'html2canvas';
-import { PLATES } from '../plates';
-import PostcardPreview, { StyleId, CardPhoto } from '../components/PostcardPreview';
-import { useSeo } from '../seo';
+import PostcardPreview, { StyleId, CardPhoto } from './PostcardPreview';
 import '../cards.css';
 
 const STYLES: { id: StyleId; label: string; locked?: boolean }[] = [
@@ -17,11 +15,6 @@ const FORMATS: { id: FormatId; label: string; w: number; h: number }[] = [
   { id: 'story', label: 'Story 9:16', w: 1080, h: 1920 },
   { id: 'square', label: 'Square 1:1', w: 1080, h: 1080 },
 ];
-
-const PHOTOS: CardPhoto[] = PLATES.filter((p) => p.image).map((p) => ({
-  url: p.image as string,
-  location: p.title,
-}));
 
 function LockIcon() {
   return (
@@ -40,9 +33,14 @@ function LockIcon() {
   );
 }
 
-export default function Cards() {
-  useSeo('Card styles (preview) — kyrrð', 'A sandbox for trying new postcard designs.');
+interface CardEditorProps {
+  /** Photos the editor can use. Usually one (the chosen plate). */
+  photos: CardPhoto[];
+  /** Show the thumbnail photo picker. Off in production, handy for testing. */
+  showPicker?: boolean;
+}
 
+export default function CardEditor({ photos, showPicker = false }: CardEditorProps) {
   const [styleId, setStyleId] = useState<StyleId>('editorial');
   const [format, setFormat] = useState<FormatId>('post');
   const [photoIdx, setPhotoIdx] = useState(0);
@@ -53,12 +51,14 @@ export default function Cards() {
   const cardRef = useRef<HTMLDivElement>(null);
 
   const fmt = FORMATS.find((f) => f.id === format) ?? FORMATS[0];
+  const current = photos[Math.min(photoIdx, photos.length - 1)];
 
   // Inline the chosen photo as a data URL so the PNG export always contains it.
   useEffect(() => {
+    if (!current) return;
     let cancelled = false;
     setImgData('');
-    fetch(PHOTOS[photoIdx].url)
+    fetch(current.url)
       .then((r) => r.blob())
       .then(
         (blob) =>
@@ -73,16 +73,16 @@ export default function Cards() {
         if (!cancelled) setImgData(data);
       })
       .catch(() => {
-        if (!cancelled) setImgData(PHOTOS[photoIdx].url);
+        if (!cancelled) setImgData(current.url);
       });
     return () => {
       cancelled = true;
     };
-  }, [photoIdx]);
+  }, [current?.url]);
 
   const photo: CardPhoto = {
-    url: imgData || PHOTOS[photoIdx].url,
-    location: PHOTOS[photoIdx].location,
+    url: imgData || current?.url || '',
+    location: current?.location || '',
   };
 
   async function download() {
@@ -117,15 +117,14 @@ export default function Cards() {
       const filename = `kyrrd-${styleId}-${format}.png`;
       const file = new File([blob], filename, { type: 'image/png' });
 
-      // On phones, the share sheet ("Save to Photos") is the reliable path and
-      // works in both Safari and Chrome; <a download> is flaky on mobile.
+      // On phones the share sheet ("Save to Photos") is reliable in both
+      // Safari and Chrome; <a download> is flaky on mobile.
       if (navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
           await navigator.share({ files: [file] });
           return;
         } catch (e) {
-          if ((e as Error).name === 'AbortError') return; // user cancelled
-          // otherwise fall through to a normal download
+          if ((e as Error).name === 'AbortError') return;
         }
       }
       const url = URL.createObjectURL(blob);
@@ -145,63 +144,62 @@ export default function Cards() {
   }
 
   const stageStyle = { '--pc-w': `${fmt.w}px`, '--pc-h': `${fmt.h}px` } as CSSProperties;
+  const picker = showPicker && photos.length > 1;
 
   return (
-    <div className="wrap section">
-      <h1 className="d-h2 cards-title">Postcard styles</h1>
-
-      <div className="cards-editor">
-        <div className="ce-chips cards-chips">
-          <div className="ce-chipgroup">
-            <div className="d-label">Format</div>
-            <div className="cards-chips-row">
-              {FORMATS.map((f) => (
-                <button
-                  key={f.id}
-                  type="button"
-                  className={'chip-sel' + (f.id === format ? ' on' : '')}
-                  onClick={() => setFormat(f.id)}
-                >
-                  {f.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="ce-chipgroup">
-            <div className="d-label">Style</div>
-            <div className="cards-chips-row">
-              {STYLES.map((s) => (
-                <button
-                  key={s.id}
-                  type="button"
-                  className={'chip-sel' + (s.id === styleId ? ' on' : '') + (s.locked ? ' locked' : '')}
-                  onClick={() => !s.locked && setStyleId(s.id)}
-                  disabled={s.locked}
-                >
-                  {s.label}
-                  {s.locked && <LockIcon />}
-                </button>
-              ))}
-            </div>
+    <div className="cards-editor">
+      <div className="ce-chips cards-chips">
+        <div className="ce-chipgroup">
+          <div className="d-label">Format</div>
+          <div className="cards-chips-row">
+            {FORMATS.map((f) => (
+              <button
+                key={f.id}
+                type="button"
+                className={'chip-sel' + (f.id === format ? ' on' : '')}
+                onClick={() => setFormat(f.id)}
+              >
+                {f.label}
+              </button>
+            ))}
           </div>
         </div>
 
-        <div className="ce-preview">
-          <div className="pc-stage" style={stageStyle}>
-            <PostcardPreview
-              ref={cardRef}
-              photo={photo}
-              message={message}
-              sender={sender}
-              styleId={styleId}
-            />
+        <div className="ce-chipgroup">
+          <div className="d-label">Style</div>
+          <div className="cards-chips-row">
+            {STYLES.map((s) => (
+              <button
+                key={s.id}
+                type="button"
+                className={'chip-sel' + (s.id === styleId ? ' on' : '') + (s.locked ? ' locked' : '')}
+                onClick={() => !s.locked && setStyleId(s.id)}
+                disabled={s.locked}
+              >
+                {s.label}
+                {s.locked && <LockIcon />}
+              </button>
+            ))}
           </div>
         </div>
+      </div>
 
-        <div className="ce-rest">
+      <div className="ce-preview">
+        <div className="pc-stage" style={stageStyle}>
+          <PostcardPreview
+            ref={cardRef}
+            photo={photo}
+            message={message}
+            sender={sender}
+            styleId={styleId}
+          />
+        </div>
+      </div>
+
+      <div className="ce-rest">
+        {picker && (
           <div className="cards-thumbs">
-            {PHOTOS.map((p, i) => (
+            {photos.map((p, i) => (
               <button
                 key={p.url}
                 type="button"
@@ -213,41 +211,41 @@ export default function Cards() {
               </button>
             ))}
           </div>
+        )}
 
-          <div className="cards-field">
-            <label className="d-label" htmlFor="pc-msg">
-              Message
-            </label>
-            <textarea
-              id="pc-msg"
-              className="field"
-              rows={3}
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-            />
-          </div>
-
-          <div className="cards-field">
-            <label className="d-label" htmlFor="pc-from">
-              Signed by
-            </label>
-            <input
-              id="pc-from"
-              className="field"
-              value={sender}
-              onChange={(e) => setSender(e.target.value)}
-            />
-          </div>
-
-          <button
-            type="button"
-            className="btn btn-primary cards-dl"
-            onClick={download}
-            disabled={busy || !imgData}
-          >
-            {busy ? 'Rendering…' : 'Download PNG'}
-          </button>
+        <div className="cards-field">
+          <label className="d-label" htmlFor="pc-msg">
+            Message
+          </label>
+          <textarea
+            id="pc-msg"
+            className="field"
+            rows={3}
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
         </div>
+
+        <div className="cards-field">
+          <label className="d-label" htmlFor="pc-from">
+            Signed by
+          </label>
+          <input
+            id="pc-from"
+            className="field"
+            value={sender}
+            onChange={(e) => setSender(e.target.value)}
+          />
+        </div>
+
+        <button
+          type="button"
+          className="btn btn-primary cards-dl"
+          onClick={download}
+          disabled={busy || !imgData}
+        >
+          {busy ? 'Rendering…' : 'Save card'}
+        </button>
       </div>
     </div>
   );

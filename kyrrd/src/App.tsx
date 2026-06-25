@@ -1,18 +1,24 @@
-import { Routes, Route, Outlet } from 'react-router-dom';
+import { Routes, Route, Outlet, Navigate, useParams } from 'react-router-dom';
 import ScrollToTop from './components/ScrollToTop';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import Archive from './pages/Archive';
 import PlateDetail from './pages/PlateDetail';
-import Inscribe from './pages/Inscribe';
 import Done from './pages/Done';
 import Journal from './pages/Journal';
 import Article from './pages/Article';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
-import Cards from './pages/Cards';
+import Create from './pages/Create';
+
+// The old inscribe editor is retired; keep the URL working by sending it
+// to the new card editor.
+function InscribeToCreate() {
+  const { id } = useParams();
+  return <Navigate to={`/create/${id}`} replace />;
+}
 
 function Layout() {
   return (
@@ -35,14 +41,15 @@ export default function App() {
           <Route index element={<Home />} />
           <Route path="archive" element={<Archive />} />
           <Route path="plate/:id" element={<PlateDetail />} />
-          <Route path="inscribe/:id" element={<Inscribe />} />
+          <Route path="inscribe/:id" element={<InscribeToCreate />} />
+          <Route path="create/:id" element={<Create />} />
           <Route path="done" element={<Done />} />
           <Route path="journal" element={<Journal />} />
           <Route path="journal/:slug" element={<Article />} />
           <Route path="about" element={<About />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
-          <Route path="cards" element={<Cards />} />
+          <Route path="cards" element={<Navigate to="/archive" replace />} />
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
