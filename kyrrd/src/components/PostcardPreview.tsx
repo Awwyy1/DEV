@@ -34,14 +34,18 @@ function Pin() {
 /**
  * The postcard canvas is a fixed 1080x1350 (4:5). The editor scales it down
  * visually with a CSS transform; export captures the node at full size.
+ * Photos are rendered as background-image (background-size: cover) rather than
+ * <img object-fit:cover> because the PNG exporter reproduces background-size
+ * faithfully but stretches object-fit.
  */
 const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
   ({ photo, message, sender, styleId }, ref) => {
+    const bg = { backgroundImage: `url("${photo.url}")` };
     return (
       <div className={`pc pc--${styleId}`} ref={ref}>
         {styleId === 'editorial' && (
           <>
-            <img src={photo.url} alt="" className="pc-ed__img" />
+            <div className="pc-ed__img" style={bg} />
             <div className="pc-ed__grad" />
             <div className="pc-ed__body">
               <p className="pc-ed__msg">{message || 'Your beautiful message goes here'}</p>
@@ -57,9 +61,7 @@ const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
 
         {styleId === 'polaroid' && (
           <div className="pc-pol">
-            <div className="pc-pol__imgwrap">
-              <img src={photo.url} alt="" />
-            </div>
+            <div className="pc-pol__imgwrap" style={bg} />
             <div className="pc-pol__cap">
               <p className="pc-pol__msg">{message || 'Thinking of you...'}</p>
               <p className="pc-pol__meta">
@@ -71,9 +73,7 @@ const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
 
         {styleId === 'minimal' && (
           <div className="pc-min">
-            <div className="pc-min__imgwrap">
-              <img src={photo.url} alt="" />
-            </div>
+            <div className="pc-min__imgwrap" style={bg} />
             <div className="pc-min__content">
               <p className="pc-min__msg">{message || 'A minimalist greeting.'}</p>
               <div className="pc-min__meta">
@@ -88,7 +88,7 @@ const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
           <div className="pc-vin">
             <div className="pc-vin__frame" />
             <div className="pc-vin__imgwrap">
-              <img src={photo.url} alt="" />
+              <div className="pc-vin__photo" style={bg} />
               <div className="pc-vin__tint" />
               <div className="pc-vin__cap">
                 <p className="pc-vin__msg">{message || 'Greetings from far away...'}</p>
