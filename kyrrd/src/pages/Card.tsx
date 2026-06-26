@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { track } from '@vercel/analytics';
 import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { findPlate } from '../plates';
 import { findPartner } from '../partners';
@@ -31,6 +32,10 @@ export default function Card() {
       if (m && prev !== null) m.setAttribute('content', prev);
     };
   }, []);
+
+  useEffect(() => {
+    track('qr_landing', { plate: key, from: fromHotel?.slug ?? 'none' });
+  }, [key]);
 
   return (
     <div className="cardpage">

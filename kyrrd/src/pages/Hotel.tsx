@@ -1,4 +1,6 @@
+import { useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
+import { track } from '@vercel/analytics';
 import { PLATES } from '../plates';
 import { findPartner } from '../partners';
 import { useSeo } from '../seo';
@@ -19,6 +21,10 @@ export default function Hotel() {
 
   const picks = PLATES.filter((p) => p.image).slice(0, 6);
   const link = (slug: string) => `/create/${slug}${hotel ? `?partner=${hotel.slug}` : ''}`;
+
+  useEffect(() => {
+    track('hotel_landing', { partner: partner ?? 'unknown' });
+  }, [partner]);
 
   return (
     <div className="hotelpage">
