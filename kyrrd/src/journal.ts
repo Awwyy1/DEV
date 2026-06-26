@@ -26,6 +26,47 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'islandsvardan',
+    title: 'A lava cairn on the waterfront, with a window cut for the mountain',
+    kicker: 'Iceland · Field note',
+    date: 'June 2026',
+    excerpt:
+      'A dark, craggy bronze on the Reykjavík shore that almost everyone walks past on the way to the Sun Voyager, with an opening at its heart that keeps Mount Esja in view.',
+    gradient: 'linear-gradient(180deg,#e7edef,#9fb0b6 50%,#586469 82%,#23282b)',
+    image: '/photos/Islandsvardan.jpeg',
+    plateSlug: 'islandsvardan',
+    plateTitle: 'Íslandsvarðan',
+    body: [
+      'On the Sæbraut path along the Reykjavík shore, a short way from the Sun Voyager and its crowd, there is a dark, craggy mass that looks for all the world like a lump of lava set down by the water. It is taller than a person, rough and pitted and full of holes, and at its centre there is a larger opening that frames a clean view of Mount Esja across the bay. Walk around it and the mountain slides in and out of the gap, and when you stand still it holds the mountain like a window.',
+      'The piece is called Íslandsvarðan, the cairn of Iceland, and it is the work of Jóhann Eyfells, an Icelandic sculptor who spent most of his long career in the United States. It is not lava at all, although it works hard to convince you otherwise. It is cast bronze, made by a method Eyfells spent his life refining, in which the metal is allowed to take on the texture of the forces acting on it rather than a shape imposed from outside. The result is a bronze that behaves like stone, pulled and pitted as though the island itself had poured it.',
+      'The name is the key to it. A varða is a cairn, a small tower of piled stones, and for centuries these cairns were how Icelanders found their way across a country that had few roads and fewer landmarks. Travellers built them and trusted them, one marker leading on to the next across the lava and the moors. Eyfells took that humble, useful thing and made a single enormous version of it on the shore of the capital, a cairn not for a path but for a whole country, with the mountain framed in its heart so that the marker and the thing it marks are caught in one glance.',
+      'That opening in the middle is the part people remember. It faces out across Faxaflói bay toward Esja, the long flat mountain that changes colour with the weather and the hour, and the sculpture is set so the view of the mountain is never quite blocked. The bronze gives the mountain a frame and then gets out of its way. It is a generous idea for so heavy an object to carry, to make itself a window onto something larger than itself.',
+      'You will find it on the run of sculptures along Sæbraut, the same easy shore walk that takes in the Sun Voyager and, further on, the Höfði house. Most people stride straight past it toward the more famous steel boat, which is part of its quiet appeal. It does not announce itself, it is not marked on most maps, and there is no fee and no queue. Come when the light is low and the bay is calm, walk a slow circle around it, and wait for the mountain to appear in the gap.',
+      'There is something fitting about sending someone a cairn, which is the oldest way there is of saying this is the path, keep going. Sign a photograph of this one for a person finding their way across difficult ground, and the picture carries the small, steady encouragement that a pile of stones has always meant.',
+    ],
+  },
+  {
+    slug: 'domkirkjan',
+    title: 'The little cathedral where the parliament still goes to pray',
+    kicker: 'Iceland · Field note',
+    date: 'June 2026',
+    excerpt:
+      'A small, plain church on Austurvöllur that most visitors walk straight past, and which is in fact the cathedral of Reykjavík, the one the parliament returns to before every session.',
+    gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
+    image: '/photos/Domkirkjan.jpeg',
+    plateSlug: 'domkirkjan',
+    plateTitle: 'Domkirkjan',
+    body: [
+      'On Austurvöllur, the green square in the middle of old Reykjavík, there is a small church that most visitors walk straight past. It is pale and plain, two low storeys under a modest tower, and it sits a little in the shadow of the parliament beside it and a long way in the shadow of Hallgrímskirkja up on the hill. Yet this quiet building, and not the great concrete tower, is the cathedral of Reykjavík.',
+      'The church was built between 1787 and 1796 to a neoclassical design by the Danish architect Andreas Kirkerup, and it carries a claim the bigger churches cannot. It was the first building in the town raised in the knowledge that Reykjavík was going to become a capital. When it was consecrated in 1796 the place around it was barely more than a scatter of houses, and the cathedral was already built for a country that did not quite exist yet.',
+      'It did not stay as it began. In 1847 and 1848 it was enlarged and raised again, this time to a design by the Danish architect Laurits Winstrup, and that is more or less the building you see today. Inside, the thing worth crossing the floor for is the baptismal font, a piece of white Italian marble carved by Bertel Thorvaldsen, the celebrated sculptor of Danish and Icelandic parentage who spent most of his life working in Rome. It is a surprising thing to find standing in so plain a room.',
+      'The real character of the place comes from one morning a year. Since the Alþingi, the Icelandic parliament, was brought back in 1845, every new session has opened with a service in this church. The members gather under its roof, the dean of the cathedral leads the prayers, and then the whole parliament walks the short distance from the cathedral door to the parliament house to begin its work. Church and state keep a polite distance through most of Icelandic life, and then once a year they walk out of the same door together.',
+      'That closeness is built into the ground as well as the calendar. The parliament house was raised right against the square not long after the parliament returned, so the cathedral and the Alþingi now stand almost shoulder to shoulder on Austurvöllur, both of them facing the same patch of grass where the city comes to celebrate on its national day and to bang pots and protest when it is angry.',
+      'Visiting is simple and free when no service is on. You step in off the square to a calm, pale interior with a gallery running around it and the Thorvaldsen font near the door, and after the height and drama of Hallgrímskirkja it feels almost domestic in here. The cathedral sits in the walkable old town, next to the parliament and a minute from the pond, so it folds easily into a slow morning of wandering the centre.',
+      'There is something quietly Icelandic about a place whose most photographed church is the landmark on the hill, while its actual cathedral is this modest house on the square, the one the lawmakers keep coming back to. Sign a photograph of it for someone who trusts the steady, understated things over the loud ones, and the card carries a little of that same restraint.',
+    ],
+  },
+  {
     slug: 'einar-benediktsson',
     title: 'The poet who tried to sell the northern lights',
     kicker: 'Iceland · Field note',
@@ -47,16 +88,16 @@ export const POSTS: Post[] = [
     ],
   },
   {
-    slug: 'arnarholl',
+    slug: 'ingolfur-arnarson',
     title: 'The man on the hill, and the cove that became a city',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
     excerpt:
       'A bronze settler with a spear and a high seat pillar on a low grassy hill in the centre of Reykjavík, looking out at the city he is said to have started.',
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
-    image: '/photos/Arnarholl.jpeg',
-    plateSlug: 'arnarholl',
-    plateTitle: 'Arnarhóll',
+    image: '/photos/Ingolfur-Arnarson.jpeg',
+    plateSlug: 'ingolfur-arnarson',
+    plateTitle: 'Ingólfur Arnarson',
     body: [
       'In the middle of central Reykjavík, between the concert hall and the parliament, the ground tilts up briefly into a low green hill called Arnarhóll. At the top of it stands a tall bronze man in furs and armour, leaning on a spear and looking north across the bay. People sit on the grass around him with sandwiches and bottles of beer, and on a warm day in summer the slope fills up like a stadium.',
       'The man is Ingólfur Arnarson, the figure the sagas place at the start of the whole Icelandic story. The Book of Settlements has him land here around the year 874, name the place Reykjavík, which means the bay of smokes, on account of the steam coming off the hot springs, and call it home. Whether the dates and the details are exactly right is one of those questions historians enjoy, and what is certainly true is that this is the spot the country chose to mark as its beginning.',

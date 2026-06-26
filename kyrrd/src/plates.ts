@@ -55,7 +55,7 @@ export const PLATES: Plate[] = [
   {
     id: '09', no: '09', series: 'Series III', title: 'Water Carrier',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
-    description: 'A bronze woman bowed under a yoke, still carrying water through the city long after the taps arrived.',
+    description: 'Bowed under a wooden yoke, the Water Carrier who hauled Reykjavík’s water by hand long before the pipes arrived.',
     gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
     image: '/photos/WaterCarrier.jpeg',
     slug: 'water-carrier',
@@ -65,7 +65,7 @@ export const PLATES: Plate[] = [
   {
     id: '01', no: '01', series: 'Series II', title: 'Grotta Lighthouse',
     place: 'Reykjavík, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
-    description: 'An island guarded by the ocean, where the path disappears with the rising tide.',
+    description: 'Reachable on foot only around low tide, the Grótta lighthouse on an island the sea cuts off twice a day.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
     image: '/photos/glacier-edge.jpg',
     slug: 'grotta-lighthouse',
@@ -74,7 +74,7 @@ export const PLATES: Plate[] = [
   {
     id: '02', no: '02', series: 'Series II', title: 'The Sun Voyager',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.92°W', date: 'June 13 2026',
-    description: 'Jón Gunnar Árnason’s iconic sculpture, standing proud against Mount Esja since 1990.',
+    description: 'Not the Viking ship everyone takes it for, Jón Gunnar Árnason’s steel Sun Voyager has faced Mount Esja since 1990.',
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
     image: '/photos/The-Sun-Voyager.jpeg',
     slug: 'sun-voyager',
@@ -83,7 +83,7 @@ export const PLATES: Plate[] = [
   {
     id: '03', no: '03', series: 'Series II', title: 'Hallgrimskirkja',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'May 27 2026',
-    description: 'Reykjavík iconic landmark, standing tall as a beacon of Icelandic heritage and design.',
+    description: 'Forty years in the building, Hallgrímskirkja’s pale tower was shaped after the basalt columns of the Icelandic coast.',
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
     image: '/photos/Hallgrimskirkja.jpeg',
     slug: 'hallgrimskirkja',
@@ -92,7 +92,7 @@ export const PLATES: Plate[] = [
   {
     id: '04', no: '04', series: 'Series II', title: 'The Partnership Sculpture',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 04 2025',
-    description: 'A bronze emblem of unity, celebrating the enduring friendship between two nations across the Atlantic.',
+    description: 'Two bronze figures leaning into each other on the shore, the Partnership, a gift between Iceland and the United States.',
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
     image: '/photos/The-Partnership-Sculpture.jpeg',
     slug: 'partnership-sculpture',
@@ -101,7 +101,7 @@ export const PLATES: Plate[] = [
   {
     id: '05', no: '05', series: 'Series III', title: 'Althingi Parliament House',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 05 2026',
-    description: 'The historic seat of Alþingi, home to one of the world’s oldest surviving parliaments.',
+    description: 'Behind a plain grey façade on Austurvöllur sits Alþingi, a parliament first gathered in the year 930.',
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
     image: '/photos/Althingi-Parliament.jpeg',
     slug: 'althingi',
@@ -111,7 +111,7 @@ export const PLATES: Plate[] = [
   {
     id: '06', no: '06', series: 'Series III', title: 'Harpa',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'March 2026',
-    description: 'An endless play of light and water, designed to dissolve the boundaries of space.',
+    description: 'Coloured glass that shifts with the weather, Harpa on the old harbour, left half built when the banks fell and finished anyway.',
     gradient: 'linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)',
     image: '/photos/Harpa.jpeg',
     slug: 'harpa',
@@ -120,7 +120,7 @@ export const PLATES: Plate[] = [
   {
     id: '10', no: '10', series: 'Series IV', title: 'Unknown Bureaucrat',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
-    description: 'An anonymous figure burdened by stone, embodying the quiet grind of bureaucratic life.',
+    description: 'Sharp from the waist down and a raw block of basalt above, the Unknown Bureaucrat, a monument to the official no one remembers.',
     gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
     image: '/photos/Unknown-Bureaucrat.jpeg',
     slug: 'unknown-bureaucrat',
@@ -130,7 +130,7 @@ export const PLATES: Plate[] = [
   {
     id: '11', no: '11', series: 'Series IV', title: 'Hofdi House',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 2026',
-    description: 'A small white house by the sea where two superpowers once sat down to talk.',
+    description: 'On the north shore stands Höfði, the white house where Reagan and Gorbachev met in 1986 and the Cold War began to thaw.',
     gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
     image: '/photos/hofdi-house.jpeg',
     slug: 'hofdi-house',
@@ -139,7 +139,7 @@ export const PLATES: Plate[] = [
   {
     id: '12', no: '12', series: 'Series IV', title: 'Einar Benediktsson',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 2026',
-    description: 'A bronze poet beside Höfði house, a restless dreamer who, the story goes, once tried to sell the northern lights.',
+    description: 'Poet, lawyer and tireless schemer, Einar Benediktsson stands beside Höfði, the man who, the story goes, once tried to sell the northern lights.',
     gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
     image: '/photos/Einar-Benediktsson.jpeg',
     slug: 'einar-benediktsson',
@@ -149,17 +149,17 @@ export const PLATES: Plate[] = [
   {
     id: '13', no: '13', series: 'Series IV', title: 'Ingólfur Arnarson',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'June 2026',
-    description: 'Armoured, spear in hand, looking out over the capital he founded.',
+    description: 'Spear in hand on his green hill, Ingólfur Arnarson, the settler the sagas credit with founding Reykjavík.',
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
-    image: '/photos/Arnarholl.jpeg',
-    slug: 'arnarholl',
+    image: '/photos/Ingolfur-Arnarson.jpeg',
+    slug: 'ingolfur-arnarson',
     mapsUrl: 'https://maps.app.goo.gl/V4TDaYU63c3Zqz61A',
     mapsQuery: 'Ingólfur Arnarson statue, Arnarhóll, Reykjavík',
   },
   {
     id: '14', no: '14', series: 'Series IV', title: 'The Black Cone',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
-    description: 'A boulder split by a black cone in front of the parliament, a quiet monument to civil disobedience.',
+    description: 'Driven into a split boulder outside parliament, the Black Cone, Iceland’s quiet monument to the right to protest.',
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     image: '/photos/The-black-cone.jpeg',
     slug: 'black-cone',
@@ -172,21 +172,22 @@ export const PLATES: Plate[] = [
      if you like). Then tell me and I will write the Journal article. ---- */
   {
     id: '15', no: '15', series: 'Series V', title: 'Domkirkjan',
-    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
-    description: 'Built in 1847. This is where Icelandic parliamentarians attend a service before the start of each legislative session.',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
+    description: 'Beside the parliament on Austurvöllur, the cathedral where members still gather for a service before each new session opens.',
     gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
-    image: '/photos/Domkirkjan.jpeg', // ← add your photo, e.g. '/photos/your-file.jpeg'
+    image: '/photos/Domkirkjan.jpeg',
     slug: 'domkirkjan',
-    mapsUrl: 'https://maps.app.goo.gl/5t4mjjBDjE8T5Sdq6', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/5t4mjjBDjE8T5Sdq6',
   },
   {
-    id: '16', no: '16', series: 'Series V', title: 'New plate 16',
-    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
-    description: 'Placeholder. Add the photo and replace this description.',
-    gradient: 'linear-gradient(180deg,#f1f6f3,#d3e2d9 55%,#9fb8aa)',
-    image: '', // ← add your photo, e.g. '/photos/your-file.jpeg'
-    slug: 'plate-16',
-    mapsUrl: '', // ← paste your Google Maps link here
+    id: '16', no: '16', series: 'Series V', title: 'Íslandsvarðan',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.92°W', date: 'June 2026',
+    description: 'Cast to look like raw lava, Íslandsvarðan, Jóhann Eyfells’s bronze cairn with a hole that keeps Mount Esja in view.',
+    gradient: 'linear-gradient(180deg,#e7edef,#9fb0b6 50%,#586469 82%,#23282b)',
+    image: '/photos/Islandsvardan.jpeg',
+    slug: 'islandsvardan',
+    mapsUrl: '', // not on Google Maps; falls back to a name search
+    mapsQuery: 'Íslandsvarðan, Sæbraut, Reykjavík',
   },
   {
     id: '17', no: '17', series: 'Series V', title: 'New plate 17',
