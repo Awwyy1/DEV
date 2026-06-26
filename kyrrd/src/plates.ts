@@ -151,8 +151,8 @@ export const PLATES: Plate[] = [
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'June 2026',
     description: 'Armoured, spear in hand, looking out over the capital he founded.',
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
-    image: '/photos/Arnarholl.jpeg',
-    slug: 'arnarholl',
+    image: '/photos/Ingolfur-Arnarson.jpeg',
+    slug: 'ingolfur-arnarson',
     mapsUrl: 'https://maps.app.goo.gl/V4TDaYU63c3Zqz61A',
     mapsQuery: 'Ingólfur Arnarson statue, Arnarhóll, Reykjavík',
   },
@@ -172,12 +172,12 @@ export const PLATES: Plate[] = [
      if you like). Then tell me and I will write the Journal article. ---- */
   {
     id: '15', no: '15', series: 'Series V', title: 'Domkirkjan',
-    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
-    description: 'Built in 1847. This is where Icelandic parliamentarians attend a service before the start of each legislative session.',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
+    description: 'Beside the parliament on Austurvöllur, the cathedral where members still gather for a service before each new session opens.',
     gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
-    image: '/photos/Domkirkjan.jpeg', // ← add your photo, e.g. '/photos/your-file.jpeg'
+    image: '/photos/Domkirkjan.jpeg',
     slug: 'domkirkjan',
-    mapsUrl: 'https://maps.app.goo.gl/5t4mjjBDjE8T5Sdq6', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/5t4mjjBDjE8T5Sdq6',
   },
   {
     id: '16', no: '16', series: 'Series V', title: 'New plate 16',
