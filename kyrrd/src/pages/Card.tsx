@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useSearchParams } from 'react-router-dom';
 import { findPlate } from '../plates';
+import { findPartner } from '../partners';
 import { POSTS } from '../journal';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
@@ -17,6 +18,8 @@ export default function Card() {
   const plate = findPlate(slug);
   const key = plate.slug ?? plate.id;
   const post = POSTS.find((p) => p.plateSlug === key);
+  const [params] = useSearchParams();
+  const fromHotel = findPartner(params.get('from'));
   useSeo(`${plate.title} — kyrrð`, plate.description);
 
   // Keep the QR landing out of the index (it mirrors the journal article).
@@ -44,7 +47,9 @@ export default function Card() {
           kyrr<span className="eth">ð</span>
         </Link>
         <div className="cp-hero-ov">
-          <div className="cp-kicker">A card from Reykjavík</div>
+          <div className="cp-kicker">
+            {fromHotel ? `Sent with compliments of ${fromHotel.name}` : 'A card from Reykjavík'}
+          </div>
           <h1 className="cp-title">{plate.title}</h1>
           <div className="cp-place">
             {plate.place}

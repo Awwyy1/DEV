@@ -1,6 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
 import { PLATES } from '../plates';
-import { Photo } from '../components/Photo';
 import { findPartner } from '../partners';
 import { useSeo } from '../seo';
 import '../hotelpage.css';
@@ -24,7 +23,7 @@ export default function Hotel() {
   return (
     <div className="hotelpage">
       <header className="hp-hero">
-        <Photo className="hp-hero-ph" image={HERO.image} gradient={HERO.gradient} sun={false} alt="Reykjavík" />
+        <div className="hp-hero-bg" style={{ backgroundImage: `url("${HERO.image ?? ''}")` }} />
         <div className="hp-grad" />
         <div className="hp-cobrand">
           <span className="hp-hotel">{name}</span>
@@ -66,7 +65,7 @@ export default function Hotel() {
         <div className="hp-grid">
           {picks.map((p) => (
             <Link key={p.id} to={link(p.slug ?? p.id)} className="hp-card">
-              <Photo className="hp-card-ph" image={p.image} gradient={p.gradient} sun={false} alt={p.title} />
+              <div className="hp-card-ph" style={{ backgroundImage: `url("${p.image ?? ''}")` }} />
               <div className="hp-card-cap">
                 <span className="hp-card-no">{p.no}</span>
                 <span className="hp-card-ttl">{p.title}</span>
