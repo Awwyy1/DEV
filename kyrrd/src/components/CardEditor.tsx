@@ -115,7 +115,7 @@ export default function CardEditor({ photos, showPicker = false, suggestions = [
       const canvas = await html2canvas(clone, {
         width: fmt.w,
         height: fmt.h,
-        scale: 1,
+        scale: 2, // 2x so the PNG is print-sharp (e.g. 2160x2700 for Post 4:5)
         backgroundColor: null,
         useCORS: true,
         logging: false,
