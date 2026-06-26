@@ -1,4 +1,5 @@
 import { Routes, Route, Outlet, Navigate, useParams } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
@@ -58,6 +59,7 @@ export default function App() {
           <Route path="*" element={<Home />} />
         </Route>
       </Routes>
+      <Analytics />
     </>
   );
 }

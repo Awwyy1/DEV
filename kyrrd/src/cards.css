@@ -62,7 +62,7 @@
 
 /* ---- maker's mark / co-brand seal (on every card) ---- */
 .pc-seal { position: absolute; z-index: 11; display: inline-flex; align-items: baseline; line-height: 1; font-family: var(--pc-sans); }
-.pc-seal__km { font-family: var(--pc-disp); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.pc-seal__km { font-family: var(--pc-disp); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
 .pc-seal__eth { color: var(--glacier); }
 .pc-seal__pre { font-size: 15px; letter-spacing: 0.06em; opacity: 0.9; }
 .pc-seal__url { font-size: 15px; letter-spacing: 0.05em; opacity: 0.75; }

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState, type CSSProperties } from 'react';
 import { Link } from 'react-router-dom';
 import html2canvas from 'html2canvas';
+import { track } from '@vercel/analytics';
 import PostcardPreview, { StyleId, CardPhoto } from './PostcardPreview';
 import '../cards.css';
 
@@ -132,6 +133,7 @@ export default function CardEditor({
 
       const filename = `kyrrd-${styleId}-${format}.png`;
       const file = new File([blob], filename, { type: 'image/png' });
+      track('card_saved', { style: styleId, format, partner: partnerName ?? 'none' });
 
       // On phones the share sheet ("Save to Photos") is reliable in both
       // Safari and Chrome; <a download> is flaky on mobile.
@@ -278,7 +280,7 @@ export default function CardEditor({
               Your signed card is ready. Want a different size? Pick another format and save again.
             </p>
             <div className="ce-saved__btns">
-              <Link to="/archive" className="btn btn-primary">
+              <Link to="/archive" className="btn btn-primary" onClick={() => track('make_another')}>
                 Make another card
               </Link>
             </div>
