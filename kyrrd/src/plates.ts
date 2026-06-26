@@ -176,7 +176,7 @@ export const PLATES: Plate[] = [
     description: 'Built in 1847. This is where Icelandic parliamentarians attend a service before the start of each legislative session.',
     gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
     image: '/photos/Domkirkjan.jpeg', // ← add your photo, e.g. '/photos/your-file.jpeg'
-    slug: 'plate-15',
+    slug: 'domkirkjan',
     mapsUrl: '', // ← paste your Google Maps link here
   },
   {
