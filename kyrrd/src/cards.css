@@ -60,6 +60,18 @@
 .pc-vin__meta { display: flex; justify-content: space-between; align-items: center; color: #5a4f48; letter-spacing: 0.1em; text-transform: uppercase; font-size: 14px; font-weight: 500; }
 .pc-vin__sender { font-family: var(--pc-hand); font-size: 36px; text-transform: none; }
 
+/* ---- maker's mark / co-brand seal (on every card) ---- */
+.pc-seal { position: absolute; z-index: 11; display: inline-flex; align-items: baseline; line-height: 1; font-family: var(--pc-sans); }
+.pc-seal__km { font-family: var(--pc-disp); font-weight: 600; font-size: 22px; letter-spacing: -0.01em; }
+.pc-seal__eth { color: var(--glacier); }
+.pc-seal__pre { font-size: 15px; letter-spacing: 0.06em; opacity: 0.9; }
+.pc-seal__url { font-size: 15px; letter-spacing: 0.05em; opacity: 0.75; }
+.pc-seal__sep { opacity: 0.5; }
+.pc--editorial .pc-seal { left: 96px; bottom: 44px; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
+.pc--polaroid .pc-seal { left: 50%; transform: translateX(-50%); bottom: 30px; color: #6b7280; }
+.pc--minimal .pc-seal { left: 128px; bottom: 78px; color: #6b7280; }
+.pc--vintage .pc-seal { left: 50%; transform: translateX(-50%); bottom: 86px; color: #5a4f48; }
+
 /* ============================================================
    Sandbox page chrome (mobile-first single column, in order:
    chips, preview, photo picker, message, signed by, download)

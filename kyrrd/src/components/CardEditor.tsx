@@ -41,9 +41,16 @@ interface CardEditorProps {
   showPicker?: boolean;
   /** Other photos offered after saving (the "more from the archive" strip). */
   suggestions?: { slug: string; url: string; title: string }[];
+  /** Co-brand the card + page with a partner (hotel) name. */
+  partnerName?: string;
 }
 
-export default function CardEditor({ photos, showPicker = false, suggestions = [] }: CardEditorProps) {
+export default function CardEditor({
+  photos,
+  showPicker = false,
+  suggestions = [],
+  partnerName,
+}: CardEditorProps) {
   const [styleId, setStyleId] = useState<StyleId>('editorial');
   const [format, setFormat] = useState<FormatId>('post');
   const [photoIdx, setPhotoIdx] = useState(0);
@@ -203,6 +210,7 @@ export default function CardEditor({ photos, showPicker = false, suggestions = [
             message={message}
             sender={sender}
             styleId={styleId}
+            partner={partnerName}
           />
         </div>
       </div>

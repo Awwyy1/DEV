@@ -47,7 +47,7 @@ export default function Create() {
         Make your card
       </h1>
 
-      <CardEditor photos={[photo]} suggestions={suggestions} />
+      <CardEditor photos={[photo]} suggestions={suggestions} partnerName={hotel?.name} />
     </div>
   );
 }
