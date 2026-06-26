@@ -9,14 +9,14 @@
 
 /* hero */
 .hp-hero { position: relative; min-height: 92vh; min-height: 92svh; display: flex; align-items: flex-end; overflow: hidden; background: #0b0b0c; }
-.hp-hero-ph { position: absolute; inset: 0; width: 100%; height: 100%; }
+.hp-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; background-repeat: no-repeat; }
 .hp-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.82), rgba(0,0,0,0.32) 45%, rgba(0,0,0,0.1) 72%, rgba(0,0,0,0.3)); }
 .hp-cobrand { position: absolute; top: clamp(20px,4vh,34px); left: var(--pad); right: var(--pad); z-index: 2; display: flex; align-items: center; gap: 10px; color: #fff; }
 .hp-cobrand .hp-hotel { font-family: var(--disp); font-weight: 600; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
 .hp-cobrand .hp-x { color: rgba(255,255,255,0.5); }
 .hp-cobrand .hp-km { font-family: var(--disp); font-weight: 600; font-size: 16px; letter-spacing: -0.02em; }
 
-.hp-hero-ov { position: relative; z-index: 1; width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 var(--pad) clamp(40px,8vh,76px); color: #fff; }
+.hp-hero-ov { position: relative; z-index: 1; width: 100%; padding: 0 var(--pad) clamp(40px,8vh,76px); color: #fff; }
 .hp-kicker { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.82); }
 .hp-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: clamp(38px,8vw,66px); line-height: 1.02; margin: 12px 0 14px; max-width: 16ch; }
 .hp-sub { font-weight: 300; font-size: clamp(15px,2.2vw,19px); line-height: 1.55; color: rgba(255,255,255,0.86); max-width: 50ch; margin: 0 0 26px; }
@@ -43,7 +43,7 @@
 @media (max-width: 460px) { .hp-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
 .hp-card { display: block; color: inherit; background: var(--white); border: var(--hair) solid var(--fog); border-radius: 4px; overflow: hidden; transition: 0.2s; }
 .hp-card:hover { box-shadow: 0 22px 44px -28px rgba(0,0,0,0.4); transform: translateY(-2px); }
-.hp-card-ph { aspect-ratio: 4 / 5; }
+.hp-card-ph { aspect-ratio: 4 / 5; background-size: cover; background-position: center; background-repeat: no-repeat; background-color: var(--mist); }
 .hp-card-cap { padding: 11px 13px; display: flex; align-items: baseline; gap: 8px; }
 .hp-card-no { font-size: 11px; letter-spacing: 0.02em; color: var(--steel); }
 .hp-card-ttl { font-family: var(--disp); font-weight: 500; font-size: 15px; }
