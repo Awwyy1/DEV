@@ -177,7 +177,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
     image: '/photos/Domkirkjan.jpeg', // ← add your photo, e.g. '/photos/your-file.jpeg'
     slug: 'domkirkjan',
-    mapsUrl: '', // ← paste your Google Maps link here
+    mapsUrl: 'https://maps.app.goo.gl/5t4mjjBDjE8T5Sdq6', // ← paste your Google Maps link here
   },
   {
     id: '16', no: '16', series: 'Series V', title: 'New plate 16',
