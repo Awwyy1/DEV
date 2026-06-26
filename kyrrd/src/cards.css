@@ -70,6 +70,11 @@
 .crumbs a:hover { color: var(--ink); }
 .crumbs .sep { color: var(--steel); }
 .crumbs .here { color: var(--ink); }
+.create-cobrand { font-size: 13px; letter-spacing: 0.03em; color: var(--steel-d); margin-bottom: 14px; }
+.create-cobrand b { color: var(--ink); font-weight: 500; }
+.create-cobrand .km { font-family: var(--disp); font-weight: 600; color: var(--ink); }
+.create-cobrand .km .eth { color: var(--glacier); }
+.create-cobrand .sep { color: var(--steel); }
 .cards-editor { display: flex; flex-direction: column; gap: 20px; }
 
 .cards-chips { display: flex; flex-direction: column; gap: 16px; }
