@@ -12,6 +12,8 @@ interface PostcardPreviewProps {
   message: string;
   sender: string;
   styleId: StyleId;
+  /** Co-brand the card with a partner (hotel) name. Falls back to kyrrd.pics. */
+  partner?: string;
 }
 
 function Pin() {
@@ -31,6 +33,24 @@ function Pin() {
   );
 }
 
+/** The quiet maker's mark printed on every card. With a partner it co-brands. */
+function Seal({ partner }: { partner?: string }) {
+  return (
+    <div className="pc-seal">
+      {partner && (
+        <span className="pc-seal__pre">
+          {partner}
+          <span className="pc-seal__sep"> · </span>
+        </span>
+      )}
+      <span className="pc-seal__km">
+        kyrr<span className="pc-seal__eth">ð</span>
+      </span>
+      {!partner && <span className="pc-seal__url"> · kyrrd.pics</span>}
+    </div>
+  );
+}
+
 /**
  * The postcard canvas is a fixed 1080x1350 (4:5). The editor scales it down
  * visually with a CSS transform; export captures the node at full size.
@@ -39,7 +59,7 @@ function Pin() {
  * faithfully but stretches object-fit.
  */
 const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
-  ({ photo, message, sender, styleId }, ref) => {
+  ({ photo, message, sender, styleId, partner }, ref) => {
     const bg = { backgroundImage: `url("${photo.url}")` };
     return (
       <div className={`pc pc--${styleId}`} ref={ref}>
@@ -100,6 +120,8 @@ const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
             </div>
           </div>
         )}
+
+        <Seal partner={partner} />
       </div>
     );
   },
