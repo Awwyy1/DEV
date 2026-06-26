@@ -1,5 +1,5 @@
 import { Link, useParams } from 'react-router-dom';
-import { findPlate } from '../plates';
+import { PLATES, findPlate } from '../plates';
 import CardEditor from '../components/CardEditor';
 import { useSeo } from '../seo';
 
@@ -8,21 +8,34 @@ export default function Create() {
   const plate = findPlate(id);
   useSeo(`Sign ${plate.title} — kyrrð`, 'Add your words and save your signed photo-card.');
 
+  const key = plate.slug ?? plate.id;
   const photo = { url: plate.image ?? '', location: plate.title };
+  const suggestions = PLATES.filter((p) => p.image && (p.slug ?? p.id) !== key)
+    .slice(0, 4)
+    .map((p) => ({ slug: p.slug ?? p.id, url: p.image as string, title: p.title }));
 
   return (
     <div className="wrap section">
-      <Link to={`/plate/${plate.slug ?? plate.id}`} className="create-back">
-        ← {plate.title}
-      </Link>
-      <div className="d-label" style={{ marginTop: 14 }}>
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <Link to="/archive">The Archive</Link>
+        <span className="sep" aria-hidden="true">
+          ▸
+        </span>
+        <Link to={`/plate/${key}`}>{plate.title}</Link>
+        <span className="sep" aria-hidden="true">
+          ▸
+        </span>
+        <span className="here">Make your card</span>
+      </nav>
+
+      <div className="d-label" style={{ marginTop: 16 }}>
         Sign &amp; send
       </div>
       <h1 className="d-h2 cards-title" style={{ marginTop: 4 }}>
         Make your card
       </h1>
 
-      <CardEditor photos={[photo]} />
+      <CardEditor photos={[photo]} suggestions={suggestions} />
     </div>
   );
 }
