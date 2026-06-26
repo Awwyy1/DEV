@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;1,400&display=swap');
+
+/* ============================================================
+   QR landing — the page on the back of a physical card leads to.
+   Hidden route /c/:slug. Cinematic photo hero, then a calm story.
+   ============================================================ */
+.cardpage { background: var(--snow); color: var(--ink); min-height: 100vh; }
+.cardpage .eth { color: var(--glacier); }
+
+/* hero */
+.cp-hero { position: relative; min-height: 88vh; min-height: 88svh; display: flex; align-items: flex-end; overflow: hidden; background: #0b0b0c; }
+.cp-hero-ph { position: absolute; inset: 0; width: 100%; height: 100%; }
+.cp-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.3) 42%, rgba(0,0,0,0.12) 72%, rgba(0,0,0,0.28)); }
+.cp-mark-top { position: absolute; top: clamp(20px,4vh,34px); left: var(--pad); z-index: 2; color: #fff; font-family: var(--disp); font-weight: 600; font-size: 18px; letter-spacing: -0.02em; }
+.cp-hero-ov { position: relative; z-index: 1; width: 100%; padding: 0 var(--pad) clamp(40px,8vh,76px); color: #fff; }
+.cp-kicker { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255,255,255,0.82); }
+.cp-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: clamp(40px,10vw,68px); line-height: 1.0; margin: 12px 0 10px; max-width: 14ch; }
+.cp-place { font-size: 13px; letter-spacing: 0.04em; color: rgba(255,255,255,0.72); }
+
+/* entrance */
+.cp-hero-ov > * { opacity: 0; transform: translateY(16px); animation: cpUp 0.85s cubic-bezier(0.2,0.7,0.2,1) forwards; }
+.cp-hero-ov .cp-kicker { animation-delay: 0.15s; }
+.cp-hero-ov .cp-title { animation-delay: 0.28s; }
+.cp-hero-ov .cp-place { animation-delay: 0.42s; }
+@keyframes cpUp { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .cp-hero-ov > * { opacity: 1; transform: none; animation: none; } }
+
+/* story */
+.cp-body { max-width: 660px; margin: 0 auto; padding: clamp(36px,7vh,66px) var(--pad) 70px; }
+.cp-intro { font-family: 'Playfair Display', serif; font-style: italic; font-size: clamp(20px,5vw,27px); line-height: 1.38; color: var(--ink); margin: 0 0 30px; }
+.cp-story p { font-size: 18px; line-height: 1.78; color: var(--body-ink); margin: 0 0 1.15em; }
+.cp-map { margin: 26px 0 0; }
+
+/* cta */
+.cp-cta { margin-top: 46px; padding: clamp(26px,6vw,40px) 26px; border: var(--hair) solid var(--fog); border-radius: 10px; background: var(--white); text-align: center; }
+.cp-cta-kicker { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--glacier-ink); font-weight: 600; }
+.cp-cta-title { font-family: 'Playfair Display', serif; font-weight: 500; font-size: clamp(23px,5.5vw,32px); line-height: 1.16; margin: 10px auto 22px; max-width: 18ch; }
+.cp-cta .btn { min-width: 220px; }
+.cp-cta-alt { display: inline-block; margin-top: 16px; font-size: 14px; color: var(--steel-d); }
+.cp-cta-alt:hover { color: var(--ink); }
+
+/* footer */
+.cp-foot { display: flex; justify-content: space-between; align-items: center; padding: 22px var(--pad); border-top: var(--hair) solid var(--fog); }
+.cp-foot .cp-mark { font-family: var(--disp); font-weight: 600; font-size: 17px; color: var(--ink); letter-spacing: -0.02em; }
+.cp-foot small { color: var(--steel-d); }

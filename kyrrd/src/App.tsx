@@ -12,6 +12,7 @@ import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
 import Create from './pages/Create';
+import Card from './pages/Card';
 
 // The old inscribe editor is retired; keep the URL working by sending it
 // to the new card editor.
@@ -37,6 +38,8 @@ export default function App() {
     <>
       <ScrollToTop />
       <Routes>
+        {/* Hidden QR landing — standalone, no nav/footer, not linked anywhere. */}
+        <Route path="/c/:slug" element={<Card />} />
         <Route element={<Layout />}>
           <Route index element={<Home />} />
           <Route path="archive" element={<Archive />} />
