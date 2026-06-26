@@ -26,6 +26,26 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'islandsvardan',
+    title: 'A lava cairn on the waterfront, with a window cut for the mountain',
+    kicker: 'Iceland · Field note',
+    date: 'June 2026',
+    excerpt:
+      'A dark, craggy bronze on the Reykjavík shore that almost everyone walks past on the way to the Sun Voyager, with an opening at its heart that keeps Mount Esja in view.',
+    gradient: 'linear-gradient(180deg,#e7edef,#9fb0b6 50%,#586469 82%,#23282b)',
+    image: '/photos/Islandsvardan.jpeg',
+    plateSlug: 'islandsvardan',
+    plateTitle: 'Íslandsvarðan',
+    body: [
+      'On the Sæbraut path along the Reykjavík shore, a short way from the Sun Voyager and its crowd, there is a dark, craggy mass that looks for all the world like a lump of lava set down by the water. It is taller than a person, rough and pitted and full of holes, and at its centre there is a larger opening that frames a clean view of Mount Esja across the bay. Walk around it and the mountain slides in and out of the gap, and when you stand still it holds the mountain like a window.',
+      'The piece is called Íslandsvarðan, the cairn of Iceland, and it is the work of Jóhann Eyfells, an Icelandic sculptor who spent most of his long career in the United States. It is not lava at all, although it works hard to convince you otherwise. It is cast bronze, made by a method Eyfells spent his life refining, in which the metal is allowed to take on the texture of the forces acting on it rather than a shape imposed from outside. The result is a bronze that behaves like stone, pulled and pitted as though the island itself had poured it.',
+      'The name is the key to it. A varða is a cairn, a small tower of piled stones, and for centuries these cairns were how Icelanders found their way across a country that had few roads and fewer landmarks. Travellers built them and trusted them, one marker leading on to the next across the lava and the moors. Eyfells took that humble, useful thing and made a single enormous version of it on the shore of the capital, a cairn not for a path but for a whole country, with the mountain framed in its heart so that the marker and the thing it marks are caught in one glance.',
+      'That opening in the middle is the part people remember. It faces out across Faxaflói bay toward Esja, the long flat mountain that changes colour with the weather and the hour, and the sculpture is set so the view of the mountain is never quite blocked. The bronze gives the mountain a frame and then gets out of its way. It is a generous idea for so heavy an object to carry, to make itself a window onto something larger than itself.',
+      'You will find it on the run of sculptures along Sæbraut, the same easy shore walk that takes in the Sun Voyager and, further on, the Höfði house. Most people stride straight past it toward the more famous steel boat, which is part of its quiet appeal. It does not announce itself, it is not marked on most maps, and there is no fee and no queue. Come when the light is low and the bay is calm, walk a slow circle around it, and wait for the mountain to appear in the gap.',
+      'There is something fitting about sending someone a cairn, which is the oldest way there is of saying this is the path, keep going. Sign a photograph of this one for a person finding their way across difficult ground, and the picture carries the small, steady encouragement that a pile of stones has always meant.',
+    ],
+  },
+  {
     slug: 'domkirkjan',
     title: 'The little cathedral where the parliament still goes to pray',
     kicker: 'Iceland · Field note',
