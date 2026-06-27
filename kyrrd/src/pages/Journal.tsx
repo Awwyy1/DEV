@@ -11,20 +11,20 @@ export default function Journal() {
   return (
     <div className="wrap section">
       <div className="d-label">Journal</div>
-      <h1 className="d-h1" style={{ margin: '8px 0 36px', maxWidth: '18ch' }}>
+      <div className="d-h2" style={{ marginTop: 4, marginBottom: 28 }}>
         Notes from the places in the archive.
-      </h1>
+      </div>
 
-      <div className="journal-list">
+      <div className="grid g3 journal-grid">
         {POSTS.map((p) => (
-          <Link key={p.slug} to={`/journal/${p.slug}`} className="post-row">
+          <Link key={p.slug} to={`/journal/${p.slug}`} className="post-card">
             <Photo image={p.image} gradient={p.gradient} alt={p.title} />
-            <div className="post-body">
+            <div className="post-card-body">
               <div className="kicker">
                 {p.kicker} · {readingMinutes(p)} min read
               </div>
               <div className="post-title">{p.title}</div>
-              <p style={{ color: 'var(--steel-d)', maxWidth: '46ch' }}>{p.excerpt}</p>
+              <p className="post-excerpt">{p.excerpt}</p>
               <span className="read">Read the note →</span>
             </div>
           </Link>
