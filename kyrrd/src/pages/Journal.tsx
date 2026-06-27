@@ -24,7 +24,6 @@ export default function Journal() {
                 {p.kicker} · {readingMinutes(p)} min read
               </div>
               <div className="post-title">{p.title}</div>
-              <p className="post-excerpt">{p.excerpt}</p>
               <span className="read">Read the note →</span>
             </div>
           </Link>

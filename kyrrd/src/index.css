@@ -70,6 +70,9 @@ button { font: inherit; }
 .d-body { font-size: 16px; }
 .d-cap { font-size: 13px; color: var(--steel-d); }
 .d-label { font-size: 11px; letter-spacing: 0.02em; color: var(--steel-d); font-weight: 500; }
+/* on phones the page-description heading drops to the article-title scale so it
+   stops eating the top of the screen — applies everywhere .d-h2 is a page head */
+@media (max-width: 620px) { .d-h2 { font-size: 19px; } }
 
 /* ---- wordmark + mark ---- */
 .wm { font-family: var(--disp); font-weight: 500; letter-spacing: -0.02em; }
@@ -205,11 +208,10 @@ button { font: inherit; }
 .journal-grid { align-items: stretch; }
 .post-card { display: flex; flex-direction: column; background: var(--white); border: var(--hair) solid var(--fog); border-radius: var(--r); overflow: hidden; color: inherit; transition: 0.2s; }
 .post-card:hover { box-shadow: 0 22px 44px -26px rgba(48, 40, 28, 0.4); transform: translateY(-2px); }
-.post-card .ph { aspect-ratio: 3 / 2; }
+.post-card .ph { aspect-ratio: 4 / 5; }
 .post-card-body { display: flex; flex-direction: column; flex: 1 1 auto; padding: 16px 18px 18px; }
-.post-card .post-title { font-family: var(--disp); font-weight: 500; font-size: 19px; line-height: 1.22; letter-spacing: -0.01em; margin: 7px 0 8px; }
-.post-card .post-excerpt { font-size: 14px; line-height: 1.55; color: var(--steel-d); margin: 0; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-.post-card .read { display: inline-block; margin-top: auto; padding-top: 14px; color: var(--glacier-ink); font-size: 13.5px; letter-spacing: 0.03em; }
+.post-card .post-title { font-family: var(--disp); font-weight: 500; font-size: 19px; line-height: 1.22; letter-spacing: -0.01em; margin: 7px 0 0; }
+.post-card .read { display: inline-block; margin-top: auto; padding-top: 16px; color: var(--glacier-ink); font-size: 13.5px; letter-spacing: 0.03em; }
 @media (max-width: 620px) { .journal-grid { grid-template-columns: 1fr; } }
 
 .article { max-width: 760px; }
