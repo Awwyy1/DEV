@@ -70,6 +70,9 @@ button { font: inherit; }
 .d-body { font-size: 16px; }
 .d-cap { font-size: 13px; color: var(--steel-d); }
 .d-label { font-size: 11px; letter-spacing: 0.02em; color: var(--steel-d); font-weight: 500; }
+/* on phones the page-description heading drops to the article-title scale so it
+   stops eating the top of the screen — applies everywhere .d-h2 is a page head */
+@media (max-width: 620px) { .d-h2 { font-size: 19px; } }
 
 /* ---- wordmark + mark ---- */
 .wm { font-family: var(--disp); font-weight: 500; letter-spacing: -0.02em; }
