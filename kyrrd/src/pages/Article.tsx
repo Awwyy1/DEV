@@ -4,6 +4,7 @@ import { findPost, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
+import NewsletterCard from '../components/NewsletterCard';
 import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
@@ -95,34 +96,34 @@ export default function Article() {
     <div className="wrap section article-page">
       <ReadingProgress />
 
+      <header className="article-head">
+        <nav className="crumbs article-crumbs" aria-label="Breadcrumb">
+          <Link to="/journal">Journal</Link>
+          <span className="sep" aria-hidden="true">
+            ▸
+          </span>
+          <span className="here">Field note</span>
+        </nav>
+
+        <div className="kicker">
+          {post.kicker} · {readingMinutes(post)} min read
+        </div>
+        <h1 className="article-title">{post.title}</h1>
+        <div className="d-cap article-byline">
+          <span>by kyrrð · {post.date}</span>
+          {plate && <MapLink plate={plate} />}
+        </div>
+      </header>
+
+      <Photo
+        image={post.image}
+        gradient={post.gradient}
+        alt={post.title}
+        className="article-hero"
+      />
+
       <div className="article-grid">
         <article className="article-main">
-          <nav className="crumbs article-crumbs" aria-label="Breadcrumb">
-            <Link to="/journal">Journal</Link>
-            <span className="sep" aria-hidden="true">
-              ▸
-            </span>
-            <span className="here">Field note</span>
-          </nav>
-
-          <div className="kicker">
-            {post.kicker} · {readingMinutes(post)} min read
-          </div>
-          <h1 className="article-title">{post.title}</h1>
-          <div className="d-cap article-byline">
-            <span>
-              by kyrrð · {post.date}
-            </span>
-            {plate && <MapLink plate={plate} />}
-          </div>
-
-          <Photo
-            image={post.image}
-            gradient={post.gradient}
-            alt={post.title}
-            className="article-hero"
-          />
-
           <div className="article-body">
             {post.body.map((para, i) =>
               i === 0 ? (
@@ -205,6 +206,8 @@ export default function Article() {
               ))}
             </ol>
           </div>
+
+          <NewsletterCard />
         </aside>
       </div>
 
