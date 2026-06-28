@@ -2,12 +2,23 @@ import { Link, useParams } from 'react-router-dom';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
-import { useSeo } from '../seo';
+import { useSeo, useJsonLd } from '../seo';
+
+const SITE = 'https://kyrrd.pics';
 
 export default function PlateDetail() {
   const { id } = useParams();
   const plate = findPlate(id);
-  useSeo(`${plate.title} — kyrrð`, plate.description);
+  useSeo(`${plate.title} — kyrrð`, plate.description, { image: plate.image });
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'kyrrð', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'The Archive', item: `${SITE}/archive` },
+      { '@type': 'ListItem', position: 3, name: plate.title },
+    ],
+  });
   return (
     <div className="wrap section">
       <div className="grid g2" style={{ alignItems: 'start' }}>

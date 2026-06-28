@@ -3,12 +3,46 @@ import { findPost, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
-import { useSeo } from '../seo';
+import { useSeo, useJsonLd } from '../seo';
+
+const SITE = 'https://kyrrd.pics';
 
 export default function Article() {
   const { slug } = useParams();
   const post = findPost(slug);
-  useSeo(post ? `${post.title} — kyrrð` : 'Journal — kyrrð', post?.excerpt);
+  useSeo(post ? `${post.title} — kyrrð` : 'Journal — kyrrð', post?.excerpt, {
+    image: post?.image,
+    type: 'article',
+  });
+  useJsonLd(
+    post
+      ? [
+          {
+            '@context': 'https://schema.org',
+            '@type': 'Article',
+            headline: post.title,
+            description: post.excerpt,
+            image: post.image ? `${SITE}${post.image}` : undefined,
+            author: { '@type': 'Organization', name: 'kyrrð' },
+            publisher: {
+              '@type': 'Organization',
+              name: 'kyrrð',
+              logo: { '@type': 'ImageObject', url: `${SITE}/icon-512.png` },
+            },
+            mainEntityOfPage: `${SITE}/journal/${post.slug}`,
+          },
+          {
+            '@context': 'https://schema.org',
+            '@type': 'BreadcrumbList',
+            itemListElement: [
+              { '@type': 'ListItem', position: 1, name: 'kyrrð', item: `${SITE}/` },
+              { '@type': 'ListItem', position: 2, name: 'Journal', item: `${SITE}/journal` },
+              { '@type': 'ListItem', position: 3, name: post.title },
+            ],
+          },
+        ]
+      : null,
+  );
 
   if (!post) {
     return (
