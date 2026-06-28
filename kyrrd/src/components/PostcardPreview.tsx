@@ -33,20 +33,12 @@ function Pin() {
   );
 }
 
-/** The quiet maker's mark printed on every card. With a partner it co-brands. */
-function Seal({ partner }: { partner?: string }) {
+/** The quiet maker's mark, set top-right on every card. With a partner it co-brands. */
+function Mark({ partner }: { partner?: string }) {
   return (
-    <div className="pc-seal">
-      {partner && (
-        <span className="pc-seal__pre">
-          {partner}
-          <span className="pc-seal__sep"> · </span>
-        </span>
-      )}
-      <span className="pc-seal__km">
-        kyrr<span className="pc-seal__eth">ð</span>
-      </span>
-      {!partner && <span className="pc-seal__url"> · kyrrd.pics</span>}
+    <div className="pc-mark">
+      {partner && <span className="pc-mark__pre">{partner} · </span>}
+      kyrr<span className="pc-mark__eth">ð</span>.pics
     </div>
   );
 }
@@ -121,7 +113,7 @@ const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
           </div>
         )}
 
-        <Seal partner={partner} />
+        <Mark partner={partner} />
       </div>
     );
   },
