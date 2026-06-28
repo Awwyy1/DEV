@@ -1,22 +1,29 @@
-// Render the ð mark to PNG icons for mobile (Safari/Chrome ignore SVG favicons).
-// Run after changing favicon.svg:  node scripts/make-icons.mjs
+// Render the ð mark to PNG icons (Safari/Chrome ignore SVG favicons, and iOS
+// home-screen icons must be opaque PNGs). The exact glyph path is the one in
+// favicon.svg (the real Space Grotesk eth, weight 500, traced to a vector path
+// so it never depends on a font being installed). Run after editing the path:
+//   node scripts/make-icons.mjs
 import sharp from 'sharp';
+import { readFileSync } from 'node:fs';
 
-const GLACIER = '#3FA9C0';
-const eth = (bg) =>
-  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">` +
-  (bg ? `<rect width="100" height="100" fill="${bg}"/>` : '') +
-  `<text x="50" y="74" font-size="82" text-anchor="middle" ` +
-  `font-family="'Space Grotesk','DejaVu Sans',Arial,sans-serif" font-weight="600" ` +
-  `fill="${GLACIER}">ð</text></svg>`;
+const GLACIER = '#23b1c9';
+const CREAM = '#f7f4ee';
 
-const out = (name, svg, size) =>
-  sharp(Buffer.from(svg), { density: 384 }).resize(size, size).png().toFile(`public/${name}`);
+// single source of truth for the glyph shape
+const d = readFileSync('public/favicon.svg', 'utf8').match(/<path d="([^"]+)"/)[1];
 
-// transparent for browser tabs, solid white square for home-screen / app icons
-await out('favicon-32.png', eth(null), 32);
-await out('favicon-16.png', eth(null), 16);
-await out('apple-touch-icon.png', eth('#ffffff'), 180);
-await out('icon-192.png', eth('#ffffff'), 192);
-await out('icon-512.png', eth('#ffffff'), 512);
-console.log('icons generated');
+const tab = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="${d}" fill="${GLACIER}"/></svg>`;
+const tile = (bg, fg) =>
+  `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="${bg}"/><path d="${d}" fill="${fg}"/></svg>`;
+
+const render = (name, svg, size) =>
+  sharp(Buffer.from(svg), { density: 512 }).resize(size, size).png().toFile(`public/${name}`);
+
+// transparent glyph for browser tabs; opaque glacier tile with a cream ð for
+// the home-screen / app icon
+await render('favicon-32.png', tab, 32);
+await render('favicon-16.png', tab, 16);
+await render('apple-touch-icon.png', tile(GLACIER, CREAM), 180);
+await render('icon-192.png', tile(GLACIER, CREAM), 192);
+await render('icon-512.png', tile(GLACIER, CREAM), 512);
+console.log('icons generated from favicon.svg path');
