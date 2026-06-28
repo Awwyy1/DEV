@@ -17,7 +17,9 @@ export default function Hotel() {
   const { partner } = useParams();
   const hotel = findPartner(partner);
   const name = hotel?.name ?? 'Your hotel';
-  useSeo(`${name} × kyrrð — send a piece of Reykjavík`, 'A guest gift: sign a photograph of Reykjavík and send it home.');
+  useSeo(`${name} × kyrrð — send a piece of Reykjavík`, 'A guest gift: sign a photograph of Reykjavík and send it home.', {
+    image: HERO.image,
+  });
 
   const picks = PLATES.filter((p) => p.image).slice(0, 6);
   const link = (slug: string) => `/create/${slug}${hotel ? `?partner=${hotel.slug}` : ''}`;

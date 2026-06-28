@@ -21,7 +21,7 @@ export default function Card() {
   const post = POSTS.find((p) => p.plateSlug === key);
   const [params] = useSearchParams();
   const fromHotel = findPartner(params.get('from'));
-  useSeo(`${plate.title} — kyrrð`, plate.description);
+  useSeo(`${plate.title} — kyrrð`, plate.description, { image: plate.image });
 
   // Keep the QR landing out of the index (it mirrors the journal article).
   useEffect(() => {
