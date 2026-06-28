@@ -60,17 +60,14 @@
 .pc-vin__meta { display: flex; justify-content: space-between; align-items: center; color: #5a4f48; letter-spacing: 0.1em; text-transform: uppercase; font-size: 14px; font-weight: 500; }
 .pc-vin__sender { font-family: var(--pc-hand); font-size: 36px; text-transform: none; }
 
-/* ---- maker's mark / co-brand seal (on every card) ---- */
-.pc-seal { position: absolute; z-index: 11; display: inline-flex; align-items: baseline; line-height: 1; font-family: var(--pc-sans); }
-.pc-seal__km { font-family: var(--pc-disp); font-weight: 500; font-size: 22px; letter-spacing: -0.02em; }
-.pc-seal__eth { color: var(--glacier); }
-.pc-seal__pre { font-size: 15px; letter-spacing: 0.06em; opacity: 0.9; }
-.pc-seal__url { font-size: 15px; letter-spacing: 0.05em; opacity: 0.75; }
-.pc-seal__sep { opacity: 0.5; }
-.pc--editorial .pc-seal { left: 96px; bottom: 44px; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45); }
-.pc--polaroid .pc-seal { left: 50%; transform: translateX(-50%); bottom: 30px; color: #6b7280; }
-.pc--minimal .pc-seal { left: 128px; bottom: 78px; color: #6b7280; }
-.pc--vintage .pc-seal { left: 50%; transform: translateX(-50%); bottom: 86px; color: #5a4f48; }
+/* ---- maker's mark (top-right on every card, sized like the "From" line) ---- */
+.pc-mark { position: absolute; z-index: 11; top: 0; right: 0; font-family: var(--pc-disp); font-weight: 500; font-size: 15px; letter-spacing: 0.04em; line-height: 1; white-space: nowrap; }
+.pc-mark__eth { color: var(--glacier); }
+.pc-mark__pre { letter-spacing: 0.05em; opacity: 0.9; }
+.pc--editorial .pc-mark { top: 96px; right: 96px; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); }
+.pc--polaroid .pc-mark { top: 40px; right: 54px; color: #9ca3af; }
+.pc--minimal .pc-mark { top: 128px; right: 128px; color: #6b7280; }
+.pc--vintage .pc-mark { top: 100px; right: 100px; color: rgba(255, 250, 242, 0.94); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4); }
 
 /* ============================================================
    Sandbox page chrome (mobile-first single column, in order:

@@ -135,15 +135,21 @@ export default function CardEditor({
       const file = new File([blob], filename, { type: 'image/png' });
       track('card_saved', { style: styleId, format, partner: partnerName ?? 'none' });
 
-      // On phones the share sheet ("Save to Photos") is reliable in both
-      // Safari and Chrome; <a download> is flaky on mobile.
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      // iOS Safari: the share sheet has "Save Image" → Photos, and <a download>
+      // just opens the image, so prefer sharing there. Everywhere else (Android
+      // Chrome, desktop) a plain download lands straight in the gallery /
+      // Downloads — the share sheet only offers Files/Drive, which is worse.
+      const isIOS =
+        /iP(hone|od|ad)/.test(navigator.userAgent) ||
+        (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+      if (isIOS && navigator.canShare && navigator.canShare({ files: [file] })) {
         try {
           await navigator.share({ files: [file] });
           setSaved(true);
           return;
         } catch (e) {
           if ((e as Error).name === 'AbortError') return;
+          // any other share failure: fall through to a direct download
         }
       }
       const url = URL.createObjectURL(blob);
