@@ -15,7 +15,7 @@ export default function PlateDetail() {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'kyrrð', item: `${SITE}/` },
-      { '@type': 'ListItem', position: 2, name: 'The Archive', item: `${SITE}/archive` },
+      { '@type': 'ListItem', position: 2, name: 'Archive', item: `${SITE}/archive` },
       { '@type': 'ListItem', position: 3, name: plate.title },
     ],
   });
