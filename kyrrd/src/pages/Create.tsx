@@ -29,11 +29,13 @@ export default function Create() {
         </div>
       )}
       <nav className="crumbs" aria-label="Breadcrumb">
-        <Link to="/archive">The Archive</Link>
+        <Link to="/archive">Archive</Link>
         <span className="sep" aria-hidden="true">
           ▸
         </span>
-        <Link to={`/plate/${key}`}>{plate.title}</Link>
+        <Link to={`/plate/${key}`} className="crumb-name">
+          {plate.title}
+        </Link>
         <span className="sep" aria-hidden="true">
           ▸
         </span>

@@ -17,7 +17,7 @@ export default function Nav() {
 
         <div className="nav-right">
           <nav className="nav">
-            <Link to="/archive">The Archive</Link>
+            <Link to="/archive">Archive</Link>
             <Link to="/journal">Journal</Link>
             <Link to="/about">How it works</Link>
             <Link to="/archive" className="btn btn-primary" style={{ padding: '10px 18px' }}>
@@ -43,7 +43,7 @@ export default function Nav() {
       {open && (
         <div className="mobile-menu">
           <Link to="/archive" onClick={close}>
-            The Archive
+            Archive
           </Link>
           <Link to="/journal" onClick={close}>
             Journal
