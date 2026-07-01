@@ -100,6 +100,7 @@ export default function CardEditor({
   const photo: CardPhoto = {
     url: imgData || current?.url || '',
     location: current?.location || '',
+    focus: current?.focus,
   };
 
   async function download() {
