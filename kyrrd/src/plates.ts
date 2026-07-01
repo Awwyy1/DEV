@@ -47,6 +47,7 @@ export interface Plate {
   slug?: string; // pretty URL segment; falls back to `id`
   mapsUrl?: string; // paste a Google Maps share link for an exact pin
   mapsQuery?: string; // precise place name to search, when the title differs
+  focus?: string; // card crop focus (CSS background-position, e.g. 'top'); default center
 }
 
 export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
@@ -87,6 +88,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
     image: '/photos/Hallgrimskirkja.jpeg',
     slug: 'hallgrimskirkja',
+    focus: 'top', // tall subject: keep the tower, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/6K1YGj6NsbuVDk7a7',
   },
   {
@@ -153,6 +155,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
     image: '/photos/Ingolfur-Arnarson.jpeg',
     slug: 'ingolfur-arnarson',
+    focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/V4TDaYU63c3Zqz61A',
     mapsQuery: 'Ingólfur Arnarson statue, Arnarhóll, Reykjavík',
   },
@@ -196,6 +199,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef1ec,#c7cfc2 52%,#8f9a8c 82%,#59615a)',
     image: '/photos/Skuli-Magnusson.jpeg',
     slug: 'skuli-magnusson',
+    focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Skúli Magnússon statue, Fógetagarðurinn, Reykjavík',
   },
