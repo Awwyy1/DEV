@@ -190,14 +190,38 @@ export const PLATES: Plate[] = [
     mapsQuery: 'Íslandsvarðan, Sæbraut, Reykjavík',
   },
   {
-    id: '17', no: '17', series: 'Series V', title: 'New plate 17',
-    place: 'Reykjavík, Iceland', coords: '', date: 'June 2026',
-    description: 'Placeholder. Add the photo and replace this description.',
-    gradient: 'linear-gradient(180deg,#f7f5f2,#e4dcd2 55%,#b9aa98)',
-    image: '', // ← add your photo, e.g. '/photos/your-file.jpeg'
-    slug: 'plate-17',
-    mapsUrl: '', // ← paste your Google Maps link here
+    id: '17', no: '17', series: 'Series VI', title: 'Skúli Magnússon',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Father of Reykjavík in bronze, Skúli Magnússon, whose Aðalstræti workshops turned a scatter of farms into a town.',
+    gradient: 'linear-gradient(180deg,#eef1ec,#c7cfc2 52%,#8f9a8c 82%,#59615a)',
+    image: '/photos/Skuli-Magnusson.jpeg',
+    slug: 'skuli-magnusson',
+    mapsUrl: '',
+    mapsQuery: 'Skúli Magnússon statue, Fógetagarðurinn, Reykjavík',
   },
+  {
+    id: '18', no: '18', series: 'Series VI', title: 'Úr Álögum',
+    place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'July 2026',
+    description: 'Sword lowered over a beaten beast, Einar Jónsson’s Úr álögum, a rider breaking a spell in the garden below Hallgrímskirkja.',
+    gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
+    image: '/photos/Ur-Alogum.jpeg',
+    slug: 'ur-alogum',
+    mapsUrl: '',
+    mapsQuery: 'Úr álögum, Einar Jónsson Museum, Reykjavík',
+  },
+  {
+    id: '19', no: '19', series: 'Series VI', title: 'Ingólfsgarður Lighthouse',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'July 2026',
+    description: 'Bright yellow at the end of a stone breakwater, the little lighthouse marking the mouth of Reykjavík’s old harbour.',
+    gradient: 'linear-gradient(180deg,#eff3f5,#cdd8de 52%,#9fb1b8 80%,#e6bf4c)',
+    image: '/photos/Ingolfsgardur-Lighthouse.jpeg',
+    slug: 'ingolfsgardur-lighthouse',
+    mapsUrl: '',
+    mapsQuery: 'Ingólfsgarður lighthouse, Reykjavík harbour',
+  },
+  /* ---- Add a plate by copying a block above: drop the photo in
+     kyrrd/public/photos, set image/title/slug/description, then ask for the
+     Journal article. Any plate left with an empty image is skipped. ---- */
 ];
 
 export const findPlate = (key?: string): Plate =>
