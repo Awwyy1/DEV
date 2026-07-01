@@ -10,7 +10,7 @@ export default function Create() {
   useSeo(`Sign ${plate.title} — kyrrð`, 'Add your words and save your signed photo-card.');
 
   const key = plate.slug ?? plate.id;
-  const photo = { url: plate.image ?? '', location: plate.title };
+  const photo = { url: plate.image ?? '', location: plate.title, focus: plate.focus };
   const [params] = useSearchParams();
   const hotel = findPartner(params.get('partner'));
   const suggestions = PLATES.filter((p) => p.image && (p.slug ?? p.id) !== key)

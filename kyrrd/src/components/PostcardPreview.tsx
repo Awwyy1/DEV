@@ -5,6 +5,8 @@ export type StyleId = 'editorial' | 'polaroid' | 'minimal' | 'vintage';
 export interface CardPhoto {
   url: string;
   location: string;
+  /** CSS background-position for the crop (e.g. 'top'); defaults to center. */
+  focus?: string;
 }
 
 interface PostcardPreviewProps {
@@ -52,7 +54,10 @@ function Mark({ partner }: { partner?: string }) {
  */
 const PostcardPreview = forwardRef<HTMLDivElement, PostcardPreviewProps>(
   ({ photo, message, sender, styleId, partner }, ref) => {
-    const bg = { backgroundImage: `url("${photo.url}")` };
+    const bg = {
+      backgroundImage: `url("${photo.url}")`,
+      backgroundPosition: photo.focus || 'center',
+    };
     return (
       <div className={`pc pc--${styleId}`} ref={ref}>
         {styleId === 'editorial' && (
