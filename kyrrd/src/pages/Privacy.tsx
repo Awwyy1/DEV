@@ -23,10 +23,6 @@ export default function Privacy() {
           before those features go live.
         </p>
         <p>If you have a question about your data, write to hello@kyrrd.pics.</p>
-        <p className="d-cap">
-          This is a starting draft, not legal advice. Have it reviewed before you take payments or
-          collect personal data.
-        </p>
       </div>
     </div>
   );
