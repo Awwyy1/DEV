@@ -9,6 +9,73 @@ import '../home.css';
 const HERO_IMG = '/photos/The-Sun-Voyager.jpeg';
 const PRODUCT_IMG = '/photos/WaterCarrier.jpeg';
 
+// Floating hero cards — edit to swap the photo, note, sender and style.
+// style: 'editorial' (dark, full-bleed) or 'vintage' (sepia, cream frame).
+type HeroCardData = {
+  image: string;
+  message: string;
+  from: string;
+  place: string;
+  style: 'editorial' | 'vintage';
+  focus?: string;
+};
+
+const HERO_CARDS: HeroCardData[] = [
+  {
+    image: '/photos/Islandsvardan.jpeg',
+    message: "You'd have loved the light here.",
+    from: 'Marco',
+    place: 'Íslandsvarðan',
+    style: 'vintage',
+  },
+  {
+    image: '/photos/WaterCarrier.jpeg',
+    message: 'For the one who talks about the north.',
+    from: 'Sofia',
+    place: 'Water Carrier',
+    style: 'editorial',
+  },
+];
+
+function HeroCardView({ card, pos }: { card: HeroCardData; pos: string }) {
+  const bg = { backgroundImage: `url("${card.image}")`, backgroundPosition: card.focus || 'center' };
+  if (card.style === 'vintage') {
+    return (
+      <div className={`hc hc--vintage ${pos}`}>
+        <div className="hc-vphoto" style={bg} />
+        <div className="hc-vtint" />
+        <div className="hc-vframe" />
+        <div className="hc-vmark">
+          kyrr<span className="eth">ð</span>.pics
+        </div>
+        <div className="hc-vcap">
+          <p className="hc-vmsg">{card.message}</p>
+          <div className="hc-vmeta">
+            <span>{card.place}</span>
+            <span className="hc-vsign">{card.from}</span>
+          </div>
+        </div>
+      </div>
+    );
+  }
+  return (
+    <div className={`hc ${pos}`}>
+      <div className="hc-img" style={bg} />
+      <div className="hc-grad" />
+      <div className="hc-mark">
+        kyrr<span className="eth">ð</span>.pics
+      </div>
+      <div className="hc-b">
+        <p className="hc-msg">{card.message}</p>
+        <div className="hc-meta">
+          <span>{card.place}</span>
+          <span>From {card.from}</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function Home() {
   useSeo(
     'kyrrð — Iceland, signed and sent',
@@ -23,30 +90,37 @@ export default function Home() {
       <section className="hm-hero">
         <div className="hm-hero-bg" style={{ backgroundImage: `url("${HERO_IMG}")` }} />
         <div className="hm-hero-grad" />
-        <div className="hm-hero-in wrap">
-          <h1 className="hm-h1">A photograph, signed and sent.</h1>
-          <p className="hm-sub">
-            Real photographs of Iceland, taken on a phone. Pick one, sign it with your own words, and
-            send it to someone who matters. Free, in under a minute.
-          </p>
-          <div className="hm-cta">
-            <Link to="/archive" className="btn btn-primary">
-              Send a card
-            </Link>
-            <Link to="/about" className="btn hm-btn-light">
-              How it works
-            </Link>
+        <div className="hm-hero-in">
+          <div className="hm-htxt">
+            <h1 className="hm-h1">A photograph, signed and sent.</h1>
+            <p className="hm-sub">
+              Real photographs of Iceland, taken on a phone. Pick&nbsp;one, sign it with your own
+              words, and send it to someone who matters. Free, in under a minute.
+            </p>
+            <div className="hm-cta">
+              <Link to="/archive" className="btn btn-primary">
+                Send a card
+              </Link>
+              <Link to="/about" className="btn hm-btn-light">
+                How it works
+              </Link>
+            </div>
+            <div className="hm-trust">
+              <span>
+                <i>✓</i> Free to send
+              </span>
+              <span>
+                <i>✓</i> No filters
+              </span>
+              <span>
+                <i>✓</i> No account
+              </span>
+            </div>
           </div>
-          <div className="hm-trust">
-            <span>
-              <i>✓</i> Free to send
-            </span>
-            <span>
-              <i>✓</i> No filters
-            </span>
-            <span>
-              <i>✓</i> No account
-            </span>
+          <div className="hm-cards">
+            {HERO_CARDS.map((c, i) => (
+              <HeroCardView key={i} card={c} pos={i === 0 ? 'hc-a' : 'hc-b'} />
+            ))}
           </div>
         </div>
       </section>
