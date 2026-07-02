@@ -216,13 +216,11 @@ button { font: inherit; }
 
 /* ---- article page: the story + a sticky sidebar ---- */
 .read-progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--glacier); z-index: 60; transition: width 0.12s linear; }
-.article-head { max-width: 940px; }
+.article-head { margin-bottom: 30px; }
 .article-crumbs { margin-bottom: 16px; }
-.article-title { font-family: var(--disp); font-weight: 500; font-size: clamp(30px, 3.8vw, 50px); letter-spacing: -0.02em; line-height: 1.06; margin: 10px 0 0; max-width: 22ch; }
+.article-title { font-family: var(--disp); font-weight: 500; font-size: clamp(30px, 3.8vw, 50px); letter-spacing: -0.02em; line-height: 1.06; margin: 10px 0 0; max-width: 20ch; }
 .article-byline { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 18px; }
-/* full-width cinematic hero sits between the masthead and the two columns */
-.article-hero.ph { width: 100%; height: clamp(320px, 50vh, 560px); border: var(--hair) solid var(--fog); border-radius: var(--r); margin: 28px 0 40px; box-shadow: 0 36px 70px -40px rgba(48, 40, 28, 0.55); }
-.article-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(36px, 5vw, 72px); align-items: start; }
+.article-grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: clamp(36px, 5vw, 72px); align-items: start; }
 .article-main { min-width: 0; }
 .article-body { margin-top: 0; }
 .article-body p { font-size: 18px; line-height: 1.78; color: var(--body-ink); margin: 0 0 1.3em; }
@@ -236,15 +234,19 @@ button { font: inherit; }
 .aside-btn { width: 100%; margin-top: 14px; }
 .aside-sub { font-size: 12.5px; color: var(--steel-d); text-align: center; margin: 10px 0 0; }
 
-.mini-pc { position: relative; aspect-ratio: 4 / 5; border-radius: 11px; overflow: hidden; background: #222; }
-.mini-pc__img { position: absolute; inset: 0; background-size: cover; background-position: center; }
-.mini-pc__grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.18) 52%, transparent); }
-.mini-pc__mark { position: absolute; top: 13px; right: 14px; font-family: var(--disp); font-weight: 500; font-size: 11px; letter-spacing: 0.03em; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5); }
-.mini-pc__mark .eth { color: var(--glacier); }
-.mini-pc__body { position: absolute; left: 0; right: 0; bottom: 0; padding: 18px; color: #fff; }
-.mini-pc__msg { font-family: 'Playfair Display', Georgia, serif; font-size: 21px; line-height: 1.24; margin: 0 0 12px; text-shadow: 0 8px 14px rgba(0, 0, 0, 0.35); }
-.mini-pc__meta { display: flex; justify-content: space-between; gap: 8px; font-size: 9px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(255, 255, 255, 0.82); }
-.mini-pc__meta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+/* the postcard itself is the article hero, at the top of the sticky rail */
+.send-hero { display: flex; flex-direction: column; }
+.send-hero__tag { font-family: var(--disp); font-weight: 500; font-size: 13px; letter-spacing: 0.02em; color: var(--steel-d); margin-bottom: 12px; }
+.send-hero__tag .dot { color: var(--glacier); }
+.hero-pc { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: #222; box-shadow: 0 40px 80px -34px rgba(20, 16, 10, 0.6); }
+.hero-pc__img { position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat; }
+.hero-pc__grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.18) 52%, transparent); }
+.hero-pc__mark { position: absolute; top: 18px; right: 20px; font-family: var(--disp); font-weight: 500; font-size: 13px; letter-spacing: 0.03em; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 7px rgba(0, 0, 0, 0.5); }
+.hero-pc__mark .eth { color: var(--glacier); }
+.hero-pc__body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; color: #fff; }
+.hero-pc__msg { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; line-height: 1.2; margin: 0 0 16px; text-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); }
+.hero-pc__meta { display: flex; justify-content: space-between; gap: 10px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 255, 255, 0.82); }
+.hero-pc__meta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
 .ranks { list-style: none; margin: 0; padding: 0; }
 .ranks li { display: flex; gap: 13px; align-items: baseline; padding: 13px 0; border-top: var(--hair) solid var(--fog); }
@@ -273,10 +275,9 @@ button { font: inherit; }
 .recent-all { font-size: 13px; color: var(--glacier-ink); font-weight: 500; white-space: nowrap; }
 
 @media (max-width: 900px) {
-  .article-head { max-width: none; }
-  .article-grid { grid-template-columns: 1fr; gap: 10px; }
-  .article-aside { position: static; margin-top: 32px; }
-  .article-aside .send-this { display: none; } /* end-of-article CTA already covers it */
+  .article-grid { grid-template-columns: 1fr; gap: 12px; }
+  .article-aside { position: static; margin-top: 30px; }
+  .article-main .article-cta { display: none; } /* the hero card in the rail carries the CTA on mobile */
 }
 @media (max-width: 620px) {
   .article-hero.ph { height: clamp(240px, 44vh, 380px); }

@@ -96,34 +96,27 @@ export default function Article() {
     <div className="wrap section article-page">
       <ReadingProgress />
 
-      <header className="article-head">
-        <nav className="crumbs article-crumbs" aria-label="Breadcrumb">
-          <Link to="/journal">Journal</Link>
-          <span className="sep" aria-hidden="true">
-            ▸
-          </span>
-          <span className="here">Field note</span>
-        </nav>
-
-        <div className="kicker">
-          {post.kicker} · {readingMinutes(post)} min read
-        </div>
-        <h1 className="article-title">{post.title}</h1>
-        <div className="d-cap article-byline">
-          <span>by kyrrð · {post.date}</span>
-          {plate && <MapLink plate={plate} />}
-        </div>
-      </header>
-
-      <Photo
-        image={post.image}
-        gradient={post.gradient}
-        alt={post.title}
-        className="article-hero"
-      />
-
       <div className="article-grid">
         <article className="article-main">
+          <header className="article-head">
+            <nav className="crumbs article-crumbs" aria-label="Breadcrumb">
+              <Link to="/journal">Journal</Link>
+              <span className="sep" aria-hidden="true">
+                ▸
+              </span>
+              <span className="here">Field note</span>
+            </nav>
+
+            <div className="kicker">
+              {post.kicker} · {readingMinutes(post)} min read
+            </div>
+            <h1 className="article-title">{post.title}</h1>
+            <div className="d-cap article-byline">
+              <span>by kyrrð · {post.date}</span>
+              {plate && <MapLink plate={plate} />}
+            </div>
+          </header>
+
           <div className="article-body">
             {post.body.map((para, i) =>
               i === 0 ? (
@@ -162,22 +155,25 @@ export default function Article() {
 
         <aside className="article-aside">
           {plate && (
-            <div className="aside-card send-this">
-              <div className="aside-h">
+            <div className="send-hero">
+              <div className="send-hero__tag">
                 Send this view <span className="dot">·</span>
               </div>
-              <div className="mini-pc">
+              <div className="hero-pc">
                 <div
-                  className="mini-pc__img"
-                  style={{ backgroundImage: `url("${plate.image ?? ''}")` }}
+                  className="hero-pc__img"
+                  style={{
+                    backgroundImage: `url("${plate.image ?? ''}")`,
+                    backgroundPosition: plate.focus || 'center',
+                  }}
                 />
-                <div className="mini-pc__grad" />
-                <div className="mini-pc__mark">
+                <div className="hero-pc__grad" />
+                <div className="hero-pc__mark">
                   kyrr<span className="eth">ð</span>.pics
                 </div>
-                <div className="mini-pc__body">
-                  <p className="mini-pc__msg">Wish you were here.</p>
-                  <div className="mini-pc__meta">
+                <div className="hero-pc__body">
+                  <p className="hero-pc__msg">Wish you were here.</p>
+                  <div className="hero-pc__meta">
                     <span>{plate.title}</span>
                     <span>From you</span>
                   </div>
