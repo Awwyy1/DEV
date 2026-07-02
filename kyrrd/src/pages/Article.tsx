@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { findPost, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
@@ -9,20 +9,32 @@ import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
 
-/** Thin glacier bar across the very top that fills as the article is read. */
+/** Thin glacier bar across the very top that fills as the article is read.
+ *  Driven by rAF + a GPU transform (no re-renders, no layout) so it glides. */
 function ReadingProgress() {
-  const [pct, setPct] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
-    const onScroll = () => {
+    let raf = 0;
+    const update = () => {
+      raf = 0;
       const h = document.documentElement;
       const max = h.scrollHeight - h.clientHeight || 1;
-      setPct(Math.min(100, Math.max(0, (h.scrollTop / max) * 100)));
+      const ratio = Math.min(1, Math.max(0, h.scrollTop / max));
+      if (ref.current) ref.current.style.transform = `scaleX(${ratio})`;
     };
-    onScroll();
+    const onScroll = () => {
+      if (!raf) raf = requestAnimationFrame(update);
+    };
+    update();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      if (raf) cancelAnimationFrame(raf);
+    };
   }, []);
-  return <div className="read-progress" style={{ width: `${pct}%` }} />;
+  return <div className="read-progress" ref={ref} />;
 }
 
 export default function Article() {
