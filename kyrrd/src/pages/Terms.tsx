@@ -26,10 +26,6 @@ export default function Terms() {
           and any changes will appear on this page.
         </p>
         <p>Questions are welcome at hello@kyrrd.pics.</p>
-        <p className="d-cap">
-          This is a starting draft, not legal advice. Add your governing law and a refund policy, and
-          have it reviewed, before the project goes paid.
-        </p>
       </div>
     </div>
   );

@@ -184,7 +184,7 @@ export default function Article() {
                   kyrr<span className="eth">ð</span>.pics
                 </div>
                 <div className="hero-pc__body">
-                  <p className="hero-pc__msg">Wish you were here.</p>
+                  <p className="hero-pc__msg">Sending you a piece of Iceland.</p>
                   <div className="hero-pc__meta">
                     <span>{plate.title}</span>
                     <span>From you</span>
