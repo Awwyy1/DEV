@@ -3,7 +3,7 @@ import { useSeo } from '../seo';
 
 const STEPS = [
   ['01', 'Choose a photograph', 'Browse the archive and pick a view that fits the moment.'],
-  ['02', 'Add your words', 'Sign it with a name, a dedication, or a quiet note. Always laid out for you.'],
+  ['02', 'Add your words', 'Sign it with a name, a dedication, or a short note. Always laid out for you.'],
   ['03', 'Download and send', 'Get your signed card and send it however you like, to anyone, anywhere.'],
 ];
 
@@ -19,7 +19,7 @@ export default function About() {
         Turn a photograph into a card.
       </h1>
       <p className="d-lead" style={{ color: 'var(--steel-d)' }}>
-        kyrrð is a small archive of quiet photographs. Pick one, add your words, and send it as a
+        kyrrð is a small archive of photographs from around Iceland. Pick one, add your words, and send it as a
         signed digital card to someone, anywhere in the world.
       </p>
 

@@ -6,7 +6,7 @@ import { useSeo } from '../seo';
 export default function Journal() {
   useSeo(
     'Journal — kyrrð',
-    'Notes from the places in the archive: short, human guides to quiet corners of the world.',
+    'Notes from the places in the archive: short, human field notes on where these photographs were taken.',
   );
   return (
     <div className="wrap section">

@@ -6,7 +6,7 @@ import { track } from '@vercel/analytics';
 // reader; nothing is stored.
 const FORMSPREE_ID = '';
 
-/** A quiet email capture for the journal sidebar. Self-contained. */
+/** Email capture for the journal sidebar. Self-contained. */
 export default function NewsletterCard() {
   const [email, setEmail] = useState('');
   const [state, setState] = useState<'idle' | 'busy' | 'done' | 'err'>('idle');
@@ -45,7 +45,7 @@ export default function NewsletterCard() {
   return (
     <div className="aside-card nl">
       <div className="aside-h">
-        A quiet note <span className="dot">·</span>
+        New in the archive <span className="dot">·</span>
       </div>
       <p className="nl-p">One short email when a new plate lands in the archive, and nothing else.</p>
       <form className="nl-row" onSubmit={submit}>

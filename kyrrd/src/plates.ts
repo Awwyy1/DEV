@@ -162,7 +162,7 @@ export const PLATES: Plate[] = [
   {
     id: '14', no: '14', series: 'Series IV', title: 'The Black Cone',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
-    description: 'Driven into a split boulder outside parliament, the Black Cone, Iceland’s quiet monument to the right to protest.',
+    description: 'Driven into a split boulder outside parliament, the Black Cone, Iceland’s stark monument to the right to protest.',
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     image: '/photos/The-black-cone.jpeg',
     slug: 'black-cone',
