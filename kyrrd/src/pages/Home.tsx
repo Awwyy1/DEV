@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
 import { PLATES } from '../plates';
+import { POSTS, readingMinutes } from '../journal';
 import PlateCard from '../components/PlateCard';
+import { Photo } from '../components/Photo';
 import { useSeo } from '../seo';
 import '../home.css';
 
@@ -13,6 +15,7 @@ export default function Home() {
     'Real photographs of Iceland, taken on a phone. Pick one, sign it with your words, and send it free to anyone.',
   );
   const picks = PLATES.filter((p) => p.image).slice(0, 4);
+  const notes = POSTS.slice(0, 3);
 
   return (
     <div className="hm">
@@ -21,9 +24,6 @@ export default function Home() {
         <div className="hm-hero-bg" style={{ backgroundImage: `url("${HERO_IMG}")` }} />
         <div className="hm-hero-grad" />
         <div className="hm-hero-in wrap">
-          <span className="hm-eyebrow">
-            <span className="hm-pip" /> Iceland · shot on a phone, no filters
-          </span>
           <h1 className="hm-h1">A photograph, signed and sent.</h1>
           <p className="hm-sub">
             Real photographs of Iceland, taken on a phone. Pick one, sign it with your own words, and
@@ -33,8 +33,8 @@ export default function Home() {
             <Link to="/archive" className="btn btn-primary">
               Send a card
             </Link>
-            <Link to="/archive" className="btn hm-btn-light">
-              Browse the archive
+            <Link to="/about" className="btn hm-btn-light">
+              How it works
             </Link>
           </div>
           <div className="hm-trust">
@@ -92,17 +92,17 @@ export default function Home() {
           <div className="hm-step">
             <div className="hm-n">01</div>
             <h3>Choose</h3>
-            <p>A photograph of Iceland you like, with the field note behind it.</p>
+            <p>Pick a photograph of Iceland, with the field note behind it.</p>
           </div>
           <div className="hm-step">
             <div className="hm-n">02</div>
             <h3>Sign</h3>
-            <p>Add your message and your name. It becomes yours.</p>
+            <p>Add your words and your name. It becomes yours.</p>
           </div>
           <div className="hm-step">
             <div className="hm-n">03</div>
             <h3>Send</h3>
-            <p>Save it and send it to anyone, anywhere. Free.</p>
+            <p>Save it and send it to someone you hold dear, anywhere. Free.</p>
           </div>
         </div>
       </section>
@@ -127,6 +127,33 @@ export default function Home() {
         </div>
       </section>
 
+      {/* STORIES */}
+      <section className="hm-sec wrap">
+        <div className="hm-shead">
+          <div className="d-label">Not just a photo</div>
+          <h2 className="hm-h2">Every one has a story.</h2>
+          <p>
+            Behind each photograph there is a short field note: who made the statue, why the
+            lighthouse stands where it does, what happened on that square. You send the picture, and
+            they get the story with it.
+          </p>
+        </div>
+        <div className="grid g3 journal-grid">
+          {notes.map((p) => (
+            <Link key={p.slug} to={`/journal/${p.slug}`} className="post-card">
+              <Photo image={p.image} gradient={p.gradient} alt={p.title} />
+              <div className="post-card-body">
+                <div className="kicker">
+                  {p.kicker} · {readingMinutes(p)} min read
+                </div>
+                <div className="post-title">{p.title}</div>
+                <span className="read">Read the note →</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* PRODUCT */}
       <section className="hm-sec wrap hm-show">
         <div className="hm-pc-wrap">
@@ -140,7 +167,7 @@ export default function Home() {
               <p className="hm-pc-msg">Sending you a piece of Iceland.</p>
               <div className="hm-pc-meta">
                 <span>Water Carrier</span>
-                <span>From Anna</span>
+                <span>From Emma</span>
               </div>
             </div>
           </div>
@@ -150,7 +177,7 @@ export default function Home() {
           <div className="hm-stitle">This is what lands in their hands.</div>
           <p className="hm-lede">
             A real photograph, your words set into it, and your name at the foot. Saved as an image
-            you can send through any app, or print.
+            you can send through any messenger, to anyone.
           </p>
           <ul className="hm-feats">
             <li>
@@ -168,7 +195,7 @@ export default function Home() {
             <li>
               <span className="hm-ic">↗</span>
               <div>
-                <b>Send anywhere.</b> Message, post, or print and mail it.
+                <b>Send anywhere.</b> Through any messenger, to anyone in the world.
               </div>
             </li>
           </ul>

@@ -56,7 +56,7 @@ export default function CardEditor({
   const [format, setFormat] = useState<FormatId>('post');
   const [photoIdx, setPhotoIdx] = useState(0);
   const [message, setMessage] = useState('Sending you a piece of Iceland.');
-  const [sender, setSender] = useState('Anna');
+  const [sender, setSender] = useState('Emma');
   const [imgData, setImgData] = useState('');
   const [busy, setBusy] = useState(false);
   const [saved, setSaved] = useState(false);

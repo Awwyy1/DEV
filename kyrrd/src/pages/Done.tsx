@@ -125,8 +125,7 @@ export default function Done() {
         Ready to send.
       </h1>
       <p className="d-body" style={{ color: 'var(--steel-d)', maxWidth: '54ch' }}>
-        Download your signed card and send it however you like — a message, an email, or print it at
-        home.
+        Download your signed card and send it however you like, through any messenger or an email.
       </p>
 
       <div style={{ maxWidth: 360, margin: '24px 0', border: 'var(--hair) solid var(--fog)' }}>
