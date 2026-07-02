@@ -125,6 +125,15 @@ export default function Home() {
         </div>
       </section>
 
+      {/* mobile-only cards block (the hero is text-only on phones) */}
+      <section className="hm-cardstrip">
+        <div className="hm-cards">
+          {HERO_CARDS.map((c, i) => (
+            <HeroCardView key={i} card={c} pos={i === 0 ? 'hc-a' : 'hc-b'} />
+          ))}
+        </div>
+      </section>
+
       {/* MANIFESTO */}
       <section className="hm-manifesto">
         <div className="wrap">
