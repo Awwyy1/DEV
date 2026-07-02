@@ -118,14 +118,23 @@ button { font: inherit; }
 .plate .cap .ttl { font-family: var(--disp); font-weight: 500; font-size: 18px; margin-top: 3px; }
 
 /* ---- top nav ---- */
-.topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--pad); border-bottom: var(--hair) solid var(--fog); background: var(--nav-bg); backdrop-filter: blur(8px); }
+.topnav { position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 16px var(--pad); border-bottom: var(--hair) solid var(--fog); background: var(--nav-bg); backdrop-filter: blur(8px); transition: background 0.28s ease, border-color 0.28s ease, backdrop-filter 0.28s ease; }
 .nav-right { display: flex; align-items: center; gap: 14px; }
 .theme-toggle { display: inline-flex; align-items: center; justify-content: center; width: 38px; height: 38px; flex: 0 0 auto; border: var(--hair) solid var(--fog); border-radius: 999px; background: none; color: var(--steel-d); cursor: pointer; transition: 0.18s; }
 .theme-toggle:hover { color: var(--ink); border-color: var(--ink); }
-.topnav .bm { font-family: var(--disp); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; }
+.topnav .bm { font-family: var(--disp); font-weight: 500; font-size: 20px; letter-spacing: -0.01em; transition: color 0.28s ease; }
 .topnav .bm .eth { color: var(--glacier); }
 .topnav .nav { display: flex; gap: 22px; font-size: 13px; color: var(--steel-d); align-items: center; }
+.topnav .nav a:not(.btn) { transition: color 0.28s ease; }
 .topnav .nav a:not(.btn):hover { color: var(--ink); }
+/* home hero: the nav rides transparent over the photo until you scroll */
+.topnav--overlay { background: transparent; border-bottom-color: transparent; backdrop-filter: none; }
+.topnav--overlay .bm { color: #fff; }
+.topnav--overlay .nav a:not(.btn) { color: rgba(255, 255, 255, 0.88); }
+.topnav--overlay .nav a:not(.btn):hover { color: #fff; }
+.topnav--overlay .theme-toggle { color: rgba(255, 255, 255, 0.85); border-color: rgba(255, 255, 255, 0.4); }
+.topnav--overlay .theme-toggle:hover { color: #fff; border-color: #fff; }
+.topnav--overlay .burger span { background: #fff; }
 .burger { display: none; flex-direction: column; gap: 5px; width: 42px; height: 42px; align-items: center; justify-content: center; border: var(--hair) solid var(--fog); border-radius: 12px; background: none; cursor: pointer; }
 .burger span { display: block; width: 18px; height: 1.5px; background: var(--ink); }
 .mobile-menu { display: none; }

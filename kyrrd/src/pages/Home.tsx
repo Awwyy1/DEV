@@ -82,6 +82,7 @@ export default function Home() {
       {/* HERO */}
       <section className="hm-hero">
         <div className="hm-hero-bg" style={{ backgroundImage: `url("${HERO_IMG}")` }} />
+        <div className="hm-hero-scrim" />
         <div className="hm-hero-in">
           <div className="hm-htxt">
             <h1 className="hm-h1">A photograph, signed and sent.</h1>
