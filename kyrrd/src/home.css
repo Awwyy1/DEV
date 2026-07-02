@@ -16,8 +16,8 @@
 .hm-h1 { font-family: var(--disp); font-weight: 500; letter-spacing: -0.03em; line-height: 0.98; font-size: clamp(42px, 7.5vw, 92px); margin: 0; max-width: 15ch; text-shadow: 0 18px 40px rgba(0, 0, 0, 0.3); }
 .hm-sub { max-width: 48ch; font-weight: 300; font-size: clamp(16px, 2.1vw, 21px); color: rgba(255, 255, 255, 0.92); margin: 20px 0 28px; line-height: 1.5; }
 .hm-cta { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
-.hm-btn-light { border-color: rgba(255, 255, 255, 0.55); color: #fff; background: none; }
-.hm-btn-light:hover { border-color: #fff; background: rgba(255, 255, 255, 0.08); }
+.hm-btn-light { border-color: rgba(255, 255, 255, 0.7); color: #fff; background: rgba(255, 255, 255, 0.14); backdrop-filter: blur(4px); }
+.hm-btn-light:hover { border-color: #fff; background: rgba(255, 255, 255, 0.24); }
 .hm-trust { margin-top: 22px; font-size: 13px; color: rgba(255, 255, 255, 0.72); display: flex; gap: 18px; flex-wrap: wrap; }
 .hm-trust i { color: var(--glacier); font-style: normal; }
 
@@ -28,7 +28,9 @@
 .hm-shead p { color: var(--steel-d); font-size: 17px; margin: 14px 0 0; }
 
 /* manifesto (dark) */
-.hm-manifesto { background: var(--ink); color: #efe9df; text-align: center; padding: clamp(64px, 9vw, 120px) 0; }
+/* always-dark bands: a fixed near-black so they never invert in dark theme;
+   hairlines delineate them from the page when the page is already dark */
+.hm-manifesto { background: #141110; color: #efe9df; text-align: center; padding: clamp(64px, 9vw, 120px) 0; border-top: var(--hair) solid var(--fog); border-bottom: var(--hair) solid var(--fog); }
 .hm-mk { font-family: var(--disp); font-weight: 600; font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: #6fd2e6; }
 .hm-mh { font-family: var(--disp); font-weight: 500; font-size: clamp(30px, 5vw, 58px); letter-spacing: -0.02em; line-height: 1.05; margin: 16px auto 0; max-width: 16ch; }
 .hm-mp { max-width: 56ch; margin: 22px auto 0; font-size: clamp(16px, 2vw, 20px); color: #c9c2b4; font-weight: 300; line-height: 1.55; }
@@ -66,7 +68,7 @@
 .hm-feats b { font-weight: 500; }
 
 /* emotional band (dark) */
-.hm-emotional { background: var(--ink); color: #efe9df; text-align: center; padding: clamp(72px, 11vw, 140px) 0; }
+.hm-emotional { background: #141110; color: #efe9df; text-align: center; padding: clamp(72px, 11vw, 140px) 0; border-top: var(--hair) solid var(--fog); border-bottom: var(--hair) solid var(--fog); }
 .hm-quote { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-weight: 400; font-size: clamp(26px, 4vw, 46px); line-height: 1.2; margin: 0 auto; max-width: 20ch; color: #f4efe6; }
 .hm-emotional p { color: #c9c2b4; font-size: 16px; margin: 22px auto 30px; }
 

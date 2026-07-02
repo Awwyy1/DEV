@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 import { useSeo } from '../seo';
 
 const STEPS = [
-  ['01', 'Choose a photograph', 'Browse the archive and pick a view that fits the moment.'],
-  ['02', 'Add your words', 'Sign it with a name, a dedication, or a short note. Always laid out for you.'],
-  ['03', 'Download and send', 'Get your signed card and send it however you like, to anyone, anywhere.'],
+  ['01', 'Choose', 'Pick a photograph of Iceland, with the field note behind it.'],
+  ['02', 'Sign', 'Add your words and your name. It becomes yours.'],
+  ['03', 'Send', 'Save it and send it to someone you hold dear, anywhere. Free.'],
 ];
 
 export default function About() {
