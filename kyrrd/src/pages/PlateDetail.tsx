@@ -30,7 +30,7 @@ export default function PlateDetail() {
         />
         <div>
           <div className="d-label">
-            Plate {plate.no} · {plate.series}
+            Plate {plate.no}
             {plate.date && <span className="pd-date-m"> · {plate.date}</span>}
           </div>
           <div className="d-h1" style={{ margin: '6px 0 4px' }}>

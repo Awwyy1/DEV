@@ -145,6 +145,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
     image: '/photos/Einar-Benediktsson.jpeg',
     slug: 'einar-benediktsson',
+    focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/54BeDJCVVFEoUDks8',
     mapsQuery: 'Einar Benediktsson statue, Höfði, Reykjavík',
   },
@@ -166,6 +167,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     image: '/photos/The-black-cone.jpeg',
     slug: 'black-cone',
+    focus: 'bottom', // low subject: keep the cone, crop from the top
     mapsUrl: 'https://maps.app.goo.gl/WRj48fMoY65L95JRA',
     mapsQuery: 'The Black Cone, Monument to Civil Disobedience, Reykjavík',
   },
@@ -210,6 +212,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
     image: '/photos/Ur-Alogum.jpeg',
     slug: 'ur-alogum',
+    focus: 'top', // tall subject: keep the rider, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Úr álögum, Einar Jónsson Museum, Reykjavík',
   },
