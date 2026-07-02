@@ -28,13 +28,6 @@ const HERO_CARDS: HeroCardData[] = [
     place: 'Íslandsvarðan',
     style: 'vintage',
   },
-  {
-    image: '/photos/WaterCarrier.jpeg',
-    message: 'For the one who talks about the north.',
-    from: 'Sofia',
-    place: 'Water Carrier',
-    style: 'editorial',
-  },
 ];
 
 function HeroCardView({ card, pos }: { card: HeroCardData; pos: string }) {
