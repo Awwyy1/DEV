@@ -26,6 +26,27 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'government-house',
+    title: 'The country is run from a house built as a prison',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'A plain white house at the foot of Arnarhóll, raised in the 1760s as the country’s prison and now the seat of the Icelandic government, where the prime minister and cabinet still sit.',
+    gradient: 'linear-gradient(180deg,#eaf1f6,#c3d6e4 50%,#8ba9bf 82%,#5b7386)',
+    image: '/photos/Government-House.jpeg',
+    plateSlug: 'government-house',
+    plateTitle: 'Government House',
+    body: [
+      'At the foot of Arnarhóll, where Lækjargata meets Bankastræti, there is a plain white house of two storeys under a steep dark roof, with a flag on a tall pole out front. It is one of the most modest buildings of its size in the middle of Reykjavík, and it is also one of the most important, because this whitewashed house is where the government of Iceland sits. The prime minister works behind those windows, the cabinet meets here, and on an ordinary day the only thing that marks the place out is the flag.',
+      'The surprise is in how it began. The house was raised between 1765 and 1770, which makes it one of the oldest buildings in the city, and it was built to be a prison. This was the tugthús, the country’s house of correction, put up in hewn stone at a time when almost every other building in Reykjavík was turf and timber. Some of the labour that raised it came from the very people who were going to be locked inside.',
+      'As a prison it did not have a long life. Iceland was a thinly peopled country with little serious crime to fill a building this size, the institution struggled for want of inmates and money, and by the 1810s it had closed its doors. What the country was left with was the best stone house in the capital, standing more or less empty, at the very moment it was starting to need somewhere to run itself from.',
+      'So the jail became the seat of power. It was handed to the Danish appointed governor of Iceland as a residence and an office, and as the country inched toward governing itself over the following century the building went with it, from governor to minister to the full government of an independent state. Today it holds the office of the prime minister and the cabinet, the body Icelanders simply call Stjórnarráðið, the government. The country is run, in the plainest possible sense, out of an old prison.',
+      'The setting has filled in around it. The house stands below Arnarhóll, the green hill where the bronze settler Ingólfur Arnarson looks out over the bay, and on the lawn in front of it are two more figures, Christian IX of Denmark holding out the constitution he granted Iceland in 1874, and Hannes Hafstein, the first Icelander to hold ministerial office. A short walk across the old town brings you to the parliament and the cathedral on Austurvöllur, so the whole apparatus of the state sits within a few hundred metres of itself.',
+      'You cannot go inside, because it is a working government building and not a museum, but that is not really the point of it. It stands right on the street with no fence and no gate, and you can walk straight up to it, read the coat of arms over the door and stand where the country’s business is done. Come on a day when the flag is up and the light is on the white wall, and photograph it the way you would any other old house, which is more or less how it carries itself.',
+      'There is something worth sending in a building that started as a prison and ended up as the place a country trusts to govern it. Sign a photograph of it for someone who has made something unlikely out of a hard beginning, and the card carries the plain suggestion that where a thing starts is not where it has to end.',
+    ],
+  },
+  {
     slug: 'skuli-magnusson',
     title: 'The man Reykjavík still calls its father',
     kicker: 'Iceland · Field note',
