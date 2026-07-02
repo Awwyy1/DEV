@@ -65,7 +65,7 @@ function HeroCardView({ card, pos }: { card: HeroCardData; pos: string }) {
       <div className="hc-mark">
         kyrr<span className="eth">ð</span>.pics
       </div>
-      <div className="hc-b">
+      <div className="hc-cap">
         <p className="hc-msg">{card.message}</p>
         <div className="hc-meta">
           <span>{card.place}</span>
