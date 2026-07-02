@@ -10,9 +10,9 @@
 .hm-hero { position: relative; min-height: clamp(560px, 86vh, 880px); display: flex; align-items: center; color: #fff; overflow: hidden; }
 .hm-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
 .hm-hero-grad { position: absolute; inset: 0; background: linear-gradient(100deg, rgba(11, 14, 18, 0.88), rgba(11, 14, 18, 0.5) 46%, rgba(11, 14, 18, 0.12) 66%), linear-gradient(to top, rgba(9, 11, 14, 0.6), transparent 40%); }
-.hm-hero-in { position: relative; z-index: 2; width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad); display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 24px; align-items: center; }
+.hm-hero-in { position: relative; z-index: 2; width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad); }
 /* text block, nudged left and down for balance against the cards */
-.hm-htxt { position: relative; top: 58px; left: -36px; }
+.hm-htxt { position: relative; top: 40px; left: -36px; max-width: 560px; }
 .hm-h1 { font-family: var(--disp); font-weight: 500; letter-spacing: -0.03em; line-height: 1; font-size: clamp(38px, 5.4vw, 68px); margin: 0; max-width: 14ch; text-shadow: 0 14px 34px rgba(0, 0, 0, 0.35); }
 .hm-sub { max-width: 40ch; font-weight: 300; font-size: clamp(15px, 1.7vw, 19px); color: rgba(255, 255, 255, 0.9); margin: 20px 0 26px; line-height: 1.5; }
 .hm-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
@@ -23,8 +23,9 @@
 .hm-trust { margin-top: 22px; font-size: 12.5px; color: rgba(255, 255, 255, 0.7); display: flex; gap: 16px; flex-wrap: wrap; }
 .hm-trust i { color: var(--glacier); font-style: normal; }
 
-/* floating cards cluster (two; edit HERO_CARDS in Home.tsx to swap content) */
-.hm-cards { position: relative; height: clamp(440px, 60vh, 600px); }
+/* floating cards: a layer pinned to the right edge of the hero (desktop only).
+   edit HERO_CARDS in Home.tsx to swap content. */
+.hm-cards { position: absolute; z-index: 3; top: 0; right: 0; height: 100%; width: clamp(360px, 50vw, 760px); }
 .hc { position: absolute; width: clamp(206px, 19.5vw, 264px); aspect-ratio: 4 / 5; border-radius: 16px; overflow: hidden; background: #222; box-shadow: 0 55px 100px -30px rgba(0, 0, 0, 0.7), 0 10px 26px -10px rgba(0, 0, 0, 0.55); transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1); will-change: transform; }
 .hc-img { position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat; }
 .hc-grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.15) 55%, transparent); }
@@ -44,34 +45,20 @@
 .hc-vmsg { font-family: 'Playfair Display', Georgia, serif; font-style: italic; font-size: 16px; line-height: 1.3; color: #3a2f28; margin: 0 0 8px; }
 .hc-vmeta { display: flex; justify-content: space-between; align-items: center; color: #5a4f48; letter-spacing: 0.06em; text-transform: uppercase; font-size: 8px; font-weight: 500; }
 .hc-vsign { font-family: 'Caveat', cursive; font-weight: 700; font-size: 17px; text-transform: none; }
-/* diagonal: left card higher and in front (its sign-off stays visible),
-   right card lower and pushed right so it clears the hero sculpture */
-.hc-a { top: 5%; left: 2%; transform: rotate(-5deg); z-index: 3; }
-.hc-b { top: 30%; left: 52%; transform: rotate(5deg); z-index: 2; }
+/* left card higher and in front (its sign-off stays visible); right card
+   lower and pushed to the very right edge */
+.hc-a { top: 20%; right: 24%; transform: rotate(-5deg); z-index: 3; }
+.hc-b { top: 38%; right: 1%; transform: rotate(5deg); z-index: 2; }
 .hm-cards:hover .hc-a { transform: rotate(-5deg) translateY(-10px); }
 .hm-cards:hover .hc-b { transform: rotate(5deg) translateY(-12px) scale(1.02); }
 
-/* mobile: the hero is text-only; the cards move to their own block below */
-.hm-cardstrip { display: none; }
+/* mobile: no cards; the hero photo fills the screen with text and buttons at
+   the bottom, the way it was before the cards */
 @media (max-width: 900px) {
-  .hm-hero { align-items: flex-start; }
-  .hm-hero-in { grid-template-columns: 1fr; gap: 0; padding-top: 78px; padding-bottom: 44px; }
-  .hm-htxt { top: 0; left: 0; }
-  .hm-hero .hm-cards { display: none; }
-  .hm-cardstrip { display: block; padding: 42px var(--pad) 0; }
-  .hm-cardstrip .hm-cards { position: relative; height: 320px; max-width: 430px; margin: 0 auto; }
-  .hm-cardstrip .hc { width: clamp(158px, 42vw, 200px); }
-  .hm-cardstrip .hc-a { top: 14%; left: 0; transform: rotate(-5deg); }
-  .hm-cardstrip .hc-b { top: 0; left: 50%; transform: rotate(5deg); }
-  /* scale card text to the smaller mobile cards so nothing collides */
-  .hc-cap { padding: 14px; }
-  .hc-msg { font-size: 15px; margin-bottom: 7px; }
-  .hc-meta { font-size: 7.5px; letter-spacing: 0.1em; }
-  .hc-vcap { padding: 30px 12px 12px; }
-  .hc-vmsg { font-size: 14px; margin-bottom: 6px; }
-  .hc-vmeta { font-size: 7.5px; letter-spacing: 0.04em; }
-  .hc-vsign { font-size: 15px; }
-  .hc-mark, .hc-vmark { font-size: 9px; }
+  .hm-hero { align-items: flex-end; }
+  .hm-hero-in { padding-top: 40px; padding-bottom: clamp(48px, 8vh, 92px); }
+  .hm-htxt { top: 0; left: 0; max-width: none; }
+  .hm-cards { display: none; }
 }
 
 /* section scaffolding */

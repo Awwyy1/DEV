@@ -117,16 +117,8 @@ export default function Home() {
               </span>
             </div>
           </div>
-          <div className="hm-cards">
-            {HERO_CARDS.map((c, i) => (
-              <HeroCardView key={i} card={c} pos={i === 0 ? 'hc-a' : 'hc-b'} />
-            ))}
-          </div>
         </div>
-      </section>
-
-      {/* mobile-only cards block (the hero is text-only on phones) */}
-      <section className="hm-cardstrip">
+        {/* cards float over the right edge of the hero (desktop only) */}
         <div className="hm-cards">
           {HERO_CARDS.map((c, i) => (
             <HeroCardView key={i} card={c} pos={i === 0 ? 'hc-a' : 'hc-b'} />
