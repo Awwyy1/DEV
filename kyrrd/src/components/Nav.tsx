@@ -1,16 +1,29 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import { useTheme } from '../theme';
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
   const [theme, setTheme] = useTheme();
+  const { pathname } = useLocation();
   const close = () => setOpen(false);
+
+  // only the home page has a photo behind the nav; there it starts transparent
+  // and picks up its background once you scroll away from the hero
+  const overlay = pathname === '/' && !scrolled;
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [pathname]);
 
   return (
     <>
-      <header className="topnav">
+      <header className={`topnav${overlay ? ' topnav--overlay' : ''}`}>
         <Link to="/" className="bm" onClick={close}>
           kyrr<span className="eth">ð</span>
         </Link>

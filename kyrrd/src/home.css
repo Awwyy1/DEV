@@ -3,15 +3,29 @@
    hero, a "shot on a phone" manifesto, then the scrolling sections.
    Self-contained; reuses .btn/.plate/.grid from index.css.
    ============================================================ */
-.hm { overflow-x: hidden; }
+/* clip (not hidden) so the horizontal overflow is contained without turning
+   overflow-y into a scroll box — that would clip the hero's negative top margin
+   and stop the photo tucking under the transparent nav */
+.hm { overflow-x: clip; }
 .hm .eth { color: var(--glacier); }
 
 /* hero: text left, floating cards right */
-.hm-hero { position: relative; min-height: clamp(560px, 86vh, 880px); display: flex; align-items: center; color: #fff; overflow: hidden; }
+/* the sticky nav rides transparent over the photo on the home page: pull the
+   hero up under it (77px = nav height) and add the same to min-height so the
+   photo tucks under the nav while the bottom of the hero stays put */
+.hm-hero { position: relative; min-height: calc(clamp(560px, 86vh, 880px) + 77px); margin-top: -77px; display: flex; align-items: center; color: #fff; overflow: hidden; }
 .hm-hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; }
+/* a slight scrim: darker at the left (behind the text) and along the top
+   (behind the nav), fading out well before the card so the photo stays bright */
+.hm-hero-scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(100deg, rgba(0, 0, 0, 0.38) 0%, rgba(0, 0, 0, 0.2) 30%, rgba(0, 0, 0, 0.05) 56%, rgba(0, 0, 0, 0) 74%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.28) 0%, rgba(0, 0, 0, 0.06) 13%, rgba(0, 0, 0, 0) 26%); }
 .hm-hero-in { position: relative; z-index: 2; width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 40px var(--pad); }
-/* text block, nudged left and down for balance against the cards */
-.hm-htxt { position: relative; top: 40px; left: -36px; max-width: 560px; }
+/* text block, nudged further left and down for balance against the card */
+.hm-htxt { position: relative; top: 150px; left: -108px; max-width: 560px; }
+/* on mid-width screens a big negative-left would clip; ease it off */
+@media (max-width: 1360px) { .hm-htxt { top: 130px; left: -24px; } }
 .hm-h1 { font-family: var(--disp); font-weight: 500; letter-spacing: -0.03em; line-height: 1; font-size: clamp(38px, 5.4vw, 68px); margin: 0; max-width: 14ch; text-shadow: 0 14px 34px rgba(0, 0, 0, 0.35); }
 .hm-sub { max-width: 40ch; font-weight: 300; font-size: clamp(15px, 1.7vw, 19px); color: rgba(255, 255, 255, 0.9); margin: 20px 0 26px; line-height: 1.5; }
 .hm-cta { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
@@ -46,9 +60,9 @@
 .hc-vsign { font-family: 'Caveat', cursive; font-weight: 700; font-size: 17px; text-transform: none; }
 /* left card higher and in front (its sign-off stays visible); right card
    lower and pushed to the very right edge */
-.hc-a { top: 20%; right: 24%; transform: rotate(-5deg); z-index: 3; }
+.hc-a { top: calc(20% + 38px); right: 24%; transform: rotate(5deg); z-index: 3; }
 .hc-b { top: 38%; right: 1%; transform: rotate(5deg); z-index: 2; }
-.hm-cards:hover .hc-a { transform: rotate(-5deg) translateY(-10px); }
+.hm-cards:hover .hc-a { transform: rotate(5deg) translateY(-10px); }
 .hm-cards:hover .hc-b { transform: rotate(5deg) translateY(-12px) scale(1.02); }
 
 /* mobile: no cards; the hero photo fills the screen with text and buttons at
@@ -58,6 +72,11 @@
   .hm-hero-in { padding-top: 40px; padding-bottom: clamp(48px, 8vh, 92px); }
   .hm-htxt { top: 0; left: 0; max-width: none; }
   .hm-cards { display: none; }
+  /* text sits at the bottom on mobile, so darken the bottom (and a touch at the
+     top, behind the transparent nav) */
+  .hm-hero-scrim { background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.55) 0%, rgba(0, 0, 0, 0.15) 40%, rgba(0, 0, 0, 0) 72%),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 15%); }
 }
 
 /* section scaffolding */
