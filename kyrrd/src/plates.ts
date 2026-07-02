@@ -226,6 +226,16 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Ingólfsgarður lighthouse, Reykjavík harbour',
   },
+  {
+    id: '20', no: '20', series: 'Series VII', title: 'Government House',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'White above the Lækjargata lawn, Government House, the prime minister’s seat in a stone building raised in the 1760s as the country’s prison.',
+    gradient: 'linear-gradient(180deg,#eaf1f6,#c3d6e4 50%,#8ba9bf 82%,#5b7386)',
+    image: '/photos/Government-House.jpeg',
+    slug: 'government-house',
+    mapsUrl: '',
+    mapsQuery: 'Stjórnarráðshúsið, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
