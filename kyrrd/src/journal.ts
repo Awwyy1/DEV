@@ -26,6 +26,48 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'christian-ix',
+    title: 'The king who handed Iceland its constitution',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'On the Government House lawn stands Christian IX of Denmark with one arm held out, offering the constitution he brought to Iceland in 1874, cast in bronze by Einar Jónsson.',
+    gradient: 'linear-gradient(180deg,#f0f4f6,#ccd9e2 50%,#93a9b8 82%,#5f7484)',
+    image: '/photos/King-Christian-IX-of-Denmark.jpeg',
+    plateSlug: 'christian-ix',
+    plateTitle: 'Christian IX',
+    body: [
+      'On the lawn in front of Government House, where Lækjargata runs past the white building at the foot of Arnarhóll, a bronze king stands on a tall stone plinth with one arm held out toward the street. He is not waving and he is not pointing. He is handing something over. The king is Christian IX of Denmark, the document in his hand is a constitution, and the gesture has been frozen in the middle of the gift for more than a century.',
+      'The year to know is 1874. Iceland was marking a thousand years since the first settlers arrived, and Christian sailed north to join the festival, the first reigning monarch ever to set foot on the island. He did not come empty handed. He brought the constitution of 1874, the country’s first written frame of government, which gave the Alþingi real power over Icelandic law and money for the first time in centuries.',
+      'It was a gift with conditions, as royal gifts tend to be. The king kept his veto, the executive stayed answerable to Copenhagen, and Icelanders spent the next seventy years politely and stubbornly asking for the rest. Home rule came in 1904, sovereignty in 1918, and the republic in 1944, declared at Þingvellir on a June day of pouring rain. The bronze on the lawn holds the first step of that story, not the last one.',
+      'Christian himself is one of history’s unlikely dynasts. A minor German princeling by birth, he began his reign in 1863 and within a year had lost a war and a third of his kingdom. Then his children married, and kept marrying, until Europe called him its father-in-law. One daughter became queen of Britain, another empress of Russia, one son king of the Greeks. The man offering Iceland its constitution had grandchildren on half the thrones of Europe.',
+      'The statue is the work of Einar Jónsson, the first professional sculptor Iceland produced, the same hands that set Ingólfur Arnarson on his hill above the harbour and filled the walled garden below Hallgrímskirkja with angels and riders. It was unveiled in 1915 on the lawn of what was by then the seat of the Icelandic government, and the pose reads in a single second: here, this is yours now.',
+      'He does not stand alone. On the far corner of the same lawn, with his back to the same house, stands Hannes Hafstein, the first Icelander ever to govern Iceland as its minister. Between them sits the low stone building raised as a prison in the 1760s and promoted, over a century and a half, into the office of the prime minister. One corner holds the king who handed the constitution over, the other holds the man who first put it to work, and forty metres of grass carry the whole constitutional history of a country.',
+      'The lawn is open, free and a minute from Arnarhóll, the harbour and Austurvöllur, so the king folds easily into any walk through the old centre. Sign a photograph of him for someone who has just been trusted with something large, a team, a project, a set of keys, and the card says what the bronze has been saying since 1915: it is yours now, look after it.',
+    ],
+  },
+  {
+    slug: 'hannes-hafstein',
+    title: 'Iceland’s first minister stands outside his old office',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'On the other corner of the Government House lawn stands Hannes Hafstein, poet, sheriff and the first Icelander to govern Iceland, with the office he governed from at his back.',
+    gradient: 'linear-gradient(180deg,#eef2f0,#c9d4cd 52%,#8fa096 82%,#57645c)',
+    image: '/photos/Hannes-Hafstein.jpeg',
+    plateSlug: 'hannes-hafstein',
+    plateTitle: 'Hannes Hafstein',
+    body: [
+      'On the other corner of the Government House lawn, a tall bronze man in a long coat stands with one hand open at his side, palm forward, as if he had just finished making a point and was waiting to see whether it landed. The plinth under him carries a name, Hannes Hafstein, and one title, ráðherra, minister. In 1904 he walked into the white building behind him as the first Icelander ever to govern Iceland.',
+      'For most of its history the country had been run from Copenhagen, often by men who had never seen it. Home rule changed that in 1904. Iceland got a single minister of its own, answerable to the Alþingi rather than to a Danish official, working from Reykjavík, and Hannes was the man chosen. The entire government of Iceland fitted at the time into a few rooms of the former prison at his back, which is why the statue stands exactly here. This is not a monument placed near a landmark. It is a man outside his own office.',
+      'He was an unlikely shape for a founding statesman, because Icelanders knew him first as a poet. His verses were the confident, weather-beaten kind, full of storms ridden out and roads pushed through, and schoolchildren were reciting them long before anyone called him minister. The poems and the politics were the same optimism in two different forms.',
+      'There was iron under the verse. In 1899, as a young sheriff in the Westfjords, he rowed out into Dýrafjörður with a small crew to arrest the captain of a British trawler fishing illegally inside the fjord. The trawler ran their boat down. Three of his men drowned, and Hannes barely reached the shore alive. The ship sailed away. Five years later the survivor of that fjord was running the country.',
+      'What he pushed through in office reads like a century of catching up compressed into five years. The telegraph cable that tied Iceland to the outside world in 1906, and the telephone lines that followed it. Roads, bridges, schools, a college for training teachers, the first serious money for forestry. His opponents fought the telegraph as a waste of a poor country’s money. He built it anyway, and within a generation nobody could imagine the island without a wire to the world.',
+      'The statue is by Einar Jónsson, who by then had already given the city its Ingólfur and its king, and it was unveiled in 1931 on the minister’s own lawn. Across the grass, on the opposite corner, Christian IX of Denmark holds out the constitution he brought over in 1874. The pair make one plain argument between them: a king handed the tools over, and an Icelander picked them up. Both face the street rather than the house, which feels right. The work was always out there, not in the corridors.',
+      'The lawn is open day and night, free, a minute from Arnarhóll and two from the harbour, and hardly anyone who photographs the white house notices the two bronzes bracketing it. Sign a photograph of Hannes for someone stepping into a job that feels a size too big, a first team, a first company, a first day at the head of the table. The card carries the example of a poet who was handed a country and got to work.',
+    ],
+  },
+  {
     slug: 'government-house',
     title: 'The country is run from a house built as a prison',
     kicker: 'Iceland · Field note',

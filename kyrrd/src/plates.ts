@@ -236,6 +236,28 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Stjórnarráðshúsið, Reykjavík',
   },
+  {
+    id: '21', no: '21', series: 'Series VII', title: 'Christian IX',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Arm held out on the Government House lawn, Christian IX of Denmark, offering Iceland the constitution he brought over in 1874.',
+    gradient: 'linear-gradient(180deg,#f0f4f6,#ccd9e2 50%,#93a9b8 82%,#5f7484)',
+    image: '/photos/King-Christian-IX-of-Denmark.jpeg',
+    slug: 'christian-ix',
+    focus: 'top', // tall statue on a tall plinth: keep the king, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Christian IX statue, Stjórnarráðshúsið, Reykjavík',
+  },
+  {
+    id: '22', no: '22', series: 'Series VII', title: 'Hannes Hafstein',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Open handed on the Government House lawn, Hannes Hafstein, the poet who became the first Icelander to govern Iceland from the house behind him.',
+    gradient: 'linear-gradient(180deg,#eef2f0,#c9d4cd 52%,#8fa096 82%,#57645c)',
+    image: '/photos/Hannes-Hafstein.jpeg',
+    slug: 'hannes-hafstein',
+    focus: 'top', // tall statue: keep the figure, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Hannes Hafstein statue, Stjórnarráðshúsið, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */

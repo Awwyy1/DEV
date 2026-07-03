@@ -3,6 +3,8 @@
   <url><loc>https://kyrrd.pics/</loc><lastmod>2026-07-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://kyrrd.pics/archive</loc><lastmod>2026-07-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://kyrrd.pics/journal</loc><lastmod>2026-07-03</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kyrrd.pics/journal/christian-ix</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kyrrd.pics/journal/hannes-hafstein</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kyrrd.pics/journal/government-house</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kyrrd.pics/journal/skuli-magnusson</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kyrrd.pics/journal/ur-alogum</loc><lastmod>2026-07-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -40,6 +42,8 @@
   <url><loc>https://kyrrd.pics/plate/ur-alogum</loc><lastmod>2026-07-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://kyrrd.pics/plate/ingolfsgardur-lighthouse</loc><lastmod>2026-07-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://kyrrd.pics/plate/government-house</loc><lastmod>2026-07-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://kyrrd.pics/plate/christian-ix</loc><lastmod>2026-07-03</lastmod><priority>0.6</priority></url>
+  <url><loc>https://kyrrd.pics/plate/hannes-hafstein</loc><lastmod>2026-07-03</lastmod><priority>0.6</priority></url>
   <url><loc>https://kyrrd.pics/privacy</loc><lastmod>2026-07-03</lastmod><priority>0.2</priority></url>
   <url><loc>https://kyrrd.pics/terms</loc><lastmod>2026-07-03</lastmod><priority>0.2</priority></url>
 </urlset>
