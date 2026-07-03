@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
-import { findPlate } from '../plates';
-import { Photo } from '../components/Photo';
+import { PLATES, findPlate } from '../plates';
+import { POSTS, readingMinutes } from '../journal';
+import PlateCard from '../components/PlateCard';
 import MapLink from '../components/MapLink';
 import { useSeo, useJsonLd } from '../seo';
 
@@ -19,15 +20,49 @@ export default function PlateDetail() {
       { '@type': 'ListItem', position: 3, name: plate.title },
     ],
   });
+
+  const key = plate.slug ?? plate.id;
+  // the field note tied to this photo, if one exists
+  const note = POSTS.find((p) => p.plateSlug === plate.slug);
+  // a few other photos to keep browsing — the next ones in the archive, wrapping
+  const withImg = PLATES.filter((p) => p.image);
+  const idx = withImg.findIndex((p) => p.id === plate.id);
+  const more =
+    idx >= 0 ? [...withImg.slice(idx + 1), ...withImg.slice(0, idx)].slice(0, 3) : withImg.slice(0, 3);
+
   return (
-    <div className="wrap section">
-      <div className="grid g2" style={{ alignItems: 'start' }}>
-        <Photo
-          gradient={plate.gradient}
-          image={plate.image}
-          alt={plate.title}
-          style={{ aspectRatio: '4/5', border: 'var(--hair) solid var(--fog)' }}
-        />
+    <div className="wrap section pd">
+      <nav className="crumbs" aria-label="Breadcrumb">
+        <Link to="/archive">Archive</Link>
+        <span className="sep" aria-hidden="true">
+          ▸
+        </span>
+        <span className="here">{plate.title}</span>
+      </nav>
+
+      <div className="grid g2 pd-grid" style={{ alignItems: 'start' }}>
+        {/* the photo shown as the finished card */}
+        <div className="hero-pc pd-pc">
+          <div
+            className="hero-pc__img"
+            style={{
+              backgroundImage: `url("${plate.image ?? ''}")`,
+              backgroundPosition: plate.focus || 'center',
+            }}
+          />
+          <div className="hero-pc__grad" />
+          <div className="hero-pc__mark">
+            kyrr<span className="eth">ð</span>.pics
+          </div>
+          <div className="hero-pc__body">
+            <p className="hero-pc__msg">A piece of Iceland, for you.</p>
+            <div className="hero-pc__meta">
+              <span>{plate.title}</span>
+              <span>From you</span>
+            </div>
+          </div>
+        </div>
+
         <div>
           <div className="d-label">
             Plate {plate.no}
@@ -38,7 +73,6 @@ export default function PlateDetail() {
           </div>
           <div className="d-cap pd-cap">
             <span>{plate.place}</span>
-            {plate.coords && <span className="pd-coords"> · {plate.coords}</span>}
             <span className="pd-date-d"> · {plate.date}</span>
             <span className="pd-map-inline">
               {' · '}
@@ -53,22 +87,47 @@ export default function PlateDetail() {
             {plate.description}
           </p>
 
-          <div className="edition">
-            <div>
-              <div className="nm">A signed card</div>
-              <div className="ds">Add your words and keep it, or send it to anyone, anywhere.</div>
+          {note && (
+            <div className="pd-story">
+              <div className="d-label">The story behind it</div>
+              <p className="pd-story-p">{note.excerpt}</p>
+              <Link to={`/journal/${note.slug}`} className="pd-read">
+                Read the field note · {readingMinutes(note)} min →
+              </Link>
             </div>
-          </div>
+          )}
 
           <Link
-            to={`/create/${plate.slug ?? plate.id}`}
+            to={`/create/${key}`}
             className="btn btn-primary"
             style={{ marginTop: 22, width: '100%' }}
           >
-            Sign &amp; send
+            Sign &amp; send this photo
           </Link>
+          <p className="pd-trust">Free · ready in seconds · send by any messenger</p>
         </div>
       </div>
+
+      {more.length > 0 && (
+        <section className="pd-more">
+          <div className="recent-h">
+            <div>
+              <div className="d-label">Keep exploring</div>
+              <div className="d-h2" style={{ marginTop: 4 }}>
+                More from the archive
+              </div>
+            </div>
+            <Link to="/archive" className="recent-all">
+              All photos →
+            </Link>
+          </div>
+          <div className="grid g3">
+            {more.map((p) => (
+              <PlateCard key={p.id} plate={p} />
+            ))}
+          </div>
+        </section>
+      )}
     </div>
   );
 }

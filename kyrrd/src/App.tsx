@@ -15,6 +15,7 @@ import Terms from './pages/Terms';
 import Create from './pages/Create';
 import Card from './pages/Card';
 import Hotel from './pages/Hotel';
+import NotFound from './pages/NotFound';
 
 // The old inscribe editor is retired; keep the URL working by sending it
 // to the new card editor.
@@ -56,7 +57,7 @@ export default function App() {
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />
           <Route path="cards" element={<Navigate to="/archive" replace />} />
-          <Route path="*" element={<Home />} />
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
       <Analytics />
