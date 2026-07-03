@@ -60,7 +60,7 @@
 .hc-vsign { font-family: 'Caveat', cursive; font-weight: 700; font-size: 17px; text-transform: none; }
 /* left card higher and in front (its sign-off stays visible); right card
    lower and pushed to the very right edge */
-.hc-a { top: calc(20% + 38px); right: 24%; transform: rotate(5deg); z-index: 3; }
+.hc-a { top: calc(20% + 76px); right: 24%; transform: rotate(5deg); z-index: 3; }
 .hc-b { top: 38%; right: 1%; transform: rotate(5deg); z-index: 2; }
 .hm-cards:hover .hc-a { transform: rotate(5deg) translateY(-10px); }
 .hm-cards:hover .hc-b { transform: rotate(5deg) translateY(-12px) scale(1.02); }
