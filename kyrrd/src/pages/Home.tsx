@@ -23,7 +23,7 @@ type HeroCardData = {
 const HERO_CARDS: HeroCardData[] = [
   {
     image: '/photos/Islandsvardan.jpeg',
-    message: "You'd have loved the light here.",
+    message: 'A piece of Iceland, for you.',
     from: 'Marco',
     place: 'Íslandsvarðan',
     style: 'vintage',

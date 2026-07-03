@@ -1,3 +1,10 @@
 {
+  "redirects": [
+    {
+      "source": "/journal/arnarholl",
+      "destination": "/journal/ingolfur-arnarson",
+      "permanent": true
+    }
+  ],
   "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/index.html" }]
 }
