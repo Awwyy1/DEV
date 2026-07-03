@@ -258,6 +258,27 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Hannes Hafstein statue, Stjórnarráðshúsið, Reykjavík',
   },
+  {
+    id: '23', no: '23', series: 'Series VII', title: 'Öndvegissúlur',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'July 2026',
+    description: 'Copper pillars crowned with carved forms beside Höfði, Sigurjón Ólafsson’s monument to the high seat pillars Ingólfur threw into the sea.',
+    gradient: 'linear-gradient(180deg,#eef3f2,#c8d6d2 50%,#8ba49c 80%,#4f6b62)',
+    image: '/photos/Ondvegissulur.jpeg',
+    slug: 'ondvegissulur',
+    focus: 'top', // tall column: keep the carved crown, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Öndvegissúlur, Höfði, Reykjavík',
+  },
+  {
+    id: '24', no: '24', series: 'Series VII', title: 'Himinglæva',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'July 2026',
+    description: 'A steel wave the wind plays on the square outside Harpa, Elín Hansdóttir’s Himinglæva, the concert hall’s own instrument.',
+    gradient: 'linear-gradient(180deg,#f1f4f7,#d3dce6 50%,#9fb0c4 82%,#6b7d94)',
+    image: '/photos/Wind-Harp.jpeg',
+    slug: 'wind-harp',
+    mapsUrl: '',
+    mapsQuery: 'Himinglæva, Harpa, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */

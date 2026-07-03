@@ -26,6 +26,48 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'ondvegissulur',
+    title: 'The pillars that chose where Reykjavík would be',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'Beside Höfði stands a dark column wearing a crown of carved copper, Sigurjón Ólafsson’s monument to the high seat pillars that Ingólfur threw into the sea and followed ashore.',
+    gradient: 'linear-gradient(180deg,#eef3f2,#c8d6d2 50%,#8ba49c 80%,#4f6b62)',
+    image: '/photos/Ondvegissulur.jpeg',
+    plateSlug: 'ondvegissulur',
+    plateTitle: 'Öndvegissúlur',
+    body: [
+      'On the grass beside Höfði, the white house on the Reykjavík shore, a tall dark column stands with a strange crown on top, a cluster of carved forms in weathered copper that could be tools, or ships, or the tops of two ancient posts. The last reading is the right one. The work is called Öndvegissúlur, the high seat pillars, and it marks the oldest decision in the city’s history: the decision about where the city would be.',
+      'The pillars themselves belong to the settlement story. A high seat pillar was a carved wooden post, one of a pair that flanked the seat of a household’s head, and it was as close to a sacred object as a Norse farmhouse kept. When Ingólfur Arnarson sailed for Iceland around the year 874, the Book of Settlements says he threw his pillars overboard within sight of the new land and vowed to build his farm wherever the gods carried them ashore.',
+      'The sea took its time. Ingólfur wintered on the south coast while two of his people walked the shoreline looking for the pillars, and the search is said to have taken three years. They finally found them washed up in a bay full of steam from the hot springs, and so the farm was raised there, and named for the steam: Reykjavík, the bay of smokes. One of the searchers is said to have grumbled that they had walked past good land to settle on this remote spit. He was looking at the future capital of the country.',
+      'The monument is the work of Sigurjón Ólafsson, one of the great Icelandic sculptors of the last century. The city commissioned it around 1970 and it was raised beside Höfði in 1971, a tall pedestal carrying the carved crown, cut copper sheets fixed over an iron frame with concrete poured inside. Sigurjón abstracted the two pillar tops into something between driftwood and treasure, which is more or less what the originals were.',
+      'There is a small story in the name as well. Sigurjón himself never titled the piece. The art historian Björn Th. Björnsson started calling it Öndvegissúlur, the name fitted, and after the sculptor’s death his widow asked that it be kept. So the monument to a found object ended up with a found name.',
+      'The pillars have had one brush with the world’s cameras. In October 1986 Reagan and Gorbachev met inside Höfði, a few steps away, and while the two men talked the world’s broadcasters filmed the white house from the lawn, with a dark copper crown standing in the frame. The spot where a Viking threw furniture into the sea spent two days as the backdrop to the end of the Cold War.',
+      'You will find the column on the shore walk along Sæbraut, past the Sun Voyager and Íslandsvarðan, on the lawn by Höfði where the poet Einar Benediktsson also stands. It is open, free and rarely crowded. Sign a photograph of it for someone deciding where to plant their life, a move, a new city, a fresh start, and the card carries the oldest advice Reykjavík has to give: throw the pillars, and trust where they land.',
+    ],
+  },
+  {
+    slug: 'wind-harp',
+    title: 'A harp for the wind, outside a hall called Harpa',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'On the square outside Harpa stands Himinglæva, Elín Hansdóttir’s stainless steel wave, an instrument with no player that hums when the wind moves through its strings.',
+    gradient: 'linear-gradient(180deg,#f1f4f7,#d3dce6 50%,#9fb0c4 82%,#6b7d94)',
+    image: '/photos/Wind-Harp.jpeg',
+    plateSlug: 'wind-harp',
+    plateTitle: 'Himinglæva',
+    body: [
+      'On the square in front of Harpa, where the concert hall’s glass wall catches the harbour light, a bright steel form curls out of the pavement like a wave caught mid turn. Strings run through the curl, dozens of them, tensioned between the sweeping edges. There is no plaque telling you to listen, and on a windy day none is needed. The sculpture hums. It is a harp, and the wind is the one playing it.',
+      'The idea is ancient. An aeolian harp, named for the Greek keeper of the winds, is an instrument built to be played by moving air alone, and people have been setting them in windows and on rooftops for centuries to hear the weather sing. This one is built of marine grade stainless steel on the scale of a small boat, tuned for a harbour that has never once run out of wind.',
+      'The name on the work is Himinglæva. In Norse mythology the sea giant Ægir and his wife Rán had nine daughters, each one a kind of wave, and Himinglæva is the small transparent wave that lets the light of the sky shine through. Sailors who felt the water move under their boats imagined her at work beneath them. It is a fitting patron for a sculpture that turns moving air into sound and moving light into shape.',
+      'The shape itself is drawn from physics. Elín Hansdóttir, the artist, based the form on a Lissajous figure, the looping pattern a beam of light traces when it is reflected off vibrating tuning forks. Which means the curl on the square is not a picture of a wave at all. It is a picture of a sound, cast in steel, set where the wind can play the real thing through it.',
+      'The sculpture waited a long time for its spot. Elín won the open competition for art around the future concert hall back in 2008, before Harpa was even finished, and the piece finally arrived on the square in 2022, a gift from the state and the city for the hall’s tenth birthday. A building named after a harp spent its first decade without one, and then got its instrument.',
+      'It rewards a slow visit more than a photo stop. Walk around it and the strings realign themselves against the glass wall behind, the loops open and close, and on a properly blustery day you can stand close and hear the overtones shift as the gusts change. Harpa’s honeycomb facade does the same trick with light that Himinglæva does with air, which is why the pair look like they were always meant to share the square.',
+      'It stands on the harbour side of Harpa, free and open at every hour, two minutes from the old harbour and five from the Sun Voyager. Sign a photograph of it for a musician, or for anyone who keeps making something good out of rough weather, and the card says what the harp proves every day: the wind is only noise until something is built to catch it.',
+    ],
+  },
+  {
     slug: 'christian-ix',
     title: 'The king who handed Iceland its constitution',
     kicker: 'Iceland · Field note',
