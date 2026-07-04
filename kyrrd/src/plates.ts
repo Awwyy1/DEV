@@ -331,6 +331,38 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Séra Bjarni Jónsson bust, Dómkirkjan, Reykjavík',
   },
+  {
+    id: '30', no: '30', series: 'Series VII', title: 'Jón Sigurðsson',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Facing the parliament from his column on Austurvöllur, Jón Sigurðsson, the man who argued Iceland back to itself.',
+    gradient: 'linear-gradient(180deg,#f1f4f6,#d5dde3 50%,#a3b2bd 80%,#5f7080)',
+    image: '/photos/Jon-Sigurdsson.jpeg',
+    slug: 'jon-sigurdsson',
+    focus: 'top', // statue high on a stone column: keep the figure, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Jón Sigurðsson statue, Austurvöllur, Reykjavík',
+  },
+  {
+    id: '31', no: '31', series: 'Series VII', title: 'Ingibjörg H. Bjarnason',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Beside the parliament she entered first, Ingibjörg H. Bjarnason, headmistress, suffragist and the first woman elected to the Alþingi.',
+    gradient: 'linear-gradient(180deg,#eff1f3,#d2d7dc 50%,#9aa3ad 80%,#454e58)',
+    image: '/photos/Ingibjorg-Bjarnason.jpeg',
+    slug: 'ingibjorg-bjarnason',
+    focus: 'top', // figure atop a tall dark plinth: keep her, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Ingibjörg H. Bjarnason statue, Alþingi, Reykjavík',
+  },
+  {
+    id: '32', no: '32', series: 'Series VII', title: 'Víkurgarður',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Three stones carved with the faint figures of the parish, marking Víkurgarður, the churchyard where Reykjavík buried its dead for six centuries.',
+    gradient: 'linear-gradient(180deg,#f1f2ee,#d8dad0 50%,#a8ab9c 80%,#6b6e5f)',
+    image: '/photos/Minnisvardi-um-Vikurkirkjugard.jpeg',
+    slug: 'vikurgardur',
+    mapsUrl: '',
+    mapsQuery: 'Víkurgarður, Aðalstræti, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
