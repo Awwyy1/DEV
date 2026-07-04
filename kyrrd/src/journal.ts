@@ -26,6 +26,48 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'berlin-wall',
+    title: 'The Wall came to the house where it began to fall',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'On the lawn by Höfði stands a painted slab of the Berlin Wall, sent to Reykjavík because the two men who started its fall met in the white house a few steps away.',
+    gradient: 'linear-gradient(180deg,#f2f4f6,#d8dde3 50%,#a7b0ba 82%,#6e7883)',
+    image: '/photos/Piece-of-Berlin-Wall.jpeg',
+    plateSlug: 'berlin-wall',
+    plateTitle: 'The Berlin Wall',
+    body: [
+      'On the grass near Höfði, a single concrete slab stands upright with a bright cartoon figure painted across it, green face, yellow hat, round astonished eyes. It looks cheerful from a distance and stranger the closer you get, because the slab is not a copy of anything. It is a piece of the Berlin Wall, the real thing, standing on a lawn in Reykjavík three and a half metres tall.',
+      'The Wall went up through the middle of Berlin overnight in August 1961 and stood for twenty eight years, a hundred and fifty five kilometres of concrete, wire and watchtowers wrapped around the western half of the city. At least a hundred and forty people died trying to cross it. It was the plainest object the Cold War ever produced: a wall built by a state to keep its own people in.',
+      'The reason a piece of it stands here, and not in any other small capital, is the white house behind it. In October 1986 Ronald Reagan and Mikhail Gorbachev met at Höfði for a summit that was scored as a failure at the time, because the two men walked away without a deal. What they did not walk away from was the talking. The thaw that started in that house carried on, the treaties followed, and three years later, in November 1989, the Wall opened and then came down. Icelanders like to say the end of the Cold War began at Höfði. The slab on the lawn is Berlin agreeing.',
+      'It arrived on the third of October 2015, the Day of German Unity, twenty five years after the two Germanys became one again, a gift to the city from the Neu West Berlin gallery. It came painted in the bright cartoon manner that Thierry Noir, a Frenchman living beside the Wall, began in 1984, when painting on it was still an act of nerve.',
+      'The paint carries the whole story, if you read it slowly. In Berlin only one face of the Wall ever carried colour, the western one, because only on that side could a person walk up to it holding a brush. The eastern face answered to a death strip. A painted wall sounds like a decorated one until you remember that the decoration marks the side where people were free to stand.',
+      'The slab shares its corner of the shore with good company: Höfði itself, the poet Einar Benediktsson, and Sigurjón Ólafsson’s copper high seat pillars a little way along the grass. It is a strange, strong cluster, a Viking legend, a Cold War summit and a piece of the wall the summit helped bring down, all within one stretch of lawn on the Sæbraut walk.',
+      'There is no fence and no fee, and the slab is at its best in low sun, when the paint burns against the grey concrete. Sign a photograph of it for someone who has just broken through a wall of their own, a border, a habit, a fear, and the card carries the best news the twentieth century ever produced: walls fall.',
+    ],
+  },
+  {
+    slug: 'cellist',
+    title: 'The cello outside Harpa has no strings',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'In the water on the harbour side of Harpa a bronze man bows a cello with no strings: Ólöf Pálsdóttir’s Musician, modelled on Erling Blöndal Bengtsson while he played for her.',
+    gradient: 'linear-gradient(180deg,#eff3f5,#d3dbe0 48%,#9daab4 78%,#7a5b48)',
+    image: '/photos/Sellospilarinn.jpeg',
+    plateSlug: 'cellist',
+    plateTitle: 'The Cellist',
+    body: [
+      'In the shallow water on the harbour side of Harpa, a bronze man in evening dress sits on a rust red plinth with a cello between his knees, bow raised, head tilted, caught in the middle of a phrase. The pose is so exact that you can almost name the note. Then you step closer and notice the one thing missing. The cello has no strings, and it never has had.',
+      'The work is called Tónlistarmaðurinn, the Musician, and it was made in 1970 by Ólöf Pálsdóttir, one of the leading Icelandic sculptors of the last century. She modelled it on a real man, the cellist Erling Blöndal Bengtsson, and the sittings were unlike any other she had. Erling did not sit. He played, for hours, piece after piece, while she worked, and she said afterwards that she never enjoyed making anything as much, because not every model can give that much of himself while holding a pose.',
+      'Erling was born in Copenhagen in 1932 to an Icelandic mother and a Danish father, and both countries have claimed him ever since. He was a prodigy who was performing in public as a small child and went on to one of the great cello careers of the north, six decades of concerts and a long life of teaching, in Copenhagen and later in America, where generations of cellists passed through his studio. Iceland gave him its highest honours and kept his mother’s share of him firmly on the books.',
+      'The statue has followed the country’s concert life around town. It was first raised in 1977 at Hagatorg, outside Háskólabíó, the cinema that doubled for decades as the symphony orchestra’s home. When the orchestra finally moved into Harpa, the Musician eventually followed, and in September 2014 he was set down in the water by the new hall. Erling had died the year before, so he never saw himself bowing at the harbour, which gives the spot a shade of memorial it was not born with.',
+      'The missing strings turn out to be the point. Ólöf made everything else true to life, the coat, the hands, the instrument, and left out the one part that makes the sound, so the music stays where it has to stay, in the person looking. Stand in front of him for a minute and your memory supplies a cello better than any speaker could.',
+      'He is also one half of a pair. On the other side of the building, on the city side square, stands Himinglæva, the steel wave strung like a harp that the wind actually plays. Harpa keeps two instruments outdoors: one that makes real sound from moving air, and one that makes imagined sound from nothing at all. Between them the glass hall does its own trick with the light.',
+      'The water, the rust red plinth and the mountain across the bay make this one of the easiest photographs on the harbour walk, two minutes from the old pier and thirty seconds from Harpa’s doors. Sign it for the musician in your life, or for someone whose talent you can hear even when they are not in the room, and the card says exactly that: I do not need the strings to hear you.',
+    ],
+  },
+  {
     slug: 'ondvegissulur',
     title: 'The pillars that chose where Reykjavík would be',
     kicker: 'Iceland · Field note',

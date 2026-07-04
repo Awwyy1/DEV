@@ -279,6 +279,26 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Himinglæva, Harpa, Reykjavík',
   },
+  {
+    id: '25', no: '25', series: 'Series VII', title: 'The Berlin Wall',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'July 2026',
+    description: 'A painted slab of the Berlin Wall on the lawn by Höfði, set down where Reagan and Gorbachev began the thaw that brought it down.',
+    gradient: 'linear-gradient(180deg,#f2f4f6,#d8dde3 50%,#a7b0ba 82%,#6e7883)',
+    image: '/photos/Piece-of-Berlin-Wall.jpeg',
+    slug: 'berlin-wall',
+    mapsUrl: '',
+    mapsQuery: 'Berlin Wall segment, Höfði, Reykjavík',
+  },
+  {
+    id: '26', no: '26', series: 'Series VII', title: 'The Cellist',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'July 2026',
+    description: 'Bowing a cello with no strings in the water outside Harpa, Ólöf Pálsdóttir’s Musician, modelled on the cellist Erling Blöndal Bengtsson.',
+    gradient: 'linear-gradient(180deg,#eff3f5,#d3dbe0 48%,#9daab4 78%,#7a5b48)',
+    image: '/photos/Sellospilarinn.jpeg',
+    slug: 'cellist',
+    mapsUrl: '',
+    mapsQuery: 'Statue of Erling Blöndal Bengtsson, Harpa, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
