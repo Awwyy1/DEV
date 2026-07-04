@@ -3,6 +3,9 @@
   <url><loc>https://kyrrd.pics/</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://kyrrd.pics/archive</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://kyrrd.pics/journal</loc><lastmod>2026-07-04</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://kyrrd.pics/journal/hofdi-lighthouse</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kyrrd.pics/journal/jon-vidalin</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://kyrrd.pics/journal/sera-bjarni</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kyrrd.pics/journal/berlin-wall</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kyrrd.pics/journal/cellist</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://kyrrd.pics/journal/ondvegissulur</loc><lastmod>2026-07-04</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
@@ -52,6 +55,9 @@
   <url><loc>https://kyrrd.pics/plate/wind-harp</loc><lastmod>2026-07-04</lastmod><priority>0.6</priority></url>
   <url><loc>https://kyrrd.pics/plate/berlin-wall</loc><lastmod>2026-07-04</lastmod><priority>0.6</priority></url>
   <url><loc>https://kyrrd.pics/plate/cellist</loc><lastmod>2026-07-04</lastmod><priority>0.6</priority></url>
+  <url><loc>https://kyrrd.pics/plate/hofdi-lighthouse</loc><lastmod>2026-07-04</lastmod><priority>0.6</priority></url>
+  <url><loc>https://kyrrd.pics/plate/jon-vidalin</loc><lastmod>2026-07-04</lastmod><priority>0.6</priority></url>
+  <url><loc>https://kyrrd.pics/plate/sera-bjarni</loc><lastmod>2026-07-04</lastmod><priority>0.6</priority></url>
   <url><loc>https://kyrrd.pics/privacy</loc><lastmod>2026-07-04</lastmod><priority>0.2</priority></url>
   <url><loc>https://kyrrd.pics/terms</loc><lastmod>2026-07-04</lastmod><priority>0.2</priority></url>
 </urlset>
