@@ -26,6 +26,27 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'leif-eriksson',
+    title: 'He stood here before the church did',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'The bronze Leif Eiríksson on his ship’s prow was a gift from the United States, and he had the hill to himself for thirteen years before anyone started building Hallgrímskirkja behind him.',
+    gradient: 'linear-gradient(180deg,#eff3f6,#d0dbe3 50%,#9db0be 80%,#5d7183)',
+    image: '/photos/Leif-Eriksson.jpeg',
+    plateSlug: 'leif-eriksson',
+    plateTitle: 'Leif Eiríksson',
+    body: [
+      'On the plaza in front of Hallgrímskirkja, where the tour groups tip their heads back at the tower, a bronze Viking stands on a plinth shaped like the prow of a ship, cloak blown back, axe in hand, eyes fixed somewhere far past the rooftops. He is looking west, which is the whole point of him. More often than not there is a seagull standing on his head, which he has borne with dignity since 1932.',
+      'The man is Leif Eiríksson, born in Iceland around the year 970, son of the exiled troublemaker Erik the Red who went on to found the Greenland settlement. Around the year 1000, by the account of the sagas, Leif sailed west from Greenland and made land in a place he called Vinland, on the coast of North America. He walked ashore there roughly five centuries before Columbus was born, and for a long time only the sagas said so. Then in the 1960s archaeologists dug up a Norse settlement at L’Anse aux Meadows in Newfoundland, and the sagas turned out to have been telling the truth all along.',
+      'The statue is American, which is its own good story. In 1930 Iceland marked a thousand years of the Alþingi, the parliament first gathered at Þingvellir in 930, and the United States government sent a gift: a bronze Leif by the sculptor Alexander Stirling Calder, father of the Calder who would later fill the world’s museums with mobiles. The inscription on the base settles an old argument in four words: son of Iceland, discoverer of Vinland. It was unveiled on the seventeenth of July 1932, on the crown of the bare hill called Skólavörðuholt.',
+      'Bare is the word to hold on to. There was no church. Construction of Hallgrímskirkja did not begin until 1945, thirteen years after Leif took his place on the hilltop, and the largest church in Iceland then rose behind him, not the other way round. Every visitor who assumes the statue was set in front of the church has it backwards. The church was set behind the statue, and the two have been framing each other ever since.',
+      'The plinth deserves a look of its own. It is cut as the prow of a ship, stepped like a breaking wave along its sides, so that Leif stands the way he would have stood at sea, at the bow, weight forward, reading the horizon. Walk around it and the illusion holds from every angle. The hilltop becomes open water, the church becomes a following wind, and the man with the axe is exactly where a captain belongs.',
+      'He earns his spot on any walk up Skólavörðustígur, and the timing matters: come in the morning, when the sun is still in the east and lights both the facade and the bronze, before the plaza fills. The sculpture garden of Einar Jónsson hides one street behind, so the hill gives you the explorer, the church and the strangest garden in the city within two hundred metres.',
+      'Sign a photograph of Leif for someone setting out west, or anywhere unmapped: a move abroad, a new country, a leap nobody in the family has taken before. The card carries the oldest promise in the sagas, which held up under excavation: sail on, the land is there.',
+    ],
+  },
+  {
     slug: 'jon-sigurdsson',
     title: 'The man who faces the parliament',
     kicker: 'Iceland · Field note',

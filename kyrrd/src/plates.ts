@@ -363,6 +363,17 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Víkurgarður, Aðalstræti, Reykjavík',
   },
+  {
+    id: '33', no: '33', series: 'Series VII', title: 'Leif Eiríksson',
+    place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'July 2026',
+    description: 'On a stone ship’s prow before Hallgrímskirkja, Leif Eiríksson, the son of Iceland who reached America five centuries before Columbus.',
+    gradient: 'linear-gradient(180deg,#eff3f6,#d0dbe3 50%,#9db0be 80%,#5d7183)',
+    image: '/photos/Leif-Eriksson.jpeg',
+    slug: 'leif-eriksson',
+    focus: 'top', // figure atop the prow plinth: keep him, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Leif Eriksson statue, Hallgrímskirkja, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
