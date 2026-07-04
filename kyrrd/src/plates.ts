@@ -299,6 +299,38 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Statue of Erling Blöndal Bengtsson, Harpa, Reykjavík',
   },
+  {
+    id: '27', no: '27', series: 'Series VII', title: 'Höfði Lighthouse',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'July 2026',
+    description: 'Bright yellow on its viewing platform by Höfði, a lighthouse built in 2019 to the pattern of the old harbour lights of 1917.',
+    gradient: 'linear-gradient(180deg,#f0f4f6,#d2dde2 50%,#a4b4bc 78%,#e8c25a)',
+    image: '/photos/Hofdi-Lighthouse.jpeg',
+    slug: 'hofdi-lighthouse',
+    mapsUrl: '',
+    mapsQuery: 'Höfði Lighthouse, Sæbraut, Reykjavík',
+  },
+  {
+    id: '28', no: '28', series: 'Series VII', title: 'Jón Vídalín',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'In the ruff of his office beside Dómkirkjan, Jón Vídalín, the bishop whose book of sermons was read aloud in Icelandic homes for two centuries.',
+    gradient: 'linear-gradient(180deg,#eef1f0,#ccd5d1 50%,#93a49d 80%,#4e5f58)',
+    image: '/photos/Jon-Vidalin.jpeg',
+    slug: 'jon-vidalin',
+    focus: 'top', // bust on a tall basalt pillar: keep the head, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Jón Vídalín memorial, Dómkirkjan, Reykjavík',
+  },
+  {
+    id: '29', no: '29', series: 'Series VII', title: 'Séra Bjarni Jónsson',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Beside the cathedral he served for forty years, séra Bjarni Jónsson, the priest all of Reykjavík knew by sight.',
+    gradient: 'linear-gradient(180deg,#f0f2f4,#d6dce1 50%,#a6b1ba 80%,#647380)',
+    image: '/photos/Sera-Bjarni-Jonsson.jpeg',
+    slug: 'sera-bjarni',
+    focus: 'top', // bust on a pedestal: keep the head and plaque, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Séra Bjarni Jónsson bust, Dómkirkjan, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
