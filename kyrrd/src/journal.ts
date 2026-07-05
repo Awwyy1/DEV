@@ -26,6 +26,27 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'shore-piece',
+    title: 'The smoothest stones in Reykjavík',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'Along the Sæbraut seawall, a short run of boulders has been polished to a furniture shine among thousands of rough ones. A small green plaque is the only explanation offered.',
+    gradient: 'linear-gradient(180deg,#f0f2f4,#dcd6d4 50%,#b3a6a4 80%,#6e6a70)',
+    image: '/photos/polished-boulders.jpeg',
+    plateSlug: 'shore-piece',
+    plateTitle: 'Shore Piece',
+    body: [
+      'Somewhere along the shore walk between the lava cairn and the Partnership sculpture, the seawall changes under your eye. The rocks along Sæbraut are rough, dark and ordinary by the thousand, and then, for a short stretch, they are not. Perhaps thirty boulders sit there polished to a furniture shine, pink and grey and near black, holding the light the way wet pebbles do, except these are dry.',
+      'The first assumption is that the sea did it, and the sea is offended by the suggestion. No tide polishes granite to a mirror in one spot and leaves the neighbouring rock untouched. Someone chose these boulders, ground them smooth, and set them back among the rough ones without a word of explanation. There is no sign facing the path, no fence, and no plaque at eye level, and most people walk straight past.',
+      'The answer is on one of the stones themselves, on a small green plate the size of a postcard: Sigurður Guðmundsson, born 1942. Fjöruverk, Shore Piece, 2002. The coat of arms of Reykjavík sits in the corner, and the work stands in the city art museum’s registry of public works, which is to say this is not a mystery at all, only a very well kept one.',
+      'What the work means is left entirely to the walker, because no statement is posted and none seems wanted. What it does is easier to say. The polishing turns beach boulders into mirrors of the weather, so the same stones read pink in evening sun and steel grey under cloud, and the contrast with the rough wall around them does all the talking. It may be the smallest gallery in the city: open all hours, no ticket, no wall text, weather permitting everything.',
+      'The strangest part is what happened around it. An unmarked run of rocks has quietly collected a dozen reviews on Google Maps, strangers awarding five stars to boulders. One local reviewer wrote that the best way to meet the piece is by complete chance, and advised against making it a destination, which may be the most honest review ever written of public art. Another simply recommends it as a place to sit and watch the bay, which also happens to be true.',
+      'You will find it on the waterfront stretch of the shore walk, with Esja flat across the water and the boulders at exactly sitting height. Run a hand over one. After twenty years of Icelandic weather they are as smooth as the day they were ground, which is more than most of us can say.',
+      'Sign a photograph of it for the person who notices what everyone else walks past, or for someone who has been through enough weather of their own. The card carries what the stones prove: some things are made beautiful by being worn.',
+    ],
+  },
+  {
     slug: 'leif-eriksson',
     title: 'He stood here before the church did',
     kicker: 'Iceland · Field note',
