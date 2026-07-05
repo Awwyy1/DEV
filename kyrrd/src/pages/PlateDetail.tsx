@@ -3,6 +3,7 @@ import { PLATES, findPlate } from '../plates';
 import { POSTS, readingMinutes } from '../journal';
 import PlateCard from '../components/PlateCard';
 import MapLink from '../components/MapLink';
+import PinIcon from '../components/PinIcon';
 import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
@@ -57,7 +58,9 @@ export default function PlateDetail() {
           <div className="hero-pc__body">
             <p className="hero-pc__msg">A piece of Iceland, for you.</p>
             <div className="hero-pc__meta">
-              <span>{plate.title}</span>
+              <span className="hero-pc__loc">
+                <PinIcon /> {plate.title}
+              </span>
               <span>From you</span>
             </div>
           </div>

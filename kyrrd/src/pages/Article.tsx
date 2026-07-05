@@ -4,6 +4,7 @@ import { findPost, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
+import PinIcon from '../components/PinIcon';
 import NewsletterCard from '../components/NewsletterCard';
 import { useSeo, useJsonLd } from '../seo';
 
@@ -186,7 +187,9 @@ export default function Article() {
                 <div className="hero-pc__body">
                   <p className="hero-pc__msg">Sending you a piece of Iceland.</p>
                   <div className="hero-pc__meta">
-                    <span>{plate.title}</span>
+                    <span className="hero-pc__loc">
+                      <PinIcon /> {plate.title}
+                    </span>
                     <span>From you</span>
                   </div>
                 </div>

@@ -318,10 +318,6 @@ export const PLATES: Plate[] = [
     mapsUrl: 'https://maps.app.goo.gl/WRj48fMoY65L95JRA',
     mapsQuery: 'The Black Cone, Monument to Civil Disobedience, Reykjavík',
   },
-
-  /* ---- NEW placeholders. For each: drop the photo in kyrrd/public/photos,
-     set `image`, rename `title`, write the `description` (and `coords`/`mapsUrl`
-     if you like). Then tell me and I will write the Journal article. ---- */,
   {
     id: '18', no: '27', series: 'Series VI', title: 'Úr Álögum',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'July 2026',
@@ -373,6 +369,16 @@ export const PLATES: Plate[] = [
     focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/V4TDaYU63c3Zqz61A',
     mapsQuery: 'Ingólfur Arnarson statue, Arnarhóll, Reykjavík',
+  },
+  {
+    id: '34', no: '32', series: 'Series VII', title: 'Shore Piece',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.92°W', date: 'July 2026',
+    description: 'A run of boulders polished to a shine among the rough rock of the Sæbraut seawall, Sigurður Guðmundsson’s Fjöruverk, hiding in plain sight since 2002.',
+    gradient: 'linear-gradient(180deg,#f0f2f4,#dcd6d4 50%,#b3a6a4 80%,#6e6a70)',
+    image: '/photos/polished-boulders.jpeg',
+    slug: 'shore-piece',
+    mapsUrl: '',
+    mapsQuery: 'The Shore Piece, Sæbraut, Reykjavík',
   },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the

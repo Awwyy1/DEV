@@ -257,15 +257,19 @@ button { font: inherit; }
 .send-hero { display: flex; flex-direction: column; }
 .send-hero__tag { font-family: var(--disp); font-weight: 500; font-size: 13px; letter-spacing: 0.02em; color: var(--steel-d); margin-bottom: 12px; }
 .send-hero__tag .dot { color: var(--glacier); }
-.hero-pc { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: #222; box-shadow: 0 40px 80px -34px rgba(20, 16, 10, 0.6); }
+/* The page-side card preview. Every size is a percentage of the card's own
+   width (container units) so it matches the real 1080x1350 export exactly:
+   msg 72px, meta 14px, mark 15px, padding 96px — all divided by 1080. */
+.hero-pc { position: relative; aspect-ratio: 4 / 5; border-radius: var(--r); overflow: hidden; background: #222; box-shadow: 0 40px 80px -34px rgba(20, 16, 10, 0.6); container-type: inline-size; }
 .hero-pc__img { position: absolute; inset: 0; background-size: cover; background-repeat: no-repeat; }
-.hero-pc__grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.82), rgba(0, 0, 0, 0.18) 52%, transparent); }
-.hero-pc__mark { position: absolute; top: 18px; right: 20px; font-family: var(--disp); font-weight: 500; font-size: 13px; letter-spacing: 0.03em; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 7px rgba(0, 0, 0, 0.5); }
+.hero-pc__grad { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.2) 50%, transparent); }
+.hero-pc__mark { position: absolute; top: 20px; right: 20px; top: 8.9cqw; right: 8.9cqw; font-family: var(--disp); font-weight: 500; font-size: 12px; font-size: 1.39cqw; letter-spacing: 0.04em; line-height: 1; color: rgba(255, 255, 255, 0.92); text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5); }
 .hero-pc__mark .eth { color: var(--glacier); }
-.hero-pc__body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; color: #fff; }
-.hero-pc__msg { font-family: 'Playfair Display', Georgia, serif; font-size: 28px; line-height: 1.2; margin: 0 0 16px; text-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); }
-.hero-pc__meta { display: flex; justify-content: space-between; gap: 10px; font-size: 10px; letter-spacing: 0.18em; text-transform: uppercase; color: rgba(255, 255, 255, 0.82); }
+.hero-pc__body { position: absolute; left: 0; right: 0; bottom: 0; padding: 26px; padding: 8.9cqw; color: #fff; }
+.hero-pc__msg { font-family: 'Playfair Display', Georgia, serif; font-weight: 400; font-size: 26px; font-size: 6.67cqw; line-height: 1.25; margin: 0 0 12px; margin: 0 0 2.96cqw; text-shadow: 0 0.93cqw 1.39cqw rgba(0, 0, 0, 0.35); }
+.hero-pc__meta { display: flex; justify-content: space-between; align-items: center; gap: 10px; font-size: 9px; font-size: 1.3cqw; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(255, 255, 255, 0.8); }
 .hero-pc__meta span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.hero-pc__loc { display: inline-flex; align-items: center; gap: 0.55em; }
 
 .ranks { list-style: none; margin: 0; padding: 0; }
 .ranks li { display: flex; gap: 13px; align-items: baseline; padding: 13px 0; border-top: var(--hair) solid var(--fog); }
