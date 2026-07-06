@@ -164,11 +164,10 @@ button { font: inherit; }
 /* ---- archive head ---- */
 .archhead { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 10px; margin-bottom: 22px; }
 
-/* ---- editions / price row ---- */
+/* ---- row layout (used for the About steps) ---- */
 .edition { display: flex; justify-content: space-between; align-items: flex-start; gap: 14px; padding: 16px 0; border-top: var(--hair) solid var(--fog); }
 .edition .nm { font-family: var(--disp); font-weight: 500; font-size: 16px; }
 .edition .ds { font-size: 12.5px; color: var(--steel-d); margin-top: 2px; max-width: 40ch; }
-.edition .pr { font-family: var(--disp); font-weight: 500; font-size: 18px; white-space: nowrap; }
 
 /* ---- plate detail: mobile meta reflow ---- */
 /* desktop default: date stays in the caption, map link is its own block */

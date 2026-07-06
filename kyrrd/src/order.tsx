@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, type ReactNode } from 'react';
 
-/** The card a buyer is building — carried across inscribe → checkout → done. */
+/** The card being built — carried from the archive through the editor to done. */
 export interface Order {
   plateId: string;
   title: string;
