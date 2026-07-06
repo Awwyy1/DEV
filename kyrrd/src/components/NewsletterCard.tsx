@@ -1,10 +1,13 @@
 import { useState, type FormEvent } from 'react';
 import { track } from '@vercel/analytics';
 
-// To collect for real: make a free form at https://formspree.io and paste its
-// id here (e.g. 'xanbqkpz'). Until then the card still works and thanks the
-// reader; nothing is stored.
-const FORMSPREE_ID = '';
+// Emails land in a Google Sheet via an Apps Script web app (doPost appends a
+// row: timestamp, email, source). Posted as form-urlencoded in no-cors mode so
+// there is no CORS preflight and no opaque-response handling; the write is
+// fire-and-forget and we thank the reader optimistically. The /exec URL is not
+// a secret — it is called from the public site by design.
+const SHEET_ENDPOINT =
+  'https://script.google.com/macros/s/AKfycbw0DQU-tneWMdzKi4eLuf-XVhoO4X464N0xUCiFoDsGLRTA03BEDZFr-GwZNhYrtJZa/exec';
 
 /** Email capture for the journal sidebar. Self-contained. */
 export default function NewsletterCard() {
@@ -17,14 +20,12 @@ export default function NewsletterCard() {
     setState('busy');
     track('newsletter_signup');
     try {
-      if (FORMSPREE_ID) {
-        const r = await fetch(`https://formspree.io/f/${FORMSPREE_ID}`, {
-          method: 'POST',
-          headers: { Accept: 'application/json', 'Content-Type': 'application/json' },
-          body: JSON.stringify({ email }),
-        });
-        if (!r.ok) throw new Error('failed');
-      }
+      await fetch(SHEET_ENDPOINT, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
+        body: new URLSearchParams({ email, source: 'journal' }).toString(),
+      });
       setState('done');
     } catch {
       setState('err');
