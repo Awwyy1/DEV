@@ -1,11 +1,12 @@
 import { useState, type FormEvent } from 'react';
 import { track } from '@vercel/analytics';
 
-// Emails land in a Google Sheet via an Apps Script web app (doPost appends a
-// row: timestamp, email, source). Posted as form-urlencoded in no-cors mode so
-// there is no CORS preflight and no opaque-response handling; the write is
-// fire-and-forget and we thank the reader optimistically. The /exec URL is not
-// a secret — it is called from the public site by design.
+// Emails land in a Google Sheet via an Apps Script web app. We hit it with a
+// GET and the email in the query string (?email=...&source=...): no CORS
+// preflight, no request body, and Apps Script populates e.parameter reliably —
+// the sturdiest path. no-cors makes the response opaque, so the write is
+// fire-and-forget and the reader is thanked optimistically. The /exec URL is
+// not a secret — it is called from the public site by design.
 const SHEET_ENDPOINT =
   'https://script.google.com/macros/s/AKfycbw0DQU-tneWMdzKi4eLuf-XVhoO4X464N0xUCiFoDsGLRTA03BEDZFr-GwZNhYrtJZa/exec';
 
@@ -20,12 +21,8 @@ export default function NewsletterCard() {
     setState('busy');
     track('newsletter_signup');
     try {
-      await fetch(SHEET_ENDPOINT, {
-        method: 'POST',
-        mode: 'no-cors',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8' },
-        body: new URLSearchParams({ email, source: 'journal' }).toString(),
-      });
+      const q = new URLSearchParams({ email, source: 'journal' }).toString();
+      await fetch(`${SHEET_ENDPOINT}?${q}`, { method: 'GET', mode: 'no-cors' });
       setState('done');
     } catch {
       setState('err');
