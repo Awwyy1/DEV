@@ -8,7 +8,7 @@ import { track } from '@vercel/analytics';
 // fire-and-forget and the reader is thanked optimistically. The /exec URL is
 // not a secret — it is called from the public site by design.
 const SHEET_ENDPOINT =
-  'https://script.google.com/macros/s/AKfycbw0DQU-tneWMdzKi4eLuf-XVhoO4X464N0xUCiFoDsGLRTA03BEDZFr-GwZNhYrtJZa/exec';
+  'https://script.google.com/macros/s/AKfycbxNGwWhL2anK0kc2uP_lkc4opgeIs-FO3ztEqEVxgr19ag63_iLRHlhlIZrMS3Bv_gc/exec';
 
 /** Email capture for the journal sidebar. Self-contained. */
 export default function NewsletterCard() {
