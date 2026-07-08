@@ -26,6 +26,27 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'looking-seawards',
+    title: 'Two fishermen watching a sea that fed them and took them',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'By the old harbour stand two bronze fishermen in oilskins, one shading his eyes, one pointing out to sea: Looking Seawards, a monument to the trade that built the country and to the men it kept.',
+    gradient: 'linear-gradient(180deg,#eef3f5,#cad9dd 50%,#8ba3ab 80%,#4f6a72)',
+    image: '/photos/Looking-seawards.jpeg',
+    plateSlug: 'looking-seawards',
+    plateTitle: 'Looking Seawards',
+    body: [
+      'On the shore by the old harbour, a little past Harpa, two bronze fishermen stand together in full oilskins and look north over the water. One has a hand raised to his cap, shading his eyes against the glare off the sea. The other points out across the bay at something only he can see. They are life sized and weathered green, and they are not posing for anyone. They are working, reading the water the way their trade taught them to.',
+      'The piece is called Looking Seawards, in Icelandic Horft til hafs, and it is the work of the sculptor Ingi P. Gíslason, put up on this spot in 1997. It marks two anniversaries at once: eighty years since Reykjavík finished building the harbour it stands beside, and the sixtieth Sjómannadagurinn, the national Day of the Seaman, which the country still keeps every June. It is, plainly and on purpose, a monument to fishermen.',
+      'That is a bigger subject in Iceland than a couple of bronze figures might suggest. For most of the country’s history the sea was the whole economy. Fish paid for everything, fish was what the island had instead of forests or farmland or coal, and the men who went out after it in small boats through the North Atlantic winter were the engine of the place. When people here talk about how a poor colony became a modern country, the short answer is usually the fish, and the longer answer is the men in this statue.',
+      'The gestures are the point, and they are exact. Shading the eyes and pointing are not heroic poses, they are the two oldest working motions of the trade: find the light on the water, and mark where the catch is. Ingi could have carved a triumphant captain at a wheel. Instead he carved two ordinary men doing the plain, patient, dangerous thing that fishing actually is, which is why the fishermen who walk past it recognise themselves in it.',
+      'It faces the water for a reason that is not only scenic. The same sea that fed the country also kept a steady share of its men, generation after generation, and nearly every coastal family in Iceland has a name that did not come home. The Day of the Seaman the statue honours is half celebration and half remembrance, and the two figures looking out to sea carry both readings at once: pride in the work, and a long memory of its cost.',
+      'You will find the pair on the harbour stretch of the shore walk, among the working quays where the whale watching boats and the last of the fishing fleet still tie up, a couple of minutes from Harpa and the little yellow lighthouse at the harbour mouth. It is open shore, free, and easy to walk straight past, which would be a shame, because few statues in the city are looking at anything as squarely as these two.',
+      'Sign a photograph of them for the person in your life who does the hard, unglamorous, necessary work and rarely gets a statue for it, or for anyone who keeps watching the horizon for someone who is out on it. The card carries the oldest posture there is on this island: two people, on the shore, reading the sea for the ones it holds.',
+    ],
+  },
+  {
     slug: 'shore-piece',
     title: 'The smoothest stones in Reykjavík',
     kicker: 'Iceland · Field note',
