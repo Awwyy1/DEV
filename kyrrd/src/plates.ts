@@ -380,6 +380,17 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'The Shore Piece, Sæbraut, Reykjavík',
   },
+  {
+    id: '35', no: '33', series: 'Series VII', title: 'Looking Seawards',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'Two fishermen in oilskins reading the horizon by the old harbour, Looking Seawards, Ingi P. Gíslason’s 1997 tribute to the men who worked the sea.',
+    gradient: 'linear-gradient(180deg,#eef3f5,#cad9dd 50%,#8ba3ab 80%,#4f6a72)',
+    image: '/photos/Looking-seawards.jpeg',
+    slug: 'looking-seawards',
+    focus: 'top', // two standing figures: keep them, crop from the bottom
+    mapsUrl: '',
+    mapsQuery: 'Looking Seawards sculpture, Reykjavík harbour',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
