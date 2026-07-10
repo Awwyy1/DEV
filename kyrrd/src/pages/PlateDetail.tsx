@@ -28,8 +28,9 @@ export default function PlateDetail() {
   // a few other photos to keep browsing — the next ones in the archive, wrapping
   const withImg = PLATES.filter((p) => p.image);
   const idx = withImg.findIndex((p) => p.id === plate.id);
+  // 4 so mobile shows a clean 2x2; desktop hides the 4th and keeps a row of 3
   const more =
-    idx >= 0 ? [...withImg.slice(idx + 1), ...withImg.slice(0, idx)].slice(0, 3) : withImg.slice(0, 3);
+    idx >= 0 ? [...withImg.slice(idx + 1), ...withImg.slice(0, idx)].slice(0, 4) : withImg.slice(0, 4);
 
   return (
     <div className="wrap section pd">
@@ -67,16 +68,11 @@ export default function PlateDetail() {
         </div>
 
         <div>
-          <div className="d-label">
-            Plate {plate.no}
-            {plate.date && <span className="pd-date-m"> · {plate.date}</span>}
-          </div>
-          <div className="d-h1" style={{ margin: '6px 0 4px' }}>
+          <div className="d-h1 pd-title" style={{ margin: '0 0 5px' }}>
             {plate.title}
           </div>
           <div className="d-cap pd-cap">
             <span>{plate.place}</span>
-            <span className="pd-date-d"> · {plate.date}</span>
             <span className="pd-map-inline">
               {' · '}
               <MapLink plate={plate} />
@@ -90,15 +86,17 @@ export default function PlateDetail() {
             {plate.description}
           </p>
 
-          {note && (
-            <Link
-              to={`/journal/${note.slug}`}
-              className="pd-read"
-              style={{ display: 'inline-block', marginTop: 4 }}
-            >
-              Read the field note · {readingMinutes(note)} min →
-            </Link>
-          )}
+          <div className="pd-readrow">
+            {plate.date && <span className="pd-date">{plate.date}</span>}
+            {note && (
+              <>
+                {plate.date ? ' · ' : ''}
+                <Link to={`/journal/${note.slug}`} className="pd-read">
+                  Read the field note · {readingMinutes(note)} min →
+                </Link>
+              </>
+            )}
+          </div>
 
           <Link
             to={`/create/${key}`}
