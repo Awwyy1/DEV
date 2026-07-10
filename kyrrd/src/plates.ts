@@ -391,6 +391,17 @@ export const PLATES: Plate[] = [
     mapsUrl: '',
     mapsQuery: 'Looking Seawards sculpture, Reykjavík harbour',
   },
+  {
+    id: '36', no: '34', series: 'Series VII', title: 'The Settlement Pillars',
+    place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
+    description: 'A basalt pillar downtown that hisses real steam, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.',
+    gradient: 'linear-gradient(180deg,#eceef0,#c2c6cc 48%,#7c8088 80%,#3a3c42)',
+    image: '/photos/Seat-Pillars-Monument.jpeg',
+    slug: 'settlement-pillars',
+    focus: 'top', // tall basalt pillar: keep the top, crop from the bottom
+    mapsUrl: 'https://maps.app.goo.gl/N1XEhZ6AaXEA676w7',
+    mapsQuery: 'Ingólfur Arnarson settlement pillars monument, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
