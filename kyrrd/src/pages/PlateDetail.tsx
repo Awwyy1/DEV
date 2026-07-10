@@ -67,7 +67,7 @@ export default function PlateDetail() {
           </div>
         </div>
 
-        <div>
+        <div className="pd-col">
           <div className="d-h1 pd-title" style={{ margin: '0 0 5px' }}>
             {plate.title}
           </div>
@@ -82,30 +82,34 @@ export default function PlateDetail() {
             <MapLink plate={plate} />
           </div>
 
-          <p className="d-body" style={{ color: 'var(--steel-d)', margin: '16px 0 8px' }}>
-            {plate.description}
-          </p>
+          <div className="pd-text">
+            <p className="d-body" style={{ color: 'var(--steel-d)', margin: '16px 0 8px' }}>
+              {plate.description}
+            </p>
 
-          <div className="pd-readrow">
-            {plate.date && <span className="pd-date">{plate.date}</span>}
-            {note && (
-              <>
-                {plate.date ? ' · ' : ''}
-                <Link to={`/journal/${note.slug}`} className="pd-read">
-                  Read the field note · {readingMinutes(note)} min →
-                </Link>
-              </>
-            )}
+            <div className="pd-readrow">
+              {plate.date && <span className="pd-date">{plate.date}</span>}
+              {note && (
+                <>
+                  {plate.date ? ' · ' : ''}
+                  <Link to={`/journal/${note.slug}`} className="pd-read">
+                    Read the field note · {readingMinutes(note)} min →
+                  </Link>
+                </>
+              )}
+            </div>
           </div>
 
-          <Link
-            to={`/create/${key}`}
-            className="btn btn-primary"
-            style={{ marginTop: 22, width: '100%' }}
-          >
-            Sign &amp; send this photo
-          </Link>
-          <p className="pd-trust">Free · ready in seconds · send by any messenger</p>
+          <div className="pd-cta">
+            <Link
+              to={`/create/${key}`}
+              className="btn btn-primary"
+              style={{ marginTop: 22, width: '100%' }}
+            >
+              Sign &amp; send this photo
+            </Link>
+            <p className="pd-trust">Free · ready in seconds · send by any messenger</p>
+          </div>
         </div>
       </div>
 

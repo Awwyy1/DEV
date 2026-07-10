@@ -197,6 +197,14 @@ button { font: inherit; }
   .pd-map-block { display: none; }
   .pd-map-inline { display: inline; }
   .pd-map-inline .maplink { display: inline-flex; vertical-align: middle; font-size: 13px; }
+  /* mobile only: lift the CTA above the fold, push the story below it */
+  .pd-col { display: flex; flex-direction: column; }
+  .pd-title { order: 1; }
+  .pd-cap { order: 2; }
+  .pd-map-block { order: 3; }
+  .pd-cta { order: 4; margin-top: 18px; }
+  .pd-text { order: 5; }
+  .pd-cta .btn { margin-top: 0 !important; }
 }
 
 /* ---- inscribe editor ---- */
