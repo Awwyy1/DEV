@@ -91,13 +91,13 @@ export default function PlateDetail() {
           </p>
 
           {note && (
-            <div className="pd-story">
-              <div className="d-label">The story behind it</div>
-              <p className="pd-story-p">{note.excerpt}</p>
-              <Link to={`/journal/${note.slug}`} className="pd-read">
-                Read the field note · {readingMinutes(note)} min →
-              </Link>
-            </div>
+            <Link
+              to={`/journal/${note.slug}`}
+              className="pd-read"
+              style={{ display: 'inline-block', marginTop: 4 }}
+            >
+              Read the field note · {readingMinutes(note)} min →
+            </Link>
           )}
 
           <Link
