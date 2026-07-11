@@ -32,13 +32,13 @@ const staticPages = [
   {
     path: '/archive',
     title: 'The Archive — kyrrð',
-    description: 'A quiet archive of photographs. Pick one, sign it, and send it as a card.',
+    description: 'An archive of photographs from around Iceland. Pick one, sign it, and send it as a card.',
   },
   {
     path: '/journal',
     title: 'Journal — kyrrð',
     description:
-      'Notes from the places in the archive: short, human guides to quiet corners of the world.',
+      'Notes from the places in the archive: short, human field notes on where these photographs were taken.',
   },
   {
     path: '/about',

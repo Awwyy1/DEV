@@ -12,7 +12,7 @@ import '../cardpage.css';
 /**
  * Hidden landing the QR on the back of a physical card points to (/c/:slug).
  * Not linked or listed anywhere. Shows the story of the landmark on the card
- * and quietly invites the recipient to send their own.
+ * and invites the recipient to send their own.
  */
 export default function Card() {
   const { slug } = useParams();
