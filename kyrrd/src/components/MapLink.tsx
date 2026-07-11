@@ -1,7 +1,7 @@
 import type { Plate } from '../plates';
 import { mapsUrl } from '../maps';
 
-/** Quiet text link to the spot on Google Maps (Option A). */
+/** Small text link to the spot on Google Maps (Option A). */
 export default function MapLink({ plate }: { plate: Plate }) {
   return (
     <a className="maplink" href={mapsUrl(plate)} target="_blank" rel="noopener noreferrer">

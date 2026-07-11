@@ -35,7 +35,7 @@ function Pin() {
   );
 }
 
-/** The quiet maker's mark, set top-right on every card. With a partner it co-brands. */
+/** The small maker's mark, set top-right on every card. With a partner it co-brands. */
 function Mark({ partner }: { partner?: string }) {
   return (
     <div className="pc-mark">
