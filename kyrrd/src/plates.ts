@@ -56,7 +56,7 @@ export const PLATES: Plate[] = [
   {
     id: '02', no: '01', series: 'Series II', title: 'The Sun Voyager',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.92°W', date: 'June 13 2026',
-    description: 'Not the Viking ship everyone takes it for, Jón Gunnar Árnason’s steel Sun Voyager has faced Mount Esja since 1990.',
+    description: 'Not the Viking ship everyone takes it for, Jón Gunnar Árnason’s steel Sun Voyager has faced Mount Esja across the bay since 1990.',
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
     image: '/photos/The-Sun-Voyager.jpeg',
     slug: 'sun-voyager',
@@ -321,11 +321,11 @@ export const PLATES: Plate[] = [
   {
     id: '18', no: '27', series: 'Series VI', title: 'Úr Álögum',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'July 2026',
-    description: 'Sword lowered over a beaten beast, Einar Jónsson’s Úr álögum, a rider breaking a spell in the garden below Hallgrímskirkja.',
+    description: 'Sword lowered over a beaten shape, Einar Jónsson’s Úr álögum, the moment a spell breaks in the garden below Hallgrímskirkja.',
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
     image: '/photos/Ur-Alogum.jpeg',
     slug: 'ur-alogum',
-    focus: 'top', // tall subject: keep the rider, crop from the bottom
+    focus: 'top', // tall subject: keep the figure, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Úr álögum, Einar Jónsson Museum, Reykjavík',
   },
