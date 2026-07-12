@@ -71,7 +71,7 @@ export default function Walk() {
           Walk<span className="eth">.</span>
         </h1>
         <p className="wk-arc">
-          From the stone where the country began to the tower that watches over all of it.
+          From the stone where the country began to the church that watches over all of it.
         </p>
         <div className="wk-stats">
           <div className="wk-stat">
@@ -232,7 +232,7 @@ export default function Walk() {
         {/* ending */}
         <section className="wk-ending">
           <div className="fin">That's the walk</div>
-          <h2>From the stone where it began to the tower that watches it.</h2>
+          <h2>From the stone where it began to the church that watches it.</h2>
           <p>
             You have walked the <b>heart</b> of Reykjavík: its founding, its republic, its harbour
             and its highest point. There is more city than this, but few lines hold more of its

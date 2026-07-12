@@ -11,10 +11,10 @@ export default function Terms() {
       <div className="article-body">
         <p className="lede">A few plain terms for using kyrrð.</p>
         <p>
-          kyrrð offers digital photo-cards for personal use. The photographs belong to kyrrð and to
-          the photographers we work with. When you make a card you receive a licence to use that image
-          for personal, non-commercial purposes, such as sending it to someone or keeping it for
-          yourself. You may not resell the photographs, redistribute them, or use them commercially.
+          kyrrð offers digital photo-cards for personal use. The photographs belong to kyrrð. The
+          card you make is yours to send and to keep: use it personally and share it with anyone you
+          like. Please do not sell the photographs, publish them as your own, or use them
+          commercially.
         </p>
         <p>
           The words you add to a card are yours, and you are responsible for them. Please do not add
