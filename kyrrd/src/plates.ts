@@ -394,7 +394,7 @@ export const PLATES: Plate[] = [
   {
     id: '36', no: '34', series: 'Series VII', title: 'The Settlement Pillars',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
-    description: 'A basalt pillar downtown that hisses real steam, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.',
+    description: 'A basalt pillar downtown, a steel pipe breathing steam beside it, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.',
     gradient: 'linear-gradient(180deg,#eceef0,#c2c6cc 48%,#7c8088 80%,#3a3c42)',
     image: '/photos/Seat-Pillars-Monument.jpeg',
     slug: 'settlement-pillars',

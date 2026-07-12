@@ -30,6 +30,7 @@ const entries = [
   { loc: '/', changefreq: 'weekly', priority: '1.0' },
   { loc: '/archive', changefreq: 'weekly', priority: '0.9' },
   { loc: '/journal', changefreq: 'weekly', priority: '0.8' },
+  { loc: '/walk', changefreq: 'monthly', priority: '0.8' },
   ...POSTS.map((p) => ({ loc: `/journal/${p.slug}`, changefreq: 'monthly', priority: '0.7' })),
   { loc: '/about', changefreq: 'monthly', priority: '0.5' },
   ...livePlates.map((p) => ({ loc: `/plate/${p.slug}`, priority: '0.6' })),

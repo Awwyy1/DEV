@@ -32,6 +32,7 @@ export default function Nav() {
           <nav className="nav">
             <Link to="/archive">Archive</Link>
             <Link to="/journal">Journal</Link>
+            <Link to="/walk">The Walk</Link>
             <Link to="/about">How it works</Link>
             <Link to="/archive" className="btn btn-primary" style={{ padding: '10px 18px' }}>
               Send a card
@@ -60,6 +61,9 @@ export default function Nav() {
           </Link>
           <Link to="/journal" onClick={close}>
             Journal
+          </Link>
+          <Link to="/walk" onClick={close}>
+            The Walk
           </Link>
           <Link to="/about" onClick={close}>
             How it works
