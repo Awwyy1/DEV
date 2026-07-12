@@ -103,7 +103,7 @@ export default function Home() {
                 <i>✓</i> Free to send
               </span>
               <span>
-                <i>✓</i> No filters
+                <i>✓</i> Real photos
               </span>
               <span>
                 <i>✓</i> No account

@@ -149,7 +149,7 @@ export const WALK: WalkChapter[] = [
     title: 'The Summit',
     area: 'Skólavörðuholt · the finale',
     belongs:
-      'This chapter belongs to the tower you have seen from every stop, and to the Viking who reached America first. The last climb, and the whole walk laid out below.',
+      'This chapter belongs to the church you have seen from every stop, and to the Viking who reached America first. The last climb, and the whole walk laid out below.',
     photoSlug: 'hallgrimskirkja',
     stops: [
       { slug: 'hallgrimskirkja', hook: 'Forty years to build, shaped like the basalt coast.' },
@@ -161,5 +161,5 @@ export const WALK: WalkChapter[] = [
 /* The long hop between VI and VII gets its own treatment on the page. */
 export const LONG_HOP = {
   big: '1.6 km · 20–25 min · uphill',
-  note: 'The long hop, and the best reward. The tower you have seen from every stop so far is next.',
+  note: 'The long hop, and the best reward. The church you have seen from every stop so far is next.',
 };

@@ -117,6 +117,12 @@
 .wk-minicard .m { position: absolute; left: 10px; right: 10px; bottom: 9px; z-index: 2; font-family: var(--serif); font-style: italic; color: #fff; font-size: 11px; line-height: 1.3; }
 .wk-minicard .wm { position: absolute; top: 7px; right: 9px; z-index: 2; font-family: var(--disp); font-weight: 500; font-size: 7px; color: rgba(255, 255, 255, 0.9); }
 .wk-minicard .wm .eth { color: var(--glacier); }
+/* stacked layout on phones: the card sits centred and full-size, not pinned small in a corner */
+@media (max-width: 560px) {
+  .wk-minicard { width: min(230px, 68%); justify-self: center; margin-top: 10px; }
+  .wk-minicard .m { font-size: 14px; left: 13px; right: 13px; bottom: 12px; }
+  .wk-minicard .wm { font-size: 9px; top: 9px; right: 11px; }
+}
 
 /* the walk page keeps its own bottom rhythm */
 .wk-foot-pad { padding-bottom: clamp(48px, 7vw, 84px); }
