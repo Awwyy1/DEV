@@ -250,7 +250,9 @@ export default function Walk() {
               centre: ten minutes of small shops and cafés, and every turn leads deeper into town.
             </p>
             <p style={{ marginTop: 10 }}>
-              If you would rather ride, buses run from a stop a short walk away.
+              If you would rather move around by bus, the rules are simple: <b>670 kr</b>,
+              contactless. Board at the front door; with a bike, scooter or pram, use the middle
+              door. Stop displays on board.
             </p>
           </div>
 
