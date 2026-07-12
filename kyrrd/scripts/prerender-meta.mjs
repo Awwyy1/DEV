@@ -41,6 +41,12 @@ const staticPages = [
       'Notes from the places in the archive: short, human field notes on where these photographs were taken.',
   },
   {
+    path: '/walk',
+    title: 'The Long Walk — kyrrð',
+    description:
+      'A free self-guided walk through the heart of Reykjavík: 30 stops in seven chapters, 5.5 km one way, with the story behind every stop and the practical details checked on foot.',
+  },
+  {
     path: '/about',
     title: 'How it works — kyrrð',
     description:

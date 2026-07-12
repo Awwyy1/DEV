@@ -1,0 +1,122 @@
+/* ============================================================
+   /walk — The Long Walk. The page is the route: one narrow
+   column, a continuous line down it, stops as nodes, chapters
+   as dark interludes. Distances live on the line itself.
+   ============================================================ */
+
+/* ---- title page ---- */
+.wk-hero { background: #141110; color: #efe9df; padding: clamp(56px, 11vh, 110px) 20px clamp(48px, 8vh, 88px); text-align: center; position: relative; }
+.wk-hero .wk-no { font-family: var(--disp); font-weight: 600; font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: #6fd2e6; }
+.wk-hero h1 { font-family: var(--disp); font-weight: 500; letter-spacing: -0.03em; line-height: 0.98; font-size: clamp(50px, 10vw, 96px); margin: 20px 0 0; }
+.wk-hero h1 .eth { color: var(--glacier); }
+.wk-hero .wk-arc { font-family: var(--serif); font-style: italic; font-size: clamp(16px, 2.3vw, 21px); color: #b7b0a2; margin: 20px auto 0; max-width: 34ch; }
+.wk-stats { display: flex; justify-content: center; gap: clamp(16px, 4vw, 38px); margin-top: 32px; flex-wrap: wrap; }
+.wk-stat { text-align: center; }
+.wk-stat .v { font-family: var(--disp); font-weight: 500; font-size: clamp(21px, 3.2vw, 28px); letter-spacing: -0.01em; }
+.wk-stat .v small { font-size: 0.55em; color: #8a8375; font-weight: 400; }
+.wk-stat .v .wk-free { color: #6fd2e6; }
+.wk-stat .k { font-family: var(--disp); font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #8a8375; margin-top: 3px; }
+.wk-go { display: inline-flex; align-items: center; gap: 9px; margin-top: 34px; }
+.wk-byline { margin-top: 24px; font-size: 12px; color: #6a655c; }
+.wk-tail { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 2px; height: 42px; background: linear-gradient(180deg, rgba(35, 177, 201, 0), var(--glacier)); }
+
+/* ---- sticky chapter bar (sits under the site nav) ---- */
+.wk-bar { position: sticky; top: 65px; z-index: 40; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: var(--hair) solid var(--fog); }
+@media (max-width: 620px) { .wk-bar { top: 57px; } }
+.wk-bar .in { max-width: 660px; margin: 0 auto; padding: 9px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.wk-bar .t { font-family: var(--disp); font-weight: 500; font-size: 13px; white-space: nowrap; color: var(--ink); }
+.wk-dots { display: flex; gap: 5px; }
+.wk-dots a { font-family: var(--disp); font-weight: 600; font-size: 10px; color: var(--steel); border: var(--hair) solid var(--fog); border-radius: 999px; padding: 4px 8px; transition: 0.15s; }
+.wk-dots a.on { background: var(--glacier); border-color: var(--glacier); color: #06343c; }
+
+/* ---- column + intro ---- */
+.wk-col { max-width: 660px; margin: 0 auto; padding: 0 20px; }
+.wk-why { padding-top: 26px; text-align: center; font-size: 15px; color: var(--steel-d); }
+.wk-why b { color: var(--ink); font-weight: 600; }
+.wk-why .m { color: var(--glacier-ink); font-weight: 600; }
+.wk-toc { padding-top: 26px; }
+.wk-toc .h { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); }
+.wk-toc ol { list-style: none; margin: 12px 0 0; padding: 0; border-top: var(--hair) solid var(--fog); }
+.wk-toc li a { display: flex; align-items: baseline; gap: 14px; padding: 10px 2px; border-bottom: var(--hair) solid var(--fog); transition: 0.15s; color: var(--ink); }
+.wk-toc li a:hover { color: var(--glacier-ink); }
+.wk-toc .rn { font-family: var(--disp); font-weight: 600; font-size: 12px; color: var(--glacier-ink); width: 26px; flex: 0 0 26px; }
+.wk-toc .nm { font-family: var(--disp); font-weight: 500; font-size: 15.5px; }
+.wk-toc .rng { margin-left: auto; font-size: 11.5px; color: var(--steel); font-family: var(--disp); font-weight: 500; white-space: nowrap; }
+.wk-railnote { text-align: center; font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--steel); padding: 26px 0 4px; }
+
+/* ---- the line ---- */
+.wk-leg { position: relative; padding-left: 54px; }
+.wk-leg::before { content: ''; position: absolute; left: 16px; top: 0; bottom: 0; width: 2px; background: var(--fog); }
+.wk-stop { position: relative; padding: 15px 0 17px; }
+.wk-stop .node { position: absolute; left: -54px; top: 15px; width: 34px; height: 34px; border-radius: 50%; background: var(--white); border: var(--hair) solid var(--fog); display: flex; align-items: center; justify-content: center; font-family: var(--disp); font-weight: 600; font-size: 12.5px; color: var(--ink); box-shadow: 0 0 0 6px var(--snow); }
+.wk-stop h4 { font-family: var(--disp); font-weight: 500; font-size: 19px; letter-spacing: -0.01em; line-height: 1.15; margin: 0; }
+.wk-stop .hook { font-size: 13.5px; color: var(--steel-d); margin-top: 3px; }
+.wk-stop .links { margin-top: 6px; font-family: var(--disp); font-weight: 500; font-size: 12.5px; }
+.wk-stop .links a { color: var(--glacier-ink); }
+.wk-stop .links a:hover { text-decoration: underline; }
+.wk-stop .links .sep { color: var(--steel); margin: 0 7px; }
+
+/* transfer marker on the line */
+.wk-hop { position: relative; padding: 6px 0; }
+.wk-hop .in { display: inline-flex; align-items: center; gap: 8px; margin-left: -46px; background: var(--snow); padding: 4px 0; }
+.wk-hop .arr { width: 26px; text-align: center; color: var(--glacier); font-size: 13px; }
+.wk-hop .txt { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--steel-d); }
+
+/* practical plaque on the line */
+.wk-plaque { margin: 8px 0 10px; background: var(--mist); border: var(--hair) solid var(--fog); border-radius: 12px; padding: 12px 15px; }
+.wk-plaque .k { font-family: var(--disp); font-weight: 600; font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--glacier-ink); }
+.wk-plaque p { font-size: 12.5px; color: var(--body-ink); margin: 4px 0 0; }
+
+/* ---- chapter interlude ---- */
+.wk-chapter { position: relative; background: #141110; color: #efe9df; border-radius: 20px; margin: 26px 0 8px -54px; padding: 24px 22px; overflow: hidden; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 18px; align-items: center; }
+@media (max-width: 560px) { .wk-chapter { grid-template-columns: 1fr; } }
+.wk-chapter .ghost { position: absolute; right: -6px; top: -26px; font-family: var(--disp); font-weight: 700; font-size: 130px; line-height: 1; color: rgba(255, 255, 255, 0.05); pointer-events: none; }
+.wk-chapter .rn { font-family: var(--disp); font-weight: 600; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #6fd2e6; }
+.wk-chapter h3 { font-family: var(--disp); font-weight: 500; font-size: clamp(22px, 4vw, 27px); letter-spacing: -0.015em; margin: 6px 0 0; }
+.wk-chapter .belongs { font-family: var(--serif); font-style: italic; font-size: 14.5px; color: #b7b0a2; margin-top: 8px; max-width: 40ch; }
+.wk-chapter .ph { aspect-ratio: 4 / 5; border-radius: 12px; background-size: cover; background-position: center; background-color: #2b3f47; min-height: 190px; }
+@media (max-width: 560px) { .wk-chapter .ph { max-width: 240px; } }
+
+/* the long hop */
+.wk-longhop { margin: 26px 0 8px -54px; background: #141110; color: #efe9df; border-radius: 20px; padding: 26px 22px; text-align: center; }
+.wk-longhop .big { font-family: var(--disp); font-weight: 500; font-size: clamp(22px, 4.4vw, 30px); letter-spacing: -0.015em; }
+.wk-longhop .big b { color: #6fd2e6; font-weight: 500; }
+.wk-longhop p { font-size: 13.5px; color: #b7b0a2; margin: 8px 0 0; }
+
+/* ---- ending + annex ---- */
+.wk-ending { padding-top: 36px; text-align: center; }
+.wk-ending .fin { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--glacier-ink); }
+.wk-ending h2 { font-family: var(--serif); font-style: italic; font-weight: 400; font-size: clamp(23px, 4.2vw, 32px); margin: 12px auto 0; max-width: 26ch; line-height: 1.3; color: var(--ink); }
+.wk-ending p { margin: 14px auto 0; max-width: 56ch; font-size: 14.5px; color: var(--steel-d); }
+.wk-ending p b { color: var(--ink); font-weight: 600; }
+
+.wk-annex { padding-top: 30px; display: flex; flex-direction: column; gap: 14px; }
+.wk-acard { background: var(--white); border: var(--hair) solid var(--fog); border-radius: var(--r); padding: 20px; }
+.wk-acard .k { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--glacier-ink); }
+.wk-acard h3 { font-family: var(--disp); font-weight: 500; font-size: 18px; margin: 6px 0 0; letter-spacing: -0.01em; }
+.wk-acard p { font-size: 13.5px; color: var(--steel-d); margin: 7px 0 0; }
+.wk-acard p b { color: var(--ink); font-weight: 600; }
+.wk-buses { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
+.wk-buses span { font-family: var(--disp); font-weight: 600; font-size: 13px; background: var(--mist); border: var(--hair) solid var(--fog); border-radius: 9px; padding: 6px 12px; }
+.wk-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+@media (max-width: 560px) { .wk-notes { grid-template-columns: 1fr; } }
+.wk-note { background: var(--white); border: var(--hair) solid var(--fog); border-radius: 14px; padding: 16px; }
+.wk-note .t { font-family: var(--disp); font-weight: 600; font-size: 12px; }
+.wk-note p { font-size: 12px; color: var(--steel-d); margin: 5px 0 0; }
+
+/* send as you go */
+.wk-send { padding-top: 18px; padding-bottom: 8px; }
+.wk-send .in { background: #141110; color: #efe9df; border-radius: 20px; padding: 24px 22px; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
+@media (max-width: 560px) { .wk-send .in { grid-template-columns: 1fr; } }
+.wk-send .k { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.16em; text-transform: uppercase; color: #6fd2e6; }
+.wk-send h3 { font-family: var(--disp); font-weight: 500; font-size: 21px; margin: 6px 0 0; letter-spacing: -0.015em; }
+.wk-send p { font-size: 13.5px; color: #b7b0a2; margin: 7px 0 0; max-width: 44ch; }
+.wk-send .btn { margin-top: 14px; }
+.wk-minicard { width: 130px; aspect-ratio: 4 / 5; border-radius: 12px; position: relative; overflow: hidden; background-size: cover; background-position: top; box-shadow: 0 20px 40px -20px rgba(0, 0, 0, 0.6); justify-self: end; }
+.wk-minicard::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 50%, rgba(0, 0, 0, 0.5)); }
+.wk-minicard .m { position: absolute; left: 10px; right: 10px; bottom: 9px; z-index: 2; font-family: var(--serif); font-style: italic; color: #fff; font-size: 11px; line-height: 1.3; }
+.wk-minicard .wm { position: absolute; top: 7px; right: 9px; z-index: 2; font-family: var(--disp); font-weight: 500; font-size: 7px; color: rgba(255, 255, 255, 0.9); }
+.wk-minicard .wm .eth { color: var(--glacier); }
+
+/* the walk page keeps its own bottom rhythm */
+.wk-foot-pad { padding-bottom: clamp(48px, 7vw, 84px); }
