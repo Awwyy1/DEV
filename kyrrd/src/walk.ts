@@ -53,7 +53,7 @@ export const WALK: WalkChapter[] = [
     plaque: {
       afterSlug: 'skuli-magnusson',
       label: 'Coffee · at stop 02',
-      text: 'You start at the founding, not at a café. But stop 02 sits by the terrace at the back of Hotel Parliament, so take your coffee here and carry on refuelled.',
+      text: 'Stop 02 sits by the terrace at the back of Hotel Parliament, so take your coffee here and carry on refuelled.',
     },
     hop: '2 min to the square',
   },

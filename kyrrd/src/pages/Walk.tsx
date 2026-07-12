@@ -244,22 +244,13 @@ export default function Walk() {
         <div className="wk-annex">
           <div className="wk-acard">
             <div className="k">Getting back</div>
-            <h3>Two ways down from the hill.</h3>
+            <h3>The best way down is Skólavörðustígur.</h3>
             <p>
-              <b>Walk it out:</b> from the church, all of downtown is ten minutes downhill, and
-              every street leads back into it.
+              From the church the street pours straight down into the liveliest stretch of the
+              centre: ten minutes of small shops and cafés, and every turn leads deeper into town.
             </p>
             <p style={{ marginTop: 10 }}>
-              <b>Or bus from near Höfði (Höfðatorg):</b>
-            </p>
-            <div className="wk-buses">
-              {['2', '4', '5', '12', '14', '16', '17'].map((b) => (
-                <span key={b}>{b}</span>
-              ))}
-            </div>
-            <p style={{ marginTop: 10 }}>
-              <b>670 kr</b>, contactless. Board at the front door; with a bike, scooter or pram,
-              use the middle door. Stop displays on board.
+              If you would rather ride, buses run from a stop a short walk away.
             </p>
           </div>
 
@@ -267,8 +258,8 @@ export default function Walk() {
             <div className="wk-note">
               <div className="t">Weather</div>
               <p>
-                Rain and fog are the real Iceland. Every photo here was shot in whatever the sky
-                was doing.
+                Wind, rain and fog are all possible, sometimes in one afternoon. Every photo here
+                was shot in whatever the sky was doing.
               </p>
             </div>
             <div className="wk-note">

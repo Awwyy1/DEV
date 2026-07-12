@@ -21,7 +21,8 @@
 .wk-tail { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: 2px; height: 42px; background: linear-gradient(180deg, rgba(35, 177, 201, 0), var(--glacier)); }
 
 /* ---- sticky chapter bar (sits under the site nav) ---- */
-.wk-bar { position: sticky; top: 65px; z-index: 40; background: var(--nav-bg); backdrop-filter: blur(8px); border-bottom: var(--hair) solid var(--fog); }
+/* solid, no backdrop blur: translucent bars glint over the photos scrolling beneath */
+.wk-bar { position: sticky; top: 65px; z-index: 40; background: var(--snow); border-bottom: var(--hair) solid var(--fog); }
 @media (max-width: 620px) { .wk-bar { top: 57px; } }
 .wk-bar .in { max-width: 660px; margin: 0 auto; padding: 9px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .wk-bar .t { font-family: var(--disp); font-weight: 500; font-size: 13px; white-space: nowrap; color: var(--ink); }
@@ -96,8 +97,6 @@
 .wk-acard h3 { font-family: var(--disp); font-weight: 500; font-size: 18px; margin: 6px 0 0; letter-spacing: -0.01em; }
 .wk-acard p { font-size: 13.5px; color: var(--steel-d); margin: 7px 0 0; }
 .wk-acard p b { color: var(--ink); font-weight: 600; }
-.wk-buses { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 10px; }
-.wk-buses span { font-family: var(--disp); font-weight: 600; font-size: 13px; background: var(--mist); border: var(--hair) solid var(--fog); border-radius: 9px; padding: 6px 12px; }
 .wk-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
 @media (max-width: 560px) { .wk-notes { grid-template-columns: 1fr; } }
 .wk-note { background: var(--white); border: var(--hair) solid var(--fog); border-radius: 14px; padding: 16px; }
