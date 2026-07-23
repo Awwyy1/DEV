@@ -1,0 +1,50 @@
+/* ============================================================
+   New-landmark popup — a centre postcard modal that announces
+   the newest field note once per visitor (keyed by slug in
+   localStorage). The popup itself is shaped like a kyrrð card.
+   ============================================================ */
+.nl-backdrop {
+  position: fixed; inset: 0; z-index: 120;
+  background: rgba(20, 16, 10, 0.55); backdrop-filter: blur(4px);
+  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+}
+.nl-backdrop.on { opacity: 1; pointer-events: auto; }
+
+.nl-modal {
+  position: fixed; z-index: 121; top: 50%; left: 50%;
+  transform: translate(-50%, -46%) scale(0.96); opacity: 0; pointer-events: none;
+  width: min(400px, 92vw); background: var(--white); border-radius: 20px; overflow: hidden;
+  box-shadow: 0 60px 120px -40px rgba(20, 16, 10, 0.7);
+  transition: transform 0.35s cubic-bezier(0.6, 0.05, 0.25, 1), opacity 0.35s ease;
+}
+.nl-modal.on { transform: translate(-50%, -50%) scale(1); opacity: 1; pointer-events: auto; }
+
+.nl-card { position: relative; aspect-ratio: 4 / 5; background-size: cover; background-position: center; background-color: #2b3f47; }
+.nl-x {
+  position: absolute; top: 12px; left: 12px; z-index: 3; width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255, 255, 255, 0.92); border: none; color: var(--ink);
+  display: flex; align-items: center; justify-content: center; font-size: 17px; line-height: 1; cursor: pointer;
+}
+.nl-mark { position: absolute; top: 14px; right: 16px; z-index: 2; font-family: var(--disp); font-weight: 500; font-size: 13px; color: rgba(255, 255, 255, 0.92); }
+.nl-mark .eth { color: var(--glacier); }
+.nl-grad { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0) 34%, rgba(0, 0, 0, 0.62) 100%); }
+.nl-cap { position: absolute; left: 22px; right: 22px; bottom: 20px; z-index: 2; color: #fff; }
+.nl-cap .k { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.14em; text-transform: uppercase; color: #6fd2e6; }
+.nl-cap .msg { font-family: var(--serif); font-style: italic; font-size: clamp(21px, 5.5vw, 26px); line-height: 1.12; margin-top: 6px; text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4); }
+
+.nl-foot { padding: 18px 22px 22px; }
+.nl-foot .ex { font-size: 13.5px; color: var(--steel-d); }
+.nl-foot .act { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+.nl-btn {
+  background: var(--glacier); color: #06343c; font-family: var(--ui); font-weight: 600; font-size: 14px;
+  padding: 12px 22px; border-radius: 999px; border: none; flex: 1; min-width: 150px;
+  display: inline-flex; align-items: center; justify-content: center; gap: 6px; cursor: pointer;
+}
+.nl-btn:hover { filter: brightness(1.05); }
+.nl-later { border: var(--hair) solid var(--fog); background: none; color: var(--steel-d); font-family: var(--disp); font-weight: 500; font-size: 13px; padding: 12px 18px; border-radius: 999px; cursor: pointer; }
+.nl-later:hover { border-color: var(--steel-d); color: var(--ink); }
+
+@media (prefers-reduced-motion: reduce) {
+  .nl-modal, .nl-backdrop { transition: opacity 0.2s ease; }
+  .nl-modal { transform: translate(-50%, -50%) scale(1); }
+}

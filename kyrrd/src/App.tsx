@@ -3,6 +3,7 @@ import { Analytics } from '@vercel/analytics/react';
 import ScrollToTop from './components/ScrollToTop';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
+import NewLandmark from './components/NewLandmark';
 import Home from './pages/Home';
 import Archive from './pages/Archive';
 import PlateDetail from './pages/PlateDetail';
@@ -33,6 +34,7 @@ function Layout() {
         <Outlet />
       </main>
       <Footer />
+      <NewLandmark />
     </>
   );
 }
