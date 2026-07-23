@@ -26,6 +26,27 @@ export interface Post {
 
 export const POSTS: Post[] = [
   {
+    slug: 'olafur-thors',
+    title: 'Five times prime minister, watching the palace he grew up in',
+    kicker: 'Iceland · Field note',
+    date: 'July 2026',
+    excerpt:
+      'On a small square off Tjarnargata stands Ólafur Thors, the shipping tycoon’s son who became Iceland’s prime minister five times, set to look across the pond toward the family palace at Fríkirkjuvegur 11.',
+    gradient: 'linear-gradient(180deg,#eef2ec,#c6d2c0 50%,#8a9a84 80%,#48533f)',
+    image: '/photos/Olafur-Thors.jpeg',
+    plateSlug: 'olafur-thors',
+    plateTitle: 'Ólafur Thors',
+    body: [
+      'On a small planted square off Tjarnargata, a short way down the western shore of the city pond, a tall bronze man in a heavy overcoat stands on a grey stone plinth with a rolled document held against his chest. Benches face him, a flowering shrub crowds one side, and most people walking the pond pass without a glance. The plaque gives only a name and a title, Ólafur Thors, forsætisráðherra, prime minister, and both are an understatement, because the man on the plinth held that office five separate times, more than anyone in the history of the country.',
+      'He was born in 1892, the son of Thor Jensen, a boy who arrived in Iceland from Denmark with nothing and built one of the largest fortunes the country had seen. Jensen founded Kveldúlfur, the biggest trawler company in Iceland, and raised his children into a new Icelandic business class from a grand house he put up on the far side of this same pond. Fríkirkjuvegur 11, still known to older Reykjavíkers as the palace, stands across the water, and the statue is set so that it looks out, more or less, toward the house Ólafur grew up in.',
+      'He might have stayed a businessman, and for a while he ran the family firm, but politics took him early and did not let go. He was elected to the Alþingi in the middle of the 1920s and sat there for close to forty years, and from 1934 he led the Independence Party, the largest party in the country, for a quarter of a century. For most of that stretch he was either prime minister or the man the prime minister had to reckon with first.',
+      'His most remembered government was also his most unlikely. In 1944, months after Iceland declared itself a republic, Ólafur formed a cabinet that reached across the whole political floor and pulled in the socialists, a pairing that startled everyone including the men who agreed to it. The country was sitting on a pile of foreign currency earned by selling fish through the war, and rather than let it drain away, the government spent it on the future, ordering a fleet of modern trawlers and the plants to process what they landed. Icelanders called it the Nýsköpunarstjórn, the Innovation Government, and it pulled the fishing industry into the modern age in a handful of years.',
+      'He was, by most accounts, the most charming man in Icelandic public life, fast, funny and hard to stay angry at, which is a fair part of how he governed. The politics of his day happened in a small room of people who had known each other since school, and Ólafur worked it with jokes and generosity as much as with argument. Opponents who lost to him tended to come away liking him anyway, and the stories about his replies outlived a good many of the laws he passed.',
+      'He died in 1964, still in office, and the statue came afterwards, the work of Sigurjón Ólafsson, whose hands are already familiar in this archive from the bust of séra Bjarni by the cathedral and the copper high seat pillars down by Höfði. Sigurjón gave him no grand gesture, only the overcoat, the papers and the level look of a man who has just come out of a long meeting and is deciding what to tell the reporters waiting outside.',
+      'Stand in front of him on a grey afternoon, with the pond at your back and the palace across the water, and a whole life sits in one small square: the father who arrived from Denmark with nothing and built that house, and the son who ran the country five times over and now stands in bronze a few hundred metres from the front door he grew up behind. Someone still plants flowers at the foot of the plinth. Sign a photograph of him for a person carrying more than their share, and the card says what the papers under his arm have been saying for half a century, that the work is heavy and you pick it up anyway.',
+    ],
+  },
+  {
     slug: 'settlement-pillars',
     title: 'The steam still rising where the country began',
     kicker: 'Iceland · Field note',

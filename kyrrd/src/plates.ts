@@ -402,6 +402,17 @@ export const PLATES: Plate[] = [
     mapsUrl: 'https://maps.app.goo.gl/N1XEhZ6AaXEA676w7',
     mapsQuery: 'Ingólfur Arnarson settlement pillars monument, Reykjavík',
   },
+  {
+    id: '37', no: '35', series: 'Series VII', title: 'Ólafur Thors',
+    place: 'Reykjavík, Iceland', coords: '64.14°N 21.94°W', date: 'July 2026',
+    description: 'By Tjarnargata stands Ólafur Thors, cast by Sigurjón Ólafsson: the shipping tycoon’s son who became Iceland’s prime minister five times.',
+    gradient: 'linear-gradient(180deg,#eef2ec,#c6d2c0 50%,#8a9a84 80%,#48533f)',
+    image: '/photos/Olafur-Thors.jpeg',
+    slug: 'olafur-thors',
+    focus: 'top', // figure atop a tall plinth: keep him, crop from the bottom
+    mapsUrl: 'https://maps.app.goo.gl/Tc9REzbqXqYvWaGm6',
+    mapsQuery: 'Ólafur Thors statue, Tjarnargata, Reykjavík',
+  },
   /* ---- Add a plate by copying a block above: drop the photo in
      kyrrd/public/photos, set image/title/slug/description, then ask for the
      Journal article. Any plate left with an empty image is skipped. ---- */
