@@ -66,11 +66,32 @@ export default function NewLandmark() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [open]);
 
+  // Soft close for the X / backdrop / Escape / Maybe later: fade out, then unmount.
   const dismiss = () => {
     markSeen();
     setOpen(false);
     setTimeout(() => setMounted(false), 400);
   };
+
+  // Hard close for navigation: the popup lives in the Layout, which React Router
+  // keeps mounted across route changes, so following the Read link would leave it
+  // hanging over the article. Remove it at once and release the scroll lock.
+  const hardClose = () => {
+    markSeen();
+    setOpen(false);
+    setMounted(false);
+    try {
+      document.body.style.overflow = '';
+    } catch {
+      /* ignore */
+    }
+  };
+
+  // Any route change (the Read link, back/forward) takes the popup down with it.
+  useEffect(() => {
+    if (mounted) hardClose();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pathname]);
 
   if (!mounted || !post) return null;
 
@@ -103,7 +124,7 @@ export default function NewLandmark() {
         <div className="nl-foot">
           <p className="ex">{post.excerpt}</p>
           <div className="act">
-            <Link className="nl-btn" to={`/journal/${post.slug}`} onClick={markSeen}>
+            <Link className="nl-btn" to={`/journal/${post.slug}`} onClick={hardClose}>
               Read the field note →
             </Link>
             <button className="nl-later" onClick={dismiss}>
