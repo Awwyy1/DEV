@@ -405,7 +405,7 @@ export const PLATES: Plate[] = [
   {
     id: '37', no: '35', series: 'Series VII', title: 'Ólafur Thors',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.94°W', date: 'July 2026',
-    description: 'By Tjarnargata stands Ólafur Thors, cast by Sigurjón Ólafsson: the shipping tycoon’s son who became Iceland’s prime minister five times.',
+    description: 'By Tjarnargata stands Ólafur Thors, cast by Sigurjón Ólafsson: the shipping tycoon’s son who became Iceland’s prime minister six times.',
     gradient: 'linear-gradient(180deg,#eef2ec,#c6d2c0 50%,#8a9a84 80%,#48533f)',
     image: '/photos/Olafur-Thors.jpeg',
     slug: 'olafur-thors',
