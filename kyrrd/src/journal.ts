@@ -27,23 +27,23 @@ export interface Post {
 export const POSTS: Post[] = [
   {
     slug: 'olafur-thors',
-    title: 'Five times prime minister, watching the palace he grew up in',
+    title: 'Six times prime minister, watching the palace he grew up in',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
     excerpt:
-      'On a small square off Tjarnargata stands Ólafur Thors, the shipping tycoon’s son who became Iceland’s prime minister five times, set to look across the pond toward the family palace at Fríkirkjuvegur 11.',
+      'On a small square off Tjarnargata stands Ólafur Thors, the shipping tycoon’s son who became Iceland’s prime minister six times, set to look across the pond toward the family palace at Fríkirkjuvegur 11.',
     gradient: 'linear-gradient(180deg,#eef2ec,#c6d2c0 50%,#8a9a84 80%,#48533f)',
     image: '/photos/Olafur-Thors.jpeg',
     plateSlug: 'olafur-thors',
     plateTitle: 'Ólafur Thors',
     body: [
-      'By Tjarnargata, beside the city pond, a tall bronze man in a heavy overcoat stands on a grey stone plinth. The plaque names him in a single line, Ólafur Thors, forsætisráðherra, prime minister. He held that office five separate times, more than anyone else in the history of Iceland.',
+      'By Tjarnargata, beside the city pond, a tall bronze man in a heavy overcoat stands on a grey stone plinth. The plaque names him in a single line, Ólafur Thors, forsætisráðherra, prime minister. He held that office six separate times, more than anyone else in the history of Iceland.',
       'He was born in 1892, the son of Thor Jensen, a boy who arrived in Iceland from Denmark with nothing and built one of the largest fortunes the country had seen. Jensen founded Kveldúlfur, the biggest trawler company in Iceland, and raised his children into a new Icelandic business class from a grand house he put up on the far side of this same pond. Fríkirkjuvegur 11, still known to older Reykjavíkers as the palace, stands across the water, and the statue is set so that it looks out, more or less, toward the house Ólafur grew up in.',
       'He might have stayed a businessman, and for a while he ran the family firm, but politics took him early and did not let go. He was elected to the Alþingi in the middle of the 1920s and sat there for close to forty years, and from 1934 he led the Independence Party, the largest party in the country, for a quarter of a century. For most of that stretch he was either prime minister or the man the prime minister had to reckon with first.',
       'His most remembered government was also his most unlikely. In 1944, months after Iceland declared itself a republic, Ólafur formed a cabinet that reached across the whole political floor and pulled in the socialists, a pairing that startled everyone including the men who agreed to it. The country was sitting on a pile of foreign currency earned by selling fish through the war, and rather than let it drain away, the government spent it on the future, ordering a fleet of modern trawlers and the plants to process what they landed. Icelanders called it the Nýsköpunarstjórn, the Innovation Government, and it pulled the fishing industry into the modern age in a handful of years.',
       'He was, by most accounts, the most charming man in Icelandic public life, fast, funny and hard to stay angry at, which is a fair part of how he governed. The politics of his day happened in a small room of people who had known each other since school, and Ólafur worked it with jokes and generosity as much as with argument. Opponents who lost to him tended to come away liking him anyway, and the stories about his replies outlived a good many of the laws he passed.',
       'He died in 1964, still in office, and the statue came afterwards, the work of Sigurjón Ólafsson, whose hands are already familiar in this archive from the bust of séra Bjarni by the cathedral and the copper high seat pillars down by Höfði. Sigurjón gave him no grand gesture, only the coat, the plain stance and the level look of a man who has just come out of a long meeting and is deciding what to tell the reporters waiting outside.',
-      'A whole life sits in this one spot by the water: the father who came from Denmark with nothing and built the palace on the far shore, and the son who ran the country five separate times and now stands in bronze within sight of it. Sign a photograph of him for someone who keeps being handed the hard job and keeps taking it, and the card carries the plain fact the plinth does, that some people are asked to carry the thing more than once.',
+      'A whole life sits in this one spot by the water: the father who came from Denmark with nothing and built the palace on the far shore, and the son who ran the country six separate times and now stands in bronze within sight of it. Sign a photograph of him for someone who keeps being handed the hard job and keeps taking it, and the card carries the plain fact the plinth does, that some people are asked to carry the thing more than once.',
     ],
   },
   {
