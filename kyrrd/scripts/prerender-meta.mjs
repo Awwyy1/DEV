@@ -62,6 +62,7 @@ const articles = POSTS.map((p) => ({
   description: p.excerpt,
   image: p.image,
   type: 'article',
+  post: p,
 }));
 
 const plates = PLATES.filter((p) => p.image && p.slug).map((p) => ({
@@ -69,6 +70,8 @@ const plates = PLATES.filter((p) => p.image && p.slug).map((p) => ({
   title: `${p.title} — kyrrð`,
   description: p.description,
   image: p.image,
+  plate: p,
+  note: POSTS.find((n) => n.plateSlug === p.slug),
 }));
 
 const routes = [...staticPages, ...articles, ...plates];
@@ -77,6 +80,91 @@ const tpl = readFileSync(resolve(dist, 'index.html'), 'utf8');
 
 const esc = (s = '') =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+
+// ---------------------------------------------------------------------------
+// Static body + structured data.
+//
+// Crawlers that do not run JavaScript (GPTBot, ClaudeBot, PerplexityBot, and
+// every social scraper) used to receive an empty <div id="root">, so the whole
+// Journal was invisible to them. We now write the real text into that div using
+// the site's own class names, so the page is readable and already styled before
+// any JavaScript arrives. React clears the container when it mounts and renders
+// the interactive version over it.
+// ---------------------------------------------------------------------------
+
+/** Words per minute matches the reading time shown in the app. */
+const readMinutes = (post) => {
+  const words = post.body.join(' ').split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200));
+};
+
+function articleBody(post) {
+  const paras = post.body
+    .map((p, i) => `<p${i === 0 ? ' class="lede"' : ''}>${esc(p)}</p>`)
+    .join('\n          ');
+  return `<div class="wrap section article-page">
+      <div class="article-grid">
+        <article class="article-main">
+          <header class="article-head">
+            <nav class="crumbs article-crumbs"><a href="/journal">Journal</a> <span class="sep">▸</span> <span class="here">Field note</span></nav>
+            <div class="kicker">${esc(post.kicker)}</div>
+            <h1 class="article-title">${esc(post.title)}</h1>
+            <div class="d-cap article-byline">${esc(post.date)} · ${readMinutes(post)} min read</div>
+          </header>
+          <div class="article-body">
+          ${paras}
+          </div>
+        </article>
+      </div>
+    </div>`;
+}
+
+function plateBody(plate, post) {
+  const note = post ? `<p><a href="/journal/${post.slug}">Read the field note about ${esc(plate.title)}</a></p>` : '';
+  return `<div class="wrap section pd">
+      <nav class="crumbs"><a href="/archive">Archive</a> <span class="sep">▸</span> <span class="here">${esc(plate.title)}</span></nav>
+      <h1 class="d-h1">${esc(plate.title)}</h1>
+      <div class="d-cap">${esc(plate.place)}${plate.date ? ` · ${esc(plate.date)}` : ''}</div>
+      <p class="d-body">${esc(plate.description)}</p>
+      ${note}
+      <p><a href="/create/${plate.slug}">Sign and send this photograph as a free digital card</a></p>
+    </div>`;
+}
+
+function pageBody(route) {
+  return `<div class="wrap section">
+      <h1 class="d-h1">${esc(route.title.replace(' — kyrrð', ''))}</h1>
+      <p class="d-body">${esc(route.description)}</p>
+    </div>`;
+}
+
+/** Article schema for a field note; a person stands behind every one of them. */
+const articleLd = (post, url, img) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.title,
+  description: post.excerpt,
+  image: img,
+  datePublished: post.date,
+  dateModified: post.date,
+  author: { '@type': 'Person', name: 'the person behind kyrrð', url: `${SITE}/about` },
+  publisher: { '@type': 'Organization', name: 'kyrrð', url: SITE },
+  mainEntityOfPage: url,
+  inLanguage: 'en',
+});
+
+/** Landmarks are places: give search engines the entity, not just an article. */
+const plateLd = (plate, url, img) => ({
+  '@context': 'https://schema.org',
+  '@type': 'TouristAttraction',
+  name: plate.title,
+  description: plate.description,
+  image: img,
+  url,
+  address: { '@type': 'PostalAddress', addressLocality: 'Reykjavík', addressCountry: 'IS' },
+  isAccessibleForFree: true,
+  publicAccess: true,
+});
 
 function setMeta(html, attr, key, value) {
   const v = esc(value);
@@ -105,6 +193,27 @@ function render(route) {
   html = setMeta(html, 'name', 'twitter:title', route.title);
   html = setMeta(html, 'name', 'twitter:description', route.description);
   html = setMeta(html, 'name', 'twitter:image', img);
+
+  // The readable page, written into the root container React will take over.
+  const body = route.post
+    ? articleBody(route.post)
+    : route.plate
+      ? plateBody(route.plate, route.note)
+      : pageBody(route);
+  html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+
+  // Structured data as a second block; the site-wide graph in index.html stays.
+  const ld = route.post
+    ? articleLd(route.post, url, img)
+    : route.plate
+      ? plateLd(route.plate, url, img)
+      : null;
+  if (ld) {
+    html = html.replace(
+      '</head>',
+      `    <script type="application/ld+json">${JSON.stringify(ld)}</script>\n  </head>`,
+    );
+  }
   return html;
 }
 
