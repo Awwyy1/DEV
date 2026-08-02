@@ -53,3 +53,35 @@ writeFileSync(resolve(root, 'public/sitemap.xml'), xml);
 console.log(
   `  sitemap.xml: ${entries.length} urls (${POSTS.length} articles, ${livePlates.length} plates)`,
 );
+
+// ---------------------------------------------------------------------------
+// llms.txt — a plain map of the site for language models, generated from the
+// same catalogue so it can never drift from what is actually published.
+// ---------------------------------------------------------------------------
+const llms = `# kyrrð
+
+> Real photographs of Reykjavík taken on foot, the true story behind each one,
+> and a free digital postcard you can sign and send. Everything here is free to
+> read and free to send. Nothing is stock, nothing is generated: every picture
+> was taken on a phone by the person who walked there, in whatever weather the
+> day gave.
+
+Facts are checked on location. When something turns out to be wrong it is
+corrected rather than quietly left, and monuments missing from the maps have
+been added to them.
+
+## Field notes
+${POSTS.map((p) => `- [${p.title}](${SITE}/journal/${p.slug}): ${p.excerpt}`).join('\n')}
+
+## Photographs
+${livePlates.map((p) => `- [${p.title}](${SITE}/plate/${p.slug}): ${p.description}`).join('\n')}
+
+## Guides
+- [The Long Walk](${SITE}/walk): a free self-guided walk through Reykjavík, 30 stops in seven chapters, 5.5 km, with the distances and the practical details measured on foot.
+
+## About
+- [How it works](${SITE}/about): choose a photograph, add your words, send it as a signed digital card.
+`;
+
+writeFileSync(resolve(root, 'public/llms.txt'), llms);
+console.log(`  llms.txt: ${POSTS.length + livePlates.length} entries`);

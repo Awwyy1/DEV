@@ -1,0 +1,91 @@
+# kyrrð
+
+> Real photographs of Reykjavík taken on foot, the true story behind each one,
+> and a free digital postcard you can sign and send. Everything here is free to
+> read and free to send. Nothing is stock, nothing is generated: every picture
+> was taken on a phone by the person who walked there, in whatever weather the
+> day gave.
+
+Facts are checked on location. When something turns out to be wrong it is
+corrected rather than quietly left, and monuments missing from the maps have
+been added to them.
+
+## Field notes
+- [Six times prime minister, watching the palace he grew up in](https://kyrrd.pics/journal/olafur-thors): On a small square off Tjarnargata stands Ólafur Thors, the shipping tycoon’s son who became Iceland’s prime minister six times, set to look across the pond toward the family palace at Fríkirkjuvegur 11.
+- [The steam still rising where the country began](https://kyrrd.pics/journal/settlement-pillars): On a downtown square ringed with restaurants stands a rough basalt pillar with a steel pipe rising beside it, breathing real steam, marking the exact spot where, by the old story, Ingólfur’s high seat pillars washed ashore and Reykjavík began.
+- [Two fishermen watching a sea that fed them and took them](https://kyrrd.pics/journal/looking-seawards): By the old harbour stand two bronze fishermen in oilskins, one shading his eyes, one pointing out to sea: Looking Seawards, a monument to the trade that built the country and to the men it kept.
+- [The smoothest stones in Reykjavík](https://kyrrd.pics/journal/shore-piece): Along the Sæbraut seawall, a short run of boulders has been polished to a furniture shine among thousands of rough ones. A small green plaque is the only explanation offered.
+- [He stood here before the church did](https://kyrrd.pics/journal/leif-eriksson): The bronze Leif Eiríksson on his ship’s prow was a gift from the United States, and he had the hill to himself for thirteen years before anyone started building Hallgrímskirkja behind him.
+- [The man who faces the parliament](https://kyrrd.pics/journal/jon-sigurdsson): In the middle of Austurvöllur, Jón Sigurðsson stands on his column facing the parliament house: the scholar who led Iceland to independence without ever raising more than an argument.
+- [The first woman through the parliament’s door](https://kyrrd.pics/journal/ingibjorg-bjarnason): Beside the Alþingi stands Ingibjörg H. Bjarnason, headmistress and suffragist, the first woman elected to Iceland’s parliament and the first named woman honoured with a full statue in Reykjavík.
+- [The oldest ground in Reykjavík](https://kyrrd.pics/journal/vikurgardur): At the corner of a small park off Aðalstræti stand three stones with faint human figures carved into them, marking Víkurgarður, the churchyard where the town buried its dead for six centuries.
+- [The lighthouse by Höfði was born in 2019](https://kyrrd.pics/journal/hofdi-lighthouse): The bright yellow lighthouse on the viewing platform by Höfði looks like a survivor from the old harbour, and it was built in 2019 on purpose, to the pattern of the lights of 1917.
+- [The preacher Iceland read aloud for two hundred years](https://kyrrd.pics/journal/jon-vidalin): Beside Dómkirkjan a green bronze bishop in a ruff stands on a rough basalt pillar: Jón Vídalín, whose book of sermons was the loudest voice in Icelandic homes for two centuries.
+- [The priest the whole town greeted](https://kyrrd.pics/journal/sera-bjarni): By the cathedral door stands the bust of séra Bjarni Jónsson, who served Dómkirkjan for forty one years and was, for most of that time, the best known face in Reykjavík.
+- [The Wall came to the house where it began to fall](https://kyrrd.pics/journal/berlin-wall): On the lawn by Höfði stands a painted slab of the Berlin Wall, sent to Reykjavík because the two men who started its fall met in the white house a few steps away.
+- [The cello outside Harpa has no strings](https://kyrrd.pics/journal/cellist): In the water on the harbour side of Harpa a bronze man bows a cello with no strings: Ólöf Pálsdóttir’s Musician, modelled on Erling Blöndal Bengtsson while he played for her.
+- [The pillars that chose where Reykjavík would be](https://kyrrd.pics/journal/ondvegissulur): Beside Höfði stands a dark column wearing a crown of carved copper, Sigurjón Ólafsson’s monument to the high seat pillars that Ingólfur threw into the sea and followed ashore.
+- [A harp for the wind, outside a hall called Harpa](https://kyrrd.pics/journal/wind-harp): On the square outside Harpa stands Himinglæva, Elín Hansdóttir’s stainless steel wave, an instrument with no player that hums when the wind moves through its strings.
+- [The king who handed Iceland its constitution](https://kyrrd.pics/journal/christian-ix): On the Government House lawn stands Christian IX of Denmark with one arm held out, offering the constitution he brought to Iceland in 1874, cast in bronze by Einar Jónsson.
+- [Iceland’s first minister stands outside his old office](https://kyrrd.pics/journal/hannes-hafstein): On the other corner of the Government House lawn stands Hannes Hafstein, poet, sheriff and the first Icelander to govern Iceland, with the office he governed from at his back.
+- [The country is run from a house built as a prison](https://kyrrd.pics/journal/government-house): A plain white house at the foot of Arnarhóll, raised in the 1760s as the country’s prison and now the seat of the Icelandic government, where the prime minister and cabinet still sit.
+- [The man Reykjavík still calls its father](https://kyrrd.pics/journal/skuli-magnusson): In a small park off Aðalstræti, the oldest street in Reykjavík, stands the magistrate Skúli Magnússon, whose workshops turned the bay from a farm into a town.
+- [Breaking a spell, in the garden below Hallgrímskirkja](https://kyrrd.pics/journal/ur-alogum): Behind the Einar Jónsson museum on the hill by Hallgrímskirkja, a bronze figure lowers his sword over a beaten shape in Úr álögum, the sculptor’s image of breaking free from a spell.
+- [The little yellow lighthouse at the mouth of the old harbour](https://kyrrd.pics/journal/ingolfsgardur-lighthouse): Out at the end of a stone breakwater in Reykjavík’s old harbour stands a small, bright yellow lighthouse, marking the gap where the boats still slip in and out.
+- [A lava cairn on the waterfront, with a window cut for the mountain](https://kyrrd.pics/journal/islandsvardan): A dark, craggy bronze on the Reykjavík shore that almost everyone walks past on the way to the Sun Voyager, with an opening at its heart that keeps Mount Esja in view.
+- [The little cathedral where the parliament still goes to pray](https://kyrrd.pics/journal/domkirkjan): A small, plain church on Austurvöllur that most visitors walk straight past, and which is in fact the cathedral of Reykjavík, the one the parliament returns to before every session.
+- [The poet who tried to sell the northern lights](https://kyrrd.pics/journal/einar-benediktsson): A bronze figure of Einar Benediktsson stands beside Höfði on the Reykjavík shore, a poet and a dreamer of impossible schemes, set near a harp by the sculptor who thought him great at everything.
+- [The man on the hill, and the cove that became a city](https://kyrrd.pics/journal/ingolfur-arnarson): A bronze settler with a spear and a high seat pillar on a low grassy hill in the centre of Reykjavík, looking out at the city he is said to have started.
+- [A broken boulder in front of parliament, and the year a country banged its pots](https://kyrrd.pics/journal/black-cone): A heavy black cone driven into a boulder in the square in front of the Icelandic parliament, a memorial to the protests of 2009 and the right to refuse.
+- [Iceland has no unknown soldier, so it honoured this man instead](https://kyrrd.pics/journal/unknown-bureaucrat): A man with a briefcase strides toward the City Hall, and where his head should be there is a block of raw basalt. A monument to the anonymous official, equal parts tribute and joke.
+- [Höfði, the white house where the Cold War began to end](https://kyrrd.pics/journal/hofdi-house): A small white house on the Reykjavík shore where Reagan and Gorbachev met in 1986, older and stranger than the summit, and said to come with a ghost.
+- [Harpa, the glass hall that almost never opened](https://kyrrd.pics/journal/harpa): A great wall of coloured glass on the Reykjavík harbour that was left half built when the banks fell, and finished anyway as a sign the country was standing up again.
+- [Althingi, a parliament older than its house](https://kyrrd.pics/journal/althingi): A modest grey stone house on a Reykjavík square that holds a parliament first gathered in the year 930, with four guardian spirits carved above its windows.
+- [The Partnership, and the house just up the shore](https://kyrrd.pics/journal/partnership-sculpture): Two bronze figures holding on to each other on the Reykjavík shore, a gift between two countries, set a short walk from the house where the Cold War began to thaw.
+- [Hallgrímskirkja, the church built to look like lava](https://kyrrd.pics/journal/hallgrimskirkja): The pale tower above Reykjavík took more than forty years to build, and its front was shaped to echo the basalt columns of the Icelandic coast.
+- [The Sun Voyager is not a Viking ship](https://kyrrd.pics/journal/sun-voyager): A gleaming steel boat on the Reykjavík waterfront that almost everyone reads as a Viking ship, and that its maker meant as something else entirely.
+- [The Water Carrier who waited years to stand](https://kyrrd.pics/journal/water-carrier): A bronze woman near Lækjargata who carried water through the city long before the pipes arrived, and who waited years for Reykjavík to let her stand.
+- [Grótta Lighthouse, where the tide sets the schedule](https://kyrrd.pics/journal/grotta-lighthouse): A small white lighthouse at the western edge of Reykjavík that you can only reach on foot when the sea allows it.
+
+## Photographs
+- [The Sun Voyager](https://kyrrd.pics/plate/sun-voyager): Not the Viking ship everyone takes it for, Jón Gunnar Árnason’s steel Sun Voyager has faced Mount Esja across the bay since 1990.
+- [Government House](https://kyrrd.pics/plate/government-house): White above the Lækjargata lawn, Government House, the prime minister’s seat in a stone building raised in the 1760s as the country’s prison.
+- [Himinglæva](https://kyrrd.pics/plate/wind-harp): A steel wave the wind plays on the square outside Harpa, Elín Hansdóttir’s Himinglæva, the concert hall’s own instrument.
+- [Skúli Magnússon](https://kyrrd.pics/plate/skuli-magnusson): Father of Reykjavík in bronze, Skúli Magnússon, whose Aðalstræti workshops turned a scatter of farms into a town.
+- [Grotta Lighthouse](https://kyrrd.pics/plate/grotta-lighthouse): Reachable on foot only around low tide, the Grótta lighthouse on an island the sea cuts off twice a day.
+- [Christian IX](https://kyrrd.pics/plate/christian-ix): Arm held out on the Government House lawn, Christian IX of Denmark, offering Iceland the constitution he brought over in 1874.
+- [The Cellist](https://kyrrd.pics/plate/cellist): Bowing a cello with no strings in the water outside Harpa, Ólöf Pálsdóttir’s Musician, modelled on the cellist Erling Blöndal Bengtsson.
+- [Althingi Parliament House](https://kyrrd.pics/plate/althingi): Behind a plain grey façade on Austurvöllur sits Alþingi, a parliament first gathered in the year 930.
+- [Íslandsvarðan](https://kyrrd.pics/plate/islandsvardan): Cast to look like raw lava, Íslandsvarðan, Jóhann Eyfells’s bronze cairn with a hole that keeps Mount Esja in view.
+- [Water Carrier](https://kyrrd.pics/plate/water-carrier): Bowed under a wooden yoke, the Water Carrier who hauled Reykjavík’s water by hand long before the pipes arrived.
+- [Leif Eiríksson](https://kyrrd.pics/plate/leif-eriksson): On a stone ship’s prow before Hallgrímskirkja, Leif Eiríksson, the son of Iceland who reached America five centuries before Columbus.
+- [The Berlin Wall](https://kyrrd.pics/plate/berlin-wall): A painted slab of the Berlin Wall on the lawn by Höfði, set down where Reagan and Gorbachev began the thaw that brought it down.
+- [Hallgrimskirkja](https://kyrrd.pics/plate/hallgrimskirkja): Forty years in the building, Hallgrímskirkja’s pale tower was shaped after the basalt columns of the Icelandic coast.
+- [Jón Sigurðsson](https://kyrrd.pics/plate/jon-sigurdsson): Facing the parliament from his column on Austurvöllur, Jón Sigurðsson, the man who argued Iceland back to itself.
+- [Höfði Lighthouse](https://kyrrd.pics/plate/hofdi-lighthouse): Bright yellow on its viewing platform by Höfði, a lighthouse built in 2019 to the pattern of the old harbour lights of 1917.
+- [Unknown Bureaucrat](https://kyrrd.pics/plate/unknown-bureaucrat): Sharp from the waist down and a raw block of basalt above, the Unknown Bureaucrat, a monument to the official no one remembers.
+- [Domkirkjan](https://kyrrd.pics/plate/domkirkjan): Beside the parliament on Austurvöllur, the cathedral where members still gather for a service before each new session opens.
+- [Öndvegissúlur](https://kyrrd.pics/plate/ondvegissulur): Copper pillars crowned with carved forms beside Höfði, Sigurjón Ólafsson’s monument to the high seat pillars Ingólfur threw into the sea.
+- [The Partnership Sculpture](https://kyrrd.pics/plate/partnership-sculpture): Two bronze figures leaning into each other on the shore, the Partnership, a gift between Iceland and the United States.
+- [Hannes Hafstein](https://kyrrd.pics/plate/hannes-hafstein): Open handed on the Government House lawn, Hannes Hafstein, the poet who became the first Icelander to govern Iceland from the house behind him.
+- [Víkurgarður](https://kyrrd.pics/plate/vikurgardur): Three stones carved with the faint figures of the parish, marking Víkurgarður, the churchyard where Reykjavík buried its dead for six centuries.
+- [Harpa](https://kyrrd.pics/plate/harpa): Coloured glass that shifts with the weather, Harpa on the old harbour, left half built when the banks fell and finished anyway.
+- [Einar Benediktsson](https://kyrrd.pics/plate/einar-benediktsson): Poet, lawyer and tireless schemer, Einar Benediktsson stands beside Höfði, the man who, the story goes, once tried to sell the northern lights.
+- [Séra Bjarni Jónsson](https://kyrrd.pics/plate/sera-bjarni): Beside the cathedral he served for forty years, séra Bjarni Jónsson, the priest all of Reykjavík knew by sight.
+- [Ingibjörg H. Bjarnason](https://kyrrd.pics/plate/ingibjorg-bjarnason): Beside the parliament she entered first, Ingibjörg H. Bjarnason, headmistress, suffragist and the first woman elected to the Alþingi.
+- [The Black Cone](https://kyrrd.pics/plate/black-cone): Driven into a split boulder outside parliament, the Black Cone, Iceland’s stark monument to the right to protest.
+- [Úr Álögum](https://kyrrd.pics/plate/ur-alogum): Sword lowered over a beaten shape, Einar Jónsson’s Úr álögum, the moment a spell breaks in the garden below Hallgrímskirkja.
+- [Hofdi House](https://kyrrd.pics/plate/hofdi-house): On the north shore stands Höfði, the white house where Reagan and Gorbachev met in 1986 and the Cold War began to thaw.
+- [Ingólfsgarður Lighthouse](https://kyrrd.pics/plate/ingolfsgardur-lighthouse): Bright yellow at the end of a stone breakwater, the little lighthouse marking the mouth of Reykjavík’s old harbour.
+- [Jón Vídalín](https://kyrrd.pics/plate/jon-vidalin): In the ruff of his office beside Dómkirkjan, Jón Vídalín, the bishop whose book of sermons was read aloud in Icelandic homes for two centuries.
+- [Ingólfur Arnarson](https://kyrrd.pics/plate/ingolfur-arnarson): Spear in hand on his green hill, Ingólfur Arnarson, the settler the sagas credit with founding Reykjavík.
+- [Shore Piece](https://kyrrd.pics/plate/shore-piece): A run of boulders polished to a shine among the rough rock of the Sæbraut seawall, Sigurður Guðmundsson’s Fjöruverk, hiding in plain sight since 2002.
+- [Looking Seawards](https://kyrrd.pics/plate/looking-seawards): Two fishermen in oilskins reading the horizon by the old harbour, Looking Seawards, Ingi P. Gíslason’s 1997 tribute to the men who worked the sea.
+- [The Settlement Pillars](https://kyrrd.pics/plate/settlement-pillars): A basalt pillar downtown, a steel pipe breathing steam beside it, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.
+- [Ólafur Thors](https://kyrrd.pics/plate/olafur-thors): By Tjarnargata stands Ólafur Thors, cast by Sigurjón Ólafsson: the shipping tycoon’s son who became Iceland’s prime minister six times.
+
+## Guides
+- [The Long Walk](https://kyrrd.pics/walk): a free self-guided walk through Reykjavík, 30 stops in seven chapters, 5.5 km, with the distances and the practical details measured on foot.
+
+## About
+- [How it works](https://kyrrd.pics/about): choose a photograph, add your words, send it as a signed digital card.
