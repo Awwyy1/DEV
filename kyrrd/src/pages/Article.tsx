@@ -130,6 +130,27 @@ export default function Article() {
             </div>
           </header>
 
+          {/* The short answer, above the story: what a reader in a hurry needs
+              and what a search result or an assistant can quote. */}
+          {post.inShort && (
+            <div className="in-short">
+              <div className="in-short-k">In short</div>
+              <p>{post.inShort}</p>
+            </div>
+          )}
+          {post.facts && (
+            <table className="fact-table">
+              <tbody>
+                {post.facts.map(([k, v]) => (
+                  <tr key={k}>
+                    <th scope="row">{k}</th>
+                    <td>{v}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          )}
+
           <div className="article-body">
             {post.body.map((para, i) =>
               i === 0 ? (

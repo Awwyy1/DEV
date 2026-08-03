@@ -21,12 +21,27 @@ export interface Post {
   image?: string;
   plateSlug?: string;
   plateTitle?: string;
+  /** 40 to 60 words answering the question the title raises, shown above the
+      story. Written from the note itself; it is what a search result or an
+      assistant can quote without reading the whole piece. */
+  inShort?: string;
+  /** The bare facts as label and value, for the reader in a hurry. */
+  facts?: [string, string][];
   body: string[];
 }
 
 export const POSTS: Post[] = [
   {
     slug: 'olafur-thors',
+    inShort:
+      'Ólafur Thors stands by Tjarnargata beside the Reykjavík pond. He led Iceland six separate times, more than anyone in the country’s history, and the bronze is the work of Sigurjón Ólafsson. Free to visit, in the open, at any hour.',
+    facts: [
+      ['What', 'Statue · Ólafur Thors'],
+      ['Sculptor', 'Sigurjón Ólafsson'],
+      ['Known for', 'Prime minister, six terms'],
+      ['Where', 'Tjarnargata, by the pond'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'Six times prime minister, watching the palace he grew up in',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -48,6 +63,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'settlement-pillars',
+    inShort:
+      'A rough basalt pillar in downtown Reykjavík marks where, by the old story, Ingólfur’s high seat pillars washed ashore and the city began. A steel pipe beside it breathes real steam from the ground. It was missing from Google Maps until 2026, when we added the pin.',
+    facts: [
+      ['What', 'Monument · the Settlement Pillars'],
+      ['Marks', 'Where Reykjavík is said to begin'],
+      ['Steam', 'From a pipe fed by a geothermal vent'],
+      ['Where', 'A square in the old centre'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The steam still rising where the country began',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -112,6 +136,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'leif-eriksson',
+    inShort:
+      'The statue of Leif Eiríksson was a gift from the United States and stood on the hill for thirteen years before anyone began building Hallgrímskirkja behind it. Everyone assumes the statue was placed in front of the church; it was the other way round.',
+    facts: [
+      ['What', 'Statue · Leif Eiríksson'],
+      ['Sculptor', 'Alexander Stirling Calder'],
+      ['In place since', '1932'],
+      ['Where', 'The plaza in front of Hallgrímskirkja'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'He stood here before the church did',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -259,6 +292,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'berlin-wall',
+    inShort:
+      'A painted slab of the Berlin Wall stands on the lawn by Höfði. It was sent to Reykjavík because the two men who started the Wall’s fall met in the white house a few steps away in 1986. It is three and a half metres tall and free to visit.',
+    facts: [
+      ['What', 'A section of the Berlin Wall'],
+      ['Height', 'Three and a half metres'],
+      ['Why here', 'The 1986 summit at Höfði'],
+      ['Where', 'The lawn beside Höfði'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The Wall came to the house where it began to fall',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -571,6 +613,14 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'unknown-bureaucrat',
+    inShort:
+      'Iceland has no tomb of an unknown soldier, so Reykjavík honoured an unknown office worker instead. A man in a coat strides toward City Hall with a briefcase, and above the waist he is a block of raw rock. It stands by the pond and costs nothing to see.',
+    facts: [
+      ['What', 'Monument to the Unknown Bureaucrat'],
+      ['Sculptor', 'Magnús Tómasson'],
+      ['Where', 'North end of Tjörnin, by City Hall'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'Iceland has no unknown soldier, so it honoured this man instead',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -590,6 +640,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'hofdi-house',
+    inShort:
+      'Höfði is the white timber house on the Reykjavík shore where Reagan and Gorbachev met in 1986. The talks ended without an agreement and are now remembered as the moment the Cold War began to come apart. You can walk up to it freely; the inside is not open to visitors.',
+    facts: [
+      ['What', 'House · Höfði'],
+      ['Known for', 'The Reagan and Gorbachev summit, 1986'],
+      ['Built', '1909'],
+      ['Where', 'The north shore, off Sæbraut'],
+      ['Cost', 'Free from outside, no public entry'],
+    ],
     title: 'Höfði, the white house where the Cold War began to end',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -610,6 +669,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'harpa',
+    inShort:
+      'Harpa is the coloured glass concert hall on the Reykjavík harbour. It stood half built when the banks fell in 2008, and the country finished it anyway. The ground floor is open to anyone, free, and the facade changes with the weather and the hour.',
+    facts: [
+      ['What', 'Concert hall · Harpa'],
+      ['Opened', '2011'],
+      ['Facade', 'Coloured glass, by Ólafur Elíasson'],
+      ['Where', 'The old harbour'],
+      ['Cost', 'Free to walk in'],
+    ],
     title: 'Harpa, the glass hall that almost never opened',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -630,6 +698,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'althingi',
+    inShort:
+      'The plain grey house on Austurvöllur holds Alþingi, a parliament first gathered in the year 930, which makes it one of the oldest in the world. Four guardian spirits of Iceland are carved above its windows. You look at it from the square, free.',
+    facts: [
+      ['What', 'Parliament · Alþingi'],
+      ['First gathered', '930'],
+      ['This building', '1881'],
+      ['Where', 'Austurvöllur square'],
+      ['Cost', 'Free to view from the square'],
+    ],
     title: 'Althingi, a parliament older than its house',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -670,6 +747,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'hallgrimskirkja',
+    inShort:
+      'Hallgrímskirkja took more than forty years to build, and its front was shaped to echo the basalt columns of the Icelandic coast. The church is free to enter; the tower, with the view over the coloured roofs, is the part you pay for.',
+    facts: [
+      ['What', 'Church · Hallgrímskirkja'],
+      ['Architect', 'Guðjón Samúelsson'],
+      ['Built', 'Over forty years'],
+      ['Where', 'Skólavörðuholt, the hill above the old town'],
+      ['Cost', 'Church free, tower ticketed'],
+    ],
     title: 'Hallgrímskirkja, the church built to look like lava',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -690,6 +776,15 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'sun-voyager',
+    inShort:
+      'The Sun Voyager on the Reykjavík waterfront is not a Viking ship. Jón Gunnar Árnason meant it as a dream boat, an ode to the sun, and it has faced Mount Esja across the bay since 1990. It is free to visit and open at every hour.',
+    facts: [
+      ['What', 'Sculpture · Sólfar, the Sun Voyager'],
+      ['Sculptor', 'Jón Gunnar Árnason'],
+      ['In place since', '1990'],
+      ['Where', 'Sæbraut waterfront'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The Sun Voyager is not a Viking ship',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
