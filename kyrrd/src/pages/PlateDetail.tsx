@@ -68,9 +68,9 @@ export default function PlateDetail() {
         </div>
 
         <div className="pd-col">
-          <div className="d-h1 pd-title" style={{ margin: '0 0 5px' }}>
+          <h1 className="d-h1 pd-title" style={{ margin: '0 0 5px' }}>
             {plate.title}
-          </div>
+          </h1>
           <div className="d-cap pd-cap">
             <span>{plate.place}</span>
             <span className="pd-map-inline">
