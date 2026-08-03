@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { PLATES } from '../plates';
 import { POSTS } from '../journal';
-import { WALK, WALK_META, LONG_HOP } from '../walk';
+import { WALK, WALK_META, LONG_HOP, WALK_FAQ } from '../walk';
 import { useSeo, useJsonLd } from '../seo';
 import '../walk.css';
 
@@ -20,9 +20,11 @@ const numberOf = (() => {
 })();
 
 export default function Walk() {
+  // Titled for the search people actually type. "The Long Walk" is the name of
+  // the route and keeps the page; it is not what anyone puts in a search box.
   useSeo(
-    'The Long Walk — kyrrð',
-    'A free self-guided walk through the heart of Reykjavík: 30 stops in seven chapters, 5.5 km one way, with the story behind every stop and the practical details checked on foot.',
+    'Free Self-Guided Walking Tour of Reykjavík: 30 Stops on Foot — kyrrð',
+    'A free self-guided walking tour of Reykjavík: 30 stops in seven chapters, 5.5 km one way, 3 to 4 hours, with the story behind every stop and the distances measured on foot. No booking, no guide, no cost.',
   );
   useJsonLd({
     '@context': 'https://schema.org',
@@ -40,6 +42,17 @@ export default function Walk() {
         };
       }),
     ),
+  });
+  // The questions people ask before they set out. Marked up so the answers can
+  // reach search result boxes and the assistants people ask instead.
+  useJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: WALK_FAQ.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
   });
 
   const [active, setActive] = useState('c1');
@@ -280,6 +293,17 @@ export default function Walk() {
             </div>
           </div>
         </div>
+
+        {/* the questions people ask before setting out */}
+        <section className="wk-faq">
+          <h2 className="wk-faq-h">Before you set out</h2>
+          {WALK_FAQ.map((f) => (
+            <details className="wk-q" key={f.q}>
+              <summary>{f.q}</summary>
+              <p>{f.a}</p>
+            </details>
+          ))}
+        </section>
 
         {/* send as you go */}
         <div className="wk-send">

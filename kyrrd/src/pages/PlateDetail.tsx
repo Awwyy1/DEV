@@ -4,9 +4,18 @@ import { POSTS, readingMinutes } from '../journal';
 import PlateCard from '../components/PlateCard';
 import MapLink from '../components/MapLink';
 import PinIcon from '../components/PinIcon';
+import { WALK } from '../walk';
 import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
+
+/** Which stop this photograph is on The Long Walk, if it is on it at all. */
+const walkStop = (() => {
+  const map = new Map<string, number>();
+  let n = 0;
+  for (const ch of WALK) for (const s of ch.stops) map.set(s.slug, ++n);
+  return (slug?: string) => (slug ? map.get(slug) : undefined);
+})();
 
 export default function PlateDetail() {
   const { id } = useParams();
@@ -23,6 +32,7 @@ export default function PlateDetail() {
   });
 
   const key = plate.slug ?? plate.id;
+  const stopNo = walkStop(plate.slug);
   // the field note tied to this photo, if one exists
   const note = POSTS.find((p) => p.plateSlug === plate.slug);
   // a few other photos to keep browsing — the next ones in the archive, wrapping
@@ -98,6 +108,17 @@ export default function PlateDetail() {
                 </>
               )}
             </div>
+
+            {/* every stop points back at the route it belongs to */}
+            {stopNo && (
+              <Link className="pd-walk" to="/walk">
+                <span className="pd-walk-no">{String(stopNo).padStart(2, '0')}</span>
+                <span>
+                  Stop {stopNo} of 30 on <b>The Long Walk</b>, our free self-guided walking tour of
+                  Reykjavík →
+                </span>
+              </Link>
+            )}
           </div>
 
           <div className="pd-cta">

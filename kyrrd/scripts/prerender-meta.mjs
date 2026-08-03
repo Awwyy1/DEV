@@ -26,6 +26,7 @@ async function load(rel) {
 
 const { PLATES } = await load('src/plates.ts');
 const { POSTS } = await load('src/journal.ts');
+const { WALK, WALK_META, WALK_FAQ } = await load('src/walk.ts');
 
 // Static pages — titles/descriptions mirror each page's useSeo() call.
 const staticPages = [
@@ -42,9 +43,9 @@ const staticPages = [
   },
   {
     path: '/walk',
-    title: 'The Long Walk — kyrrð',
+    title: 'Free Self-Guided Walking Tour of Reykjavík: 30 Stops on Foot — kyrrð',
     description:
-      'A free self-guided walk through the heart of Reykjavík: 30 stops in seven chapters, 5.5 km one way, with the story behind every stop and the practical details checked on foot.',
+      'A free self-guided walking tour of Reykjavík: 30 stops in seven chapters, 5.5 km one way, 3 to 4 hours, with the story behind every stop and the distances measured on foot. No booking, no guide, no cost.',
   },
   {
     path: '/about',
@@ -131,6 +132,61 @@ function plateBody(plate, post) {
     </div>`;
 }
 
+/**
+ * The walk is our most useful page and used to prerender as a title and one
+ * line, so every stop, distance and practical note was invisible without
+ * JavaScript. The whole route goes into the HTML: chapters as headings, all
+ * thirty stops with their names and hooks, the legs between them, and the
+ * questions people ask before setting out.
+ */
+function walkBody(route) {
+  let n = 0;
+  const chapters = WALK.map((ch) => {
+    const stops = ch.stops
+      .map((s) => {
+        n += 1;
+        const plate = PLATES.find((p) => p.slug === s.slug);
+        const note = POSTS.find((p) => p.plateSlug === s.slug);
+        const links = [
+          note ? `<a href="/journal/${note.slug}">Story</a>` : '',
+          `<a href="/plate/${s.slug}">Send this place</a>`,
+        ]
+          .filter(Boolean)
+          .join(' · ');
+        return `<div class="wk-stop"><h3>${String(n).padStart(2, '0')}. ${esc(
+          plate?.title ?? s.slug,
+        )}</h3><p>${esc(s.hook)}</p><p>${links}</p></div>`;
+      })
+      .join('\n        ');
+    const plaque = ch.plaque
+      ? `<p><strong>${esc(ch.plaque.label)}:</strong> ${esc(ch.plaque.text)}</p>`
+      : '';
+    const hop = ch.hop ? `<p>${esc(ch.hop)}</p>` : '';
+    return `<section>
+        <h2>Chapter ${ch.roman}: ${esc(ch.title)} · ${esc(ch.area)}</h2>
+        <p>${esc(ch.belongs)}</p>
+        ${stops}
+        ${plaque}
+        ${hop}
+      </section>`;
+  }).join('\n      ');
+
+  const faq = WALK_FAQ.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('\n        ');
+
+  return `<div class="wrap section">
+      <h1>Free Self-Guided Walking Tour of Reykjavík</h1>
+      <p>${esc(route.description)}</p>
+      <p>${WALK_META.stops} stops · ${WALK_META.km} km one way · ${WALK_META.hours} hours · ${
+        WALK_META.chapters
+      } chapters · free to walk</p>
+      ${chapters}
+      <section>
+        <h2>Before you set out</h2>
+        ${faq}
+      </section>
+    </div>`;
+}
+
 function pageBody(route) {
   return `<div class="wrap section">
       <h1 class="d-h1">${esc(route.title.replace(' — kyrrð', ''))}</h1>
@@ -199,7 +255,9 @@ function render(route) {
     ? articleBody(route.post)
     : route.plate
       ? plateBody(route.plate, route.note)
-      : pageBody(route);
+      : route.path === '/walk'
+        ? walkBody(route)
+        : pageBody(route);
   html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
 
   // Structured data as a second block; the site-wide graph in index.html stays.
