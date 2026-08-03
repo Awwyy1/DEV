@@ -103,6 +103,14 @@ function articleBody(post) {
   const paras = post.body
     .map((p, i) => `<p${i === 0 ? ' class="lede"' : ''}>${esc(p)}</p>`)
     .join('\n          ');
+  const short = post.inShort
+    ? `<div class="in-short"><div class="in-short-k">In short</div><p>${esc(post.inShort)}</p></div>`
+    : '';
+  const facts = post.facts
+    ? `<table class="fact-table"><tbody>${post.facts
+        .map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td>${esc(v)}</td></tr>`)
+        .join('')}</tbody></table>`
+    : '';
   return `<div class="wrap section article-page">
       <div class="article-grid">
         <article class="article-main">
@@ -112,6 +120,8 @@ function articleBody(post) {
             <h1 class="article-title">${esc(post.title)}</h1>
             <div class="d-cap article-byline">${esc(post.date)} · ${readMinutes(post)} min read</div>
           </header>
+          ${short}
+          ${facts}
           <div class="article-body">
           ${paras}
           </div>
@@ -209,6 +219,59 @@ const articleLd = (post, url, img) => ({
   inLanguage: 'en',
 });
 
+/**
+ * A walk is a trip, not an article: TouristTrip with an itinerary is how search
+ * engines are told this is a route of thirty places, on foot, costing nothing.
+ */
+const walkLd = (url, img) => {
+  let n = 0;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'TouristTrip',
+    name: 'Free Self-Guided Walking Tour of Reykjavík',
+    description:
+      'A free self-guided walking tour of Reykjavík: 30 stops in seven chapters, 5.5 km one way, 3 to 4 hours, with the distances measured on foot.',
+    url,
+    image: img,
+    touristType: 'Self-guided walking tour',
+    offers: { '@type': 'Offer', price: '0', priceCurrency: 'ISK', availability: 'https://schema.org/InStock' },
+    provider: { '@type': 'Organization', name: 'kyrrð', url: SITE },
+    itinerary: {
+      '@type': 'ItemList',
+      numberOfItems: WALK_META.stops,
+      itemListElement: WALK.flatMap((ch) =>
+        ch.stops.map((s) => {
+          const plate = PLATES.find((p) => p.slug === s.slug);
+          n += 1;
+          return {
+            '@type': 'ListItem',
+            position: n,
+            item: {
+              '@type': 'TouristAttraction',
+              name: plate?.title ?? s.slug,
+              description: s.hook,
+              url: `${SITE}/plate/${s.slug}`,
+              address: { '@type': 'PostalAddress', addressLocality: 'Reykjavík', addressCountry: 'IS' },
+              isAccessibleForFree: true,
+            },
+          };
+        }),
+      ),
+    },
+  };
+};
+
+/** The questions asked before setting out, in the form search engines read. */
+const walkFaqLd = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: WALK_FAQ.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: { '@type': 'Answer', text: f.a },
+  })),
+});
+
 /** Landmarks are places: give search engines the entity, not just an article. */
 const plateLd = (plate, url, img) => ({
   '@context': 'https://schema.org',
@@ -261,12 +324,14 @@ function render(route) {
   html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
 
   // Structured data as a second block; the site-wide graph in index.html stays.
-  const ld = route.post
-    ? articleLd(route.post, url, img)
+  const lds = route.post
+    ? [articleLd(route.post, url, img)]
     : route.plate
-      ? plateLd(route.plate, url, img)
-      : null;
-  if (ld) {
+      ? [plateLd(route.plate, url, img)]
+      : route.path === '/walk'
+        ? [walkLd(url, img), walkFaqLd()]
+        : [];
+  for (const ld of lds) {
     html = html.replace(
       '</head>',
       `    <script type="application/ld+json">${JSON.stringify(ld)}</script>\n  </head>`,

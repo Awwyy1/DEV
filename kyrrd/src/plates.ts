@@ -48,9 +48,12 @@ export interface Plate {
   mapsUrl?: string; // paste a Google Maps share link for an exact pin
   mapsQuery?: string; // precise place name to search, when the title differs
   focus?: string; // card crop focus (CSS background-position, e.g. 'top'); default center
+  tags?: string[]; // what kind of thing it is, used by the archive filters
 }
 
-export const TAGS = ['All', 'Waterfalls', 'Coast', 'Mountains', 'Cities'];
+/* The filter chips on the archive, in the order they are shown. Every plate
+   carries one of these so the list can be narrowed to what someone came for. */
+export const TAGS = ['All', 'Statues', 'Sculpture', 'Buildings', 'Lighthouses', 'Memorials'];
 
 export const PLATES: Plate[] = [
   {
@@ -60,6 +63,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#eef3f4,#cdd9dc 60%,#8fa3aa)',
     image: '/photos/The-Sun-Voyager.jpeg',
     slug: 'sun-voyager',
+    tags: ['Sculpture'],
     mapsUrl: 'https://maps.app.goo.gl/fLSZxB7wTDUS8b5K9',
   },
   {
@@ -69,6 +73,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eaf1f6,#c3d6e4 50%,#8ba9bf 82%,#5b7386)',
     image: '/photos/Government-House.jpeg',
     slug: 'government-house',
+    tags: ['Buildings'],
     mapsUrl: '',
     mapsQuery: 'Stjórnarráðshúsið, Reykjavík',
   },
@@ -79,6 +84,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f1f4f7,#d3dce6 50%,#9fb0c4 82%,#6b7d94)',
     image: '/photos/Wind-Harp.jpeg',
     slug: 'wind-harp',
+    tags: ['Sculpture'],
     mapsUrl: '',
     mapsQuery: 'Himinglæva, Harpa, Reykjavík',
   },
@@ -89,6 +95,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef1ec,#c7cfc2 52%,#8f9a8c 82%,#59615a)',
     image: '/photos/Skuli-Magnusson.jpeg',
     slug: 'skuli-magnusson',
+    tags: ['Statues'],
     focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Skúli Magnússon statue, Fógetagarðurinn, Reykjavík',
@@ -100,6 +107,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
     image: '/photos/glacier-edge.jpg',
     slug: 'grotta-lighthouse',
+    tags: ['Lighthouses'],
     mapsUrl: 'https://maps.app.goo.gl/YbsUwJ2c7R4hezwM6',
   },
   {
@@ -109,6 +117,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f0f4f6,#ccd9e2 50%,#93a9b8 82%,#5f7484)',
     image: '/photos/King-Christian-IX-of-Denmark.jpeg',
     slug: 'christian-ix',
+    tags: ['Statues'],
     focus: 'top', // tall statue on a tall plinth: keep the king, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Christian IX statue, Stjórnarráðshúsið, Reykjavík',
@@ -120,6 +129,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eff3f5,#d3dbe0 48%,#9daab4 78%,#7a5b48)',
     image: '/photos/Sellospilarinn.jpeg',
     slug: 'cellist',
+    tags: ['Statues'],
     mapsUrl: '',
     mapsQuery: 'Statue of Erling Blöndal Bengtsson, Harpa, Reykjavík',
   },
@@ -130,6 +140,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fff,#eaf0f2 52%,#cfd8dc 80%,#9aa9af)',
     image: '/photos/Althingi-Parliament.jpeg',
     slug: 'althingi',
+    tags: ['Buildings'],
     mapsUrl: 'https://maps.app.goo.gl/dShnqqthHmDtbu2H9',
     mapsQuery: 'Alþingishúsið, Reykjavík',
   },
@@ -140,6 +151,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#e7edef,#9fb0b6 50%,#586469 82%,#23282b)',
     image: '/photos/Islandsvardan.jpeg',
     slug: 'islandsvardan',
+    tags: ['Sculpture'],
     mapsUrl: '', // not on Google Maps; falls back to a name search
     mapsQuery: 'Íslandsvarðan, Sæbraut, Reykjavík',
   },
@@ -150,6 +162,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
     image: '/photos/WaterCarrier.jpeg',
     slug: 'water-carrier',
+    tags: ['Statues'],
     mapsUrl: 'https://maps.app.goo.gl/uh56g3gKDMePMQLd7',
     mapsQuery: 'Vatnsberinn, Reykjavík',
   },
@@ -160,6 +173,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eff3f6,#d0dbe3 50%,#9db0be 80%,#5d7183)',
     image: '/photos/Leif-Eriksson.jpeg',
     slug: 'leif-eriksson',
+    tags: ['Statues'],
     focus: 'top', // figure atop the prow plinth: keep him, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Leif Eriksson statue, Hallgrímskirkja, Reykjavík',
@@ -171,6 +185,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f2f4f6,#d8dde3 50%,#a7b0ba 82%,#6e7883)',
     image: '/photos/Piece-of-Berlin-Wall.jpeg',
     slug: 'berlin-wall',
+    tags: ['Memorials'],
     mapsUrl: '',
     mapsQuery: 'Berlin Wall segment, Höfði, Reykjavík',
   },
@@ -181,6 +196,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(200deg,#f4f6f7,#dfe7e9 50%,#aebcc1 85%,#6f8389)',
     image: '/photos/Hallgrimskirkja.jpeg',
     slug: 'hallgrimskirkja',
+    tags: ['Buildings'],
     focus: 'top', // tall subject: keep the tower, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/6K1YGj6NsbuVDk7a7',
   },
@@ -191,6 +207,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f1f4f6,#d5dde3 50%,#a3b2bd 80%,#5f7080)',
     image: '/photos/Jon-Sigurdsson.jpeg',
     slug: 'jon-sigurdsson',
+    tags: ['Statues'],
     focus: 'top', // statue high on a stone column: keep the figure, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Jón Sigurðsson statue, Austurvöllur, Reykjavík',
@@ -202,6 +219,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f0f4f6,#d2dde2 50%,#a4b4bc 78%,#e8c25a)',
     image: '/photos/Hofdi-Lighthouse.jpeg',
     slug: 'hofdi-lighthouse',
+    tags: ['Lighthouses'],
     mapsUrl: '',
     mapsQuery: 'Höfði Lighthouse, Sæbraut, Reykjavík',
   },
@@ -212,6 +230,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#ffffff,#e6edf0 50%,#bcccd2 80%,#8ea0a7)',
     image: '/photos/Unknown-Bureaucrat.jpeg',
     slug: 'unknown-bureaucrat',
+    tags: ['Statues'],
     mapsUrl: 'https://maps.app.goo.gl/az5ee1gHZKVV7CmZA',
     mapsQuery: 'Monument to the Unknown Bureaucrat, Reykjavík',
   },
@@ -222,6 +241,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',
     image: '/photos/Domkirkjan.jpeg',
     slug: 'domkirkjan',
+    tags: ['Buildings'],
     mapsUrl: 'https://maps.app.goo.gl/5t4mjjBDjE8T5Sdq6',
   },
   {
@@ -231,6 +251,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef3f2,#c8d6d2 50%,#8ba49c 80%,#4f6b62)',
     image: '/photos/Ondvegissulur.jpeg',
     slug: 'ondvegissulur',
+    tags: ['Sculpture'],
     focus: 'top', // tall column: keep the carved crown, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Öndvegissúlur, Höfði, Reykjavík',
@@ -242,6 +263,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
     image: '/photos/The-Partnership-Sculpture.jpeg',
     slug: 'partnership-sculpture',
+    tags: ['Sculpture'],
     mapsUrl: 'https://maps.app.goo.gl/8LrrBWL9wyvuijJj9',
   },
   {
@@ -251,6 +273,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef2f0,#c9d4cd 52%,#8fa096 82%,#57645c)',
     image: '/photos/Hannes-Hafstein.jpeg',
     slug: 'hannes-hafstein',
+    tags: ['Statues'],
     focus: 'top', // tall statue: keep the figure, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Hannes Hafstein statue, Stjórnarráðshúsið, Reykjavík',
@@ -262,6 +285,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f1f2ee,#d8dad0 50%,#a8ab9c 80%,#6b6e5f)',
     image: '/photos/Minnisvardi-um-Vikurkirkjugard.jpeg',
     slug: 'vikurgardur',
+    tags: ['Memorials'],
     mapsUrl: '',
     mapsQuery: 'Víkurgarður, Aðalstræti, Reykjavík',
   },
@@ -272,6 +296,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#f4f6f7,#d7e0e3 55%,#9fb0b6)',
     image: '/photos/Harpa.jpeg',
     slug: 'harpa',
+    tags: ['Buildings'],
     mapsUrl: 'https://maps.app.goo.gl/9Sjh2W6vGcdiHwrm8',
   },
   {
@@ -281,6 +306,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(200deg,#f6f7f8,#dde6e8 50%,#a9b9bf 88%,#728288)',
     image: '/photos/Einar-Benediktsson.jpeg',
     slug: 'einar-benediktsson',
+    tags: ['Statues'],
     focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/54BeDJCVVFEoUDks8',
     mapsQuery: 'Einar Benediktsson statue, Höfði, Reykjavík',
@@ -292,6 +318,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f0f2f4,#d6dce1 50%,#a6b1ba 80%,#647380)',
     image: '/photos/Sera-Bjarni-Jonsson.jpeg',
     slug: 'sera-bjarni',
+    tags: ['Statues'],
     focus: 'top', // bust on a pedestal: keep the head and plaque, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Séra Bjarni Jónsson bust, Dómkirkjan, Reykjavík',
@@ -303,6 +330,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eff1f3,#d2d7dc 50%,#9aa3ad 80%,#454e58)',
     image: '/photos/Ingibjorg-Bjarnason.jpeg',
     slug: 'ingibjorg-bjarnason',
+    tags: ['Statues'],
     focus: 'top', // figure atop a tall dark plinth: keep her, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Ingibjörg H. Bjarnason statue, Alþingi, Reykjavík',
@@ -314,6 +342,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     image: '/photos/The-black-cone.jpeg',
     slug: 'black-cone',
+    tags: ['Memorials'],
     focus: 'bottom', // low subject: keep the cone, crop from the top
     mapsUrl: 'https://maps.app.goo.gl/WRj48fMoY65L95JRA',
     mapsQuery: 'The Black Cone, Monument to Civil Disobedience, Reykjavík',
@@ -325,6 +354,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
     image: '/photos/Ur-Alogum.jpeg',
     slug: 'ur-alogum',
+    tags: ['Sculpture'],
     focus: 'top', // tall subject: keep the figure, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Úr álögum, Einar Jónsson Museum, Reykjavík',
@@ -336,6 +366,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(160deg,#f4f6f7,#d3dde0 55%,#92a3a9)',
     image: '/photos/hofdi-house.jpeg',
     slug: 'hofdi-house',
+    tags: ['Buildings'],
     mapsUrl: 'https://maps.app.goo.gl/fPsvWe3mRM8Cqf3r8',
   },
   {
@@ -345,6 +376,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eff3f5,#cdd8de 52%,#9fb1b8 80%,#e6bf4c)',
     image: '/photos/Ingolfsgardur-Lighthouse.jpeg',
     slug: 'ingolfsgardur-lighthouse',
+    tags: ['Lighthouses'],
     mapsUrl: '',
     mapsQuery: 'Ingólfsgarður lighthouse, Reykjavík harbour',
   },
@@ -355,6 +387,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef1f0,#ccd5d1 50%,#93a49d 80%,#4e5f58)',
     image: '/photos/Jon-Vidalin.jpeg',
     slug: 'jon-vidalin',
+    tags: ['Statues'],
     focus: 'top', // bust on a tall basalt pillar: keep the head, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Jón Vídalín memorial, Dómkirkjan, Reykjavík',
@@ -366,6 +399,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#fbfdfd,#e2eaec 55%,#b3c2c7 85%,#7f9197)',
     image: '/photos/Ingolfur-Arnarson.jpeg',
     slug: 'ingolfur-arnarson',
+    tags: ['Statues'],
     focus: 'top', // tall subject: keep the head, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/V4TDaYU63c3Zqz61A',
     mapsQuery: 'Ingólfur Arnarson statue, Arnarhóll, Reykjavík',
@@ -377,6 +411,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#f0f2f4,#dcd6d4 50%,#b3a6a4 80%,#6e6a70)',
     image: '/photos/polished-boulders.jpeg',
     slug: 'shore-piece',
+    tags: ['Sculpture'],
     mapsUrl: '',
     mapsQuery: 'The Shore Piece, Sæbraut, Reykjavík',
   },
@@ -387,6 +422,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef3f5,#cad9dd 50%,#8ba3ab 80%,#4f6a72)',
     image: '/photos/Looking-seawards.jpeg',
     slug: 'looking-seawards',
+    tags: ['Statues'],
     focus: 'top', // two standing figures: keep them, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Looking Seawards sculpture, Reykjavík harbour',
@@ -398,6 +434,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eceef0,#c2c6cc 48%,#7c8088 80%,#3a3c42)',
     image: '/photos/Seat-Pillars-Monument.jpeg',
     slug: 'settlement-pillars',
+    tags: ['Memorials'],
     focus: 'top', // tall basalt pillar: keep the top, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/N1XEhZ6AaXEA676w7',
     mapsQuery: 'Ingólfur Arnarson settlement pillars monument, Reykjavík',
@@ -409,6 +446,7 @@ export const PLATES: Plate[] = [
     gradient: 'linear-gradient(180deg,#eef2ec,#c6d2c0 50%,#8a9a84 80%,#48533f)',
     image: '/photos/Olafur-Thors.jpeg',
     slug: 'olafur-thors',
+    tags: ['Statues'],
     focus: 'top', // figure atop a tall plinth: keep him, crop from the bottom
     mapsUrl: 'https://maps.app.goo.gl/Tc9REzbqXqYvWaGm6',
     mapsQuery: 'Ólafur Thors statue, Tjarnargata, Reykjavík',
