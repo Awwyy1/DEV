@@ -163,3 +163,37 @@ export const LONG_HOP = {
   big: '1.6 km · 20–25 min · uphill',
   note: 'The long hop, and the best reward. The church you have seen from every stop so far is next.',
 };
+
+/* The questions people ask before setting out, answered plainly. They are shown
+   on the page and marked up as FAQ, which is how they reach the answer boxes in
+   search and the assistants people ask instead of searching. */
+export const WALK_FAQ = [
+  {
+    q: 'How long does the walking tour take?',
+    a: 'Three to four hours if you stop and read the stories, and about two if you keep moving. The route is 5.5 km one way, and you can join or leave it at any stop.',
+  },
+  {
+    q: 'Is it really free?',
+    a: 'Yes. The route, the stories and the photographs cost nothing, there is nothing to book and nothing to unlock. A guided walk in Reykjavík costs more than dinner and stops at about six places; this one holds thirty.',
+  },
+  {
+    q: 'Where does the walk start and end?',
+    a: 'It starts at the Settlement Pillars in the old town, the steaming stone that marks where the city began, and ends at Hallgrímskirkja on the hill with the statue of Leif Eiríksson in front of it.',
+  },
+  {
+    q: 'Do I need a guide or an app?',
+    a: 'Neither. The page is the guide: every stop has its name, its story and the distance to the next one. Open it on your phone and follow the line down the page.',
+  },
+  {
+    q: 'How difficult is the route?',
+    a: 'Mostly flat pavement, much of it along the water where there is not one road to cross. There are two rises: the grassy hill at stop 15 and the final pull up to the church.',
+  },
+  {
+    q: 'What is the best time of day to walk it?',
+    a: 'Any of them, and the light does the rest. Wind, rain and fog are all possible in one afternoon, so dress for the weather rather than the forecast.',
+  },
+  {
+    q: 'Can I walk only part of it?',
+    a: 'Yes. It is built in seven chapters, each with its own theme, so a single chapter makes a short walk on its own. The harbour and shore chapters are the easiest to pick up.',
+  },
+];

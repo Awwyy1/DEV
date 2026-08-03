@@ -105,6 +105,18 @@
 .wk-note .t { font-family: var(--disp); font-weight: 600; font-size: 12px; }
 .wk-note p { font-size: 12px; color: var(--steel-d); margin: 5px 0 0; }
 
+/* the questions people ask before setting out */
+.wk-faq { padding-top: 30px; }
+.wk-faq-h { font-family: var(--disp); font-weight: 500; font-size: clamp(20px, 3vw, 26px); letter-spacing: -0.02em; margin: 0 0 14px; }
+.wk-q { border-bottom: var(--hair) solid var(--fog); }
+.wk-q:first-of-type { border-top: var(--hair) solid var(--fog); }
+.wk-q summary { list-style: none; cursor: pointer; padding: 14px 28px 14px 0; position: relative; font-family: var(--disp); font-weight: 500; font-size: 15.5px; color: var(--ink); }
+.wk-q summary::-webkit-details-marker { display: none; }
+.wk-q summary::after { content: '+'; position: absolute; right: 4px; top: 50%; transform: translateY(-50%); font-size: 19px; color: var(--glacier); line-height: 1; }
+.wk-q[open] summary::after { content: '–'; }
+.wk-q summary:hover { color: var(--glacier-ink); }
+.wk-q p { font-size: 14px; color: var(--steel-d); margin: 0 0 16px; max-width: 66ch; }
+
 /* send as you go */
 .wk-send { padding-top: 18px; padding-bottom: 8px; }
 .wk-send .in { background: #141110; color: #efe9df; border-radius: 20px; padding: 24px 22px; display: grid; grid-template-columns: 1fr auto; gap: 18px; align-items: center; }
