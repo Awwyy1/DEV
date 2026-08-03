@@ -360,3 +360,6 @@ button { font: inherit; }
 .fact-table tr:last-child th, .fact-table tr:last-child td { border-bottom: none; }
 .fact-table th { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--steel-d); width: 36%; background: var(--mist); }
 .fact-table td { color: var(--ink); }
+/* the story needs room to start after the summary block */
+.in-short + .article-body,
+.fact-table + .article-body { margin-top: 30px; }
