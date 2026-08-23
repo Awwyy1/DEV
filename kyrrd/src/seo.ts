@@ -30,15 +30,19 @@ function absUrl(src?: string): string {
 export function useSeo(
   title: string,
   description?: string,
-  opts: { image?: string; type?: SeoType } = {},
+  opts: { image?: string; type?: SeoType; canonical?: string } = {},
 ) {
   const image = opts.image;
   const type = opts.type ?? 'website';
+  // Pages that are a second view of something else point at the original, so
+  // search engines rank one strong page instead of two competing ones.
+  const canonicalOverride = opts.canonical;
   useEffect(() => {
     document.title = title;
 
     const path = window.location.pathname.replace(/\/$/, '');
-    const canonical = path ? SITE + path : `${SITE}/`;
+    const pageUrl = path ? SITE + path : `${SITE}/`;
+    const canonical = canonicalOverride ?? pageUrl;
     const img = absUrl(image);
 
     if (description) upsertMeta('name', 'description', description);
@@ -53,7 +57,7 @@ export function useSeo(
 
     upsertMeta('property', 'og:title', title);
     if (description) upsertMeta('property', 'og:description', description);
-    upsertMeta('property', 'og:url', canonical);
+    upsertMeta('property', 'og:url', pageUrl);
     upsertMeta('property', 'og:type', type);
     upsertMeta('property', 'og:image', img);
 
@@ -61,7 +65,7 @@ export function useSeo(
     upsertMeta('name', 'twitter:title', title);
     if (description) upsertMeta('name', 'twitter:description', description);
     upsertMeta('name', 'twitter:image', img);
-  }, [title, description, image, type]);
+  }, [title, description, image, type, canonicalOverride]);
 }
 
 /**

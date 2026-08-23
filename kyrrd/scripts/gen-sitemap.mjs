@@ -33,7 +33,11 @@ const entries = [
   { loc: '/walk', changefreq: 'monthly', priority: '0.8' },
   ...POSTS.map((p) => ({ loc: `/journal/${p.slug}`, changefreq: 'monthly', priority: '0.7' })),
   { loc: '/about', changefreq: 'monthly', priority: '0.5' },
-  ...livePlates.map((p) => ({ loc: `/plate/${p.slug}`, priority: '0.6' })),
+  // Photograph pages whose story lives in a field note point their canonical at
+  // that note, so only the notes belong here; a sitemap lists canonical URLs.
+  ...livePlates
+    .filter((p) => !POSTS.some((n) => n.plateSlug === p.slug))
+    .map((p) => ({ loc: `/plate/${p.slug}`, priority: '0.6' })),
   { loc: '/privacy', priority: '0.2' },
   { loc: '/terms', priority: '0.2' },
 ];
