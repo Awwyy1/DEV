@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PLATES, TAGS } from '../plates';
 import PlateCard from '../components/PlateCard';
 import { useSeo } from '../seo';
@@ -33,6 +34,10 @@ export default function Archive() {
           <h1 className="d-h2" style={{ margin: '4px 0 0' }}>
             Photographs from around Iceland.
           </h1>
+          {/* the archive has a route through it; say so where people are looking */}
+          <Link className="on-foot" to="/walk">
+            Thirty of these places in one line on foot<b>The Long Walk →</b>
+          </Link>
         </div>
       </div>
 

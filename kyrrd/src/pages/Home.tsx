@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { PLATES } from '../plates';
 import { POSTS, readingMinutes } from '../journal';
 import PlateCard from '../components/PlateCard';
+import { WALK_META } from '../walk';
 import { Photo } from '../components/Photo';
 import { useSeo } from '../seo';
 import '../home.css';
@@ -192,6 +193,45 @@ export default function Home() {
               <PlateCard key={p.id} plate={p} />
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* THE WALK — the archive on foot. The most useful page we have, and it
+          used to be reachable only from the nav. */}
+      <section className="hm-walk">
+        <div className="wrap">
+          <Link to="/walk" className="hm-walk-in">
+            <span
+              className="hm-walk-ph"
+              style={{ backgroundImage: `url("/photos/Hallgrimskirkja.jpeg")` }}
+            />
+            <span className="hm-walk-tx">
+              {/* the lighter glacier, not glacier-ink: this label sits on black */}
+              <span className="d-label" style={{ color: 'var(--glacier)' }}>
+                kyrrð walks · no. 1 · free
+              </span>
+              <span className="hm-walk-h">Or see them on foot, in one long line.</span>
+              <span className="hm-walk-p">
+                A free self-guided walking tour of Reykjavík: thirty of these places in the order
+                you meet them, with the story behind each and the distances measured on foot.
+              </span>
+              <span className="hm-walk-stats">
+                <span>
+                  <b>{WALK_META.stops}</b>stops
+                </span>
+                <span>
+                  <b>{WALK_META.km}</b>km
+                </span>
+                <span>
+                  <b>{WALK_META.hours}</b>hours
+                </span>
+                <span>
+                  <b>0</b>kr
+                </span>
+              </span>
+              <span className="hm-walk-cta">Walk it →</span>
+            </span>
+          </Link>
         </div>
       </section>
 

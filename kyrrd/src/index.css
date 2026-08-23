@@ -374,3 +374,30 @@ button { font: inherit; }
 .soc-follow a { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: var(--hair) solid var(--fog); border-radius: 999px; padding: 9px 10px; font-family: var(--disp); font-weight: 500; font-size: 12.5px; color: var(--steel-d); background: var(--snow); transition: 0.16s; }
 .soc-follow a:hover { border-color: var(--glacier); color: var(--glacier-ink); }
 .soc-follow svg { width: 14px; height: 14px; flex: 0 0 auto; }
+
+/* ---- home: the archive on foot ---- */
+.hm-walk { padding: clamp(10px, 2vw, 22px) 0 clamp(30px, 5vw, 56px); }
+.hm-walk-in { display: grid; grid-template-columns: 300px 1fr; gap: clamp(20px, 3vw, 40px); align-items: center; background: var(--night, #141110); border-radius: 20px; overflow: hidden; color: #efe9df; transition: 0.2s; }
+.hm-walk-in:hover { transform: translateY(-2px); box-shadow: 0 34px 66px -40px rgba(20, 16, 10, 0.6); }
+/* the band stays dark in both themes, so in dark mode it needs its own edge:
+   lifted a shade off the page and given a hairline, or it dissolves */
+[data-theme='dark'] .hm-walk-in { background: #221d16; border: var(--hair) solid var(--fog); }
+.hm-walk-ph { display: block; align-self: stretch; min-height: 240px; background-size: cover; background-position: center; background-color: #2b3f47; }
+.hm-walk-tx { display: block; padding: clamp(20px, 3vw, 34px) clamp(20px, 3vw, 36px) clamp(20px, 3vw, 34px) 0; }
+.hm-walk-h { display: block; font-family: var(--disp); font-weight: 500; font-size: clamp(21px, 3.2vw, 30px); letter-spacing: -0.02em; line-height: 1.1; margin-top: 8px; }
+.hm-walk-p { display: block; font-size: 14px; color: #b7b0a2; margin-top: 10px; max-width: 56ch; }
+.hm-walk-stats { display: flex; gap: clamp(16px, 3vw, 30px); margin-top: 16px; font-family: var(--disp); }
+.hm-walk-stats span { font-size: 10px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8a8375; }
+.hm-walk-stats b { display: block; font-weight: 500; font-size: 22px; letter-spacing: -0.01em; color: #efe9df; text-transform: none; }
+.hm-walk-cta { display: inline-block; margin-top: 18px; background: var(--glacier); color: #06343c; font-family: var(--ui); font-weight: 600; font-size: 13.5px; padding: 11px 22px; border-radius: 999px; }
+@media (max-width: 780px) {
+  .hm-walk-in { grid-template-columns: 1fr; gap: 0; }
+  .hm-walk-ph { min-height: 200px; }
+  .hm-walk-tx { padding: 20px; }
+}
+
+/* a line at the top of the archive and the journal, pointing at the route */
+.on-foot { display: inline-flex; align-items: center; gap: 8px; margin-top: 14px; padding: 9px 15px; background: var(--mist); border: var(--hair) solid var(--fog); border-radius: 999px; font-size: 12.5px; color: var(--steel-d); transition: 0.15s; }
+.on-foot:hover { border-color: var(--glacier); color: var(--ink); }
+.on-foot b { font-family: var(--disp); font-weight: 600; color: var(--ink); }
+.on-foot b::before { content: '·'; margin-right: 8px; font-weight: 400; color: var(--steel); }
