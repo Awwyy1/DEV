@@ -230,10 +230,19 @@ button { font: inherit; }
 .foot .bm { font-family: var(--disp); font-weight: 500; font-size: 22px; letter-spacing: -0.01em; }
 .foot .bm .eth { color: var(--glacier); }
 .foot .seal { width: 34px; height: 34px; color: var(--ink); flex: 0 0 auto; }
-.foot .foot-fine { display: flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; align-items: center; font-size: 12px; letter-spacing: 0.02em; color: var(--steel); font-weight: 400; }
-.foot .foot-links { display: flex; gap: 18px; }
+.foot .foot-fine { display: grid; grid-template-columns: 1fr auto 1fr; gap: 8px 18px; align-items: center; font-size: 12px; letter-spacing: 0.02em; color: var(--steel); font-weight: 400; }
+.foot .foot-links { display: flex; gap: 18px; justify-self: end; }
 .foot .foot-fine a { color: var(--steel); }
 .foot .foot-fine a:hover { color: var(--ink); }
+/* on a phone the row becomes a centred stack: links, icons, then the line */
+@media (max-width: 640px) {
+  .foot { align-items: center; text-align: center; gap: 18px; }
+  .foot .foot-top { justify-content: center; gap: 12px; }
+  .foot .foot-fine { grid-template-columns: 1fr; justify-items: center; gap: 16px; }
+  .foot .foot-links { justify-self: center; order: 1; }
+  .foot .soc { order: 2; }
+  .foot .foot-c { order: 3; }
+}
 
 /* ---- journal (3-up card grid) ---- */
 .kicker { font-size: 12px; letter-spacing: 0.02em; color: var(--steel-d); font-weight: 500; }
@@ -259,7 +268,11 @@ button { font: inherit; }
 .article-body p.lede { font-size: 22px; line-height: 1.55; font-weight: 300; color: var(--ink); margin-bottom: 1.05em; }
 .article-body p.lede::first-letter { font-family: var(--disp); font-weight: 500; font-size: 3em; line-height: 0.78; float: left; padding: 7px 12px 0 0; color: var(--ink); }
 
-.article-aside { position: sticky; top: 86px; display: flex; flex-direction: column; gap: 20px; }
+/* min-width:0 for the same reason .article-main has it: on mobile both sit in
+   one grid track, and a grid item's automatic minimum is its min-content width.
+   The rail's cards would floor the track at 398px inside a 342px page and push
+   the whole article sideways. */
+.article-aside { position: sticky; top: 86px; display: flex; flex-direction: column; gap: 20px; min-width: 0; }
 .aside-card { background: var(--white); border: var(--hair) solid var(--fog); border-radius: var(--r); padding: 20px; box-shadow: 0 22px 44px -34px rgba(48, 40, 28, 0.4); }
 .aside-h { font-family: var(--disp); font-weight: 500; font-size: 14px; letter-spacing: 0.02em; margin-bottom: 16px; }
 .aside-h .dot { color: var(--glacier); }
@@ -369,7 +382,6 @@ button { font: inherit; }
 .soc a { width: 30px; height: 30px; border: var(--hair) solid var(--fog); border-radius: 999px; display: flex; align-items: center; justify-content: center; color: var(--steel-d); background: var(--white); transition: 0.16s; }
 .soc a:hover { border-color: var(--glacier); color: var(--glacier-ink); }
 .soc svg { width: 15px; height: 15px; }
-.foot-sep { width: 1px; height: 16px; background: var(--fog); display: inline-block; }
 .soc-follow { display: flex; gap: 8px; margin-top: 12px; }
 .soc-follow a { flex: 1; display: inline-flex; align-items: center; justify-content: center; gap: 7px; border: var(--hair) solid var(--fog); border-radius: 999px; padding: 9px 10px; font-family: var(--disp); font-weight: 500; font-size: 12.5px; color: var(--steel-d); background: var(--snow); transition: 0.16s; }
 .soc-follow a:hover { border-color: var(--glacier); color: var(--glacier-ink); }
