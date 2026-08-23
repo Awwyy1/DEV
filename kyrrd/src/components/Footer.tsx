@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Mark } from './Brand';
+import { SocialIcons } from './Social';
 
 export default function Footer() {
   return (
@@ -16,6 +17,8 @@ export default function Footer() {
           <Link to="/journal">Journal</Link>
           <Link to="/privacy">Privacy</Link>
           <Link to="/terms">Terms</Link>
+          <span className="foot-sep" aria-hidden="true" />
+          <SocialIcons />
         </span>
       </div>
     </footer>
