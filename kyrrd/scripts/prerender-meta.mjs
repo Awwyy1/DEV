@@ -295,6 +295,9 @@ function setMeta(html, attr, key, value) {
 
 function render(route) {
   const url = SITE + route.path;
+  // A photograph page and its field note tell the same story, so the note is
+  // named as the version to rank and the two stop competing with each other.
+  const canonical = route.note ? `${SITE}/journal/${route.note.slug}` : url;
   const img = route.image
     ? route.image.startsWith('http')
       ? route.image
@@ -302,7 +305,7 @@ function render(route) {
     : DEFAULT_IMAGE;
   let html = tpl;
   html = html.replace(/<title>[\s\S]*?<\/title>/, `<title>${esc(route.title)}</title>`);
-  html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${url}$2`);
+  html = html.replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${canonical}$2`);
   html = setMeta(html, 'name', 'description', route.description);
   html = setMeta(html, 'property', 'og:title', route.title);
   html = setMeta(html, 'property', 'og:description', route.description);
