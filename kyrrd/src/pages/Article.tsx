@@ -6,6 +6,7 @@ import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
 import PinIcon from '../components/PinIcon';
 import NewsletterCard from '../components/NewsletterCard';
+import { SocialFollow } from '../components/Social';
 import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
@@ -240,6 +241,17 @@ export default function Article() {
           </div>
 
           <NewsletterCard />
+
+          {/* whoever reads a note to the end is the person who actually follows */}
+          <div className="aside-card">
+            <div className="aside-h">
+              Follow the archive <span className="dot">·</span>
+            </div>
+            <p className="aside-sub" style={{ textAlign: 'left', margin: 0 }}>
+              New photographs as they are taken.
+            </p>
+            <SocialFollow />
+          </div>
         </aside>
       </div>
 
