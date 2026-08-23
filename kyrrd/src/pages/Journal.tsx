@@ -12,9 +12,12 @@ export default function Journal() {
     <div className="wrap section">
       <div className="d-label">Journal</div>
       {/* the page's one h1; the margins keep the spacing the div had */}
-      <h1 className="d-h2" style={{ margin: '4px 0 28px' }}>
+      <h1 className="d-h2" style={{ margin: '4px 0 0' }}>
         Notes from the places in the archive.
       </h1>
+      <Link className="on-foot" to="/walk" style={{ marginBottom: 28 }}>
+        Walk past thirty of them in an afternoon<b>The Long Walk →</b>
+      </Link>
 
       <div className="grid g3 journal-grid">
         {POSTS.map((p) => (

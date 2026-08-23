@@ -5,6 +5,8 @@
 
 User-agent: *
 Allow: /
+# the empty shell the app is served from; it has no content of its own
+Disallow: /app.html
 
 User-agent: GPTBot
 Allow: /

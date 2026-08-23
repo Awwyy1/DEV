@@ -31,6 +31,13 @@ const { WALK, WALK_META, WALK_FAQ } = await load('src/walk.ts');
 // Static pages — titles/descriptions mirror each page's useSeo() call.
 const staticPages = [
   {
+    path: '/',
+    title: 'kyrrð — Iceland, signed and sent',
+    description:
+      'Real photographs of Iceland, taken on a phone. Pick one, sign it with your words, and send it free to anyone.',
+    image: '/photos/The-Sun-Voyager.jpeg',
+  },
+  {
     path: '/archive',
     title: 'The Archive — kyrrð',
     description: 'An archive of photographs from around Iceland. Pick one, sign it, and send it as a card.',
@@ -204,6 +211,80 @@ function pageBody(route) {
     </div>`;
 }
 
+/**
+ * The three index pages used to prerender as a heading and one sentence, which
+ * meant every link out of them — thirty-five photographs, thirty-five notes, the
+ * walk — existed only once React had run. A crawler that does not run scripts
+ * saw three dead ends. These three bodies mirror what the pages actually render,
+ * links included, so the archive is navigable without JavaScript.
+ */
+function homeBody() {
+  const picks = PLATES.filter((p) => p.image && p.slug)
+    .slice(0, 4)
+    .map((p) => `<li><a href="/plate/${p.slug}">${esc(p.title)}</a> · ${esc(p.place)}</li>`)
+    .join('\n        ');
+  const notes = POSTS.slice(0, 3)
+    .map((p) => `<li><a href="/journal/${p.slug}">${esc(p.title)}</a> · ${esc(p.kicker)}</li>`)
+    .join('\n        ');
+  return `<div class="hm">
+      <h1>A photograph, signed and sent.</h1>
+      <p>Real photographs of Iceland, taken on a phone. Pick one, sign it with your own words, and send it to someone who matters. Free, in under a minute.</p>
+      <p><a href="/archive">Send a card</a> · <a href="/about">How it works</a></p>
+      <h2>Shot on a phone. On purpose.</h2>
+      <p>No drones, no filters, no stock library. These are real photographs of Iceland, taken by one person walking around with a phone. That is the whole point. A card should feel like a person made it and sent it, because one did.</p>
+      <h2>Three steps, under a minute.</h2>
+      <p>Choose a photograph of Iceland, with the field note behind it. Add your words and your name. Save it and send it to someone you hold dear, anywhere. Free.</p>
+      <h2>Real places, one at a time.</h2>
+      <ul>
+        ${picks}
+      </ul>
+      <p><a href="/archive">Browse all ${PLATES.filter((p) => p.image && p.slug).length} photographs</a></p>
+      <h2>Or see them on foot, in one long line.</h2>
+      <p>A free self-guided walking tour of Reykjavík: thirty of these places in the order you meet them, with the story behind each and the distances measured on foot. ${
+        WALK_META.stops
+      } stops, ${WALK_META.km} km, ${WALK_META.hours} hours, nothing to pay.</p>
+      <p><a href="/walk">Walk it</a></p>
+      <h2>Every one has a story.</h2>
+      <ul>
+        ${notes}
+      </ul>
+      <p><a href="/journal">All ${POSTS.length} field notes</a></p>
+      <h2>Pick a photograph. Sign it. Send it.</h2>
+      <p>Free, and ready before the kettle boils.</p>
+    </div>`;
+}
+
+function archiveBody(route) {
+  const items = PLATES.filter((p) => p.slug)
+    .map((p) => `<li><a href="/plate/${p.slug}">${esc(p.title)}</a> · ${esc(p.place)}</li>`)
+    .join('\n        ');
+  return `<div class="wrap section">
+      <h1 class="d-h1">Photographs from around Iceland.</h1>
+      <p class="d-body">${esc(route.description)}</p>
+      <p><a href="/walk">Thirty of these places in one line on foot · The Long Walk</a></p>
+      <ul>
+        ${items}
+      </ul>
+    </div>`;
+}
+
+function journalBody(route) {
+  const items = POSTS.map(
+    (p) =>
+      `<li><a href="/journal/${p.slug}">${esc(p.title)}</a> · ${esc(p.kicker)} · ${readMinutes(
+        p,
+      )} min read<br>${esc(p.excerpt)}</li>`,
+  ).join('\n        ');
+  return `<div class="wrap section">
+      <h1 class="d-h1">Notes from the places in the archive.</h1>
+      <p class="d-body">${esc(route.description)}</p>
+      <p><a href="/walk">Walk past thirty of them in an afternoon · The Long Walk</a></p>
+      <ul>
+        ${items}
+      </ul>
+    </div>`;
+}
+
 /** Article schema for a field note; a person stands behind every one of them. */
 const articleLd = (post, url, img) => ({
   '@context': 'https://schema.org',
@@ -323,7 +404,13 @@ function render(route) {
       ? plateBody(route.plate, route.note)
       : route.path === '/walk'
         ? walkBody(route)
-        : pageBody(route);
+        : route.path === '/'
+          ? homeBody()
+          : route.path === '/archive'
+            ? archiveBody(route)
+            : route.path === '/journal'
+              ? journalBody(route)
+              : pageBody(route);
   html = html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
 
   // Structured data as a second block; the site-wide graph in index.html stays.
@@ -343,12 +430,19 @@ function render(route) {
   return html;
 }
 
+// dist/index.html is the homepage now, so the catch-all rewrite in vercel.json
+// can no longer point at it: every route without a file of its own would serve
+// the homepage's text. The untouched shell is kept beside it as app.html and the
+// rewrite sends the rest of the app there. Written before the loop, from the
+// template already in memory, so nothing can overwrite it.
+writeFileSync(join(dist, 'app.html'), tpl);
+
 for (const route of routes) {
-  const dir = join(dist, route.path);
+  const dir = route.path === '/' ? dist : join(dist, route.path);
   mkdirSync(dir, { recursive: true });
   writeFileSync(join(dir, 'index.html'), render(route));
 }
 
 console.log(
-  `  prerender-meta: ${routes.length} routes (${articles.length} articles, ${plates.length} plates)`,
+  `  prerender-meta: ${routes.length} routes (${articles.length} articles, ${plates.length} plates) + app.html`,
 );
