@@ -75,7 +75,7 @@ corrected rather than quietly left, and monuments missing from the maps have
 been added to them.
 
 ## Field notes
-${POSTS.map((p) => `- [${p.title}](${SITE}/journal/${p.slug}): ${p.excerpt}`).join('\n')}
+${POSTS.map((p) => `- [${p.seoTitle ?? p.title}](${SITE}/journal/${p.slug}): ${p.inShort ?? p.excerpt}`).join('\n')}
 
 ## Photographs
 ${livePlates.map((p) => `- [${p.title}](${SITE}/plate/${p.slug}): ${p.description}`).join('\n')}

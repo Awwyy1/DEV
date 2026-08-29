@@ -66,7 +66,8 @@ const staticPages = [
 
 const articles = POSTS.map((p) => ({
   path: `/journal/${p.slug}`,
-  title: `${p.title} — kyrrð`,
+  // seoTitle when the note has one; the headline is still the h1 in the body
+  title: `${p.seoTitle ?? p.title} — kyrrð`,
   description: p.excerpt,
   image: p.image,
   type: 'article',
