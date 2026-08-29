@@ -42,7 +42,9 @@ function ReadingProgress() {
 export default function Article() {
   const { slug } = useParams();
   const post = findPost(slug);
-  useSeo(post ? `${post.title} — kyrrð` : 'Journal — kyrrð', post?.excerpt, {
+  // the tab and the search result carry seoTitle when the headline alone would
+  // not find the place; the h1 below is always the headline itself
+  useSeo(post ? `${post.seoTitle ?? post.title} — kyrrð` : 'Journal — kyrrð', post?.excerpt, {
     image: post?.image,
     type: 'article',
   });

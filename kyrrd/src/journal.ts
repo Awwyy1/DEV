@@ -21,6 +21,10 @@ export interface Post {
   image?: string;
   plateSlug?: string;
   plateTitle?: string;
+  /** The <title> a search engine sees, when the headline alone would not
+      find the place: the landmark's name first, the hook after. The h1 on the
+      page stays `title`. Falls back to `title` when unset. */
+  seoTitle?: string;
   /** 40 to 60 words answering the question the title raises, shown above the
       story. Written from the note itself; it is what a search result or an
       assistant can quote without reading the whole piece. */
@@ -33,6 +37,7 @@ export interface Post {
 export const POSTS: Post[] = [
   {
     slug: 'olafur-thors',
+    seoTitle: 'Ólafur Thors Statue, Reykjavík: six times prime minister',
     inShort:
       'Ólafur Thors stands by Tjarnargata beside the Reykjavík pond. He led Iceland six separate times, more than anyone in the country’s history, and the bronze is the work of Sigurjón Ólafsson. Free to visit, in the open, at any hour.',
     facts: [
@@ -63,6 +68,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'settlement-pillars',
+    seoTitle: 'The Settlement Pillars, Reykjavík: the stone that steams',
     inShort:
       'A rough basalt pillar in downtown Reykjavík marks where, by the old story, Ingólfur’s high seat pillars washed ashore and the city began. A steel pipe beside it breathes real steam from the ground. It was missing from Google Maps until 2026, when we added the pin.',
     facts: [
@@ -94,6 +100,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'looking-seawards',
+    seoTitle: 'Looking Seawards (Horft til hafs), Reykjavík harbour',
+    inShort:
+      'Looking Seawards, in Icelandic Horft til hafs, is a pair of bronze fishermen in oilskins on the shore by the old harbour. Ingi P. Gíslason made it in 1997, marking eighty years since Reykjavík finished its harbour and the sixtieth Day of the Seaman. Open shore, free at any hour.',
+    facts: [
+      ['What', 'Sculpture · Looking Seawards'],
+      ['Icelandic name', 'Horft til hafs'],
+      ['Sculptor', 'Ingi P. Gíslason'],
+      ['In place since', '1997'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'Two fishermen watching a sea that fed them and took them',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -115,6 +131,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'shore-piece',
+    seoTitle: 'Shore Piece (Fjöruverk): the polished boulders on Sæbraut',
+    inShort:
+      'Shore Piece, in Icelandic Fjöruverk, is a run of fifty five or fifty six boulders polished to a mirror shine among the rough rocks of the Sæbraut seawall. Sigurður Guðmundsson made it in 2002, and the only marker is a small green plate on one of the stones. Free, on open shore.',
+    facts: [
+      ['What', 'Public artwork · Shore Piece'],
+      ['Icelandic name', 'Fjöruverk'],
+      ['Artist', 'Sigurður Guðmundsson'],
+      ['In place since', '2002'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The smoothest stones in Reykjavík',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -136,6 +162,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'leif-eriksson',
+    seoTitle: 'Leif Eiríksson Statue at Hallgrímskirkja, Reykjavík',
     inShort:
       'The statue of Leif Eiríksson was a gift from the United States and stood on the hill for thirteen years before anyone began building Hallgrímskirkja behind it. Everyone assumes the statue was placed in front of the church; it was the other way round.',
     facts: [
@@ -166,6 +193,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'jon-sigurdsson',
+    seoTitle: 'Jón Sigurðsson Statue, Austurvöllur, Reykjavík',
+    inShort:
+      'Jón Sigurðsson stands on a column in the middle of Austurvöllur with his face turned to the parliament. He argued Iceland out of Danish rule in print rather than in arms, and the republic chose his birthday, the seventeenth of June, for its national day. Einar Jónsson made the statue, unveiled in 1911.',
+    facts: [
+      ['What', 'Statue · Jón Sigurðsson'],
+      ['Sculptor', 'Einar Jónsson'],
+      ['Unveiled', '1911'],
+      ['Where', 'Austurvöllur, facing the parliament'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The man who faces the parliament',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -187,6 +224,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'ingibjorg-bjarnason',
+    seoTitle: 'Ingibjörg H. Bjarnason Statue, Reykjavík',
+    inShort:
+      'Ingibjörg H. Bjarnason was the first woman elected to Iceland’s parliament, in 1922, and the statue beside the Alþingi was the first full statue of a named woman ever raised in Reykjavík. Ragnhildur Stefánsdóttir made it, unveiled on the nineteenth of June 2015, a hundred years to the day after Icelandic women won the vote.',
+    facts: [
+      ['What', 'Statue · Ingibjörg H. Bjarnason'],
+      ['Sculptor', 'Ragnhildur Stefánsdóttir'],
+      ['Unveiled', '19 June 2015'],
+      ['Where', 'Beside the parliament, Austurvöllur'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The first woman through the parliament’s door',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -208,6 +255,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'vikurgardur',
+    seoTitle: 'Víkurgarður: the oldest burial ground in Reykjavík',
+    inShort:
+      'Víkurgarður is the burial ground of the first Reykjavík church and the oldest marked ground in the city, in use until 1838. Three grey standing stones carved with faint human figures and no names were given to the city in 2000 to mark it. It is a small open park off Aðalstræti.',
+    facts: [
+      ['What', 'Churchyard memorial · Víkurgarður'],
+      ['Burials until', '1838'],
+      ['Memorial raised', '2000'],
+      ['Where', 'Off Aðalstræti, the old centre'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The oldest ground in Reykjavík',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -229,6 +286,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'hofdi-lighthouse',
+    seoTitle: 'The Höfði Lighthouse, Reykjavík: built in 2019',
+    inShort:
+      'The bright yellow lighthouse on the platform by Höfði looks a century old and was built in 2019. The architects at Yrki Arkitektar followed the pattern of the channel lights raised in Reykjavík’s old harbour between 1913 and 1917. It has no ships to guide; its job is memory. Free, on open shore.',
+    facts: [
+      ['What', 'Lighthouse · by Höfði'],
+      ['Built', '2019'],
+      ['Architects', 'Yrki Arkitektar'],
+      ['Copied from', 'The harbour lights of 1913 to 1917'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The lighthouse by Höfði was born in 2019',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -250,6 +317,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'jon-vidalin',
+    seoTitle: 'Jón Vídalín Bust at Dómkirkjan, Reykjavík',
+    inShort:
+      'Jón Vídalín took the bishop’s seat at Skálholt in 1698, and his book of house sermons, printed in 1718 and known as Vídalínspostilla, was the most read book in Iceland after the Bible for two hundred years. The bust beside Dómkirkjan was raised in 1920, two centuries after his death.',
+    facts: [
+      ['What', 'Bust · Jón Vídalín'],
+      ['Known for', 'Vídalínspostilla, printed 1718'],
+      ['Raised', '1920'],
+      ['Where', 'Beside Dómkirkjan, Austurvöllur'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The preacher Iceland read aloud for two hundred years',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -271,6 +348,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'sera-bjarni',
+    seoTitle: 'Séra Bjarni Jónsson Bust at Dómkirkjan, Reykjavík',
+    inShort:
+      'Séra Bjarni Jónsson served Dómkirkjan for forty one years, from 1910 to 1951, and Reykjavík made him an honorary citizen. Sigurjón Ólafsson modelled the bust in the cathedral itself, in the real vestments rather than a studio, and it was set beside the church seven years after Bjarni died.',
+    facts: [
+      ['What', 'Bust · séra Bjarni Jónsson'],
+      ['Sculptor', 'Sigurjón Ólafsson'],
+      ['At the cathedral', '1910 to 1951'],
+      ['Where', 'Beside Dómkirkjan, Austurvöllur'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The priest the whole town greeted',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -292,6 +379,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'berlin-wall',
+    seoTitle: 'A Piece of the Berlin Wall in Reykjavík, by Höfði',
     inShort:
       'A painted slab of the Berlin Wall stands on the lawn by Höfði. It was sent to Reykjavík because the two men who started the Wall’s fall met in the white house a few steps away in 1986. It is three and a half metres tall and free to visit.',
     facts: [
@@ -322,6 +410,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'cellist',
+    seoTitle: 'The Cellist (Tónlistarmaðurinn) at Harpa, Reykjavík',
+    inShort:
+      'The bronze cellist in the water by Harpa is Tónlistarmaðurinn, the Musician, made in 1970 by Ólöf Pálsdóttir. She modelled it on the cellist Erling Blöndal Bengtsson, who played for hours while she worked, and left the cello without strings on purpose. It moved to the harbour in 2014.',
+    facts: [
+      ['What', 'Sculpture · The Musician'],
+      ['Icelandic name', 'Tónlistarmaðurinn'],
+      ['Sculptor', 'Ólöf Pálsdóttir'],
+      ['Made', '1970, set by Harpa in 2014'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The cello outside Harpa has no strings',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -343,6 +441,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'ondvegissulur',
+    seoTitle: 'Öndvegissúlur at Höfði: the high seat pillars',
+    inShort:
+      'Öndvegissúlur stands on the Höfði grounds: a dark column crowned with carved copper, Sigurjón Ólafsson’s monument to the high seat pillars Ingólfur Arnarson threw into the sea and followed ashore. It was raised in 1971. Sigurjón never named it; an art historian did, and the name stuck.',
+    facts: [
+      ['What', 'Monument · Öndvegissúlur'],
+      ['Sculptor', 'Sigurjón Ólafsson'],
+      ['Raised', '1971'],
+      ['Where', 'The Höfði grounds, off Sæbraut'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The pillars that chose where Reykjavík would be',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -364,6 +472,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'wind-harp',
+    seoTitle: 'Himinglæva, the wind harp outside Harpa, Reykjavík',
+    inShort:
+      'Himinglæva is a stainless steel wave outside Harpa, strung like a harp and played by the wind. Elín Hansdóttir drew its form from a Lissajous figure, the pattern light traces off vibrating tuning forks, and named it for the wave in Norse myth that lets the sky shine through. It arrived on the square in 2022.',
+    facts: [
+      ['What', 'Sculpture · Himinglæva'],
+      ['Artist', 'Elín Hansdóttir'],
+      ['On the square since', '2022'],
+      ['Where', 'The square outside Harpa'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'A harp for the wind, outside a hall called Harpa',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -385,6 +503,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'christian-ix',
+    seoTitle: 'Christian IX Statue, Government House, Reykjavík',
+    inShort:
+      'Christian IX of Denmark stands on the Government House lawn with one arm held out, handing over the constitution he brought to Iceland in 1874, the country’s first written frame of government. Einar Jónsson made the statue, unveiled in 1915. The lawn is open at any hour.',
+    facts: [
+      ['What', 'Statue · Christian IX of Denmark'],
+      ['Sculptor', 'Einar Jónsson'],
+      ['Unveiled', '1915'],
+      ['Where', 'The Government House lawn, Lækjargata'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The king who handed Iceland its constitution',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -406,6 +534,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'hannes-hafstein',
+    seoTitle: 'Hannes Hafstein Statue, Government House, Reykjavík',
+    inShort:
+      'Hannes Hafstein became the first Icelander to govern Iceland when home rule arrived in 1904, and the statue stands on the lawn of the building he worked in. He was known as a poet first, and he pushed through the telegraph cable that tied the island to the world in 1906. Einar Jónsson made it, unveiled in 1931.',
+    facts: [
+      ['What', 'Statue · Hannes Hafstein'],
+      ['Sculptor', 'Einar Jónsson'],
+      ['Unveiled', '1931'],
+      ['Where', 'The Government House lawn, Lækjargata'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'Iceland’s first minister stands outside his old office',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -427,6 +565,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'government-house',
+    seoTitle: 'Government House, Reykjavík: a prison turned seat of power',
+    inShort:
+      'The white house at the foot of Arnarhóll was raised between 1765 and 1770 as the country’s prison, and it now holds the office of the prime minister and the cabinet. It is one of the oldest buildings in Reykjavík. You cannot go inside, but it stands on the street with no fence or gate.',
+    facts: [
+      ['What', 'Government House · Stjórnarráðið'],
+      ['Built', '1765 to 1770'],
+      ['Built as', 'The country’s prison'],
+      ['Where', 'Lækjargata, below Arnarhóll'],
+      ['Cost', 'Free from outside, no public entry'],
+    ],
     title: 'The country is run from a house built as a prison',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -448,6 +596,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'skuli-magnusson',
+    seoTitle: 'Skúli Magnússon Statue, Fógetagarðurinn, Reykjavík',
+    inShort:
+      'Skúli Magnússon became the first Icelander appointed fógeti, the king’s steward, in 1749, and founded the Innréttingar workshops around Aðalstræti in the early 1750s. Historians mark those workshops as the point where the town of Reykjavík actually began. His statue stands in Fógetagarðurinn.',
+    facts: [
+      ['What', 'Statue · Skúli Magnússon'],
+      ['Lived', '1711 to 1794'],
+      ['Known for', 'The Innréttingar workshops, the 1750s'],
+      ['Where', 'Fógetagarðurinn, off Aðalstræti'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The man Reykjavík still calls its father',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -469,6 +627,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'ur-alogum',
+    seoTitle: 'Úr álögum, Einar Jónsson sculpture garden, Reykjavík',
+    inShort:
+      'Úr álögum, out of the spell, stands in the sculpture garden behind the Einar Jónsson museum on the hill by Hallgrímskirkja: a hero lowering his sword over a beaten shape, with the freed figure at his side. Einar gave his whole body of work to Iceland on condition a house be built to hold it. The garden is free all year.',
+    facts: [
+      ['What', 'Sculpture · Úr álögum'],
+      ['Sculptor', 'Einar Jónsson'],
+      ['Museum opened', '1923'],
+      ['Where', 'The garden behind Hnitbjörg, Skólavörðuholt'],
+      ['Cost', 'Garden free, all year'],
+    ],
     title: 'Breaking a spell, in the garden below Hallgrímskirkja',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -490,6 +658,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'ingolfsgardur-lighthouse',
+    seoTitle: 'Ingólfsgarður Lighthouse, Reykjavík old harbour',
+    inShort:
+      'The small yellow lighthouse at the end of Ingólfsgarður marks the mouth of Reykjavík’s old harbour, the gap every boat passes through. The harbour was built between 1913 and 1917; before that the boats were hauled up onto the beach. You can walk out to the light along the breakwater.',
+    facts: [
+      ['What', 'Lighthouse · Ingólfsgarður'],
+      ['Harbour built', '1913 to 1917'],
+      ['Getting there', 'On foot along the breakwater'],
+      ['Where', 'The mouth of the old harbour'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The little yellow lighthouse at the mouth of the old harbour',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
@@ -511,6 +689,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'islandsvardan',
+    seoTitle: 'Íslandsvarðan on the Sæbraut shore path, Reykjavík',
+    inShort:
+      'Íslandsvarðan, the cairn of Iceland, sits on the Sæbraut shore path a short way from the Sun Voyager. It looks like a lump of lava and is cast bronze, the work of Jóhann Eyfells, and the opening at its centre frames Mount Esja across the bay. Free, on open shore, and easy to walk past.',
+    facts: [
+      ['What', 'Sculpture · Íslandsvarðan'],
+      ['Sculptor', 'Jóhann Eyfells'],
+      ['Material', 'Cast bronze'],
+      ['Where', 'The Sæbraut shore path'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'A lava cairn on the waterfront, with a window cut for the mountain',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -531,6 +719,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'domkirkjan',
+    seoTitle: 'Dómkirkjan: the cathedral of Reykjavík on Austurvöllur',
+    inShort:
+      'Dómkirkjan on Austurvöllur is the cathedral of Reykjavík, not Hallgrímskirkja up on the hill. It was built between 1787 and 1796 and holds a marble font carved by Bertel Thorvaldsen. Every new session of the Alþingi opens with a service here, and the members walk from its door to the parliament.',
+    facts: [
+      ['What', 'Cathedral · Dómkirkjan'],
+      ['Built', '1787 to 1796'],
+      ['Architect', 'Andreas Kirkerup'],
+      ['Where', 'Austurvöllur, beside the parliament'],
+      ['Cost', 'Free when no service is on'],
+    ],
     title: 'The little cathedral where the parliament still goes to pray',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -552,6 +750,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'einar-benediktsson',
+    seoTitle: 'Einar Benediktsson Statue at Höfði, Reykjavík',
+    inShort:
+      'Einar Benediktsson stands with a harp beside Höfði, the house he lived in for a dozen years. He was a poet, a lawyer and the founder of Iceland’s first daily newspaper, and the story that outlived his schemes is that he once tried to sell the northern lights. Ásmundur Sveinsson finished the statue in 1964; the city moved it here in 2015.',
+    facts: [
+      ['What', 'Statue · Einar Benediktsson'],
+      ['Sculptor', 'Ásmundur Sveinsson'],
+      ['Finished', '1964, moved to the shore in 2015'],
+      ['Where', 'The lawn beside Höfði'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The poet who tried to sell the northern lights',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -573,6 +781,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'ingolfur-arnarson',
+    seoTitle: 'Ingólfur Arnarson Statue on Arnarhóll, Reykjavík',
+    inShort:
+      'The bronze settler on Arnarhóll is Ingólfur Arnarson, the man the sagas place at the start of the Icelandic story, landing around the year 874 and naming the place Reykjavík, the bay of smokes. Einar Jónsson made the statue and it went up on the hill in 1924, with the harbour laid out below.',
+    facts: [
+      ['What', 'Statue · Ingólfur Arnarson'],
+      ['Sculptor', 'Einar Jónsson'],
+      ['On the hill since', '1924'],
+      ['Where', 'Arnarhóll, above the harbour'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The man on the hill, and the cove that became a city',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -593,6 +811,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'black-cone',
+    seoTitle: 'The Black Cone, Austurvöllur: the 2009 protest memorial',
+    inShort:
+      'The Black Cone is a boulder split by a heavy black cone, standing in the corner of Austurvöllur in front of the Icelandic parliament. Santiago Sierra made it, unveiled in 2012 on the third anniversary of the Pots and Pans protests of 2009, and the plaque carries a line from the French Revolution on the right to refuse.',
+    facts: [
+      ['What', 'Monument · the Black Cone'],
+      ['Artist', 'Santiago Sierra'],
+      ['Unveiled', '2012'],
+      ['Marks', 'The Pots and Pans protests of 2009'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'A broken boulder in front of parliament, and the year a country banged its pots',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -613,6 +841,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'unknown-bureaucrat',
+    seoTitle: 'Monument to the Unknown Bureaucrat, Reykjavík',
     inShort:
       'Iceland has no tomb of an unknown soldier, so Reykjavík honoured an unknown office worker instead. A man in a coat strides toward City Hall with a briefcase, and above the waist he is a block of raw rock. It stands by the pond and costs nothing to see.',
     facts: [
@@ -640,6 +869,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'hofdi-house',
+    seoTitle: 'Höfði House, Reykjavík: the 1986 Reagan Gorbachev summit',
     inShort:
       'Höfði is the white timber house on the Reykjavík shore where Reagan and Gorbachev met in 1986. The talks ended without an agreement and are now remembered as the moment the Cold War began to come apart. You can walk up to it freely; the inside is not open to visitors.',
     facts: [
@@ -669,6 +899,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'harpa',
+    seoTitle: 'Harpa Concert Hall, Reykjavík: the hall that almost fell',
     inShort:
       'Harpa is the coloured glass concert hall on the Reykjavík harbour. It stood half built when the banks fell in 2008, and the country finished it anyway. The ground floor is open to anyone, free, and the facade changes with the weather and the hour.',
     facts: [
@@ -698,6 +929,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'althingi',
+    seoTitle: 'Alþingi Parliament House, Austurvöllur, Reykjavík',
     inShort:
       'The plain grey house on Austurvöllur holds Alþingi, a parliament first gathered in the year 930, which makes it one of the oldest in the world. Four guardian spirits of Iceland are carved above its windows. You look at it from the square, free.',
     facts: [
@@ -727,6 +959,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'partnership-sculpture',
+    seoTitle: 'The Partnership Sculpture on the Reykjavík shore',
+    inShort:
+      'The Partnership is two bronze figures leaning into each other on the Sæbraut shore path. The American ambassador Charles Cobb and his wife Sue gave it to Reykjavík in 1991, fifty years after Iceland and the United States opened relations. Pétur Bjarnason made it, and an identical version stands in Miami.',
+    facts: [
+      ['What', 'Sculpture · The Partnership'],
+      ['Artist', 'Pétur Bjarnason'],
+      ['Given', '1991'],
+      ['Twin', 'An identical version in Miami'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The Partnership, and the house just up the shore',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -747,6 +989,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'hallgrimskirkja',
+    seoTitle: 'Hallgrímskirkja, Reykjavík: the church shaped like lava',
     inShort:
       'Hallgrímskirkja took more than forty years to build, and its front was shaped to echo the basalt columns of the Icelandic coast. The church is free to enter; the tower, with the view over the coloured roofs, is the part you pay for.',
     facts: [
@@ -776,6 +1019,7 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'sun-voyager',
+    seoTitle: 'The Sun Voyager (Sólfar), Reykjavík: not a Viking ship',
     inShort:
       'The Sun Voyager on the Reykjavík waterfront is not a Viking ship. Jón Gunnar Árnason meant it as a dream boat, an ode to the sun, and it has faced Mount Esja across the bay since 1990. It is free to visit and open at every hour.',
     facts: [
@@ -805,6 +1049,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'water-carrier',
+    seoTitle: 'The Water Carrier Statue, Lækjargata, Reykjavík',
+    inShort:
+      'The Water Carrier near Lækjargata is a bronze woman bent under a yoke with a pail at each end, the work women did before Reykjavík had pipes. Ásmundur Sveinsson shaped her in the nineteen thirties and the city argued for years about whether she was too plain to stand. She was placed in the late forties.',
+    facts: [
+      ['What', 'Statue · Water Carrier'],
+      ['Sculptor', 'Ásmundur Sveinsson'],
+      ['Made', 'The nineteen thirties'],
+      ['Placed', 'The late nineteen forties'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'The Water Carrier who waited years to stand',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
@@ -825,6 +1079,16 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'grotta-lighthouse',
+    seoTitle: 'Grótta Lighthouse, Reykjavík: walking there at low tide',
+    inShort:
+      'Grótta is a small island with a white lighthouse at the western tip of Seltjarnarnes, reachable on foot only for a few hours around low tide, across a sandbar that floods faster than most people expect. The present lighthouse went up in 1947. The island is a nature reserve and closes for nesting from about the start of May to the middle of July.',
+    facts: [
+      ['What', 'Lighthouse · Grótta'],
+      ['Built', '1947'],
+      ['Getting there', 'On foot at low tide, check the tide first'],
+      ['Closed', 'Nesting season, about May to mid July'],
+      ['Cost', 'Free, always open'],
+    ],
     title: 'Grótta Lighthouse, where the tide sets the schedule',
     kicker: 'Iceland · Field note',
     date: 'June 2026',
