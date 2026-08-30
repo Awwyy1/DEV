@@ -141,13 +141,18 @@ button { font: inherit; }
 @media (max-width: 620px) {
   .topnav .nav { display: none; }
   .burger { display: inline-flex; }
+  /* absolute inside .topnav: top:100% is the bar's real height, whatever the
+     padding and the burger add up to at this width */
   .mobile-menu {
-    display: flex; position: fixed; left: 0; right: 0; top: 60px; z-index: 49;
+    display: flex; position: absolute; left: 0; right: 0; top: 100%; z-index: 49;
     flex-direction: column; gap: 2px; background: var(--snow);
     border-bottom: var(--hair) solid var(--fog); padding: 10px var(--pad) 22px;
   }
   .mobile-menu a { padding: 13px 2px; font-size: 15px; color: var(--ink); border-bottom: var(--hair) solid var(--fog); }
   .mobile-menu a.btn { margin-top: 14px; border-color: var(--glacier); justify-content: center; color: #06343c; }
+  /* the same fill as the panel and no hairline between them, so the open menu
+     reads as one sheet from the top of the screen down */
+  .topnav--open { background: var(--snow); backdrop-filter: none; border-bottom-color: transparent; }
 }
 
 /* ---- hero (fills the viewport, give or take) ---- */
@@ -191,7 +196,6 @@ button { font: inherit; }
   /* mobile: thinner nav, tighter top gap, single-line titles, map beside place */
   .topnav { padding-top: 13px; padding-bottom: 13px; }
   .burger { width: 40px; height: 40px; }
-  .mobile-menu { top: 58px; }
   .pd { padding-top: 14px; }
   .pd .pd-title { font-size: 22px; line-height: 1.06; }
   .pd-map-block { display: none; }
