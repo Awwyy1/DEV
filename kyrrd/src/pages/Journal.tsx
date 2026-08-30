@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { POSTS, readingMinutes } from '../journal';
+import { POSTS, photoAlt, readingMinutes } from '../journal';
 import { Photo } from '../components/Photo';
 import { useSeo } from '../seo';
 
@@ -22,7 +22,7 @@ export default function Journal() {
       <div className="grid g3 journal-grid">
         {POSTS.map((p) => (
           <Link key={p.slug} to={`/journal/${p.slug}`} className="post-card">
-            <Photo image={p.image} gradient={p.gradient} alt={p.title} />
+            <Photo image={p.image} gradient={p.gradient} alt={photoAlt(p)} />
             <div className="post-card-body">
               <div className="kicker">
                 {p.kicker} · {readingMinutes(p)} min read

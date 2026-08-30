@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { PLATES } from '../plates';
-import { POSTS, readingMinutes } from '../journal';
+import { POSTS, photoAlt, readingMinutes } from '../journal';
 import PlateCard from '../components/PlateCard';
 import { WALK_META } from '../walk';
 import { Photo } from '../components/Photo';
@@ -249,7 +249,7 @@ export default function Home() {
         <div className="grid g3 journal-grid">
           {notes.map((p) => (
             <Link key={p.slug} to={`/journal/${p.slug}`} className="post-card">
-              <Photo image={p.image} gradient={p.gradient} alt={p.title} />
+              <Photo image={p.image} gradient={p.gradient} alt={photoAlt(p)} />
               <div className="post-card-body">
                 <div className="kicker">
                   {p.kicker} · {readingMinutes(p)} min read

@@ -1111,6 +1111,14 @@ export const POSTS: Post[] = [
 
 export const findPost = (slug?: string): Post | undefined => POSTS.find((p) => p.slug === slug);
 
+/**
+ * What the photograph shows, for alt text. The headline is editorial and most
+ * of them never name the place, so using it described a photograph of the Leif
+ * Eiríksson statue as "He stood here before the church did", which helps nobody
+ * reading with a screen reader and nothing looking for the picture.
+ */
+export const photoAlt = (post: Post): string => `${post.plateTitle ?? post.title}, Reykjavík`;
+
 /** Reading time from the body, ~200 words per minute, at least 1. */
 export function readingMinutes(post: Post): number {
   const words = post.body.join(' ').split(/\s+/).filter(Boolean).length;
