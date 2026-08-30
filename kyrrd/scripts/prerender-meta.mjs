@@ -107,6 +107,20 @@ const readMinutes = (post) => {
   return Math.max(1, Math.round(words / 200));
 };
 
+/** The photograph, named by what it shows rather than by the headline. */
+function articleFigure(post) {
+  if (!post.image) return '';
+  const alt = `${post.plateTitle ?? post.title}, Reykjavík`;
+  const plate = post.plateSlug ? PLATES.find((p) => p.slug === post.plateSlug) : undefined;
+  const caption = [post.plateTitle ?? post.title, plate?.date, 'shot on a phone']
+    .filter(Boolean)
+    .join(' · ');
+  // 3:4 is what every photo comes out of the pipeline at
+  return `<figure class="article-fig"><img src="${post.image}" alt="${esc(
+    alt,
+  )}" width="1200" height="1600"><figcaption>${esc(caption)}</figcaption></figure>`;
+}
+
 function articleBody(post) {
   const paras = post.body
     .map((p, i) => `<p${i === 0 ? ' class="lede"' : ''}>${esc(p)}</p>`)
@@ -128,6 +142,7 @@ function articleBody(post) {
             <h1 class="article-title">${esc(post.title)}</h1>
             <div class="d-cap article-byline">${esc(post.date)} · ${readMinutes(post)} min read</div>
           </header>
+          ${articleFigure(post)}
           ${short}
           ${facts}
           <div class="article-body">

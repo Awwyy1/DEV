@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { findPost, POSTS, readingMinutes } from '../journal';
+import { findPost, photoAlt, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
@@ -132,6 +132,30 @@ export default function Article() {
               {plate && <MapLink plate={plate} />}
             </div>
           </header>
+
+          {/* The photograph the note is about. It used to appear only as a 60px
+              thumb at the foot of the page and as the postcard in the rail,
+              which is a strange thing for a site made of photographs. It is the
+              largest paint on the page, so it loads eagerly, and it takes the
+              plate's own focus so tall subjects are not cropped at the neck. */}
+          {post.image && (
+            <figure className="article-fig">
+              <Photo
+                className="article-hero"
+                image={post.image}
+                gradient={post.gradient}
+                sun={false}
+                alt={photoAlt(post)}
+                position={plate?.focus}
+                eager
+              />
+              <figcaption>
+                {post.plateTitle ?? post.title}
+                {plate?.date && <span> · {plate.date}</span>}
+                <span className="fig-by"> · shot on a phone</span>
+              </figcaption>
+            </figure>
+          )}
 
           {/* The short answer, above the story: what a reader in a hurry needs
               and what a search result or an assistant can quote. */}
@@ -273,7 +297,7 @@ export default function Article() {
           <div className="grid g3 journal-grid">
             {recent.map((p) => (
               <Link key={p.slug} to={`/journal/${p.slug}`} className="post-card">
-                <Photo image={p.image} gradient={p.gradient} alt={p.title} />
+                <Photo image={p.image} gradient={p.gradient} alt={photoAlt(p)} />
                 <div className="post-card-body">
                   <div className="kicker">
                     {p.kicker} · {readingMinutes(p)} min read

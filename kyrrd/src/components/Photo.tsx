@@ -12,6 +12,8 @@ export function Photo({
   style,
   className = '',
   alt = '',
+  eager = false,
+  position,
   children,
 }: {
   gradient?: string;
@@ -20,13 +22,28 @@ export function Photo({
   style?: CSSProperties;
   className?: string;
   alt?: string;
+  /** Above the fold: skip lazy loading so the largest paint is not deferred. */
+  eager?: boolean;
+  /** object-position for the crop, e.g. 'top' to keep a tall subject's head. */
+  position?: string;
   children?: ReactNode;
 }) {
   const s: CSSProperties = { ...style };
   if (gradient) (s as Record<string, string>)['--p'] = gradient;
   return (
     <div className={`ph ${image ? 'has-img' : ''} ${className}`} style={s}>
-      {image ? <img className="ph-img" src={image} alt={alt} loading="lazy" /> : sun && <span className="sun" />}
+      {image ? (
+        <img
+          className="ph-img"
+          src={image}
+          alt={alt}
+          loading={eager ? 'eager' : 'lazy'}
+          {...(eager ? { fetchPriority: 'high' as const } : {})}
+          style={position ? { objectPosition: position } : undefined}
+        />
+      ) : (
+        sun && <span className="sun" />
+      )}
       {children}
     </div>
   );
