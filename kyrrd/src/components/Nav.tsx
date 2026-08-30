@@ -23,7 +23,11 @@ export default function Nav() {
 
   return (
     <>
-      <header className={`topnav${overlay ? ' topnav--overlay' : ''}`}>
+      {/* with the menu down the bar is the top of the menu, so it drops the
+          translucency and the overlay state and matches the panel below it */}
+      <header
+        className={`topnav${overlay && !open ? ' topnav--overlay' : ''}${open ? ' topnav--open' : ''}`}
+      >
         <Link to="/" className="bm" onClick={close}>
           kyrr<span className="eth">ð</span>
         </Link>
@@ -52,9 +56,10 @@ export default function Nav() {
             <span />
           </button>
         </div>
-      </header>
 
-      {open && (
+        {/* the panel lives inside the bar so it can hang off the bar's own
+            height rather than a guessed number of pixels */}
+        {open && (
         <div className="mobile-menu">
           <Link to="/archive" onClick={close}>
             Archive
@@ -85,7 +90,8 @@ export default function Nav() {
             Send a card
           </Link>
         </div>
-      )}
+        )}
+      </header>
     </>
   );
 }
