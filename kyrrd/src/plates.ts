@@ -247,12 +247,12 @@ export const PLATES: Plate[] = [
   {
     id: '23', no: '18', series: 'Series VII', title: 'Öndvegissúlur',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'July 2026',
-    description: 'Copper pillars crowned with carved forms beside Höfði, Sigurjón Ólafsson’s monument to the high seat pillars Ingólfur threw into the sea.',
+    description: 'Sigurjón Ólafsson’s copper sculpture on a tall pedestal beside Höfði, set up in 1971 and seen on television around the world during the summit of 1986.',
     gradient: 'linear-gradient(180deg,#eef3f2,#c8d6d2 50%,#8ba49c 80%,#4f6b62)',
     image: '/photos/Ondvegissulur.jpeg',
     slug: 'ondvegissulur',
     tags: ['Sculpture'],
-    focus: 'top', // tall column: keep the carved crown, crop from the bottom
+    focus: 'top', // tall pedestal: keep the copper sculpture on top, crop from the bottom
     mapsUrl: '',
     mapsQuery: 'Öndvegissúlur, Höfði, Reykjavík',
   },
