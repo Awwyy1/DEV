@@ -105,7 +105,7 @@ export const PLATES: Plate[] = [
     place: 'Reykjavík, Iceland', coords: '64.17°N 22.02°W', date: 'June 10 2026',
     description: 'Reachable on foot only around low tide, the Grótta lighthouse on an island the sea cuts off twice a day.',
     gradient: 'linear-gradient(180deg,#fff,#e8eef0 55%,#c9d4d8 78%,#9fb0b6)',
-    image: '/photos/glacier-edge.jpg',
+    image: '/photos/Grotta-Lighthouse.jpeg',
     slug: 'grotta-lighthouse',
     tags: ['Lighthouses'],
     mapsUrl: 'https://maps.app.goo.gl/YbsUwJ2c7R4hezwM6',
@@ -432,7 +432,7 @@ export const PLATES: Plate[] = [
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
     description: 'A basalt pillar downtown, a steel pipe breathing steam beside it, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.',
     gradient: 'linear-gradient(180deg,#eceef0,#c2c6cc 48%,#7c8088 80%,#3a3c42)',
-    image: '/photos/Seat-Pillars-Monument.jpeg',
+    image: '/photos/Settlement-Pillars.jpeg',
     slug: 'settlement-pillars',
     tags: ['Memorials'],
     focus: 'top', // tall basalt pillar: keep the top, crop from the bottom

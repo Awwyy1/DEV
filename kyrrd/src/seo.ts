@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 const SITE = 'https://kyrrd.pics';
-const DEFAULT_IMAGE = `${SITE}/photos/glacier-edge.jpg`;
+const DEFAULT_IMAGE = `${SITE}/photos/Grotta-Lighthouse.jpeg`;
 
 type SeoType = 'website' | 'article';
 

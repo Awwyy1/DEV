@@ -4,7 +4,22 @@
       "source": "/journal/arnarholl",
       "destination": "/journal/ingolfur-arnarson",
       "permanent": true
+    },
+    {
+      "source": "/photos/glacier-edge.jpg",
+      "destination": "/photos/Grotta-Lighthouse.jpeg",
+      "permanent": true
+    },
+    {
+      "source": "/photos/Seat-Pillars-Monument.jpeg",
+      "destination": "/photos/Settlement-Pillars.jpeg",
+      "permanent": true
     }
   ],
-  "rewrites": [{ "source": "/((?!.*\\.).*)", "destination": "/app.html" }]
+  "rewrites": [
+    {
+      "source": "/((?!.*\\.).*)",
+      "destination": "/app.html"
+    }
+  ]
 }

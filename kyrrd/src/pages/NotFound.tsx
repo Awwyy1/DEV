@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useSeo } from '../seo';
 import '../notfound.css';
 
-const NF_IMG = '/photos/glacier-edge.jpg';
+const NF_IMG = '/photos/Grotta-Lighthouse.jpeg';
 
 export default function NotFound() {
   useSeo('Page not found — kyrrð', 'This page has drifted off the map. Let’s get you back.');
