@@ -137,7 +137,7 @@ export const WALK: WalkChapter[] = [
     belongs: 'This chapter belongs to one lawn and the two days in 1986 when the whole world was watching it.',
     photoSlug: 'hofdi-house',
     stops: [
-      { slug: 'ondvegissulur', hook: 'A copper sculpture its maker never named. 140 m in.' },
+      { slug: 'ondvegissulur', hook: 'A copper sculpture named by someone other than its maker. 140 m in.' },
       { slug: 'berlin-wall', hook: 'The real thing, three and a half metres of it. 100 m.' },
       { slug: 'einar-benediktsson', hook: 'The poet who tried to sell the northern lights. 20 m.' },
       { slug: 'hofdi-house', hook: 'Where the Cold War began to thaw, 1986.' },

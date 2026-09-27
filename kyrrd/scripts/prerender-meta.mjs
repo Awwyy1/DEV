@@ -15,7 +15,7 @@ import { transform } from 'esbuild';
 const root = resolve(dirname(fileURLToPath(import.meta.url)), '..');
 const dist = resolve(root, 'dist');
 const SITE = 'https://kyrrd.pics';
-const DEFAULT_IMAGE = `${SITE}/photos/glacier-edge.jpg`;
+const DEFAULT_IMAGE = `${SITE}/photos/Grotta-Lighthouse.jpeg`;
 
 async function load(rel) {
   const ts = readFileSync(resolve(root, rel), 'utf8');
