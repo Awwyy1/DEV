@@ -1120,6 +1120,61 @@ export const findPost = (slug?: string): Post | undefined => POSTS.find((p) => p
  */
 export const photoAlt = (post: Post): string => `${post.plateTitle ?? post.title}, Reykjavík`;
 
+/** Splits on full stops that end a sentence, not on the initials in names such
+    as Björn Th. Björnsson or Ingi P. Gíslason. */
+function sentences(text: string): string[] {
+  const out: string[] = [];
+  let start = 0;
+  for (let i = 0; i < text.length; i++) {
+    if (!'.!?'.includes(text[i]) || (i + 1 < text.length && text[i + 1] !== ' ')) continue;
+    const word = text.slice(text.lastIndexOf(' ', i - 1) + 1, i);
+    if (/^(?:\p{Lu}|Th|St)$/u.test(word)) continue;
+    out.push(text.slice(start, i + 1).trim());
+    start = i + 1;
+  }
+  if (start < text.length) out.push(text.slice(start).trim());
+  return out.filter(Boolean);
+}
+
+/** Shortens a sentence to `room` characters, at a comma where one falls late
+    enough, otherwise at a space, and marks the cut. */
+function clip(s: string, room: number): string {
+  if (s.length <= room) return s;
+  const cut = s.slice(0, room - 1);
+  const comma = cut.lastIndexOf(', ');
+  const at = comma > room * 0.6 ? comma : cut.lastIndexOf(' ');
+  // never leave the cut hanging on "the", "of", "to" and the like
+  const head = cut
+    .slice(0, at)
+    .replace(/(?:\s+(?:the|a|an|of|to|as|in|on|at|by|for|and|with|its|his|her|their|that|which|who|over|into|from|rather|than))+$/i, '')
+    .replace(/[,;:]$/, '');
+  return `${head}…`;
+}
+
+/**
+ * The description a search result shows. It used to be the excerpt, which is
+ * the opening of the story and was cut off by Google mid-sentence. The In short
+ * leads with the name of the place and the facts, so it is built from that:
+ * whole sentences while they fit in 160 characters, and when what fits is
+ * short, or the first sentence alone runs long, the next part is cut at a comma
+ * rather than wherever the result page happens to stop.
+ */
+export function metaDescription(post: Post, max = 160): string {
+  const parts = sentences(post.inShort ?? post.excerpt);
+  let out = '';
+  let i = 0;
+  for (; i < parts.length; i++) {
+    const next = out ? `${out} ${parts[i]}` : parts[i];
+    if (next.length > max) break;
+    out = next;
+  }
+  if (i < parts.length && out.length < 110) {
+    const room = max - (out ? out.length + 1 : 0);
+    if (room >= 40) out = out ? `${out} ${clip(parts[i], room)}` : clip(parts[i], room);
+  }
+  return out;
+}
+
 /** Reading time from the body, ~200 words per minute, at least 1. */
 export function readingMinutes(post: Post): number {
   const words = post.body.join(' ').split(/\s+/).filter(Boolean).length;

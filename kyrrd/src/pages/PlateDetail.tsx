@@ -23,7 +23,7 @@ export default function PlateDetail() {
   // The field note tells the same story at length, so it is the version search
   // engines should rank. This page stays for people: it is where a card is made.
   const noteForSeo = POSTS.find((p) => p.plateSlug === plate.slug);
-  useSeo(`${plate.title} — kyrrð`, plate.description, {
+  useSeo(`${noteForSeo?.seoTitle ?? plate.title} — kyrrð`, plate.description, {
     image: plate.image,
     canonical: noteForSeo ? `${SITE}/journal/${noteForSeo.slug}` : undefined,
   });

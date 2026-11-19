@@ -25,8 +25,8 @@ async function load(rel) {
 }
 
 const { PLATES } = await load('src/plates.ts');
-const { POSTS } = await load('src/journal.ts');
-const { WALK, WALK_META, WALK_FAQ } = await load('src/walk.ts');
+const { POSTS, metaDescription } = await load('src/journal.ts');
+const { WALK, WALK_META, WALK_FAQ, walkNeighbours } = await load('src/walk.ts');
 
 // Static pages — titles/descriptions mirror each page's useSeo() call.
 const staticPages = [
@@ -68,20 +68,26 @@ const articles = POSTS.map((p) => ({
   path: `/journal/${p.slug}`,
   // seoTitle when the note has one; the headline is still the h1 in the body
   title: `${p.seoTitle ?? p.title} — kyrrð`,
-  description: p.excerpt,
+  // the In short, cut to fit a result page; the excerpt was the story's opening
+  description: metaDescription(p),
   image: p.image,
   type: 'article',
   post: p,
 }));
 
-const plates = PLATES.filter((p) => p.image && p.slug).map((p) => ({
-  path: `/plate/${p.slug}`,
-  title: `${p.title} — kyrrð`,
-  description: p.description,
-  image: p.image,
-  plate: p,
-  note: POSTS.find((n) => n.plateSlug === p.slug),
-}));
+const plates = PLATES.filter((p) => p.image && p.slug).map((p) => {
+  const note = POSTS.find((n) => n.plateSlug === p.slug);
+  return {
+    path: `/plate/${p.slug}`,
+    // Google showed /plate/ondvegissulur, not the note, for "öndvegissúlur"
+    // despite the canonical, so the plate carries the note's search title too
+    title: `${note?.seoTitle ?? p.title} — kyrrð`,
+    description: p.description,
+    image: p.image,
+    plate: p,
+    note,
+  };
+});
 
 const routes = [...staticPages, ...articles, ...plates];
 
@@ -121,6 +127,24 @@ function articleFigure(post) {
   )}" width="1200" height="1600"><figcaption>${esc(caption)}</figcaption></figure>`;
 }
 
+/** The neighbouring stops on the walk, as plain links a crawler can follow. */
+function nearbyBody(post) {
+  const w = post.plateSlug ? walkNeighbours(post.plateSlug) : null;
+  if (!w || !w.near.length) return '';
+  const items = w.near
+    .map((s) => {
+      const note = POSTS.find((p) => p.plateSlug === s.slug);
+      const plate = PLATES.find((p) => p.slug === s.slug);
+      const name = note?.plateTitle ?? plate?.title ?? s.slug;
+      const href = note ? `/journal/${note.slug}` : `/plate/${s.slug}`;
+      return `<li><a href="${href}">${esc(name)}</a>, stop ${s.number}</li>`;
+    })
+    .join('');
+  return `<section class="nearby"><h2>Close by on The Long Walk</h2><p>Stop ${w.stop} of ${
+    WALK_META.stops
+  }, chapter ${w.chapter.roman}, ${esc(w.chapter.title)}.</p><ul>${items}</ul><p><a href="/walk">The whole route</a></p></section>`;
+}
+
 function articleBody(post) {
   const paras = post.body
     .map((p, i) => `<p${i === 0 ? ' class="lede"' : ''}>${esc(p)}</p>`)
@@ -148,6 +172,7 @@ function articleBody(post) {
           <div class="article-body">
           ${paras}
           </div>
+          ${nearbyBody(post)}
         </article>
       </div>
     </div>`;

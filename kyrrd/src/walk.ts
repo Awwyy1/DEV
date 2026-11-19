@@ -158,6 +158,32 @@ export const WALK: WalkChapter[] = [
   },
 ];
 
+/**
+ * A stop's number on the route and the stops nearest it in its own chapter, for
+ * the "close by" links at the foot of a note. A chapter is one stretch of the
+ * city (one square, one lawn), so its stops are a short walk from each other;
+ * across a chapter break there can be a long hop, so neighbours never cross it.
+ */
+export function walkNeighbours(slug: string, n = 3) {
+  let before = 0;
+  for (const chapter of WALK) {
+    const i = chapter.stops.findIndex((s) => s.slug === slug);
+    if (i >= 0) {
+      const near = chapter.stops
+        .map((s, j) => ({ slug: s.slug, number: before + j + 1, gap: Math.abs(j - i), ahead: j > i }))
+        .filter((s) => s.gap > 0)
+        // nearest first; between two equally near, the one ahead on the route
+        .sort((a, b) => a.gap - b.gap || Number(b.ahead) - Number(a.ahead))
+        .slice(0, n)
+        .sort((a, b) => a.number - b.number)
+        .map(({ slug: stop, number }) => ({ slug: stop, number }));
+      return { chapter, stop: before + i + 1, near };
+    }
+    before += chapter.stops.length;
+  }
+  return null;
+}
+
 /* The long hop between VI and VII gets its own treatment on the page. */
 export const LONG_HOP = {
   big: '1.6 km · 20–25 min · uphill',

@@ -1,12 +1,13 @@
 import { useEffect, useRef } from 'react';
 import { Link, useParams } from 'react-router-dom';
-import { findPost, photoAlt, POSTS, readingMinutes } from '../journal';
+import { findPost, metaDescription, photoAlt, POSTS, readingMinutes } from '../journal';
 import { findPlate } from '../plates';
 import { Photo } from '../components/Photo';
 import MapLink from '../components/MapLink';
 import PinIcon from '../components/PinIcon';
 import NewsletterCard from '../components/NewsletterCard';
 import { SocialFollow } from '../components/Social';
+import { walkNeighbours, WALK_META } from '../walk';
 import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
@@ -44,7 +45,7 @@ export default function Article() {
   const post = findPost(slug);
   // the tab and the search result carry seoTitle when the headline alone would
   // not find the place; the h1 below is always the headline itself
-  useSeo(post ? `${post.seoTitle ?? post.title} — kyrrð` : 'Journal — kyrrð', post?.excerpt, {
+  useSeo(post ? `${post.seoTitle ?? post.title} — kyrrð` : 'Journal — kyrrð', post && metaDescription(post), {
     image: post?.image,
     type: 'article',
   });
@@ -92,17 +93,20 @@ export default function Article() {
   const plate = post.plateSlug ? findPlate(post.plateSlug) : undefined;
   const key = plate ? (plate.slug ?? plate.id) : undefined;
   const others = POSTS.filter((p) => p.slug !== post.slug);
-  // "Most read" is a curated order (the landmarks people actually search for,
-  // per Search Console) so it stays distinct from the most-recent strip below.
+  const walk = post.plateSlug ? walkNeighbours(post.plateSlug) : null;
+  // "Most read" is the order Search Console shows (clicks, then impressions,
+  // sixteen months to November 2026). It sits on every note, so it is also the
+  // strongest set of links on the site, and these are the notes sitting on the
+  // edge of the first page, positions 6 to 13, where a push counts most.
   const POPULAR = [
-    'grotta-lighthouse',
-    'sun-voyager',
-    'domkirkjan',
-    'hallgrimskirkja',
-    'einar-benediktsson',
-    'harpa',
-    'black-cone',
     'unknown-bureaucrat',
+    'einar-benediktsson',
+    'settlement-pillars',
+    'skuli-magnusson',
+    'jon-sigurdsson',
+    'sun-voyager',
+    'hofdi-house',
+    'grotta-lighthouse',
   ];
   const rank = (slug: string) => (POPULAR.indexOf(slug) + 1 || 99);
   const mostRead = [...others].sort((a, b) => rank(a.slug) - rank(b.slug)).slice(0, 5);
@@ -280,6 +284,56 @@ export default function Article() {
           </div>
         </aside>
       </div>
+
+      {/* The places a short walk from this one, from the same chapter of the
+          walk. Notes about neighbouring places did not link to each other at
+          all; the Höfði lawn alone has four of them. */}
+      {walk && walk.near.length > 0 && (
+        <section className="nearby">
+          <div className="recent-h">
+            <div>
+              <div className="d-label">
+                Stop {walk.stop} of {WALK_META.stops} · Chapter {walk.chapter.roman}, {walk.chapter.title}
+              </div>
+              <div className="d-h2" style={{ marginTop: 4 }}>
+                Close by on The Long Walk
+              </div>
+            </div>
+            <Link to="/walk" className="recent-all">
+              The whole route →
+            </Link>
+          </div>
+          <div className="nearby-row">
+            {walk.near.map((s) => {
+              const pl = findPlate(s.slug);
+              const note = POSTS.find((p) => p.plateSlug === s.slug);
+              if (!pl) return null;
+              const name = note?.plateTitle ?? pl.title;
+              return (
+                <Link
+                  key={s.slug}
+                  to={note ? `/journal/${note.slug}` : `/plate/${s.slug}`}
+                  className="nearby-item"
+                >
+                  <Photo
+                    image={pl.image}
+                    gradient={pl.gradient}
+                    sun={false}
+                    alt={`${name}, Reykjavík`}
+                    position={pl.focus}
+                    className="nearby-ph"
+                  />
+                  <span className="nearby-tx">
+                    <span className="nearby-n">Stop {s.number}</span>
+                    <span className="nearby-t">{name}</span>
+                    {note && <span className="nearby-s">{note.title}</span>}
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
 
       {recent.length > 0 && (
         <section className="recent-notes">

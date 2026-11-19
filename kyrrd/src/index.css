@@ -327,6 +327,18 @@ button { font: inherit; }
 .recent-h { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 24px; }
 .recent-all { font-size: 13px; color: var(--glacier-ink); font-weight: 500; white-space: nowrap; }
 
+/* ---- close by on the walk: the next places on foot, under a note ---- */
+.nearby { border-top: var(--hair) solid var(--fog); margin-top: 18px; padding-top: 44px; }
+.nearby-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.nearby-item { display: flex; gap: 14px; align-items: center; min-width: 0; padding: 12px; border: var(--hair) solid var(--fog); border-radius: var(--r); background: var(--white); transition: 0.16s; }
+.nearby-item:hover { border-color: var(--glacier); transform: translateY(-2px); }
+.nearby-ph.ph { width: 64px; aspect-ratio: 4 / 5; flex: 0 0 auto; border-radius: 8px; }
+.nearby-tx { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.nearby-n { font-family: var(--disp); font-weight: 600; font-size: 10.5px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--glacier-ink); }
+.nearby-t { font-family: var(--disp); font-weight: 500; font-size: 15.5px; line-height: 1.25; color: var(--ink); }
+.nearby-s { font-size: 12.5px; line-height: 1.4; color: var(--steel-d); }
+@media (max-width: 780px) { .nearby-row { grid-template-columns: 1fr; } }
+
 @media (max-width: 900px) {
   .article-grid { grid-template-columns: 1fr; gap: 12px; }
   .article-aside { position: static; margin-top: 30px; }
