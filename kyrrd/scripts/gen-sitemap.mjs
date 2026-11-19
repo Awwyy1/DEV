@@ -31,7 +31,14 @@ const entries = [
   { loc: '/archive', changefreq: 'weekly', priority: '0.9' },
   { loc: '/journal', changefreq: 'weekly', priority: '0.8' },
   { loc: '/walk', changefreq: 'monthly', priority: '0.8' },
-  ...POSTS.map((p) => ({ loc: `/journal/${p.slug}`, changefreq: 'monthly', priority: '0.7' })),
+  ...POSTS.map((p) => ({
+    loc: `/journal/${p.slug}`,
+    changefreq: 'monthly',
+    priority: '0.7',
+    // the photograph the note opens with, so image search finds it from here
+    // rather than only by crawling the page
+    image: p.image,
+  })),
   { loc: '/about', changefreq: 'monthly', priority: '0.5' },
   // Photograph pages whose story lives in a field note point their canonical at
   // that note, so only the notes belong here; a sitemap lists canonical URLs.
@@ -47,11 +54,12 @@ const body = entries
     const parts = [`<loc>${SITE}${e.loc}</loc>`, `<lastmod>${today}</lastmod>`];
     if (e.changefreq) parts.push(`<changefreq>${e.changefreq}</changefreq>`);
     if (e.priority) parts.push(`<priority>${e.priority}</priority>`);
+    if (e.image) parts.push(`<image:image><image:loc>${SITE}${e.image}</image:loc></image:image>`);
     return `  <url>${parts.join('')}</url>`;
   })
   .join('\n');
 
-const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${body}\n</urlset>\n`;
+const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${body}\n</urlset>\n`;
 
 writeFileSync(resolve(root, 'public/sitemap.xml'), xml);
 console.log(
