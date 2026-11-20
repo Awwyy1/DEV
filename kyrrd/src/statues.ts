@@ -105,12 +105,30 @@ export function buildStatues(
   firstSentence: (text: string) => string,
 ) {
   const stopOf: Record<string, number> = {};
+  const chapterOf: Record<string, WalkChapter> = {};
   let n = 0;
-  for (const ch of walk) for (const s of ch.stops) stopOf[s.slug] = ++n;
+  for (const ch of walk)
+    for (const s of ch.stops) {
+      stopOf[s.slug] = ++n;
+      chapterOf[s.slug] = ch;
+    }
 
-  const areas = STATUE_AREAS.map((area) => ({
-    ...area,
-    items: area.slugs.flatMap((slug): StatueItem[] => {
+  const areas = STATUE_AREAS.map((area) => {
+    // An area follows one chapter of the walk. The chapter's other stops are
+    // buildings and lighthouses; they are named under the area, so every area
+    // holds the same stops as the route does.
+    const chapter = area.slugs.map((s) => chapterOf[s]).find(Boolean);
+    const range = chapter ? chapter.stops.map((s) => stopOf[s.slug]) : [];
+    const also = (chapter?.stops ?? [])
+      .filter((s) => !area.slugs.includes(s.slug))
+      .flatMap((s) => {
+        const plate = plates.find((p) => p.slug === s.slug);
+        const post = posts.find((p) => p.plateSlug === s.slug);
+        return plate
+          ? [{ slug: s.slug, name: post?.plateTitle ?? plate.title, stop: stopOf[s.slug], note: post?.slug ?? null }]
+          : [];
+      });
+    const items = area.slugs.flatMap((slug): StatueItem[] => {
       const plate = plates.find((p) => p.slug === slug);
       const post = posts.find((p) => p.plateSlug === slug);
       if (!plate || !post || !plate.image) return [];
@@ -132,8 +150,16 @@ export function buildStatues(
           area,
         },
       ];
-    }),
-  }));
+    });
+    return {
+      ...area,
+      chapter: chapter
+        ? { roman: chapter.roman, title: chapter.title, first: Math.min(...range), last: Math.max(...range) }
+        : null,
+      also,
+      items,
+    };
+  });
   const items = areas.flatMap((a) => a.items);
   const count = (t: StatueType) => items.filter((i) => i.type === t).length;
 
