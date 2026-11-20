@@ -220,8 +220,16 @@ function walkBody(route) {
       ? `<p><strong>${esc(ch.plaque.label)}:</strong> ${esc(ch.plaque.text)}</p>`
       : '';
     const hop = ch.hop ? `<p>${esc(ch.hop)}</p>` : '';
+    const photo = PLATES.find((p) => p.slug === ch.photoSlug);
+    const photoNote = POSTS.find((p) => p.plateSlug === ch.photoSlug);
+    const img = photo?.image
+      ? `<img src="${photo.image}" alt="${esc(
+          `${photoNote?.plateTitle ?? photo.title}, Reykjavík`,
+        )}" width="1200" height="1600" loading="lazy">`
+      : '';
     return `<section>
         <h2>Chapter ${ch.roman}: ${esc(ch.title)} · ${esc(ch.area)}</h2>
+        ${img}
         <p>${esc(ch.belongs)}</p>
         ${stops}
         ${plaque}

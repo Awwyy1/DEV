@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { PLATES } from '../plates';
 import { POSTS } from '../journal';
 import { WALK, WALK_META, LONG_HOP, WALK_FAQ } from '../walk';
+import { Photo } from '../components/Photo';
 import { useSeo, useJsonLd } from '../seo';
 import '../walk.css';
 
@@ -188,12 +189,14 @@ export default function Walk() {
                   <h3>{ch.title}</h3>
                   <p className="belongs">{ch.belongs}</p>
                 </div>
-                <div
-                  className="ph"
-                  style={{
-                    backgroundImage: photo?.image ? `url("${photo.image}")` : undefined,
-                    backgroundPosition: photo?.focus || 'center',
-                  }}
+                {/* a real image, not a CSS background: backgrounds are invisible
+                    to image search, and the photo is the chapter's place */}
+                <Photo
+                  image={photo?.image}
+                  gradient={photo?.gradient}
+                  sun={false}
+                  alt={photo ? `${noteForPlate(photo.slug ?? '')?.plateTitle ?? photo.title}, Reykjavík` : ''}
+                  position={photo?.focus}
                 />
               </div>
 
