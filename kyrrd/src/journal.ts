@@ -646,7 +646,7 @@ export const POSTS: Post[] = [
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
     image: '/photos/Ur-Alogum.jpeg',
     plateSlug: 'ur-alogum',
-    plateTitle: 'Úr Álögum',
+    plateTitle: 'Úr álögum',
     body: [
       'On the hill at Skólavörðuholt, in the shadow of Hallgrímskirkja, there is a house of pale stone that looks a little like a small fortress, and behind it a walled garden full of bronze. One figure in that garden stops most people who wander in. A powerful man stands with a great sword held point down before him, a beaten shape slumped at his feet and a smaller freed figure gathered against his side. The work is called Úr álögum, which means out of the spell, and it is about the moment a curse finally breaks.',
       'The house and everything in the garden belong to Einar Jónsson, the first professional sculptor Iceland ever produced. He worked in a heavy, symbolic, dreamlike manner that has little to do with the plain daylight realism of most public statues, and his subjects are angels and heroes and souls hauling themselves out of matter. Úr álögum is one of the clearest of them. A young hero has overcome the thing that held someone under a spell, and the piece stands for the spirit breaking free of whatever binds it, told in the shape of an old fairy tale.',
@@ -1135,6 +1135,9 @@ function sentences(text: string): string[] {
   if (start < text.length) out.push(text.slice(start).trim());
   return out.filter(Boolean);
 }
+
+/** The first sentence of a text, not cut at an initial. */
+export const firstSentence = (text: string): string => sentences(text)[0] ?? text;
 
 /** Shortens a sentence to `room` characters, at a comma where one falls late
     enough, otherwise at a space, and marks the cut. */

@@ -35,9 +35,14 @@ export default function Archive() {
             Photographs from around Iceland.
           </h1>
           {/* the archive has a route through it; say so where people are looking */}
-          <Link className="on-foot" to="/walk">
-            Thirty of these places in one line on foot<b>The Long Walk →</b>
-          </Link>
+          <div className="arch-links">
+            <Link className="on-foot" to="/walk">
+              Thirty of these places in one line on foot<b>The Long Walk →</b>
+            </Link>
+            <Link className="on-foot" to="/statues">
+              Every statue by where it stands<b>Statues and sculptures →</b>
+            </Link>
+          </div>
         </div>
       </div>
 

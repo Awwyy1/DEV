@@ -8,8 +8,8 @@
     "date": "2026-07-04"
   },
   "/archive": {
-    "hash": "d8c6a18b9748f49a",
-    "date": "2026-08-23"
+    "hash": "eff30967b0cc6e93",
+    "date": "2026-11-20"
   },
   "/journal": {
     "hash": "5d26553b6eec5085",
@@ -140,8 +140,8 @@
     "date": "2026-11-19"
   },
   "/journal/ur-alogum": {
-    "hash": "0a1425ffc56acba0",
-    "date": "2026-11-19"
+    "hash": "3a29f6b36e53ec57",
+    "date": "2026-11-20"
   },
   "/journal/vikurgardur": {
     "hash": "d796ca1ac2a0394d",
@@ -158,6 +158,10 @@
   "/privacy": {
     "hash": "5aa5568ce880a0f2",
     "date": "2026-07-04"
+  },
+  "/statues": {
+    "hash": "45b15126f9cf9d40",
+    "date": "2026-11-20"
   },
   "/terms": {
     "hash": "ecd2ce0ba329d616",

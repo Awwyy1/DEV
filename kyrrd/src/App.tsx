@@ -11,6 +11,7 @@ import Done from './pages/Done';
 import Journal from './pages/Journal';
 import Article from './pages/Article';
 import Walk from './pages/Walk';
+import Statues from './pages/Statues';
 import About from './pages/About';
 import Privacy from './pages/Privacy';
 import Terms from './pages/Terms';
@@ -57,6 +58,7 @@ export default function App() {
           <Route path="journal" element={<Journal />} />
           <Route path="journal/:slug" element={<Article />} />
           <Route path="walk" element={<Walk />} />
+          <Route path="statues" element={<Statues />} />
           <Route path="about" element={<About />} />
           <Route path="privacy" element={<Privacy />} />
           <Route path="terms" element={<Terms />} />

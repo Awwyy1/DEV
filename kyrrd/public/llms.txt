@@ -74,7 +74,7 @@ been added to them.
 - [Séra Bjarni Jónsson](https://kyrrd.pics/plate/sera-bjarni): Beside the cathedral he served for forty years, séra Bjarni Jónsson, the priest all of Reykjavík knew by sight.
 - [Ingibjörg H. Bjarnason](https://kyrrd.pics/plate/ingibjorg-bjarnason): Beside the parliament she entered first, Ingibjörg H. Bjarnason, headmistress, suffragist and the first woman elected to the Alþingi.
 - [The Black Cone](https://kyrrd.pics/plate/black-cone): Driven into a split boulder outside parliament, the Black Cone, Iceland’s stark monument to the right to protest.
-- [Úr Álögum](https://kyrrd.pics/plate/ur-alogum): Sword lowered over a beaten shape, Einar Jónsson’s Úr álögum, the moment a spell breaks in the garden below Hallgrímskirkja.
+- [Úr álögum](https://kyrrd.pics/plate/ur-alogum): Sword lowered over a beaten shape, Einar Jónsson’s Úr álögum, the moment a spell breaks in the garden below Hallgrímskirkja.
 - [Hofdi House](https://kyrrd.pics/plate/hofdi-house): On the north shore stands Höfði, the white house where Reagan and Gorbachev met in 1986 and the Cold War began to thaw.
 - [Ingólfsgarður Lighthouse](https://kyrrd.pics/plate/ingolfsgardur-lighthouse): Bright yellow at the end of a stone breakwater, the little lighthouse marking the mouth of Reykjavík’s old harbour.
 - [Jón Vídalín](https://kyrrd.pics/plate/jon-vidalin): In the ruff of his office beside Dómkirkjan, Jón Vídalín, the bishop whose book of sermons was read aloud in Icelandic homes for two centuries.
@@ -86,6 +86,7 @@ been added to them.
 
 ## Guides
 - [The Long Walk](https://kyrrd.pics/walk): a free self-guided walk through Reykjavík, 30 stops in seven chapters, 5.5 km, with the distances and the practical details measured on foot.
+- [Statues and sculptures of Reykjavík](https://kyrrd.pics/statues): Every statue, sculpture and memorial in the archive, by where it stands in Reykjavík, with who made it and the story behind it. All free to see. 26 works by area, with who made each one and when, and 22 of them on The Long Walk.
 
 ## About
 - [How it works](https://kyrrd.pics/about): choose a photograph, add your words, send it as a signed digital card.

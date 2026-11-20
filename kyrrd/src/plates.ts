@@ -348,7 +348,7 @@ export const PLATES: Plate[] = [
     mapsQuery: 'The Black Cone, Monument to Civil Disobedience, Reykjavík',
   },
   {
-    id: '18', no: '27', series: 'Series VI', title: 'Úr Álögum',
+    id: '18', no: '27', series: 'Series VI', title: 'Úr álögum',
     place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'July 2026',
     description: 'Sword lowered over a beaten shape, Einar Jónsson’s Úr álögum, the moment a spell breaks in the garden below Hallgrímskirkja.',
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
