@@ -235,7 +235,7 @@ export const PLATES: Plate[] = [
     mapsQuery: 'Monument to the Unknown Bureaucrat, Reykjavík',
   },
   {
-    id: '15', no: '17', series: 'Series V', title: 'Domkirkjan',
+    id: '15', no: '17', series: 'Series V', title: 'Dómkirkjan',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
     description: 'Beside the parliament on Austurvöllur, the cathedral where members still gather for a service before each new session opens.',
     gradient: 'linear-gradient(180deg,#f2f6f8,#d2e0e6 55%,#9bb4be)',

@@ -5,6 +5,7 @@ import { firstSentence, POSTS } from '../journal';
 import { WALK } from '../walk';
 import { buildStatues, STATUES_DESCRIPTION, statuesInShort, statuesTitle, type StatueType } from '../statues';
 import { useSeo } from '../seo';
+import PinIcon from '../components/PinIcon';
 import '../statues.css';
 
 const DATA = buildStatues(PLATES, POSTS, WALK, firstSentence);
@@ -125,14 +126,10 @@ export default function Statues() {
             areas.map((a, idx) => {
               const visible = a.items.filter((i) => shows(i.type));
               if (!visible.length) return null;
-              const stops = a.items.map((i) => i.stop).filter((s): s is number => s !== null);
-              const meta = stops.length
-                ? `${a.items.length} ${a.items.length === 1 ? 'work' : 'works'} · ${
-                    stops.length === a.items.length ? '' : `${stops.length} of them `
-                  }on The Long Walk, ${
-                    stops.length > 1 ? `stops ${Math.min(...stops)} to ${Math.max(...stops)}` : `stop ${stops[0]}`
-                  }`
-                : `${a.items.length} works · not on The Long Walk`;
+              // the area is the walk's chapter, stop for stop
+              const meta = a.chapter
+                ? `Chapter ${a.chapter.roman} of The Long Walk, ${a.chapter.title} · stops ${a.chapter.first} to ${a.chapter.last}`
+                : 'Not on The Long Walk';
               return (
                 <section className="st-area" id={a.id} key={a.id}>
                   <header className="st-area-h">
@@ -160,6 +157,9 @@ export default function Statues() {
                             {i.stop ? `Stop ${i.stop} on the walk` : 'Off the walk'}
                           </span>
                           <span className="st-n">{i.name}</span>
+                          <span className="st-w">
+                            <PinIcon /> {i.where}
+                          </span>
                           <span className="st-l">{i.line}</span>
                           {(i.by || i.year) && <span className="st-m">{[i.by, i.year].filter(Boolean).join(' · ')}</span>}
                           <span className="st-go">
@@ -169,6 +169,22 @@ export default function Statues() {
                       </Link>
                     ))}
                   </div>
+                  {filter === 'all' && a.also.length > 0 && (
+                    <div className="st-also">
+                      <span>Also on this stretch of the walk</span>
+                      {a.also.map((x) =>
+                        x.note ? (
+                          <Link key={x.slug} to={`/journal/${x.note}`}>
+                            Stop {x.stop} · {x.name}
+                          </Link>
+                        ) : (
+                          <span key={x.slug} className="st-also-x">
+                            Stop {x.stop} · {x.name}
+                          </span>
+                        ),
+                      )}
+                    </div>
+                  )}
                 </section>
               );
             })

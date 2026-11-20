@@ -284,10 +284,18 @@ function statuesBody(route) {
             `${i.name}, Reykjavík`,
           )}" width="1200" height="1600" loading="lazy"> <strong>${esc(i.name)}</strong></a>. ${esc(i.type)}${
             i.stop ? `, stop ${i.stop} on The Long Walk` : ''
-          }. ${esc(i.line)}${meta ? ` ${esc(meta)}.` : ''}</li>`;
+          }. ${esc(i.where)}. ${esc(i.line)}${meta ? ` ${esc(meta)}.` : ''}</li>`;
         })
         .join('');
-      return `<section id="${a.id}"><h2>${esc(a.name)}</h2><ul>${cards}</ul></section>`;
+      const chapter = a.chapter
+        ? `<p>Chapter ${a.chapter.roman} of The Long Walk, ${esc(a.chapter.title)}, stops ${a.chapter.first} to ${a.chapter.last}.</p>`
+        : '<p>Not on The Long Walk.</p>';
+      const also = a.also.length
+        ? `<p>Also on this stretch of the walk: ${a.also
+            .map((x) => (x.note ? `<a href="/journal/${x.note}">${esc(x.name)}</a>` : esc(x.name)) + `, stop ${x.stop}`)
+            .join('; ')}.</p>`
+        : '';
+      return `<section id="${a.id}"><h2>${esc(a.name)}</h2>${chapter}<ul>${cards}</ul>${also}</section>`;
     })
     .join('\n      ');
   const makers = STATUES.makers
