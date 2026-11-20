@@ -22,8 +22,10 @@ async function load(relPath) {
 }
 
 const { PLATES } = await load('src/plates.ts');
-const { POSTS } = await load('src/journal.ts');
+const { POSTS, firstSentence } = await load('src/journal.ts');
 const { WALK } = await load('src/walk.ts');
+const { buildStatues, STATUES_DESCRIPTION } = await load('src/statues.ts');
+const STATUES = buildStatues(PLATES, POSTS, WALK, firstSentence);
 
 // A plate is live once it has a real photo and a pretty slug; placeholders ship
 // with image: '' and are skipped until a photo is added.
@@ -98,6 +100,14 @@ const entries = [
     seed: 'src/walk.ts',
     // the chapter photographs, now real images on the page
     images: walkImages,
+  },
+  {
+    loc: '/statues',
+    changefreq: 'monthly',
+    priority: '0.8',
+    print: fingerprint(src('src/pages/Statues.tsx'), STATUES.items.map((i) => [i.name, i.line, i.by, i.year, i.image])),
+    seed: 'src/statues.ts',
+    images: STATUES.items.map((i) => i.image),
   },
   ...POSTS.map((p) => ({
     loc: `/journal/${p.slug}`,
@@ -177,6 +187,7 @@ ${livePlates.map((p) => `- [${p.title}](${SITE}/plate/${p.slug}): ${p.descriptio
 
 ## Guides
 - [The Long Walk](${SITE}/walk): a free self-guided walk through Reykjavík, 30 stops in seven chapters, 5.5 km, with the distances and the practical details measured on foot.
+- [Statues and sculptures of Reykjavík](${SITE}/statues): ${STATUES_DESCRIPTION} ${STATUES.counts.all} works by area, with who made each one and when, and ${STATUES.onWalk} of them on The Long Walk.
 
 ## About
 - [How it works](${SITE}/about): choose a photograph, add your words, send it as a signed digital card.

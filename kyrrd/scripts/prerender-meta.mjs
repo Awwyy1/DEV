@@ -25,8 +25,13 @@ async function load(rel) {
 }
 
 const { PLATES } = await load('src/plates.ts');
-const { POSTS, metaDescription } = await load('src/journal.ts');
+const { POSTS, metaDescription, firstSentence } = await load('src/journal.ts');
 const { WALK, WALK_META, WALK_FAQ, walkNeighbours } = await load('src/walk.ts');
+const { buildStatues, statuesTitle, STATUES_DESCRIPTION, statuesInShort, STATUE_AREAS } = await load(
+  'src/statues.ts',
+);
+const STATUES = buildStatues(PLATES, POSTS, WALK, firstSentence);
+const IN_STATUES = STATUE_AREAS.flatMap((a) => a.slugs);
 
 // Static pages — titles/descriptions mirror each page's useSeo() call.
 const staticPages = [
@@ -53,6 +58,12 @@ const staticPages = [
     title: 'Free Self-Guided Walking Tour of Reykjavík: 30 Stops on Foot — kyrrð',
     description:
       'A free self-guided walking tour of Reykjavík: 30 stops in seven chapters, 5.5 km one way, 3 to 4 hours, with the story behind every stop and the distances measured on foot. No booking, no guide, no cost.',
+  },
+  {
+    path: '/statues',
+    title: statuesTitle(STATUES.counts.all),
+    description: STATUES_DESCRIPTION,
+    image: '/photos/Leif-Eriksson.jpeg',
   },
   {
     path: '/about',
@@ -172,6 +183,11 @@ function articleBody(post) {
           <div class="article-body">
           ${paras}
           </div>
+          ${
+            post.plateSlug && IN_STATUES.includes(post.plateSlug)
+              ? `<p><a href="/statues">All ${IN_STATUES.length} statues, sculptures and memorials of Reykjavík, by where they stand</a></p>`
+              : ''
+          }
           ${nearbyBody(post)}
         </article>
       </div>
@@ -252,6 +268,83 @@ function walkBody(route) {
       </section>
     </div>`;
 }
+
+/**
+ * The statues hub in full: every work by area with its photograph, the line
+ * from its note, who made it and when, then the makers and the questions. The
+ * same data as the page, from statues.ts, so the two cannot drift apart.
+ */
+function statuesBody(route) {
+  const areas = STATUES.areas
+    .map((a) => {
+      const cards = a.items
+        .map((i) => {
+          const meta = [i.by, i.year].filter(Boolean).join(' · ');
+          return `<li><a href="/journal/${i.note}"><img src="${i.image}" alt="${esc(
+            `${i.name}, Reykjavík`,
+          )}" width="1200" height="1600" loading="lazy"> <strong>${esc(i.name)}</strong></a>. ${esc(i.type)}${
+            i.stop ? `, stop ${i.stop} on The Long Walk` : ''
+          }. ${esc(i.line)}${meta ? ` ${esc(meta)}.` : ''}</li>`;
+        })
+        .join('');
+      return `<section id="${a.id}"><h2>${esc(a.name)}</h2><ul>${cards}</ul></section>`;
+    })
+    .join('\n      ');
+  const makers = STATUES.makers
+    .map(
+      (m) =>
+        `<li><strong>${esc(m.name)}</strong>, ${m.items.length} works: ${m.items
+          .map((i) => `<a href="/journal/${i.note}">${esc(i.name)}</a>`)
+          .join(', ')}.</li>`,
+    )
+    .join('');
+  const faq = STATUES.faq.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join('');
+  return `<div class="wrap section">
+      <nav class="crumbs"><a href="/archive">Archive</a> <span class="sep">▸</span> <span class="here">Statues and sculptures</span></nav>
+      <h1>Statues and sculptures of Reykjavík</h1>
+      <p>${esc(route.description)}</p>
+      <div class="in-short"><div class="in-short-k">In short</div><p>${esc(statuesInShort(STATUES))}</p></div>
+      ${areas}
+      <section><h2>Who made them</h2><ul>${makers}</ul></section>
+      <p><a href="/walk">See ${STATUES.onWalk} of them in one line on The Long Walk</a></p>
+      <section><h2>Before you go</h2>${faq}</section>
+    </div>`;
+}
+
+const statuesLd = (url) => [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Statues and sculptures of Reykjavík',
+    url,
+    numberOfItems: STATUES.items.length,
+    itemListElement: STATUES.items.map((i, n) => ({
+      '@type': 'ListItem',
+      position: n + 1,
+      name: i.name,
+      url: `${SITE}/journal/${i.note}`,
+      image: `${SITE}${i.image}`,
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: STATUES.faq.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'kyrrð', item: `${SITE}/` },
+      { '@type': 'ListItem', position: 2, name: 'Archive', item: `${SITE}/archive` },
+      { '@type': 'ListItem', position: 3, name: 'Statues and sculptures', item: url },
+    ],
+  },
+];
 
 function pageBody(route) {
   return `<div class="wrap section">
@@ -453,7 +546,9 @@ function render(route) {
       ? plateBody(route.plate, route.note)
       : route.path === '/walk'
         ? walkBody(route)
-        : route.path === '/'
+        : route.path === '/statues'
+          ? statuesBody(route)
+          : route.path === '/'
           ? homeBody()
           : route.path === '/archive'
             ? archiveBody(route)
@@ -469,7 +564,9 @@ function render(route) {
       ? [plateLd(route.plate, url, img)]
       : route.path === '/walk'
         ? [walkLd(url, img), walkFaqLd()]
-        : [];
+        : route.path === '/statues'
+          ? statuesLd(url)
+          : [];
   for (const ld of lds) {
     html = html.replace(
       '</head>',

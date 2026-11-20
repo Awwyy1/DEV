@@ -19,6 +19,7 @@ export default function Footer() {
         <SocialIcons />
         <span className="foot-links">
           <Link to="/journal">Journal</Link>
+          <Link to="/statues">Statues</Link>
           <Link to="/privacy">Privacy</Link>
           <Link to="/terms">Terms</Link>
         </span>
