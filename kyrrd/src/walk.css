@@ -24,6 +24,10 @@
 /* solid, no backdrop blur: translucent bars glint over the photos scrolling beneath */
 .wk-bar { position: sticky; top: 65px; z-index: 40; background: var(--snow); border-bottom: var(--hair) solid var(--fog); }
 @media (max-width: 620px) { .wk-bar { top: 57px; } }
+/* a chapter reached by its anchor (the chapter bar, or /walk#c6 from the
+   statues page) lands below the nav and this bar, not under them */
+.wk-leg { scroll-margin-top: 122px; }
+@media (max-width: 620px) { .wk-leg { scroll-margin-top: 112px; } }
 .wk-bar .in { max-width: 660px; margin: 0 auto; padding: 9px 20px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .wk-bar .t { font-family: var(--disp); font-weight: 500; font-size: 13px; white-space: nowrap; color: var(--ink); }
 .wk-dots { display: flex; gap: 5px; }
