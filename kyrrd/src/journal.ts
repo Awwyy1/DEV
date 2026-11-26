@@ -45,7 +45,7 @@ export const POSTS: Post[] = [
       ['Sculptor', 'Sigurjón Ólafsson'],
       ['Unveiled', '1969'],
       ['Known for', 'Prime minister, six terms'],
-      ['Where', 'In front of the Prime Minister’s residence, Tjarnargata'],
+      ['Where', 'In front of Ráðherrabústaðurinn, the Ministers’ Residence, Tjarnargata'],
       ['Cost', 'Free, always open'],
     ],
     title: 'Six times prime minister, watching the palace he grew up in',
@@ -71,25 +71,25 @@ export const POSTS: Post[] = [
     slug: 'settlement-pillars',
     seoTitle: 'The Settlement Pillars, Reykjavík: the stone that steams',
     inShort:
-      'A rough basalt pillar in downtown Reykjavík marks where, by the old story, Ingólfur’s high seat pillars washed ashore and the city began. A steel pipe beside it breathes real steam from the ground. It was missing from Google Maps until 2026, when we added the pin.',
+      'Two rough basalt pillars on Ingólfstorg, in downtown Reykjavík, mark where, by the old story, Ingólfur’s high seat pillars washed ashore and the city began. A steel pipe beside them breathes real steam from the ground. It was missing from Google Maps until 2026, when we added the pin.',
     facts: [
       ['What', 'Monument · the Settlement Pillars'],
       ['Marks', 'Where Reykjavík is said to begin'],
       ['Steam', 'From a pipe fed by a geothermal vent'],
-      ['Where', 'A square in the old centre'],
+      ['Where', 'Ingólfstorg, off Aðalstræti'],
       ['Cost', 'Free, always open'],
     ],
     title: 'The steam still rising where the country began',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
     excerpt:
-      'On a downtown square ringed with restaurants stands a rough basalt pillar with a steel pipe rising beside it, breathing real steam, marking the exact spot where, by the old story, Ingólfur’s high seat pillars washed ashore and Reykjavík began.',
+      'On Ingólfstorg, a downtown square ringed with restaurants, stand two rough basalt pillars with a steel pipe rising beside them, breathing real steam, marking the exact spot where, by the old story, Ingólfur’s high seat pillars washed ashore and Reykjavík began.',
     gradient: 'linear-gradient(180deg,#eceef0,#c2c6cc 48%,#7c8088 80%,#3a3c42)',
     image: '/photos/Settlement-Pillars.jpeg',
     plateSlug: 'settlement-pillars',
     plateTitle: 'The Settlement Pillars',
     body: [
-      'On a square in the old centre of Reykjavík, the kind ringed with café tables and tourist menus, there is a rough pillar of dark basalt that most people walk past on the way to lunch. Stand near it for a moment and you notice something the menus do not mention. Beside the stone, running parallel to it, a slim stainless steel pipe rises, and from it comes a thin plume of steam that does not stop, a low continuous breath of warm vapour. It is the single most literal monument in the city, and many people walk past it without knowing this is where the story of the city begins.',
+      'On Ingólfstorg, a square in the old centre of Reykjavík, the kind ringed with café tables and tourist menus, there is a rough pillar of dark basalt that most people walk past on the way to lunch. Stand near it for a moment and you notice something the menus do not mention. Beside the stone, running parallel to it, a slim stainless steel pipe rises, and from it comes a thin plume of steam that does not stop, a low continuous breath of warm vapour. It is the single most literal monument in the city, and many people walk past it without knowing this is where the story of the city begins.',
       'It marks the spot where the whole country is said to begin. This is one of two basalt pillars set here to mark the landfall of the öndvegissúlur, the high seat pillars of Ingólfur Arnarson, the chieftain the sagas name as the first permanent settler of Iceland. Everything else in Reykjavík is downstream of the story this stone is pointing at.',
       'The story runs like this. Around the year 874 Ingólfur sailed from Norway toward a barely known island in the north, and as the coast came into view he did the thing his people did when they wanted the gods to choose for them. He threw the carved wooden pillars of his high seat overboard and swore to build his farm wherever the sea carried them ashore. Then he waited, and searched, and eventually the pillars were found washed up on a steaming shore, and there he settled with his household.',
       'The inscription on the pillar puts it plainly, quoting the Book of Settlements: “Ingólfur saw Iceland, he threw his high-seat posts overboard for good luck. He declared that he would establish himself at the place where the beam came to land.” The shore they came to was full of steam rising off the hot ground, and Ingólfur named the place for it: Reykjavík, the bay of smokes. Which is the joke the monument is built around. The city named after its steam is marked by a monument that steams, its pipe fed by a geothermal vent so that a thousand years later the ground is still breathing exactly as it did on the day it was named.',
@@ -103,11 +103,11 @@ export const POSTS: Post[] = [
     slug: 'looking-seawards',
     seoTitle: 'Looking Seawards (Horft til hafs), Reykjavík harbour',
     inShort:
-      'Looking Seawards, in Icelandic Horft til hafs, is a pair of bronze fishermen in oilskins on the shore by the old harbour. Ingi P. Gíslason made it in 1997, marking eighty years since Reykjavík finished its harbour and the sixtieth Day of the Seaman. Open shore, free at any hour.',
+      'Looking Seawards, in Icelandic Horft til hafs, is a pair of bronze fishermen in oilskins on the shore by the old harbour. Ingi Þ. Gíslason made it in 1997, marking eighty years since Reykjavík finished its harbour and the sixtieth Day of the Seaman. Open shore, free at any hour.',
     facts: [
       ['What', 'Sculpture · Looking Seawards'],
       ['Icelandic name', 'Horft til hafs'],
-      ['Sculptor', 'Ingi P. Gíslason'],
+      ['Sculptor', 'Ingi Þ. Gíslason'],
       ['In place since', '1997'],
       ['Where', 'Miðbakki, the old harbour'],
       ['Cost', 'Free, always open'],
@@ -123,7 +123,7 @@ export const POSTS: Post[] = [
     plateTitle: 'Looking Seawards',
     body: [
       'On the shore by the old harbour, a little past Harpa, two bronze fishermen stand together in full oilskins and look out over the water. One has a hand raised to his cap, shading his eyes against the glare off the sea. The other points out across the bay at something only he can see. They are life sized and weathered green, and they are not posing for anyone. They are working, reading the water the way their trade taught them to.',
-      'The piece is called Looking Seawards, in Icelandic Horft til hafs, and it is the work of the sculptor Ingi P. Gíslason, put up on this spot in 1997. It marks two anniversaries at once: eighty years since Reykjavík finished building the harbour it stands beside, and the sixtieth Sjómannadagurinn, the national Day of the Seaman, which the country still keeps every June. It is, plainly and on purpose, a monument to fishermen.',
+      'The piece is called Looking Seawards, in Icelandic Horft til hafs, and it is the work of the sculptor Ingi Þ. Gíslason, put up on this spot in 1997. It marks two anniversaries at once: eighty years since Reykjavík finished building the harbour it stands beside, and the sixtieth Sjómannadagurinn, the national Day of the Seaman, which the country still keeps every June. It is, plainly and on purpose, a monument to fishermen.',
       'That is a bigger subject in Iceland than a couple of bronze figures might suggest. For most of the country’s history the sea was the whole economy. Fish paid for everything, fish was what the island had instead of forests or farmland or coal, and the men who went out after it in small boats through the North Atlantic winter were the engine of the place. When people here talk about how a poor colony became a modern country, the short answer is usually the fish, and the longer answer is the men in this statue.',
       'The gestures are the point, and they are exact. Shading the eyes and pointing are not heroic poses, they are the two oldest working motions of the trade: find the light on the water, and mark where the catch is. Ingi could have carved a triumphant captain at a wheel. Instead he carved two ordinary men doing the plain, patient, dangerous thing that fishing actually is, which is why the fishermen who walk past it recognise themselves in it.',
       'It faces the water for a reason that is not only scenic. The same sea that fed the country also kept a steady share of its men, generation after generation, and nearly every coastal family in Iceland has a name that did not come home. The Day of the Seaman the statue honours is half celebration and half remembrance, and the two figures looking out to sea carry both readings at once: pride in the work, and a long memory of its cost.',
@@ -234,7 +234,7 @@ export const POSTS: Post[] = [
       ['What', 'Statue · Ingibjörg H. Bjarnason'],
       ['Sculptor', 'Ragnhildur Stefánsdóttir'],
       ['Unveiled', '19 June 2015'],
-      ['Where', 'Beside the parliament, Austurvöllur'],
+      ['Where', 'Kirkjustræti, by Skáli, the parliament annex'],
       ['Cost', 'Free, always open'],
     ],
     title: 'The first woman through the parliament’s door',
@@ -265,7 +265,7 @@ export const POSTS: Post[] = [
       ['What', 'Churchyard memorial · Víkurgarður'],
       ['Burials until', '1838'],
       ['Memorial raised', '2000'],
-      ['Where', 'Off Aðalstræti, the old centre'],
+      ['Where', 'Víkurgarður, corner of Aðalstræti and Kirkjustræti'],
       ['Cost', 'Free, always open'],
     ],
     title: 'The oldest ground in Reykjavík',
@@ -325,6 +325,7 @@ export const POSTS: Post[] = [
       'Jón Vídalín took the bishop’s seat at Skálholt in 1698, and his book of house sermons, printed in 1718 and known as Vídalínspostilla, was the most read book in Iceland after the Bible for two hundred years. The bust beside Dómkirkjan was raised in 1920, two centuries after his death.',
     facts: [
       ['What', 'Bust · Jón Vídalín'],
+      ['Sculptor', 'Ríkarður Jónsson'],
       ['Known for', 'Vídalínspostilla, printed 1718'],
       ['Raised', '1920'],
       ['Where', 'Beside Dómkirkjan, Austurvöllur'],
@@ -357,6 +358,7 @@ export const POSTS: Post[] = [
     facts: [
       ['What', 'Bust · séra Bjarni Jónsson'],
       ['Sculptor', 'Sigurjón Ólafsson'],
+      ['Set up', '1972'],
       ['At the cathedral', '1910 to 1951'],
       ['Where', 'Beside Dómkirkjan, Austurvöllur'],
       ['Cost', 'Free, always open'],
@@ -421,7 +423,7 @@ export const POSTS: Post[] = [
       ['Icelandic name', 'Tónlistarmaðurinn'],
       ['Sculptor', 'Ólöf Pálsdóttir'],
       ['Made', '1970, set by Harpa in 2014'],
-      ['Where', 'The reflecting pool in front of Harpa'],
+      ['Where', 'The reflecting pool beside Harpa, by Sæbraut'],
       ['Cost', 'Free, always open'],
     ],
     title: 'The cello outside Harpa has no strings',
@@ -434,7 +436,7 @@ export const POSTS: Post[] = [
     plateSlug: 'cellist',
     plateTitle: 'The Cellist',
     body: [
-      'In the shallow water on the harbour side of Harpa, a bronze man in evening dress sits on a rust red plinth with a cello between his knees, bow raised, head tilted, caught in the middle of a phrase. The pose is so exact that you can almost name the note. Then you step closer and notice the one thing missing. The cello has no strings, and it never has had.',
+      'In the shallow water on the harbour side of Harpa, a bronze man in evening dress sits on a rust red plinth with a cello between his knees, his right arm out where the bow would be, caught in the middle of a phrase. The pose is so exact that you can almost name the note. Then you step closer and notice what is missing: there is no bow in his hand, and the cello has no strings, and it never has had.',
       'The work is called Tónlistarmaðurinn, the Musician, and it was made in 1970 by Ólöf Pálsdóttir, one of the leading Icelandic sculptors of the last century. She modelled it on a real man, the cellist Erling Blöndal Bengtsson, and the sittings were unlike any other she had. Erling did not sit. He played, for hours, piece after piece, while she worked, and she said afterwards that she never enjoyed making anything as much, because not every model can give that much of himself while holding a pose.',
       'Erling was born in Copenhagen in 1932 to an Icelandic mother and a Danish father, and both countries have claimed him ever since. He was a prodigy who was performing in public as a small child and went on to one of the great cello careers of the north, six decades of concerts and a long life of teaching, in Copenhagen and later in America, where generations of cellists passed through his studio. Iceland gave him its highest honours and kept his mother’s share of him firmly on the books.',
       'The statue has followed the country’s concert life around town. It was first raised in 1977 at Hagatorg, outside Háskólabíó, the cinema that doubled for decades as the symphony orchestra’s home. When the orchestra finally moved into Harpa, the Musician eventually followed, and in September 2014 he was set down in the water by the new hall. Erling had died the year before, so he never saw himself bowing at the harbour, which gives the spot a shade of memorial it was not born with.',
@@ -510,7 +512,7 @@ export const POSTS: Post[] = [
     slug: 'christian-ix',
     seoTitle: 'Christian IX Statue, Government House, Reykjavík',
     inShort:
-      'Christian IX of Denmark stands on the Government House lawn with one arm held out, handing over the constitution he brought to Iceland in 1874, the country’s first written frame of government. Einar Jónsson made the statue, unveiled in 1915. The lawn is open at any hour.',
+      'Christian IX of Denmark stands on the Government House lawn holding up the rolled constitution he brought to Iceland in 1874, the country’s first written frame of government. Einar Jónsson made the statue, unveiled in 1915. The lawn is open at any hour.',
     facts: [
       ['What', 'Statue · Christian IX of Denmark'],
       ['Sculptor', 'Einar Jónsson'],
@@ -522,13 +524,13 @@ export const POSTS: Post[] = [
     kicker: 'Iceland · Field note',
     date: 'July 2026',
     excerpt:
-      'On the Government House lawn stands Christian IX of Denmark with one arm held out, offering the constitution he brought to Iceland in 1874, cast in bronze by Einar Jónsson.',
+      'On the Government House lawn stands Christian IX of Denmark holding up the rolled constitution he brought to Iceland in 1874, cast in bronze by Einar Jónsson.',
     gradient: 'linear-gradient(180deg,#f0f4f6,#ccd9e2 50%,#93a9b8 82%,#5f7484)',
     image: '/photos/King-Christian-IX-of-Denmark.jpeg',
     plateSlug: 'christian-ix',
     plateTitle: 'Christian IX',
     body: [
-      'On the lawn in front of Government House, where Lækjargata runs past the white building at the foot of Arnarhóll, a bronze king stands on a tall stone plinth with one arm held out toward the street, a document in the outstretched hand. He is not waving and he is not pointing. He is handing something over. The king is Christian IX of Denmark, the document in his hand is a constitution, and the gesture has been frozen in the middle of the gift for more than a century.',
+      'On the lawn in front of Government House, where Lækjargata runs past the white building at the foot of Arnarhóll, a bronze king stands on a tall stone plinth with his right arm raised and a rolled document held up in his hand, his hat in the other. He is not waving and he is not pointing. He is holding something up to be seen. The king is Christian IX of Denmark, the document in his hand is a constitution, and the gesture has been frozen in the middle of the gift for more than a century.',
       'The year to know is 1874. Iceland was marking a thousand years since the first settlers arrived, and Christian sailed north to join the festival, the first reigning monarch ever to set foot on the island. He did not come empty handed. He brought the constitution of 1874, the country’s first written frame of government, which gave the Alþingi real power over Icelandic law and money for the first time in centuries.',
       'It was a gift with conditions, as royal gifts tend to be. The king kept his veto, the executive stayed answerable to Copenhagen, and Icelanders spent the next seventy years politely and stubbornly asking for the rest. Home rule came in 1904, sovereignty in 1918, and the republic in 1944, declared at Þingvellir on a June day of pouring rain. The bronze on the lawn holds the first step of that story, not the last one.',
       'Christian himself is one of history’s unlikely dynasts. A minor German princeling by birth, he began his reign in 1863 and within a year had lost a war and a third of his kingdom. Then his children married, and kept marrying, until Europe called him its father-in-law. One daughter became queen of Britain, another empress of Russia, one son king of the Greeks. The man offering Iceland its constitution had grandchildren on half the thrones of Europe.',
@@ -606,9 +608,10 @@ export const POSTS: Post[] = [
       'Skúli Magnússon became the first Icelander appointed fógeti, the king’s steward, in 1749, and founded the Innréttingar workshops around Aðalstræti in the early 1750s. Historians mark those workshops as the point where the town of Reykjavík actually began. His statue stands in Fógetagarðurinn.',
     facts: [
       ['What', 'Statue · Skúli Magnússon'],
+      ['Sculptor', 'Guðmundur Einarsson frá Miðdal'],
       ['Lived', '1711 to 1794'],
       ['Known for', 'The Innréttingar workshops, the 1750s'],
-      ['Where', 'Fógetagarðurinn, off Aðalstræti'],
+      ['Where', 'Víkurgarður (Fógetagarðurinn), corner of Aðalstræti and Kirkjustræti'],
       ['Cost', 'Free, always open'],
     ],
     title: 'The man Reykjavík still calls its father',
@@ -632,32 +635,32 @@ export const POSTS: Post[] = [
   },
   {
     slug: 'ur-alogum',
-    seoTitle: 'Úr álögum, Einar Jónsson sculpture garden, Reykjavík',
+    seoTitle: 'Úr álögum by Einar Jónsson, at Tjörnin, Reykjavík',
     inShort:
-      'Úr álögum, out of the spell, stands in the sculpture garden behind the Einar Jónsson museum on the hill by Hallgrímskirkja: a hero lowering his sword over a beaten shape, with the freed figure at his side. Einar gave his whole body of work to Iceland on condition a house be built to hold it. The garden is free all year.',
+      'Úr álögum, out of the spell, is Einar Jónsson’s bronze of a knight driving his sword into a dragon, with a young woman freed from the spell at his shoulder. He worked on it from 1916 to 1927. The bronze stands by Tjörnin, the city pond, in the open and free at any hour; the original is in his museum on Skólavörðuholt.',
     facts: [
       ['What', 'Sculpture · Úr álögum'],
       ['Sculptor', 'Einar Jónsson'],
-      ['Museum opened', '1923'],
-      ['Where', 'The garden behind Hnitbjörg, Skólavörðuholt'],
-      ['Cost', 'Garden free, all year'],
+      ['Made', '1916 to 1927'],
+      ['Where', 'By Tjörnin, the city pond'],
+      ['Cost', 'Free, always open'],
     ],
-    title: 'Breaking a spell, in the garden below Hallgrímskirkja',
+    title: 'Breaking a spell, beside the pond',
     kicker: 'Iceland · Field note',
     date: 'July 2026',
     excerpt:
-      'Behind the Einar Jónsson museum on the hill by Hallgrímskirkja, a bronze figure lowers his sword over a beaten shape in Úr álögum, the sculptor’s image of breaking free from a spell.',
+      'By Tjörnin, the city pond, a bronze knight drives his sword into a dragon in Úr álögum, Einar Jónsson’s image of breaking free from a spell.',
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
     image: '/photos/Ur-Alogum.jpeg',
     plateSlug: 'ur-alogum',
     plateTitle: 'Úr álögum',
     body: [
-      'On the hill at Skólavörðuholt, in the shadow of Hallgrímskirkja, there is a house of pale stone that looks a little like a small fortress, and behind it a walled garden full of bronze. One figure in that garden stops most people who wander in. A powerful man stands with a great sword held point down before him, a beaten shape slumped at his feet and a smaller freed figure gathered against his side. The work is called Úr álögum, which means out of the spell, and it is about the moment a curse finally breaks.',
-      'The house and everything in the garden belong to Einar Jónsson, the first professional sculptor Iceland ever produced. He worked in a heavy, symbolic, dreamlike manner that has little to do with the plain daylight realism of most public statues, and his subjects are angels and heroes and souls hauling themselves out of matter. Úr álögum is one of the clearest of them. A young hero has overcome the thing that held someone under a spell, and the piece stands for the spirit breaking free of whatever binds it, told in the shape of an old fairy tale.',
-      'Einar lived from 1874 to 1954, and he made a bargain with his country that shaped the rest of his life. He offered the whole body of his work to the Icelandic nation on a single condition, that a home be built to keep it in, and the fortress like building his statue stands behind was raised to hold it. He called it Hnitbjörg, after the cliffs in the old myth where the mead of poetry lay hidden. It opened in 1923 as the first art museum in the country, and Einar lived and worked upstairs in it until he died. He gave everything away and then lived on top of it.',
-      'The bronzes in the garden are casts of his works, set out on granite among the grass and the flowerbeds, and the garden is open and free the whole year round. It is one of the strangest corners in central Reykjavík, a crowd of angels and riders and struggling figures standing in the open air a step away from the busiest church in the country, and hardly anyone in the queue for the church tower thinks to walk around the back and find them.',
+      'At the edge of the city pond, on a lawn among the flowerbeds, a big bronze stands on a dark stone base. A knight holds a great sword point down, driven into the coils of a dragon, and at his shoulder a young woman is lifted clear of the thing that held her. A round shield and a dark wing fill out the shape behind them. The work is called Úr álögum, which means out of the spell, and it is about the moment a curse finally breaks.',
+      'It is the work of Einar Jónsson, the first professional sculptor Iceland ever produced. He worked in a heavy, symbolic, dreamlike manner that has little to do with the plain daylight realism of most public statues, and his subjects are angels and heroes and souls hauling themselves out of matter. Úr álögum is one of the clearest of them. A young hero has overcome the thing that held someone under a spell, and the piece stands for the spirit breaking free of whatever binds it, told in the shape of an old fairy tale.',
+      'Einar lived from 1874 to 1954, and he made a bargain with his country that shaped the rest of his life. He offered the whole body of his work to the Icelandic nation on a single condition, that a home be built to keep it in, and the fortress like building on Skólavörðuholt, beside where Hallgrímskirkja now stands, was raised to hold it. He called it Hnitbjörg, after the cliffs in the old myth where the mead of poetry lay hidden. It opened in 1923 as the first art museum in the country, and Einar lived and worked upstairs in it until he died. He gave everything away and then lived on top of it. He worked on Úr álögum from 1916 to 1927; the original is there, and the bronze by the pond is cast from it.',
+      'The bronze by the pond has the open air to itself. It stands on a lawn by the water with flowers at its feet, and most of the people walking the path around Tjörnin pass it on their way somewhere else, which is a shame, because it is one of the strangest and most worked pieces of public sculpture in the city.',
       'It rewards a slow circle. Einar meant his figures to be read rather than simply looked at, each one a small allegory of birth or grief or release worked out in bronze, and Úr álögum is the one most people carry away, partly because the story in it is so plain. There is a hero, a monster, a spell, and the moment it lifts. You do not need the label on the plinth to feel what it is about.',
-      'You reach it the easy way, by climbing up to Hallgrímskirkja and simply carrying on past it to the far side. The garden asks nothing of you, no ticket and no turnstile, and the museum indoors is there if you want the rest of the story. Come on an overcast day, which Reykjavík supplies without much effort, and the flat grey light suits the green bronze and the heavy themes far better than sunshine ever could.',
+      'You reach it on an easy loop of the pond, and it asks nothing of you, no ticket and no turnstile. If you want the rest of the story, the museum on Skólavörðuholt holds the original and the rest of his work. Come on an overcast day, which Reykjavík supplies without much effort, and the flat grey light suits the green bronze and the heavy themes far better than sunshine ever could.',
       'Úr álögum is a good thing to send to a person climbing out of a hard stretch, a bad year or a long spell of something they are ready to be finished with. Sign the photograph with a steady word, and the picture tells them that the spell is breaking and the worst of it is behind them.',
     ],
   },
@@ -757,12 +760,12 @@ export const POSTS: Post[] = [
     slug: 'einar-benediktsson',
     seoTitle: 'Einar Benediktsson Statue at Höfði, Reykjavík',
     inShort:
-      'Einar Benediktsson stands with a harp beside Höfði, the house he lived in for a dozen years. He was a poet, a lawyer and the founder of Iceland’s first daily newspaper, and the story that outlived his schemes is that he once tried to sell the northern lights. Ásmundur Sveinsson finished the statue in 1964; the city moved it here in 2015.',
+      'Einar Benediktsson stands with a harp beside Höfði, the house he lived in from 1914 to 1917. He was a poet, a lawyer and the founder of Iceland’s first daily newspaper, and the story that outlived his schemes is that he once tried to sell the northern lights. Ásmundur Sveinsson finished the statue in 1964; the city moved it here in 2015.',
     facts: [
       ['What', 'Statue · Einar Benediktsson'],
       ['Sculptor', 'Ásmundur Sveinsson'],
       ['Finished', '1964, moved to the shore in 2015'],
-      ['Where', 'The lawn beside Höfði'],
+      ['Where', 'The lawn east of Höfði'],
       ['Cost', 'Free, always open'],
     ],
     title: 'The poet who tried to sell the northern lights',
@@ -779,7 +782,7 @@ export const POSTS: Post[] = [
       'Einar lived from 1864 to 1940 and is counted among the finest of the Icelandic neo romantic poets, a writer of long, grand, heavily worked verse about nature and the spirit and the future of his small country. He trained as a lawyer, he argued for Iceland to break free of Danish rule long before it happened, and in 1896 he founded Dagskrá, the first daily newspaper the country had ever had. For a nation of a few tens of thousands of people scattered around a cold island, a man like this was a sizeable portion of its public life all by himself.',
       'What makes him stranger and more memorable than most poets is the other half of his life. Einar was an entrepreneur of enormous and largely unrealised ambition. He spent years abroad chasing foreign money to harness Iceland’s waterfalls for electricity and to dig its minerals out of the ground, and the schemes mostly came to nothing, which did not slow him down at all. The story that has outlived all of them is that he once tried to sell the northern lights to foreign investors. Whether it happened quite like that hardly matters now, because it is exactly the sort of legend that attaches itself to a man who genuinely seemed to believe the sky over Iceland was an asset waiting for the right buyer.',
       'The statue is the work of Ásmundur Sveinsson, one of the great Icelandic sculptors of the last century, who finished it in 1964. He gave Einar the harp on purpose. Ásmundur wanted to show that the man had been great in everything he turned his hand to, the poetry and the grand plans alike, and the harp stands in for all of that reach. It is a generous reading of a complicated life, and standing in front of it you can believe the sculptor meant it warmly.',
-      'For its first fifty years the statue stood inland, in the green park at Klambratún, and only in 2015 did the city move it down to the shore beside Höfði. The new spot is the right one. Einar lived in that white house for a dozen years early in the last century, long before it became the place where Reagan and Gorbachev sat down together in 1986, so the move brought the poet back to his own front garden. The man and the house now share one patch of grass by the water.',
+      'For its first fifty years the statue stood inland, in the green park at Klambratún, and only in 2015 did the city move it down to the shore beside Höfði. The new spot is the right one. Einar lived in that white house from 1914 to 1917, long before it became the place where Reagan and Gorbachev sat down together in 1986, so the move brought the poet back to his own front garden. The man and the house now share one patch of grass by the water.',
       'It takes only a few minutes to visit, and most people come for the house and find the poet by accident. Walk the shore path east from the Sun Voyager and the Partnership sculpture, and Höfði and its bronze resident sit together a little apart from everything, with Mount Esja across the bay behind them. Morning light suits the figure, when the coat and the harp still hold a little of the cold off the sea.',
       'There is something fitting about sending a photograph of a man who dreamed far past anything his country could hold at the time. Sign one for someone with a head full of plans that everyone else thinks are too big, and the picture tells them that you are on their side.',
     ],
@@ -818,13 +821,13 @@ export const POSTS: Post[] = [
     slug: 'black-cone',
     seoTitle: 'The Black Cone, Austurvöllur: the 2009 protest memorial',
     inShort:
-      'The Black Cone is a boulder split by a heavy black cone, standing in the corner of Austurvöllur in front of the Icelandic parliament. Santiago Sierra made it, unveiled in 2012 on the third anniversary of the Pots and Pans protests of 2009, and the plaque carries a line from the French Revolution on the right to refuse.',
+      'The Black Cone is a boulder split by a heavy black cone, standing at the corner of Austurvöllur where Kirkjustræti meets Thorvaldsensstræti, by the Icelandic parliament. Santiago Sierra made it, unveiled in 2012 on the third anniversary of the Pots and Pans protests of 2009, and the plaque carries a line from the French Revolution on the right to refuse.',
     facts: [
       ['What', 'Monument · the Black Cone'],
       ['Artist', 'Santiago Sierra'],
       ['Unveiled', '2012'],
       ['Marks', 'The Pots and Pans protests of 2009'],
-      ['Where', 'A corner of Austurvöllur, by the parliament'],
+      ['Where', 'Corner of Kirkjustræti and Thorvaldsensstræti, Austurvöllur'],
       ['Cost', 'Free, always open'],
     ],
     title: 'A broken boulder in front of parliament, and the year a country banged its pots',
@@ -867,7 +870,7 @@ export const POSTS: Post[] = [
     plateTitle: 'Unknown Bureaucrat',
     body: [
       'At the northern end of the city pond, where the long footbridge runs across to the City Hall, a man in a coat strides forward with a briefcase in his hand. Where his head and chest should be there is a rough, unworked block of Icelandic basalt. You can walk past him in a hurry and only register it a few steps later, and then you have to go back and look at him properly.',
-      'Most countries keep a monument to the unknown soldier. Iceland has never had an army, so it has no unknown soldier to mourn, and somewhere in that gap Magnús Tómasson found this idea and cast it in 1994. He called it the unknown bureaucrat, a tribute to the anonymous official who keeps a country running. Whether it is sincere or gently teasing is left entirely to you, and the honest answer is that it manages to be both at once.',
+      'Most countries keep a monument to the unknown soldier. Iceland has never had an army, so it has no unknown soldier to mourn, and somewhere in that gap Magnús Tómasson found this idea and made it in 1993. He called it the unknown bureaucrat, a tribute to the anonymous official who keeps a country running. Whether it is sincere or gently teasing is left entirely to you, and the honest answer is that it manages to be both at once.',
       'The whole thing lives in the contrast. From the waist down he is precise and human, the creased trousers, the briefcase, the forward lean of a man with somewhere to be. From the waist up he is a slab of raw rock, faceless and heavy, the role sitting square on the shoulders of the person. It says more about work, and about being a small part of a large machine, than a page of writing could.',
       'He is easy to find and easy to miss, which suits him. Look for him at the City Hall end of Tjörnin, by the water, among the ducks and the reflections of the houses around the pond. A slow loop of the pond takes you right past, and most of the people walking it never notice the joke standing at the edge.',
       'There are few better things to send to a friend who is buried under a desk than a faceless office worker carved in bronze, signed with a kind word from you. It lands as a joke and stays as something a little warmer, which is about the most a card can hope to do.',
@@ -897,7 +900,7 @@ export const POSTS: Post[] = [
     body: [
       'On the north shore of Reykjavík, a little apart from everything, a white timber house stands on its own patch of grass and looks out at the bay with Mount Esja on the far side. It is pale and prim and slightly formal, the kind of house that seems to be keeping a secret, and for a building its size it has held more history than most.',
       'For two days in October 1986, this is where Ronald Reagan and Mikhail Gorbachev sat down together. The talks ended without an agreement and were called a failure at the time, and yet almost everyone now looks back on those two days in this house as the moment the Cold War began to come apart in a good way. Inside, the American and Soviet flags hang crossed to mark it.',
-      'The house is older and odder than that summit. It was put up in 1909, built in Norway, shipped across the sea in pieces and assembled here for the French consul. For a dozen years it was the home of the poet Einar Benediktsson, whose statue now stands not far away, and in 1958 the city bought it and turned it into a place for receptions and official welcomes.',
+      'The house is older and odder than that summit. It was put up in 1909, built in Norway, shipped across the sea in pieces and assembled here for the French consul. From 1914 to 1917 it was the home of the poet Einar Benediktsson, whose statue now stands not far away, and in 1958 the city bought it and turned it into a place for receptions and official welcomes.',
       'It is also, by long tradition, haunted. The resident ghost is known as the White Lady, and a former British ambassador found her presence unsettling enough that he persuaded Britain to sell the house and move on. The Foreign Ministry has even put it on the record, with the lovely careful line that it will neither confirm nor deny that Höfði has a ghost.',
       'You cannot usually go inside, and you do not need to. The photograph is the house itself, white and self-contained against the grey water with the mountain behind it. It stands a short walk along the shore from the Sun Voyager and the Partnership sculpture, so the three of them make one easy and rewarding loop on a clear day.',
       'There is something fitting about sending a small white house where, for a moment, the world let its shoulders drop. Sign it with a few of your own words for someone you wish that same ease, and the picture carries more than it seems to.',
@@ -967,7 +970,7 @@ export const POSTS: Post[] = [
     slug: 'partnership-sculpture',
     seoTitle: 'The Partnership Sculpture on the Reykjavík shore',
     inShort:
-      'The Partnership is two bronze figures leaning into each other on the Sæbraut shore path. The American ambassador Charles Cobb and his wife Sue gave it to Reykjavík in 1991, fifty years after Iceland and the United States opened relations. Pétur Bjarnason made it, and an identical version stands in Miami.',
+      'The Partnership is a bronze on the Sæbraut shore path shaped like a split arrowhead, its two halves joined at the root between two black stone pillars. The American ambassador Charles Cobb and his wife Sue gave it to Reykjavík in 1991, fifty years after Iceland and the United States opened relations. Pétur Bjarnason made it, and an identical version stands in Miami.',
     facts: [
       ['What', 'Sculpture · The Partnership'],
       ['Artist', 'Pétur Bjarnason'],
@@ -980,18 +983,18 @@ export const POSTS: Post[] = [
     kicker: 'Iceland · Field note',
     date: 'June 2026',
     excerpt:
-      'Two bronze figures holding on to each other on the Reykjavík shore, a gift between two countries, set a short walk from the house where the Cold War began to thaw.',
+      'A bronze split in two and still joined at the root, on the Reykjavík shore, a gift between two countries, set a short walk from the house where the Cold War began to thaw.',
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
     image: '/photos/The-Partnership-Sculpture.jpeg',
     plateSlug: 'partnership-sculpture',
     plateTitle: 'The Partnership Sculpture',
     body: [
-      'Out on the seafront path, east of the old harbour, two bronze figures lean into each other and hold on. They face the water and the long line of Mount Esja on the far side of the bay, and most people walk past them on the way to somewhere else. If you stop, the thing they are doing is plain enough. They are two separate shapes that have decided to stay joined.',
-      'The sculpture is a gift, and the story behind it is unusually specific. In 1991 the American ambassador of the day, Charles Cobb, and his wife Sue gave it to the city to mark fifty years since Iceland and the United States first opened formal relations in 1941. The artist was Pétur Bjarnason, and he kept it simple, two people reaching for one another, which is about as clear as a statement of partnership between two countries can be. An identical version stands in Miami, on the other side of the same ocean.',
+      'Out on the seafront path, east of the old harbour, a tall bronze stands between two black stone pillars. It is shaped like the head of an arrow or a harpoon and split clean down the middle, two halves that part at the top and stay joined at the root, where they curve together into one. Most people walk past it on the way to somewhere else. If you stop, the idea is plain enough. It is one thing that has become two and decided to stay joined.',
+      'The sculpture is a gift, and the story behind it is unusually specific. In 1991 the American ambassador of the day, Charles Cobb, and his wife Sue gave it to the city to mark fifty years since Iceland and the United States first opened formal relations in 1941. The artist was Pétur Bjarnason, and he kept it simple, one form split in two that still holds together, which is about as clear as a statement of partnership between two countries can be. An identical version stands in Miami, on the other side of the same ocean.',
       'The place it stands gives it a second meaning that the makers could only have half intended. A few hundred metres further along the shore is Höfði, a white timber house on its own patch of lawn, and it was in that house in 1986 that Ronald Reagan and Mikhail Gorbachev sat down at a summit often credited with helping bring the Cold War toward its end. So a sculpture about two nations holding on sits within easy sight of the room where two superpowers tried to do the same thing.',
-      'None of this announces itself. There is no grand plaza and no queue, just the path, the wind off the bay, and the two figures going about their embrace while the city walks past. That is part of why it photographs so well. The drama is all in the shapes and the water behind them, and none of it in the staging.',
-      'You will find it on the Sæbraut path, part of the run of sculptures along this stretch of coast, close enough to the Sun Voyager and to Höfði that the three of them make an easy and rewarding walk on a clear afternoon. Go when the light is low and the bay is flat, and let the two figures sit against the water.',
-      'There are not many better things to send to a person you want to keep close than a photograph of two figures who have decided to hold on. Sign one with a few of your own words, and it carries exactly the thing it was built to say.',
+      'None of this announces itself. There is no grand plaza and no queue, just the path, the wind off the bay, and the two green halves standing between their pillars while the city walks past. That is part of why it photographs so well. The drama is all in the shapes and the water behind them, and none of it in the staging.',
+      'You will find it on the Sæbraut path, part of the run of sculptures along this stretch of coast, close enough to the Sun Voyager and to Höfði that the three of them make an easy and rewarding walk on a clear afternoon. Go when the light is low and the bay is flat, and let the bronze stand against the sky.',
+      'There are not many better things to send to a person you want to keep close than a photograph of one shape split in two that has decided to hold together. Sign one with a few of your own words, and it carries exactly the thing it was built to say.',
     ],
   },
   {
@@ -1058,7 +1061,7 @@ export const POSTS: Post[] = [
     slug: 'water-carrier',
     seoTitle: 'The Water Carrier Statue, Lækjargata, Reykjavík',
     inShort:
-      'The Water Carrier near Lækjargata is a bronze woman bent under a yoke with a pail at each end, the work women did before Reykjavík had pipes. Ásmundur Sveinsson shaped her in the nineteen thirties; the city bought her in 1948, but objections kept her off the street, and she has stood at the corner of Lækjargata and Bankastræti only since 2011.',
+      'The Water Carrier near Lækjargata is a bronze woman bent forward with a heavy pail of water in each hand, the work women did before Reykjavík had pipes. Ásmundur Sveinsson shaped her in the nineteen thirties; the city bought her in 1948, but objections kept her off the street, and she has stood at the corner of Lækjargata and Bankastræti only since 2011.',
     facts: [
       ['What', 'Statue · Water Carrier'],
       ['Sculptor', 'Ásmundur Sveinsson'],
@@ -1077,7 +1080,7 @@ export const POSTS: Post[] = [
     plateSlug: 'water-carrier',
     plateTitle: 'Water Carrier',
     body: [
-      'She stands near Lækjargata, in the older part of central Reykjavík, a bronze woman bent forward under a wooden yoke with a pail of water hanging from each end. People pass her on their way to the shops without always noticing, which feels right, because for most of her life she was exactly the kind of person nobody looked at twice. If you stop in front of her for a moment you can see the weight in her shoulders and the patience in her face, and you begin to understand why she is here.',
+      'She stands near Lækjargata, in the older part of central Reykjavík, a bronze woman bent forward with a heavy pail of water gripped in each hand. People pass her on their way to the shops without always noticing, which feels right, because for most of her life she was exactly the kind of person nobody looked at twice. If you stop in front of her for a moment you can see the weight in her shoulders and the patience in her face, and you begin to understand why she is here.',
       'Before Reykjavík had pipes in its walls, somebody had to bring the water. For a long time that somebody was usually a woman, often a poor one, who carried it from the wells and the pond to the houses of people who could pay her a little to do it. The work was heavy and endless and almost invisible, the sort of labour a town leans on without ever thanking. The statue is for her. Ásmundur Sveinsson, who made it, spent much of his life turning ordinary working people into bronze, and the water carrier is one of the most honest things he ever did.',
       'He shaped her in the nineteen thirties, and the city did not know what to do with her. Many people thought she was ugly. They wanted their public sculpture to lift the eye and flatter the nation, and here instead was a stooped figure doing hard manual work, with no grace added and nothing softened. The argument went on for years, and the statue waited while it played out. The city bought her in 1948 to stand on the slope by Lækjargata, and the objections kept her off it anyway. She was not cast in bronze until 1967, spent the next decades on the hill at Öskjuhlíð, and reached the slope she was bought for only in 2011, once enough people had come round to the idea that a monument could honour effort instead of glory.',
       'Time has been kinder to her than her first audience was. The thing people once found unlovely is now the thing they value, because she tells the truth about how a small northern town actually kept itself alive. Reykjavík grew up around her, the wells closed, the pipes arrived, and the job she represents disappeared completely, which is the only reason we can afford to find her beautiful now.',
@@ -1128,7 +1131,7 @@ export const findPost = (slug?: string): Post | undefined => POSTS.find((p) => p
 export const photoAlt = (post: Post): string => `${post.plateTitle ?? post.title}, Reykjavík`;
 
 /** Splits on full stops that end a sentence, not on the initials in names such
-    as Björn Th. Björnsson or Ingi P. Gíslason. */
+    as Björn Th. Björnsson or Ingi Þ. Gíslason. */
 function sentences(text: string): string[] {
   const out: string[] = [];
   let start = 0;

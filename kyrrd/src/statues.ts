@@ -17,10 +17,10 @@ export interface StatueArea {
   slugs: string[]; // plate slugs, in walking order
 }
 
-/** Areas in the order The Long Walk meets them; Tjörnin holds the two off it. */
+/** Areas in the order The Long Walk meets them; Tjörnin holds the three by the pond, off the route. */
 export const STATUE_AREAS: StatueArea[] = [
   { id: 'old-town', name: 'The old town', slugs: ['settlement-pillars', 'skuli-magnusson', 'vikurgardur'] },
-  { id: 'tjornin', name: 'Tjörnin, the pond', slugs: ['olafur-thors', 'unknown-bureaucrat'] },
+  { id: 'tjornin', name: 'Tjörnin, the pond', slugs: ['olafur-thors', 'unknown-bureaucrat', 'ur-alogum'] },
   {
     id: 'austurvollur',
     name: 'Austurvöllur',
@@ -38,12 +38,12 @@ export const STATUE_AREAS: StatueArea[] = [
     slugs: ['sun-voyager', 'islandsvardan', 'shore-piece', 'partnership-sculpture'],
   },
   { id: 'hofdi', name: 'Höfði', slugs: ['ondvegissulur', 'berlin-wall', 'einar-benediktsson'] },
-  { id: 'holt', name: 'Skólavörðuholt', slugs: ['leif-eriksson', 'ur-alogum'] },
+  { id: 'holt', name: 'Skólavörðuholt', slugs: ['leif-eriksson'] },
 ];
 
 /** Years a note states in its text where its fact table has none. */
 const YEAR_FROM_TEXT: Record<string, string> = {
-  'unknown-bureaucrat': '1994', // "found this idea and cast it in 1994"
+  'unknown-bureaucrat': '1993', // made in 1993 (the plaque, reykjavik.is); the city set it up in 1994
   'berlin-wall': '2015', // "It arrived on the third of October 2015"
   vikurgardur: '2000', // "presented to the city on the sixteenth of June 2000"
   'black-cone': '2012', // "unveiled in 2012"
@@ -171,6 +171,14 @@ export function buildStatues(
     .map(([name, list]) => ({ name, line: MAKER_LINE[name] ?? '', items: list }));
 
   const onWalk = items.filter((i) => i.stop).length;
+  // where the works off the route stand, said from the data so it cannot go stale
+  const WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const OFF_PLACE: Record<string, string> = { tjornin: 'by the pond', harbour: 'at the old harbour', holt: 'on Skólavörðuholt' };
+  const offWalk = areas
+    .map((a) => ({ id: a.id, n: a.items.filter((i) => !i.stop).length }))
+    .filter((a) => a.n)
+    .map((a) => `${WORDS[a.n] ?? a.n} ${OFF_PLACE[a.id] ?? 'nearby'}`)
+    .join(' and ');
   const sun = posts.find((p) => p.slug === 'sun-voyager');
   const einar = byMaker['Einar Jónsson'] ?? [];
   const faq = [
@@ -189,8 +197,8 @@ export function buildStatues(
     {
       q: 'Can I see them all on one walk?',
       a: `${onWalk} of the ${items.length} lie on The Long Walk, a free self-guided route of 5.5 km that takes 3 to 4 hours. The other ${
-        items.length - onWalk
-      }, by the pond, at the old harbour and behind Hallgrímskirkja, are listed here with where they stand.`,
+        WORDS[items.length - onWalk] ?? items.length - onWalk
+      }, ${offWalk}, are listed here with where they stand.`,
     },
     ...(sun?.inShort ? [{ q: 'Is the Sun Voyager a Viking ship?', a: sun.inShort }] : []),
   ];
