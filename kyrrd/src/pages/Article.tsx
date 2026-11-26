@@ -8,9 +8,10 @@ import PinIcon from '../components/PinIcon';
 import NewsletterCard from '../components/NewsletterCard';
 import { SocialFollow } from '../components/Social';
 import { walkNeighbours, WALK_META } from '../walk';
-import { STATUE_AREAS } from '../statues';
+import { isStatue } from '../statues';
+import { PLATES } from '../plates';
 
-const IN_STATUES = STATUE_AREAS.flatMap((a) => a.slugs);
+const STATUE_COUNT = PLATES.filter((p) => isStatue(p) && p.image).length;
 import { useSeo, useJsonLd } from '../seo';
 
 const SITE = 'https://kyrrd.pics';
@@ -198,9 +199,9 @@ export default function Article() {
           </div>
 
           {/* a statue's note leads to all of them, grouped by where they stand */}
-          {post.plateSlug && IN_STATUES.includes(post.plateSlug) && (
+          {isStatue(plate) && (
             <Link className="on-foot to-statues" to="/statues">
-              All {IN_STATUES.length} statues, sculptures and memorials, by where they stand
+              All {STATUE_COUNT} statues, sculptures and memorials, chapter by chapter along the walk
               <b>See them all →</b>
             </Link>
           )}

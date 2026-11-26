@@ -1,6 +1,8 @@
 /* ============================================================
    STATUES — the /statues hub: every statue, sculpture and
-   memorial in the archive, grouped by where it stands.
+   memorial in the archive, set out chapter by chapter along
+   The Long Walk, so each one sits where the walk, measured on
+   foot, meets it. The few that are not on the route come last.
    Like plates.ts, journal.ts and walk.ts this module imports no
    code (only types), so the prerender and the sitemap can load it
    on its own; the catalogue is passed in. Every name, sentence,
@@ -11,39 +13,30 @@ import type { Plate } from './plates';
 import type { Post } from './journal';
 import type { WalkChapter } from './walk';
 
-export interface StatueArea {
-  id: string; // anchor
-  name: string;
-  slugs: string[]; // plate slugs, in walking order
-}
+/** The archive's tags that belong on this page. */
+export const STATUE_TAGS = ['Statues', 'Sculpture', 'Memorials'];
+export const isStatue = (plate?: Plate) => !!plate && STATUE_TAGS.includes(plate.tags?.[0] ?? '');
 
-/** Areas in the order The Long Walk meets them; Tjörnin holds the two off it. */
-export const STATUE_AREAS: StatueArea[] = [
-  { id: 'old-town', name: 'The old town', slugs: ['settlement-pillars', 'skuli-magnusson', 'vikurgardur'] },
-  { id: 'tjornin', name: 'Tjörnin, the pond', slugs: ['olafur-thors', 'unknown-bureaucrat'] },
-  {
-    id: 'austurvollur',
-    name: 'Austurvöllur',
-    slugs: ['ingibjorg-bjarnason', 'black-cone', 'jon-sigurdsson', 'jon-vidalin', 'sera-bjarni'],
-  },
-  {
-    id: 'arnarholl',
-    name: 'Lækjargata and Arnarhóll',
-    slugs: ['water-carrier', 'christian-ix', 'hannes-hafstein', 'ingolfur-arnarson'],
-  },
-  { id: 'harbour', name: 'Harpa and the old harbour', slugs: ['cellist', 'wind-harp', 'looking-seawards'] },
-  {
-    id: 'saebraut',
-    name: 'The Sæbraut shore',
-    slugs: ['sun-voyager', 'islandsvardan', 'shore-piece', 'partnership-sculpture'],
-  },
-  { id: 'hofdi', name: 'Höfði', slugs: ['ondvegissulur', 'berlin-wall', 'einar-benediktsson'] },
-  { id: 'holt', name: 'Skólavörðuholt', slugs: ['leif-eriksson', 'ur-alogum'] },
+/**
+ * Works that are not on The Long Walk, in the order the last section lists
+ * them, with where they stand. One missing from this list still appears, at
+ * the end of the section.
+ */
+const OFF_ROUTE: { slug: string; near: string }[] = [
+  { slug: 'olafur-thors', near: 'by the pond' },
+  { slug: 'unknown-bureaucrat', near: 'by the pond' },
+  { slug: 'ur-alogum', near: 'by the pond' },
+  { slug: 'looking-seawards', near: 'at the old harbour' },
 ];
+
+export interface StatueArea {
+  id: string; // anchor; for a chapter it is the walk page's own anchor
+  name: string;
+}
 
 /** Years a note states in its text where its fact table has none. */
 const YEAR_FROM_TEXT: Record<string, string> = {
-  'unknown-bureaucrat': '1994', // "found this idea and cast it in 1994"
+  'unknown-bureaucrat': '1993', // made in 1993 (the plaque, reykjavik.is); the city set it up in 1994
   'berlin-wall': '2015', // "It arrived on the third of October 2015"
   vikurgardur: '2000', // "presented to the city on the sixteenth of June 2000"
   'black-cone': '2012', // "unveiled in 2012"
@@ -87,6 +80,12 @@ export interface StatueItem {
   area: StatueArea;
 }
 
+export interface StatueSection extends StatueArea {
+  chapter: { id: string; roman: string; title: string; area: string; first: number; last: number } | null;
+  items: StatueItem[];
+  also: { slug: string; name: string; stop: number; note: string | null }[];
+}
+
 function yearOf(slug: string, facts: [string, string][]): string {
   if (YEAR_FROM_TEXT[slug]) return YEAR_FROM_TEXT[slug];
   for (const [k, v] of facts) {
@@ -105,61 +104,75 @@ export function buildStatues(
   firstSentence: (text: string) => string,
 ) {
   const stopOf: Record<string, number> = {};
-  const chapterOf: Record<string, WalkChapter> = {};
   let n = 0;
-  for (const ch of walk)
-    for (const s of ch.stops) {
-      stopOf[s.slug] = ++n;
-      chapterOf[s.slug] = ch;
-    }
+  for (const ch of walk) for (const s of ch.stops) stopOf[s.slug] = ++n;
+  const plateOf = (slug: string) => plates.find((p) => p.slug === slug);
+  const postOf = (slug: string) => posts.find((p) => p.plateSlug === slug);
 
-  const areas = STATUE_AREAS.map((area) => {
-    // An area follows one chapter of the walk. The chapter's other stops are
-    // buildings and lighthouses; they are named under the area, so every area
-    // holds the same stops as the route does.
-    const chapter = area.slugs.map((s) => chapterOf[s]).find(Boolean);
-    const range = chapter ? chapter.stops.map((s) => stopOf[s.slug]) : [];
-    const also = (chapter?.stops ?? [])
-      .filter((s) => !area.slugs.includes(s.slug))
-      .flatMap((s) => {
-        const plate = plates.find((p) => p.slug === s.slug);
-        const post = posts.find((p) => p.plateSlug === s.slug);
-        return plate
-          ? [{ slug: s.slug, name: post?.plateTitle ?? plate.title, stop: stopOf[s.slug], note: post?.slug ?? null }]
-          : [];
-      });
-    const items = area.slugs.flatMap((slug): StatueItem[] => {
-      const plate = plates.find((p) => p.slug === slug);
-      const post = posts.find((p) => p.plateSlug === slug);
-      if (!plate || !post || !plate.image) return [];
-      const facts = post.facts ?? [];
-      const fact = (...keys: string[]) => facts.find(([k]) => keys.includes(k))?.[1] ?? '';
-      return [
-        {
-          slug,
-          note: post.slug,
-          name: post.plateTitle ?? plate.title,
-          type: TYPE[plate.tags?.[0] ?? ''] ?? 'Sculpture',
-          image: plate.image,
-          focus: plate.focus,
-          line: firstSentence(post.inShort ?? post.excerpt),
-          by: fact('Sculptor', 'Artist'),
-          year: yearOf(slug, facts),
-          where: fact('Where') || area.name,
-          stop: stopOf[slug] ?? null,
-          area,
-        },
-      ];
-    });
-    return {
-      ...area,
-      chapter: chapter
-        ? { roman: chapter.roman, title: chapter.title, first: Math.min(...range), last: Math.max(...range) }
-        : null,
-      also,
-      items,
-    };
-  });
+  const item = (plate: Plate, area: StatueArea): StatueItem[] => {
+    const slug = plate.slug ?? plate.id;
+    const post = postOf(slug);
+    if (!post || !plate.image) return [];
+    const facts = post.facts ?? [];
+    const fact = (...keys: string[]) => facts.find(([k]) => keys.includes(k))?.[1] ?? '';
+    return [
+      {
+        slug,
+        note: post.slug,
+        name: post.plateTitle ?? plate.title,
+        type: TYPE[plate.tags?.[0] ?? ''] ?? 'Sculpture',
+        image: plate.image,
+        focus: plate.focus,
+        line: firstSentence(post.inShort ?? post.excerpt),
+        by: fact('Sculptor', 'Artist'),
+        year: yearOf(slug, facts),
+        where: fact('Where') || area.name,
+        stop: stopOf[slug] ?? null,
+        area,
+      },
+    ];
+  };
+
+  // The walk's chapters, in its order, with its names and stop numbers. The
+  // chapter's other stops (buildings, lighthouses) are named under it, so a
+  // chapter here holds exactly the stops it holds on the walk.
+  const chapters: StatueSection[] = walk
+    .map((ch) => {
+      const area: StatueArea = { id: ch.id, name: ch.title };
+      const nums = ch.stops.map((s) => stopOf[s.slug]);
+      return {
+        ...area,
+        chapter: { id: ch.id, roman: ch.roman, title: ch.title, area: ch.area, first: Math.min(...nums), last: Math.max(...nums) },
+        items: ch.stops.flatMap((s) => {
+          const plate = plateOf(s.slug);
+          return plate && isStatue(plate) ? item(plate, area) : [];
+        }),
+        also: ch.stops
+          .filter((s) => !isStatue(plateOf(s.slug)))
+          .flatMap((s) => {
+            const plate = plateOf(s.slug);
+            return plate
+              ? [{ slug: s.slug, name: postOf(s.slug)?.plateTitle ?? plate.title, stop: stopOf[s.slug], note: postOf(s.slug)?.slug ?? null }]
+              : [];
+          }),
+      };
+    })
+    .filter((c) => c.items.length);
+
+  // then the works the route does not pass
+  const offArea: StatueArea = { id: 'off-route', name: 'Off the route' };
+  const rank = (slug: string) => {
+    const i = OFF_ROUTE.findIndex((o) => o.slug === slug);
+    return i < 0 ? OFF_ROUTE.length : i;
+  };
+  const offItems = plates
+    .filter((p) => isStatue(p) && !stopOf[p.slug ?? p.id])
+    .sort((a, b) => rank(a.slug ?? a.id) - rank(b.slug ?? b.id))
+    .flatMap((p) => item(p, offArea));
+  const areas: StatueSection[] = offItems.length
+    ? [...chapters, { ...offArea, chapter: null, items: offItems, also: [] }]
+    : chapters;
+
   const items = areas.flatMap((a) => a.items);
   const count = (t: StatueType) => items.filter((i) => i.type === t).length;
 
@@ -171,6 +184,16 @@ export function buildStatues(
     .map(([name, list]) => ({ name, line: MAKER_LINE[name] ?? '', items: list }));
 
   const onWalk = items.filter((i) => i.stop).length;
+  // where the works off the route stand, said from the data so it cannot go stale
+  const WORDS = ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+  const groups: [string, number][] = [];
+  for (const i of offItems) {
+    const near = OFF_ROUTE.find((o) => o.slug === i.slug)?.near ?? 'elsewhere in the centre';
+    const g = groups.find(([k]) => k === near);
+    if (g) g[1] += 1;
+    else groups.push([near, 1]);
+  }
+  const offWalk = groups.map(([near, count]) => `${WORDS[count] ?? count} ${near}`).join(' and ');
   const sun = posts.find((p) => p.slug === 'sun-voyager');
   const einar = byMaker['Einar Jónsson'] ?? [];
   const faq = [
@@ -189,8 +212,8 @@ export function buildStatues(
     {
       q: 'Can I see them all on one walk?',
       a: `${onWalk} of the ${items.length} lie on The Long Walk, a free self-guided route of 5.5 km that takes 3 to 4 hours. The other ${
-        items.length - onWalk
-      }, by the pond, at the old harbour and behind Hallgrímskirkja, are listed here with where they stand.`,
+        WORDS[items.length - onWalk] ?? items.length - onWalk
+      }, ${offWalk}, are listed here with where they stand.`,
     },
     ...(sun?.inShort ? [{ q: 'Is the Sun Voyager a Viking ship?', a: sun.inShort }] : []),
   ];
@@ -200,6 +223,7 @@ export function buildStatues(
     items,
     counts: { all: items.length, Statue: count('Statue'), Sculpture: count('Sculpture'), Memorial: count('Memorial') },
     onWalk,
+    offWalk,
     makers,
     madeByMakers: makers.reduce((s, m) => s + m.items.length, 0),
     faq,
@@ -212,4 +236,7 @@ export const statuesTitle = (n: number) => `Statues and Sculptures of Reykjavík
 export const STATUES_DESCRIPTION =
   'Every statue, sculpture and memorial in the archive, by where it stands in Reykjavík, with who made it and the story behind it. All free to see.';
 export const statuesInShort = (s: Statues) =>
-  `This page lists the ${s.counts.all} statues, sculptures and memorials in the kyrrð archive, grouped by where they stand in Reykjavík. Every one stands outdoors and is free to see, and ${s.onWalk} of them lie on The Long Walk, a free self-guided route of 5.5 km.`;
+  `This page lists the ${s.counts.all} statues, sculptures and memorials in the kyrrð archive, chapter by chapter along The Long Walk, a free self-guided route of 5.5 km, so each one sits where the walk meets it. The ${
+    ['no', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'][s.counts.all - s.onWalk] ??
+    s.counts.all - s.onWalk
+  } the route does not pass, ${s.offWalk}, come last. Every one stands outdoors and is free to see.`;

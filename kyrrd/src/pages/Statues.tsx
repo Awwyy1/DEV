@@ -19,7 +19,7 @@ type Filter = 'all' | StatueType;
 export default function Statues() {
   const [filter, setFilter] = useState<Filter>('all');
   const [view, setView] = useState<'areas' | 'table'>('areas');
-  const { areas, items, counts, onWalk, makers, madeByMakers, faq } = DATA;
+  const { areas, items, counts, onWalk, offWalk, makers, madeByMakers, faq } = DATA;
 
   useSeo(statuesTitle(counts.all), STATUES_DESCRIPTION, { image: '/photos/Leif-Eriksson.jpeg' });
   // The ItemList, FAQ and breadcrumbs are written into the served HTML by the
@@ -113,6 +113,7 @@ export default function Statues() {
               <div className="st-idx">
                 {areas.map((a) => (
                   <a key={a.id} href={`#${a.id}`}>
+                    {a.chapter ? `${a.chapter.roman} · ` : ''}
                     {a.name} <b>{a.items.length}</b>
                   </a>
                 ))}
@@ -123,20 +124,26 @@ export default function Statues() {
 
         <div className="wrap">
           {view === 'areas' ? (
-            areas.map((a, idx) => {
+            areas.map((a) => {
               const visible = a.items.filter((i) => shows(i.type));
               if (!visible.length) return null;
-              // the area is the walk's chapter, stop for stop
+              // a section is the walk's chapter, named and numbered as the walk
+              // page names it, so a work's place is the walk's own
               const meta = a.chapter
-                ? `Chapter ${a.chapter.roman} of The Long Walk, ${a.chapter.title} · stops ${a.chapter.first} to ${a.chapter.last}`
-                : 'Not on The Long Walk';
+                ? `Chapter ${a.chapter.roman} · stops ${a.chapter.first}–${a.chapter.last} · ${a.chapter.area}`
+                : `Not on The Long Walk · ${offWalk}`;
               return (
                 <section className="st-area" id={a.id} key={a.id}>
                   <header className="st-area-h">
-                    <span className="st-area-i">{String(idx + 1).padStart(2, '0')}</span>
+                    <span className="st-area-i">{a.chapter ? a.chapter.roman : '+'}</span>
                     <div>
                       <h2>{a.name}</h2>
                       <p>{meta}</p>
+                      {a.chapter && (
+                        <Link className="st-area-walk" to={`/walk#${a.chapter.id}`}>
+                          This chapter on the walk →
+                        </Link>
+                      )}
                     </div>
                   </header>
                   <div className="st-grid">

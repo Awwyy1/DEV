@@ -113,7 +113,7 @@ export const PLATES: Plate[] = [
   {
     id: '21', no: '06', series: 'Series VII', title: 'Christian IX',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
-    description: 'Arm held out on the Government House lawn, Christian IX of Denmark, offering Iceland the constitution he brought over in 1874.',
+    description: 'The rolled constitution raised in his hand on the Government House lawn, Christian IX of Denmark, who brought it to Iceland in 1874.',
     gradient: 'linear-gradient(180deg,#f0f4f6,#ccd9e2 50%,#93a9b8 82%,#5f7484)',
     image: '/photos/King-Christian-IX-of-Denmark.jpeg',
     slug: 'christian-ix',
@@ -125,7 +125,7 @@ export const PLATES: Plate[] = [
   {
     id: '26', no: '07', series: 'Series VII', title: 'The Cellist',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.93°W', date: 'July 2026',
-    description: 'Bowing a cello with no strings in the water outside Harpa, Ólöf Pálsdóttir’s Musician, modelled on the cellist Erling Blöndal Bengtsson.',
+    description: 'Playing a cello with no strings and no bow in the water beside Harpa, Ólöf Pálsdóttir’s Musician, modelled on the cellist Erling Blöndal Bengtsson.',
     gradient: 'linear-gradient(180deg,#eff3f5,#d3dbe0 48%,#9daab4 78%,#7a5b48)',
     image: '/photos/Sellospilarinn.jpeg',
     slug: 'cellist',
@@ -158,7 +158,7 @@ export const PLATES: Plate[] = [
   {
     id: '09', no: '10', series: 'Series III', title: 'Water Carrier',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
-    description: 'Bowed under a wooden yoke, the Water Carrier who hauled Reykjavík’s water by hand long before the pipes arrived.',
+    description: 'Bowed over the heavy pails in her hands, the Water Carrier who hauled Reykjavík’s water by hand long before the pipes arrived.',
     gradient: 'linear-gradient(180deg,#eef2f3 0%,#cdd8dc 50%,#8b999f 100%)',
     image: '/photos/WaterCarrier.jpeg',
     slug: 'water-carrier',
@@ -259,7 +259,7 @@ export const PLATES: Plate[] = [
   {
     id: '04', no: '19', series: 'Series II', title: 'The Partnership Sculpture',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.91°W', date: 'June 04 2025',
-    description: 'Two bronze figures leaning into each other on the shore, the Partnership, a gift between Iceland and the United States.',
+    description: 'A bronze split in two and still joined at the root on the shore, the Partnership, a gift between Iceland and the United States.',
     gradient: 'linear-gradient(180deg,#fafafa,#e2eaec 60%,#b9c7cc)',
     image: '/photos/The-Partnership-Sculpture.jpeg',
     slug: 'partnership-sculpture',
@@ -338,7 +338,7 @@ export const PLATES: Plate[] = [
   {
     id: '14', no: '26', series: 'Series IV', title: 'The Black Cone',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'June 2026',
-    description: 'Driven into a split boulder outside parliament, the Black Cone, Iceland’s stark monument to the right to protest.',
+    description: 'Driven into a split boulder outside parliament, the Black Cone, Iceland’s stark monument to civil disobedience.',
     gradient: 'linear-gradient(180deg,#dfe7ea,#aebcc2 45%,#5f6e74 80%,#23282b)',
     image: '/photos/The-black-cone.jpeg',
     slug: 'black-cone',
@@ -349,15 +349,15 @@ export const PLATES: Plate[] = [
   },
   {
     id: '18', no: '27', series: 'Series VI', title: 'Úr álögum',
-    place: 'Reykjavík, Iceland', coords: '64.14°N 21.93°W', date: 'July 2026',
-    description: 'Sword lowered over a beaten shape, Einar Jónsson’s Úr álögum, the moment a spell breaks in the garden below Hallgrímskirkja.',
+    place: 'Reykjavík, Iceland', coords: '64.14°N 21.94°W', date: 'July 2026',
+    description: 'A knight’s sword driven into a dragon by Tjörnin, the city pond: Einar Jónsson’s Úr álögum, the moment a spell breaks.',
     gradient: 'linear-gradient(180deg,#e9edee,#b9c4c2 52%,#7c8a86 82%,#414a45)',
     image: '/photos/Ur-Alogum.jpeg',
     slug: 'ur-alogum',
     tags: ['Sculpture'],
     focus: 'top', // tall subject: keep the figure, crop from the bottom
     mapsUrl: '',
-    mapsQuery: 'Úr álögum, Einar Jónsson Museum, Reykjavík',
+    mapsQuery: 'Úr álögum, Tjörnin, Reykjavík',
   },
   {
     id: '11', no: '28', series: 'Series IV', title: 'Hofdi House',
@@ -418,7 +418,7 @@ export const PLATES: Plate[] = [
   {
     id: '35', no: '33', series: 'Series VII', title: 'Looking Seawards',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
-    description: 'Two fishermen in oilskins reading the horizon by the old harbour, Looking Seawards, Ingi P. Gíslason’s 1997 tribute to the men who worked the sea.',
+    description: 'Two fishermen in oilskins reading the horizon by the old harbour, Looking Seawards, Ingi Þ. Gíslason’s 1997 tribute to the men who worked the sea.',
     gradient: 'linear-gradient(180deg,#eef3f5,#cad9dd 50%,#8ba3ab 80%,#4f6a72)',
     image: '/photos/Looking-seawards.jpeg',
     slug: 'looking-seawards',
@@ -430,7 +430,7 @@ export const PLATES: Plate[] = [
   {
     id: '36', no: '34', series: 'Series VII', title: 'The Settlement Pillars',
     place: 'Reykjavík, Iceland', coords: '64.15°N 21.94°W', date: 'July 2026',
-    description: 'A basalt pillar downtown, a steel pipe breathing steam beside it, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.',
+    description: 'Two basalt pillars on Ingólfstorg, a steel pipe breathing steam beside them, marking where Ingólfur’s high seat pillars are said to have washed ashore and Reykjavík began.',
     gradient: 'linear-gradient(180deg,#eceef0,#c2c6cc 48%,#7c8088 80%,#3a3c42)',
     image: '/photos/Settlement-Pillars.jpeg',
     slug: 'settlement-pillars',

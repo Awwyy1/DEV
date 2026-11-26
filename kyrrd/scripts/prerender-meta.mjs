@@ -27,11 +27,11 @@ async function load(rel) {
 const { PLATES } = await load('src/plates.ts');
 const { POSTS, metaDescription, firstSentence } = await load('src/journal.ts');
 const { WALK, WALK_META, WALK_FAQ, walkNeighbours } = await load('src/walk.ts');
-const { buildStatues, statuesTitle, STATUES_DESCRIPTION, statuesInShort, STATUE_AREAS } = await load(
+const { buildStatues, statuesTitle, STATUES_DESCRIPTION, statuesInShort, isStatue } = await load(
   'src/statues.ts',
 );
 const STATUES = buildStatues(PLATES, POSTS, WALK, firstSentence);
-const IN_STATUES = STATUE_AREAS.flatMap((a) => a.slugs);
+const STATUE_COUNT = PLATES.filter((p) => isStatue(p) && p.image).length;
 
 // Static pages — titles/descriptions mirror each page's useSeo() call.
 const staticPages = [
@@ -184,8 +184,8 @@ function articleBody(post) {
           ${paras}
           </div>
           ${
-            post.plateSlug && IN_STATUES.includes(post.plateSlug)
-              ? `<p><a href="/statues">All ${IN_STATUES.length} statues, sculptures and memorials of Reykjavík, by where they stand</a></p>`
+            isStatue(PLATES.find((p) => p.slug === post.plateSlug))
+              ? `<p><a href="/statues">All ${STATUE_COUNT} statues, sculptures and memorials of Reykjavík, chapter by chapter along The Long Walk</a></p>`
               : ''
           }
           ${nearbyBody(post)}
@@ -288,14 +288,17 @@ function statuesBody(route) {
         })
         .join('');
       const chapter = a.chapter
-        ? `<p>Chapter ${a.chapter.roman} of The Long Walk, ${esc(a.chapter.title)}, stops ${a.chapter.first} to ${a.chapter.last}.</p>`
-        : '<p>Not on The Long Walk.</p>';
+        ? `<p>Chapter ${a.chapter.roman} of The Long Walk, stops ${a.chapter.first} to ${a.chapter.last}, ${esc(
+            a.chapter.area,
+          )}. <a href="/walk#${a.chapter.id}">This chapter on the walk</a></p>`
+        : `<p>Not on The Long Walk: ${esc(STATUES.offWalk)}.</p>`;
       const also = a.also.length
         ? `<p>Also on this stretch of the walk: ${a.also
             .map((x) => (x.note ? `<a href="/journal/${x.note}">${esc(x.name)}</a>` : esc(x.name)) + `, stop ${x.stop}`)
             .join('; ')}.</p>`
         : '';
-      return `<section id="${a.id}"><h2>${esc(a.name)}</h2>${chapter}<ul>${cards}</ul>${also}</section>`;
+      const h2 = a.chapter ? `Chapter ${a.chapter.roman}: ${esc(a.name)}` : esc(a.name);
+      return `<section id="${a.id}"><h2>${h2}</h2>${chapter}<ul>${cards}</ul>${also}</section>`;
     })
     .join('\n      ');
   const makers = STATUES.makers
